@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        svg {width: 200px; height: 200px; background: #ffebee;}
+        .polygon1 {stroke:#880e4f; stroke-width: 1px;}
+        .path2 {stroke:#880e4f; stroke-width: 1px; }
+    </style>
+</head>
+<body>
+    <svg>
+      <image xlink:href="../assets/img/box.jpg" width="200" height="200" />
+    </svg>
+    <svg>
+      <image xlink:href="../assets/img/box.jpg" width="200" height="200" clip-path="circle(100px at center)" />
+    </svg>
+    
+    <svg>
+        <clipPath id="clipPath1">
+           <path class="path1" d="M93.926,111.318c-57.253,99.165-122.58-13.985-8.074-13.985
+	c-114.506,0-49.179-113.15,8.074-13.985c-57.253-99.165,73.401-99.165,16.148,0c57.253-99.165,122.58,13.985,8.074,13.985
+	c114.506,0,49.179,113.15-8.074,13.985C167.327,210.484,36.673,210.484,93.926,111.318z"></path> 
+        </clipPath>
+        <image xlink:href="../assets/img/box.jpg" width="200" height="200" clip-path="url(#clipPath1)" />
+    </svg>
+    
+    <svg>
+        <pattern id="pattern" patternUnits="useSpaceOnUse" width="200" height="200">
+            <image xlink:href="../assets/img/box.jpg" width="200" height="200"/>
+        </pattern>
+        <text x="40" y="120" font-size="45" font-weight="bold" fill="url(#pattern)" >WEBS</text>
+    </svg>
+    
+</body>
+</html>
+
+
+
+
+
+

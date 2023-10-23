@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="300"></canvas>
+    
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        ctx.lineTo(50, 150);
+        ctx.lineCap = "butt";
+        ctx.lineWidth = 15;
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(100, 50);
+        ctx.lineTo(100, 150);
+        ctx.lineCap = "round";
+        ctx.lineWidth = 15;
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(150, 50);
+        ctx.lineTo(150, 150);
+        ctx.lineCap = "square";
+        ctx.lineWidth = 15;
+        ctx.stroke();
+        
+        
+        function draw() {
+            var lineCap = ['butt','round','square'];
+
+            // 안내선을 그린다
+            ctx.strokeStyle = '#09f';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(40, 200);
+            ctx.lineTo(160, 200);
+            ctx.moveTo(40, 340);
+            ctx.lineTo(160, 340);
+            ctx.stroke();
+
+            // 선을 그린다
+            ctx.strokeStyle = 'black';
+            for (var i=0;i<lineCap.length;i++){
+                ctx.lineWidth = 15;
+                ctx.lineCap = lineCap[i];
+                ctx.beginPath();
+                ctx.moveTo(50 + i * 50, 200);
+                ctx.lineTo(50 + i * 50, 340);
+                ctx.stroke();
+            }
+        }
+        
+        draw();
+    </script>
+</body>
+</html>

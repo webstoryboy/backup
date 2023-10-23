@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG</title>
+    <style>
+        svg {width: 160px; height: 160px; background: #ffebee;}
+        .rect1 {width:100px; height:100px; fill:#f48fb1;}
+        .rect2 {width:100px; height:100px; fill:#f48fb1; stroke-width:5; stroke:#880e4f;}
+        
+        #canvas {width: 160px; height: 160px; background: #ffebee;}
+    </style>
+</head>
+<body>
+    <svg>
+        <rect class="rect1" x="30" y="30"></rect>
+    </svg>
+    
+    <svg>
+        <rect class="rect2" x="30" y="30"></rect>
+    </svg>
+    
+    <canvas id="canvas">
+        
+    </canvas>
+    
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        
+        ctx.fillStyle = "#f48fb1";
+        ctx.fillRect(50,25,200,100);
+    </script>
+</body>
+</html>
+
+
+
+
+
+

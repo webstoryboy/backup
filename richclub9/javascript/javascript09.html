@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript</title>
+  <script type="text/javascript">
+    var color = window.prompt("빨강, 파랑, 노랑, 검정, 흰색 중 가장 좋아하는 색은?");
+
+    switch (color) {
+      case "빨강":
+        document.write("당신은 빨강처럼 열정적인 사람입니다.");
+        break;
+      case "파랑":
+        document.write("당신은 파랑처럼 열정적인 사람입니다.");
+        break;
+      case "노랑":
+        document.write("당신은 노랑처럼 열정적인 사람입니다.");
+        break;
+      case "검정":
+        document.write("당신은 검정처럼 열정적인 사람입니다.");
+        break;
+      case "흰색":
+        document.write("당신은 흰색처럼 열정적인 사람입니다.");
+        break;
+      default:
+        document.write("당신은 색을 볼 줄 모르는군요~ 실망입니다.");
+        break;
+    }
+
+    //if문으로 변환
+    var color2 = window.prompt("빨강, 파랑, 노랑, 검정, 흰색 중 가장 싫어 하는 색은?");
+    if( color2 = "빨강"){
+      document.write("당신은 빨강처럼 열정적인 사람이 아니군요!.");
+    } else if ( color2 = "파랑" ){
+      document.write("당신은 파랑처럼 열정적인 사람이 아니군요!.");
+    } else if ( color2 = "노랑" ){
+      document.write("당신은 노랑처럼 열정적인 사람이 아니군요!.");
+    } else if ( color2 = "검정" ){
+      document.write("당신은 검정처럼 열정적인 사람이 아니군요!.");
+    } else if ( color2 = "흰색" ){
+      document.write("당신은 흰색처럼 열정적인 사람이 아니군요!.");
+    } else {
+      document.write("당신은 색을 볼 줄 모르는군요~ 실망입니다.");
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

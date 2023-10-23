@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0;}
+        li {list-style: none}
+        a {text-decoration: none;}
+        #tab-menu {width: 300px; margin: 100px auto;}
+        #tab-tit {overflow: hidden;}
+        #tab-tit li {float: left; width: 25%; text-align: center;}
+        #tab-tit li a {display: block; background: #777; color: #fff; padding: 10px; text-transform: uppercase}
+        #tab-img {width: 400px; height: 300px;}
+        #tab-img.img1 {background: url(assets/img/img01.png) no-repeat ; background-size: 300px}
+        #tab-img.img2 {background: url(assets/img/img02.png) no-repeat ; background-size: 300px}
+        #tab-img.img3 {background: url(assets/img/img03.png) no-repeat ; background-size: 300px}
+        #tab-img.img4 {background: url(assets/img/img04.png) no-repeat ; background-size: 300px}
+    </style>
+</head>
+<body>
+    
+    
+    <div id="tab-menu">
+        <div id="tab-tit">
+            <ul>
+                <li><a href="#">tab1</a></li>
+                <li><a href="#">tab2</a></li>
+                <li><a href="#">tab3</a></li>
+                <li><a href="#">tab4</a></li>
+            </ul>
+        </div>
+        <div id="tab-img" class="img1">
+            
+        </div>
+    </div>
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        //버튼을 클릭하면 클릭한 글씨 색만 빨간색으로 변경해주세요!!
+        $("#tab-tit a").click(function(){
+            $(this).css("color","red");
+        });
+        //두번째 버튼을 클릭하면 글씨를 MENU2로 변경해주세요!
+        $("#tab-tit li:eq(1) a").click(function(){
+           $(this).text("Menu2");
+        });
+        
+        //첫 번째 버튼을 클릭하면 tab-img에 클래스 img1을 추가하세요
+        $("#tab-tit li:nth-child(1)").click(function(){
+            $("#tab-img").removeClass().addClass("img1");
+        });
+        
+        $("#tab-tit li:nth-child(2)").click(function(){
+            $("#tab-img").removeClass().addClass("img2");
+        });
+        
+        $("#tab-tit li:nth-child(3)").click(function(){
+            $("#tab-img").removeClass().addClass("img3");
+        });
+        
+        $("#tab-tit li:nth-child(4)").click(function(){
+            $("#tab-img").removeClass().addClass("img4");
+        });
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <style>
+        * {padding: 0; margin: 0;}
+        .box img {width: 100%;}
+    </style>
+    
+</head>
+<body>
+    
+    <div class="box">
+        <div><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg01.png" alt="1"></div>
+        <div><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg02.png" alt="2"></div>
+        <div><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg03.png" alt="3"></div>
+        <div><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg04.png" alt="4"></div>
+        <div><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg05.png" alt="5"></div>
+        <div><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg06.png" alt="6"></div>
+    </div>
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.box').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+        });
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

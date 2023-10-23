@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select,table,td,textarea,th,ul{margin:0;padding:0}
+    a {text-decoration:none;}
+    nav {border: 1px solid #000; width: 200px; margin: 50px;}
+    nav li {list-style:none;}
+    nav li a {color: #000; padding: 5px 10px; display: block; border-bottom: 1px solid #000;}
+    nav li ul {display:none;}
+    
+    #nav2 {border: 1px solid #000; width: 400px; margin: 50px;}
+    #nav2 ul {overflow: hidden;}
+    #nav2 li {list-style:none; float: left; width: 100px; text-align:center; }
+    #nav2 li a {color: #000; padding: 5px 10px; display: block; border-bottom: 1px solid #000;}
+    #nav2 li ul {display:none;}
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Menu1</a>
+        <ul>
+          <li><a href="#">SubMenu1</a></li>
+          <li><a href="#">SubMenu2</a></li>
+          <li><a href="#">SubMenu3</a></li>
+          <li><a href="#">SubMenu4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Menu2</a>
+        <ul>
+          <li><a href="#">SubMenu1</a></li>
+          <li><a href="#">SubMenu2</a></li>
+          <li><a href="#">SubMenu3</a></li>
+          <li><a href="#">SubMenu4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Menu3</a>
+        <ul>
+          <li><a href="#">SubMenu1</a></li>
+          <li><a href="#">SubMenu2</a></li>
+          <li><a href="#">SubMenu3</a></li>
+          <li><a href="#">SubMenu4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Menu4</a>
+        <ul>
+          <li><a href="#">SubMenu1</a></li>
+          <li><a href="#">SubMenu2</a></li>
+          <li><a href="#">SubMenu3</a></li>
+          <li><a href="#">SubMenu4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <div id="nav2">
+    <ul>
+      <li><a href="#">Menu1</a>
+        <ul>
+          <li><a href="#">SubMenu1</a></li>
+          <li><a href="#">SubMenu2</a></li>
+          <li><a href="#">SubMenu3</a></li>
+          <li><a href="#">SubMenu4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Menu2</a>
+        <ul>
+          <li><a href="#">SubMenu1</a></li>
+          <li><a href="#">SubMenu2</a></li>
+          <li><a href="#">SubMenu3</a></li>
+          <li><a href="#">SubMenu4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Menu3</a>
+        <ul>
+          <li><a href="#">SubMenu1</a></li>
+          <li><a href="#">SubMenu2</a></li>
+          <li><a href="#">SubMenu3</a></li>
+          <li><a href="#">SubMenu4</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Menu4</a>
+        <ul>
+          <li><a href="#">SubMenu1</a></li>
+          <li><a href="#">SubMenu2</a></li>
+          <li><a href="#">SubMenu3</a></li>
+          <li><a href="#">SubMenu4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <script>
+    $("nav > ul > li").click(function(){
+      //$(this).find("ul").toggle();
+      //$(this).find("ul").fadeToggle();
+      $(this).find("ul").slideToggle();
+    });
+    
+    $("#nav2 > ul > li").mouseover(function(){
+      $(this).find("ul").stop().slideDown();
+    });
+    $("#nav2 > ul > li").mouseout(function(){
+      $(this).find("ul").stop().slideUp();
+    });
+  </script>
+  
+</body>
+</html>
+
+
+

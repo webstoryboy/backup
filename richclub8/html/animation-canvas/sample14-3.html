@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    
+    <script type="text/javascript" src="../assets2/js/jquery-1.12.4.min.js"></script>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        $("#canvas").on("click", function(event){
+            var mouseX = event.clientX;
+            var mouseY = event.clientY;
+            ctx.fillStyle = "red";
+            
+            ctx.fillRect(mouseX -10, mouseY -10, 20, 20);
+            console.log("X: "+mouseX+ ", Y: "+ mouseY);
+        });
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        canvas {border: 1px solid #000;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        var offset = 0;
+        
+        function draw(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(100, 100);
+            ctx.lineTo(300, 100);
+            ctx.lineTo(300, 300);
+            ctx.lineTo(100, 300);
+            ctx.lineTo(100, 100);
+            ctx.setLineDash([4,2]);
+            ctx.lineDashOffset = -offset;
+            ctx.stroke();
+        }
+        
+        function march(){
+            offset++;
+            
+            if(offset > 16){
+                offset = 0;
+            }
+            
+            setTimeout(march, 20);
+            draw();
+        }
+        march();
+    </script>
+</body>
+</html>
+
+
+
+
+
+

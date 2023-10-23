@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A Documentation by JavaScript.">
+	<meta name="author" content="JavaScript documentation">
+
+	<title>GSAP Animation</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="../assets2/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Documentation extras -->
+	<link href="../assets2/css/docs.min.css" rel="stylesheet">
+	<link href="../assets2/css/prism.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+
+	<!-- web font -->
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+    
+    <style>
+    	.box {position: relative;}
+    	.box > div {width: 60px; height: 60px; line-height: 60px;
+			text-align: center; border-radius: 50%; overflow: hidden;
+			position: relative; font-size: 12px; color: #fff;
+			margin: 4px;
+			background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    	}
+
+
+    	a[class^="btn"] {
+    		padding: 3px 10px 1px 10px; color: #fff; border-radius: 2px; font-size: 12px;
+    		background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    	}
+    </style>
+</head>
+
+<body>
+	<a class="sr-only" href="#content">Skip to main content</a>
+
+	<header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand">webstoryboy &lt;/doc&gt;</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../jquery/jquery.html">jQuery</a></li>
+					<li><a href="../javascript/javascript.html">JavaScript</a></li>
+                    <li><a href="../animation-css/index.html">CSS Animation</a></li>
+                    <li><a href="../animation-js/index.html">JS Animation</a></li>
+                    <li><a href="../animation-canvas/index.html">Canvas Animation</a></li>
+                    <li><a href="../animation-svg/index.html">SVG Animation</a></li>
+                    <li><a href="../animation-gsap/index.html">GSAP Animation</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="bs-header" style="background-image: linear-gradient(45deg, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);" id="content">
+		<div class="container">
+			<h1>GSAP Animation v1.0 &lt;/doc&gt;</h1>
+			<p><a href="https://webstoryboy.co.kr">webstoryboy.co.kr</a></p>
+		</div>
+	</div>
+
+	<div class="container bs-docs-container">
+		<div class="row">
+			
+            <div class="col-md-9">
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro1" class="page-header">GSAP</h2>
+                    <p>웹 브라우저에서 애니메이션을 구현하기 위한 자바스크립트 라이브러리입니다. 기존 CSS Animation나 자바스크립트 Animation보다 탁원한 퍼포먼스를 발휘할 수 있도록 최적화 된 애니메이션 전용 라이브러리입니다. </p>
+
+                    <h4 class="mt20">GSAP 구성</h4>
+                    <ul>
+                    	<li>Tweenlite : GSAP의 애니메이션 객체와 그 속성을 조절하는 코어 엔진입니다. 이 파일은 필수 객체만 포함하고 있는 경량화 파일이지만. 기본적인 애니메이션을 모두 처리할 수 있으며, 다른 특수한 기능을 추가로 로드해서 사용할 수도 있습니다.</li>
+                    	<li>TweenMax : Tweenlite가 반드시 필요한 기능만 묶은 경량화 코어 파일이라면, TweenMax는 TweenLite 기능은 물론이고, 애니메이션 작업에 필요한 대부분의 기능을 커버하는 다양한 플러그인도 다수 포함하고 있는 풀버전 파일입니다. 유료 기능은 포함하고 있지 않습니다.</li>
+                    	<li>TimelineLite : GSAP의 핵심 기능이라고 할 수 있으며, CSS가 오직 지연시간만을 이용해서 각 애니메이션의 타이밍을 결정한다고 하면, GSAP는 타임라인에 기초한 시퀀싱, 즉 순차재생이 가능하기 때문에 여러 애니메이션을 유기적으로 연결하거나 수정하기가 편리합니다.</li>
+                    	<li>TimeLineMax : TimelineLite의 확장된 파일이며, repeat, repeatDelay, yoyo 등의 부가기능이 포함되어 있습니다.</li>
+                    </ul>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro2" class="page-header">GSAP 사용</h2>
+                     
+                    <h5 class="pt10">GSAP 사용하기</h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"&gt;
+		&lt;title&gt;GSAP&lt;/title&gt;
+
+		&lt;!-- CDN TweenMax --&gt;
+		&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"&gt;&lt;/script&gt;
+		
+		&lt;!-- CDN TweenLite, CSSPluginm, EasePack  --&gt;
+		&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.5/plugins/CSSPlugin.min.js"&gt;&lt;/script&gt;
+		&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.5/easing/EasePack.min.js"&gt;&lt;/script&gt;
+		&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.5/TweenLite.min.js"&gt;&lt;/script&gt;
+		
+		&lt;!-- local --&gt;
+		&lt;script src="js/TimelineLite.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/TimelineMax.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/TweenLite.min.js"&gt;&lt;/script&gt;
+		&lt;script src="js/TweenMax.min.js"&gt;&lt;/script&gt;
+		
+		&lt;!-- jquery + gsap --&gt;
+		&lt;script src="js/jquery.gsap.min.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro3" class="page-header">이동하기</h2>
+
+					<p class="bs-callout bs-callout-info">
+						TweenMax.to("target", duration, vars);
+					</p>
+
+                    <h5 id="intro3-1" class="pt10">1. 버튼을 클릭하면 오른쪽으로 이동하기 <a href="#c" class="btn1">START</a></h5>
+                    <div class="well box">
+                    	<div class="box1_1">box</div>
+                    	<div class="box1_2">box</div>
+                    	<div class="box1_3">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//1. 버튼을 클릭하면 원을 오른쪽으로 이동시켜주세요!!!!
+$(".btn1").on("click",function(){
+	//$(".box1_1, .box1_2, .box1_3").animate({ left:"90%" },1000);
+	//TweenMax
+	TweenMax.to([".box1_1, .box1_2, .box1_3"],1,{left:"90%"});
+});
+</code></pre>
+					
+                    <h5 id="intro3-2" class="pt20">2. 버튼을 클릭하면 오른쪽으로 100px 이동하기 <a href="#c" class="btn2">START</a></h5>
+                    <div class="well box">
+                    	<div class="box2_1">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//2. 버튼을 클릭할 때마다 원을 오른쪽으로 100픽셀 이동시켜주세요!!
+$(".btn2").on("click",function(){
+	//$(".box2_1").animate({ left : "+=100px"},"slow","easeOutQuint");
+	//TweenMax
+	TweenMax.to(".box2_1", 1, {left:"+=100px"});
+});
+</code></pre>
+                    <h5 id="intro3-3" class="pt20">3. 버튼을 클릭하면 백그라운드 이미지 색 변경하면서 이동하기 <a href="#c" class="btn3">START</a></h5>
+                    <div class="well box">
+                    	<div class="box3_1">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//3. 버튼을 클릭하면 백그라운드 이미지 색 변경하면서 이동하기
+$(".btn3").on("click",function(){
+	//TweenMax
+	TweenMax.to(".box3_1", 2, {left:"90%",backgroundImage:"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"});
+});
+</code></pre>
+
+					<h5 id="intro3-4" class="pt20">4. 버튼을 클릭하면 확대하면서 이동하기 <a href="#c" class="btn4">START</a></h5>
+                    <div class="well box">
+                    	<div class="box4_1">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//4. 버튼을 클릭하면 확대하면서 이동하기
+$(".btn4").on("click",function(){
+	//TweenMax
+	TweenMax.to(".box4_1", 1, {left:"90%",scale:"3"});
+});
+</code></pre>
+					
+					<h5 id="intro3-5" class="pt20">5. 버튼을 클릭하면 border-radius 변경하면서 이동하기 <a href="#c" class="btn5">START</a></h5>
+                    <div class="well box">
+                    	<div class="box5_1">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//5. 버튼을 클릭하면 border-radius 변경하면서 이동하기
+$(".btn5").on("click",function(){
+	//TweenMax
+	TweenMax.to(".box5_1", 1, {left:"90%", borderRadius:"0%"});
+});
+</code></pre>		
+					<h5 id="intro3-6" class="pt20">6. 버튼을 클릭하면 skew 변경하면서 이동하기 <a href="#c" class="btn6">START</a></h5>
+                    <div class="well box">
+                    	<div class="box6_1">box</div>
+                    	<div class="box6_2">box</div>
+                    	<div class="box6_3">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//6. 버튼을 클릭하면 skew 변경하면서 이동하기
+$(".btn6").on("click",function(){
+	//TweenMax
+	TweenMax.to(".box6_1", 2, {left:"90%", skewX:"30deg"});
+	TweenMax.to(".box6_2", 2, {left:"90%", skewX:"330deg"});
+	TweenMax.to(".box6_3", 2, {left:"90%", skewX:"630deg"});
+});
+</code></pre>
+					
+					<h5 id="intro3-7" class="pt20">7. 버튼을 클릭하면 rotation 변경하면서 이동하기 <a href="#c" class="btn7">START</a></h5>
+                    <div class="well box">
+                    	<div class="box7_1">box</div>
+                    	<div class="box7_2">box</div>
+                    	<div class="box7_3">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//7. 버튼을 클릭하면 rotation 변경하면서 이동하기
+$(".btn7").on("click",function(){
+	//TweenMax
+	TweenMax.to(".box7_1", 2, {left:"90%", rotation:"30deg"});
+	TweenMax.to(".box7_2", 2, {left:"90%", rotation:"8rad", skewX:"360deg"});
+	TweenMax.to(".box7_3", 2, {left:"90%", rotation:"630", skewX:"360deg"});
+});
+</code></pre>
+
+					<h5 id="intro3-8" class="pt20">8. 버튼을 클릭하면 Delay효과로 이동하기 <a href="#c" class="btn8">START</a></h5>
+                    <div class="well box">
+                    	<div class="box8_1">box</div>
+                    	<div class="box8_2">box</div>
+                    	<div class="box8_3">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//8. 버튼을 클릭하면 Delay효과로 이동하기
+$(".btn8").on("click",function(){
+	//TweenMax
+	TweenMax.to(".box8_1", 2, {left:"90%", delay:1, rotationY:"720deg"});
+	TweenMax.to(".box8_2", 2, {left:"90%", delay:2, rotationY:"720deg"});
+	TweenMax.to(".box8_3", 2, {left:"90%", delay:3, rotationY:"720deg"});
+});
+</code></pre>
+					
+					<h3 class="pt20">2D and 3D Transforms</h3>
+					<table class="table table-striped table-hover table-bordered">
+						<thead>
+							<tr>
+								<th>GSAP</th>
+								<th>CSS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>x:100</td>
+								<td>transform: translateX(100px)</td>
+							</tr>
+							<tr>
+								<td>y:100</td>
+								<td>transform: translateY(100px)</td>
+							</tr>
+							<tr>
+								<td>rotation:360</td>
+								<td>transform: rotate(360deg)</td>
+							</tr>
+							<tr>
+								<td>rotationX:360</td>
+								<td>transform: rotateX(360deg)</td>
+							</tr>
+							<tr>
+								<td>rotationY:360</td>
+								<td>transform: rotateY(360deg)</td>
+							</tr>
+							<tr>
+								<td>slewY:45</td>
+								<td>transform: skewY(45deg)</td>
+							</tr>
+							<tr>
+								<td>xPercent: 50</td>
+								<td>transform: translateX(50%)</td>
+							</tr>
+							<tr>
+								<td>yPercent: 50</td>
+								<td>transform: translateY(50%)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //Introduction -->
+
+				
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro4" class="page-header">TweenMax.from</h2>
+					
+					<h5 id="intro4-1" class="pt20">1. 버튼을 클릭하면 반대로 이동하기 <a href="#c" class="btn41">START</a></h5>
+                    <div class="well box">
+                    	<div class="box41_1">box</div>
+                    	<div class="box41_2">box</div>
+                    	<div class="box41_3">box</div>
+                    	<div class="box41_4">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//1. 버튼을 클릭하면 반대로 이동하기
+$(".btn41").on("click",function(){
+	TweenMax.from(".box41_1",2, {left:"90%"});
+	TweenMax.from(".box41_2",2, {left:"90%", opacity: 0});
+	TweenMax.from(".box41_3",2, {left:"90%", opacity: 0, scale: 0.5});
+	TweenMax.from(".box41_4",2, {left:"90%", opacity: 0, scale: 0.5, rotationX:"720deg"});
+});
+</code></pre>
+                    
+				</div>
+				<!-- //Introduction -->
+				
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro5" class="page-header">Easing</h2>
+					
+					<h5 id="intro5-1" class="pt20">1. 버튼을 클릭하면 움직임 효과보기 <a href="#c" class="btn51">START</a></h5>
+                    <div class="well box">
+                    	<div class="box51_1">box</div>
+                    	<div class="box51_2">box</div>
+                    	<div class="box51_3">box</div>
+                    	<div class="box51_4">box</div>
+                    	<div class="box51_5">box</div>
+                    	<div class="box51_6">box</div>
+                    	<div class="box51_7">box</div>
+                    	<div class="box51_8">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//1. 버튼을 클릭하면 움직임 효과 보기
+$(".btn51").on("click",function(){
+	TweenMax.to(".box51_1",2, {left:"90%"});
+	TweenMax.to(".box51_2",2, {left:"90%", ease:Power0.easeOut});
+	TweenMax.to(".box51_3",2, {left:"90%", ease:Power1.easeOut});
+	TweenMax.to(".box51_4",2, {left:"90%", ease:Power2.easeOut});
+	TweenMax.to(".box51_5",2, {left:"90%", ease:Power3.easeOut});
+	TweenMax.to(".box51_6",2, {left:"90%", ease:Power4.easeOut});
+	TweenMax.to(".box51_7",2, {left:"90%", ease:Bounce.easeOut});
+	TweenMax.to(".box51_8",2, {left:"90%", ease:SlowMo.easeOut});
+});
+</code></pre>
+                    
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro6" class="page-header">Callbacks</h2>
+					
+					<p>콜백함수는 특정 애니메이션 관련 이벤트가 발행한 후 또 다른 함수를 호출합니다.</p>
+                    <ul>
+                    	<li>onComplete : 애니메이션이 완료되였을 때</li>
+                    	<li>onStart : 애니메이션이 시작할 때</li>
+                    	<li>onUpdate : 애니메이션 업데이트 될 때 마다</li>
+                    	<li>onRepeat : 애니메이션이 반복될 때마다</li>
+                    	<li>onReverseComplete : 애니메이션이 반대로 되고 완료되었을 때 </li>
+                    </ul>
+
+
+                    <h5 id="intro6-1" class="pt20">1. 버튼을 클릭하면 콜백함수 사용하기 <a href="#c" class="btn61">START</a></h5>
+                    <div class="well box">
+                    	<div class="box61_1">box</div>
+                    	<div class="box61_2">box</div>
+                    	<div class="box61_3">box</div>
+                    </div>
+<pre class="line-numbers"><code class="language-js">//콜백함수
+$(".btn61").on("click",function(){
+	$(".box61_1").animate({left: "90%"},1000,function(){
+		alert("제이쿼리 콜백함수 도착");
+	});
+
+	TweenMax.to(".box61_2", 1, {left:"90%", onComplete:tweenComplete});
+	TweenMax.to(".box61_2", 1, {left:"90%", onStart:tweenStart});
+
+	function tweenComplete(){
+		alert("TweenMax 콜백함수 도착");
+	}
+	function tweenStart(){
+		alert("TweenMax 콜백함수 시작");
+	}
+});
+</code></pre>
+					
+					<h5 id="intro6-2" class="pt20">2. 버튼을 클릭하면 콜백함수 사용하기 <a href="#c" class="btn62">START</a></h5>
+                    <div class="well box">
+                    	<div class="box62_1">box</div>
+                    	<div class="box62_2">box</div>
+                    	<span id="outout"></span>
+                    </div>
+<pre class="line-numbers"><code class="language-js">var outout = document.querySelector("#outout");
+$(".btn62").on("click",function(){
+	TweenMax.to(".box62_1",2, {
+		left:"90%",
+		onStart: showMessage,
+		onStartParams: ["이 박스는 지금 움직일꺼야!"],
+		onComplete: showMessage,
+		onCompleteParams: ["이 박스는 다 움직였어"],
+		delay: 1
+	});
+	TweenMax.to(".box62_2",2, {
+		left:"90%",
+		onStart: showMessage,
+		onStartParams: ["이 두번째 원은 지금 움직일꺼야!"],
+		onComplete: showMessage,
+		onCompleteParams: ["이 두번째 원은 다 움직였어"],
+		delay: 5
+	});
+});
+
+function showMessage(message) {
+	outout.innerHTML += message + "&lt;br&gt;";
+}
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro7" class="page-header">Controlling</h2>
+					
+					<h5 id="intro7-1" class="pt20">
+						<a href="#c" class="btn71_1">START</a>
+						<a href="#c" class="btn71_2">Pause</a>
+						<a href="#c" class="btn71_3">Resume</a>
+						<a href="#c" class="btn71_4">Reverse</a>
+						<a href="#c" class="btn71_5">Seek</a>
+						<a href="#c" class="btn71_6">Scale</a>
+						<a href="#c" class="btn71_7">Scale(2)</a>
+						<a href="#c" class="btn71_8">Kill</a>
+						<a href="#c" class="btn71_9">Restart</a>
+					</h5>
+					<div class="well box">
+                    	<div class="box71_1">box</div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">var tween = TweenMax.to(".box71_1",10,{left:"90%", borderRadius:"0%", rotation:"720deg"});
+$(".btn71_1").click(function(){tween.play()});
+$(".btn71_2").click(function(){tween.pause()});
+$(".btn71_3").click(function(){tween.resume()});
+$(".btn71_4").click(function(){tween.reverse()});
+$(".btn71_5").click(function(){tween.seek(0.5)});
+$(".btn71_6").click(function(){tween.timeScale(0.5)});
+$(".btn71_7").click(function(){tween.timeScale(2)});
+$(".btn71_8").click(function(){tween.kill()});
+$(".btn71_9").click(function(){tween.restart()});</code></pre>
+                    
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro8" class="page-header">Timeline</h2>
+					
+					<h5 id="intro8-1" class="pt20">1.Timeline 이용하여 애니메이션 만들기 
+						<a href="#c" class="btn81">START</a>
+					</h5>
+					<div class="well box">
+                    	<div class="box81">box</div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">$(".btn81").on("click",function(){
+	var tl = new TimelineLite();
+	tl.to(".box81", 1, {left:"90%"});
+	tl.to(".box81", 1, {height: 300, ease:Elastic.easeOut});
+	tl.to(".box81", 1, {opacity: 0.5, scale:"3"});
+	tl.to(".box81", 1, {height: 60, skewX:"3600deg", ease:Elastic.easeOut});
+	tl.to(".box81", 1, {opacity:1, left:"0", scale:"1"});
+});</code></pre>
+
+					<h5 id="intro8-2" class="pt20">2.Timeline 이용하여 반복 애니메이션 만들기 
+						<a href="#c" class="btn82">START</a>
+					</h5>
+					<div class="well box">
+                    	<div class="box82_1">box</div>
+                    	<div class="box82_2">box</div>
+                    	<div class="box82_3">box</div>
+                    	<div class="box82_4">box</div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">$(".btn82").on("click",function(){
+	var tl = new TimelineMax({repeat:3, repeatDelay:1});
+
+	tl.to(".box82_1",1,{left:"90%"})
+	  .to(".box82_2",1,{left:"90%", scale:0.2}, "+=1")
+	  .addLabel("gray")
+	  .to(".box82_3",1,{left:"90%", scale:2}, "gray")
+	  .to(".box82_4",1,{left:"90%", rotation:360}, "gray");
+});</code></pre>
+					
+					<h5 id="intro8-3" class="pt20">3.Timeline 이용하여 애니메이션 컨트롤 하기
+						<a href="#c" class="btn83_1">Play</a>
+						<a href="#c" class="btn83_2">Pluse</a>
+						<a href="#c" class="btn83_3">Resume</a>
+						<a href="#c" class="btn83_4">Reverse</a>
+						<a href="#c" class="btn83_5">Restart</a>
+					</h5>
+					<div class="well box">
+                    	<div class="box83_1">box</div>
+                    	<div class="box83_2">box</div>
+                    	<div class="box83_3">box</div>
+                    	<div class="box83_4">box</div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">var play = document.querySelector(".btn83_1");
+var pause = document.querySelector(".btn83_2");
+var resume = document.querySelector(".btn83_3");
+var reverse = document.querySelector(".btn83_4");
+var restart = document.querySelector(".btn83_5");
+
+var tl2 = new TimelineMax({pause:true});
+
+tl2.to(".box83_1",1,{left:"90%"})
+   .to(".box83_2",1,{left:"90%", scale:0.2}, "+=1")
+   .to(".box83_3",1,{left:"90%", scale:2}, "black")
+   .to(".box83_4",1,{left:"90%", rotation:360}, "black");
+
+play.onclick = function(){tl2.play();}
+pause.onclick = function(){tl2.pause();}
+resume.onclick = function(){tl2.resume();}
+reverse.onclick = function(){tl2.reverse();}
+restart.onclick = function(){tl2.restart();}</code></pre>
+
+					<h5 id="intro8-4" class="pt20">4.TimeScale() 이용하여 애니메이션 컨트롤 하기
+						<a href="#c" class="btn84_1">restart</a>
+						<a href="#c" class="btn84_2">timeScale(0.2)</a>
+						<a href="#c" class="btn84_3">timeScale(1)</a>
+						<a href="#c" class="btn84_4">timeScale(4)</a>
+					</h5>
+					<div class="well box">
+                    	<div class="box84_1">box</div>
+                    	<div class="box84_2">box</div>
+                    	<div class="box84_3">box</div>
+                    	<div class="box84_4">box</div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">var tplay = document.querySelector(".btn84_1");
+var timeScale2 = document.querySelector(".btn84_2");
+var timeScale3 = document.querySelector(".btn84_3");
+var timeScale4 = document.querySelector(".btn84_4");
+
+var tl3 = new TimelineMax({repeat: 6, yoyo:true, pause:true});
+
+tl3.to(".box84_1",1,{left:"90%"})
+   .to(".box84_2",1,{left:"90%", scale:0.2})
+   .to(".box84_3",1,{left:"90%", scale:2}, "black")
+   .to(".box84_4",1,{left:"90%", rotation:360}, "black");
+
+tplay.onclick = function(){tl3.restart();};
+timeScale2.onclick = function(){tl3.timeScale(0.2);};
+timeScale3.onclick = function(){tl3.timeScale(1);};
+timeScale4.onclick = function(){tl3.timeScale(4);};</code></pre>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro9" class="page-header">Repeat</h2>
+
+                    <h5 id="intro9-1" class="pt20">1. 반복하기 애니메이션
+						<a href="#c" class="btn91">start</a>
+					</h5>
+					<div class="well box">
+                    	<div class="box91_1">box</div>
+                    	<div class="box91_2">box</div>
+                    	<div class="box91_3">box</div>
+                    	<div class="box91_4">box</div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">$(".btn91").on("click",function(){
+	TweenMax.to(".box91_1",2,{left:"90%", repeat:1, ease:Power4.easeOut});
+	TweenMax.to(".box91_2",2,{left:"90%", repeat:1, repeatDelay:1, ease:Power4.easeOut});
+	TweenMax.to(".box91_3",2,{left:"90%", repeat:1, yoyo:true, ease:Power4.easeOut});
+	TweenMax.to(".box91_4",2,{left:"90%", repeat:-1, yoyo:true, ease:Power4.easeOut});
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro10" class="page-header">Stagger</h2>
+					
+					<h5 id="intro10-1" class="pt20">1. 연속적으로 반복하기 애니메이션
+						<a href="#c" class="btn101">start</a>
+					</h5>
+					<div class="well box">
+                    	<div class="box101_1">box</div>
+                    	<div class="box101_2">box</div>
+                    	<div class="box101_3">box</div>
+                    	<div class="box101_4">box</div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">$(".btn101").on("click",function(){
+	TweenMax.staggerTo([".box101_1",".box101_2",".box101_3",".box101_4"],1,
+		{left:"90%", scale:0.2, opacity:0.3, ease:Power3.easeOut},0.25);
+});</code></pre>
+                    
+				</div>
+				<!-- //Introduction -->
+
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro10" class="page-header">Sample</h2>
+					
+					<h5 id="intro11-1" class="pt20">1. Hover Button</h5>
+					<p class="codepen" data-height="300" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="moYqae" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Button TweenMax Animation">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/moYqae/">
+  Button TweenMax Animation</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+					<h5 id="intro11-2" class="pt20">2. Jelly Button</h5>
+					<p class="codepen" data-height="300" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="eXayZb" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Jelly Button">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/eXayZb/">
+  Jelly Button</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					
+					<h5 id="intro11-3" class="pt20">3. text animation</h5>
+					<p class="codepen" data-height="300" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="bZPKgm" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Loading Animation TweenMax">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/bZPKgm/">
+  Loading Animation TweenMax</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+					<h5 id="intro11-4" class="pt20">4. text animation</h5>
+					<p class="codepen" data-height="300" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="NJZzJZ" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Loading Animation TweenMax2">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/NJZzJZ/">
+  Loading Animation TweenMax2</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+					<h5 id="intro11-4" class="pt20">5. text animation</h5>
+					<p class="codepen" data-height="500" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="JzQBEL" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Roket Animation">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/JzQBEL/">
+  Roket Animation</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					
+				</div>
+				<!-- //Introduction -->
+
+
+			</div>
+			<!-- //col-md-9 -->
+            
+
+			<div class="col-md-3">
+				<div class="bs-sidebar hidden-print" role="complementary">
+					<ul class="nav bs-sidenav">
+						<li><a href="#intro1">GSAP</a></li>
+						<li><a href="#intro2">GSAP 사용하기</a></li>
+						<li><a href="#intro3">TweenMax.to</a>
+							<ul class="nav">
+								<li><a href="#intro3-1">left1</a></li>
+								<li><a href="#intro3-2">left2</a></li>
+								<li><a href="#intro3-3">background</a></li>
+								<li><a href="#intro3-4">Scale</a></li>
+								<li><a href="#intro3-5">border-radius</a></li>
+								<li><a href="#intro3-6">skew</a></li>
+								<li><a href="#intro3-7">rotation</a></li>
+								<li><a href="#intro3-8">delay</a></li>
+							</ul>
+						</li>
+						<li><a href="#intro4">TweenMax.from</a></li>
+						<li><a href="#intro5">Easing</a></li>
+						<li><a href="#intro6">Callbacks</a>
+							<ul class="nav">
+								<li><a href="#intro6-1">Callbacks1</a></li>
+								<li><a href="#intro6-2">Callbacks2</a></li>
+							</ul>
+						</li>
+						<li><a href="#intro7">Controlling</a></li>
+						<li><a href="#intro8">Timeline</a>
+							<ul class="nav">
+								<li><a href="#intro8-1">Timeline1</a></li>
+								<li><a href="#intro8-2">Timeline2</a></li>
+								<li><a href="#intro8-3">Timeline3</a></li>
+								<li><a href="#intro8-4">Timeline4</a></li>
+							</ul>
+						</li>
+						<li><a href="#intro9">Repeat</a>
+						<li><a href="#intro10">Stagger</a>
+						<li><a href="#intro11">Sample
+							<ul class="nav">
+								<li><a href="#intro11-1">Sample1</a></li>
+								<li><a href="#intro11-2">Sample2</a></li>
+								<li><a href="#intro11-3">Sample3</a></li>
+								<li><a href="#intro11-4">Sample4</a></li>
+							</ul>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<!-- //col-md-3 -->
+		</div>
+		<!-- //row -->
+
+	</div>
+	<!-- //container -->
+
+	<!-- Footer -->
+	<footer class="bs-footer" role="contentinfo">
+		<div class="container">
+			<ul class="footer-links muted">
+				<li>Currently v1.0</li>
+				<li>&middot;</li>
+				<li><a href="http://webstoryboy.co.kr">webstoryboy</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+			</ul>
+		</div>
+	</footer>
+	<!-- //Footer -->
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../assets2/js/bootstrap.min.js"></script>
+	<script src="../assets2/js/docs.min.js"></script>
+	<script src="../assets2/js/prism.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+	<script>
+		//1. 버튼을 클릭하면 원을 오른쪽으로 이동시켜주세요!!!!
+		$(".btn1").on("click",function(){
+			//$(".box1_1, .box1_2, .box1_3").animate({ left:"90%" },1000);
+			//TweenMax
+			TweenMax.to([".box1_1, .box1_2, .box1_3"],1,{left:"90%"});
+		});
+
+		//2. 버튼을 클릭할 때마다 원을 오른쪽으로 100픽셀 이동시켜주세요!!
+		$(".btn2").on("click",function(){
+			//$(".box2_1").animate({ left : "+=100px"},"slow","easeOutQuint");
+			//TweenMax
+			TweenMax.to(".box2_1", 1, {left:"+=100px"});
+		});
+
+		//3. 버튼을 클릭하면 백그라운드 이미지 색 변경하면서 이동하기
+		$(".btn3").on("click",function(){
+			//TweenMax
+			TweenMax.to(".box3_1", 2, {left:"90%",backgroundImage:"linear-gradient(135deg, #667eea 0%, #764ba2 100%)"});
+		});
+
+		//4. 버튼을 클릭하면 확대하면서 이동하기
+		$(".btn4").on("click",function(){
+			//TweenMax
+			TweenMax.to(".box4_1", 1, {left:"90%",scale:"3"});
+		});
+
+		//5. 버튼을 클릭하면 border-radius 변경하면서 이동하기
+		$(".btn5").on("click",function(){
+			//TweenMax
+			TweenMax.to(".box5_1", 1, {left:"90%", borderRadius:"0%"});
+		});
+
+		//6. 버튼을 클릭하면 skew 변경하면서 이동하기
+		$(".btn6").on("click",function(){
+			//TweenMax
+			TweenMax.to(".box6_1", 2, {left:"90%", skewX:"30deg"});
+			TweenMax.to(".box6_2", 2, {left:"90%", skewX:"330deg"});
+			TweenMax.to(".box6_3", 2, {left:"90%", skewX:"630deg"});
+		});
+
+		//7. 버튼을 클릭하면 rotation 변경하면서 이동하기
+		$(".btn7").on("click",function(){
+			//TweenMax
+			TweenMax.to(".box7_1", 2, {left:"90%", rotation:"30deg"});
+			TweenMax.to(".box7_2", 2, {left:"90%", rotationX:"30deg"});
+			TweenMax.to(".box7_3", 2, {left:"90%", rotationY:"100deg"});
+			TweenMax.to(".box7_4", 2, {left:"90%", rotationZ:"8rad", skewX:"360deg"});
+			TweenMax.to(".box7_5", 2, {left:"90%", rotation:"630", skewX:"360deg"});
+		});
+
+		//8. 버튼을 클릭하면 Delay효과로 이동하기
+		$(".btn8").on("click",function(){
+			//TweenMax
+			TweenMax.to(".box8_1", 1, {left:"90%", delay:0.1, rotationY:"720deg"});
+			TweenMax.to(".box8_2", 1, {left:"90%", delay:0.2, rotationY:"720deg"});
+			TweenMax.to(".box8_3", 1, {left:"90%", delay:0.3, rotationY:"720deg"});
+		});
+
+		//1. 버튼을 클릭하면 반대로 이동하기
+		$(".btn41").on("click",function(){
+			TweenMax.from(".box41_1",2, {left:"90%"});
+			TweenMax.from(".box41_2",2, {left:"90%", opacity: 0});
+			TweenMax.from(".box41_3",2, {left:"90%", opacity: 0, scale: 0.5});
+			TweenMax.from(".box41_4",2, {left:"90%", opacity: 0, scale: 0.5, rotationX:"720deg"});
+		});
+
+
+		//1. 버튼을 클릭하면 움직임 효과 보기
+		$(".btn51").on("click",function(){
+			TweenMax.to(".box51_1",2, {left:"90%"});
+			TweenMax.to(".box51_2",2, {left:"90%", ease:Power0.easeOut});
+			TweenMax.to(".box51_3",2, {left:"90%", ease:Power1.easeOut});
+			TweenMax.to(".box51_4",2, {left:"90%", ease:Power2.easeOut});
+			TweenMax.to(".box51_5",2, {left:"90%", ease:Power3.easeOut});
+			TweenMax.to(".box51_6",2, {left:"90%", ease:Power4.easeOut});
+			TweenMax.to(".box51_7",2, {left:"90%", ease:Bounce.easeOut});
+			TweenMax.to(".box51_8",2, {left:"90%", ease:SlowMo.easeOut});
+		});
+
+
+		//콜백함수
+		$(".btn61").on("click",function(){
+			$(".box61_1").animate({left: "90%"},1000,function(){
+				alert("제이쿼리 콜백함수 도착");
+			});
+
+			TweenMax.to(".box61_2", 1, {left:"90%", onComplete:tweenComplete});
+			TweenMax.to(".box61_2", 1, {left:"90%", onStart:tweenStart});
+
+			function tweenComplete(){
+				alert("TweenMax 콜백함수 도착");
+			}
+			function tweenStart(){
+				alert("TweenMax 콜백함수 시작");
+			}
+		});
+
+		//
+		//var outout = $("#outout");
+		var outout = document.querySelector("#outout");
+
+
+		$(".btn62").on("click",function(){
+			TweenMax.to(".box62_1",2, {
+				left:"90%",
+				onStart: showMessage,
+				onStartParams: ["이 박스는 지금 움직일꺼야!"],
+				onComplete: showMessage,
+				onCompleteParams: ["이 박스는 다 움직였어"],
+				delay: 1
+			});
+			TweenMax.to(".box62_2",2, {
+				left:"90%",
+				onStart: showMessage,
+				onStartParams: ["이 두번째 원은 지금 움직일꺼야!"],
+				onComplete: showMessage,
+				onCompleteParams: ["이 두번째 원은 다 움직였어"],
+				delay: 5
+			});
+		});
+
+		function showMessage(message) {
+			outout.innerHTML += message + "<br>";
+		}
+
+
+		//controll
+		var tween = TweenMax.to(".box71_1",10,{left:"90%", borderRadius:"0%", rotation:"720deg"});
+		$(".btn71_1").click(function(){tween.play()});
+		$(".btn71_2").click(function(){tween.pause()});
+		$(".btn71_3").click(function(){tween.resume()});
+		$(".btn71_4").click(function(){tween.reverse()});
+		$(".btn71_5").click(function(){tween.seek(0.5)});
+		$(".btn71_6").click(function(){tween.timeScale(0.5)});
+		$(".btn71_7").click(function(){tween.timeScale(2)});
+		$(".btn71_8").click(function(){tween.kill()});
+		$(".btn71_9").click(function(){tween.restart()});
+
+		//timeline
+		$(".btn81").on("click",function(){
+			var tl = new TimelineLite();
+			tl.to(".box81", 1, {left:"90%"});
+			tl.to(".box81", 1, {height: 300, ease:Elastic.easeOut});
+			tl.to(".box81", 1, {opacity: 0.5, scale:"3"});
+			tl.to(".box81", 1, {height: 60, skewX:"3600deg", ease:Elastic.easeOut});
+			tl.to(".box81", 1, {opacity:1, left:"0", scale:"1"});
+		});
+
+
+		//timeline Repeat
+		$(".btn82").on("click",function(){
+			var tl = new TimelineMax({repeat:3, repeatDelay:1});
+
+			tl.to(".box82_1",1,{left:"90%"})
+			  .to(".box82_2",1,{left:"90%", scale:0.2}, "+=1")
+			  .addLabel("gray")
+			  .to(".box82_3",1,{left:"90%", scale:2}, "gray")
+			  .to(".box82_4",1,{left:"90%", rotation:360}, "gray");
+		});
+
+		//timeline Controll
+		var play = document.querySelector(".btn83_1");
+		var pause = document.querySelector(".btn83_2");
+		var resume = document.querySelector(".btn83_3");
+		var reverse = document.querySelector(".btn83_4");
+		var restart = document.querySelector(".btn83_5");
+
+		var tl2 = new TimelineMax({pause:true});
+
+		tl2.to(".box83_1",1,{left:"90%"})
+		   .to(".box83_2",1,{left:"90%", scale:0.2}, "+=1")
+		   .to(".box83_3",1,{left:"90%", scale:2}, "black")
+		   .to(".box83_4",1,{left:"90%", rotation:360}, "black");
+
+		play.onclick = function(){tl2.play();}
+		pause.onclick = function(){tl2.pause();}
+		resume.onclick = function(){tl2.resume();}
+		reverse.onclick = function(){tl2.reverse();}
+		restart.onclick = function(){tl2.restart();}
+
+		//timeline timescale
+		var tplay = document.querySelector(".btn84_1");
+		var timeScale2 = document.querySelector(".btn84_2");
+		var timeScale3 = document.querySelector(".btn84_3");
+		var timeScale4 = document.querySelector(".btn84_4");
+
+		var tl3 = new TimelineMax({repeat: 6, yoyo:true, pause:true});
+
+		tl3.to(".box84_1",1,{left:"90%"})
+		   .to(".box84_2",1,{left:"90%", scale:0.2})
+		   .to(".box84_3",1,{left:"90%", scale:2}, "black")
+		   .to(".box84_4",1,{left:"90%", rotation:360}, "black");
+
+		tplay.onclick = function(){tl3.restart();};
+		timeScale2.onclick = function(){tl3.timeScale(0.2);};
+		timeScale3.onclick = function(){tl3.timeScale(1);};
+		timeScale4.onclick = function(){tl3.timeScale(4);};
+
+
+		$(".btn91").on("click",function(){
+			TweenMax.to(".box91_1",2,{left:"90%", repeat:1, ease:Power4.easeOut});
+			TweenMax.to(".box91_2",2,{left:"90%", repeat:1, repeatDelay:1, ease:Power4.easeOut});
+			TweenMax.to(".box91_3",2,{left:"90%", repeat:1, yoyo:true, ease:Power4.easeOut});
+			TweenMax.to(".box91_4",2,{left:"90%", repeat:-1, yoyo:true, ease:Power4.easeOut});
+		});
+
+		$(".btn101").on("click",function(){
+			TweenMax.staggerTo([".box101_1",".box101_2",".box101_3",".box101_4"],1,
+				{left:"90%", scale:0.2, opacity:0.3, ease:Power3.easeOut},0.25);
+		});
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

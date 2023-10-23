@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        var offset = 0;
+        
+        ctx.lineWidth = 10;
+        ctx.beginPath();
+        ctx.moveTo(100,50);
+        ctx.lineTo(300,50);
+        ctx.lineTo(300,100);
+        ctx.setLineDash([20]);
+        ctx.stroke();
+        
+        ctx.lineWidth = 10;
+        ctx.beginPath();
+        ctx.moveTo(100,150);
+        ctx.lineTo(300,150);
+        ctx.lineTo(300,200);
+        ctx.setLineDash([20, 10]);
+        ctx.stroke();
+        
+        ctx.lineWidth = 10;
+        ctx.beginPath();
+        ctx.moveTo(100,250);
+        ctx.lineTo(300,250);
+        ctx.lineTo(300,300);
+        ctx.setLineDash([20, 10, 50, 10]);
+        ctx.stroke();
+        
+        
+        
+    
+    </script>
+</body>
+</html>

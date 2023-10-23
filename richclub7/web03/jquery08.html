@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {height: 200px; margin: 10px; padding: 10px; 
+            border: 10px solid #888; background: #ccc;}
+    </style>
+</head>
+<body>
+    
+    <div id="box">
+        <span id="width">0</span><br>
+        <span id="height">0</span><br>
+        <span id="innerWidth">0</span><br>
+        <span id="innerHeight">0</span><br>
+        <span id="outerWidth">0</span><br>
+        <span id="outerHeight">0</span>
+    </div>
+
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        
+        //$("선택자").click()
+        $(window).resize(function(){
+            var width = $("#box").width();
+            var height = $("#box").height();
+            var innerWidth = $("#box").innerWidth();
+            var innerHeight = $("#box").innerHeight();
+            var outerWidth = $("#box").outerWidth();
+            var outerHeight = $("#box").outerHeight();
+
+            $("#width").text(width);
+            $("#height").text(height);
+            $("#innerWidth").text(innerWidth);
+            $("#innerHeight").text(innerHeight);
+            $("#outerWidth").text(outerWidth);
+            $("#outerHeight").text(outerHeight);
+        });
+        
+        $(window).trigger("resize");  
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+

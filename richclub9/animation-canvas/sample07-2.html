@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        function draw() {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            var grad = ctx.createRadialGradient(0, 0, 0, 100, 100, 300);
+            grad.addColorStop(0, "#42E695");
+            grad.addColorStop(1, "#6E8EFB");
+            ctx.fillStyle = grad;
+            ctx.fillRect(50,50,200,200);
+            
+            
+            var radgrad = ctx.createRadialGradient(45,45,10,52,50,30);
+            radgrad.addColorStop(0, '#A7D30C');
+            radgrad.addColorStop(0.9, '#019F62');
+            radgrad.addColorStop(1, 'rgba(1,159,98,0)');
+            ctx.fillStyle = radgrad;
+            ctx.fillRect(0,0,150,150);
+            
+            var radgrad2 = ctx.createRadialGradient(105,105,20,112,120,50);
+            radgrad2.addColorStop(0, '#FF5F98');
+            radgrad2.addColorStop(0.75, '#FF0188');
+            radgrad2.addColorStop(1, 'rgba(255,1,136,0)');
+            ctx.fillStyle = radgrad2;
+            ctx.fillRect(0,0,250,250);
+        }
+        
+        draw()
+    </script>
+</body>
+</html>

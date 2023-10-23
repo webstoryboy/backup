@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        function draw() {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            ctx.fillStyle = "#6495ed";
+            ctx.font = "bold 40px Arial";
+            
+            ctx.fillText("Hello World", 300, 50);
+            
+            ctx.lineWidth = 2;
+            ctx.strokeText("Hello World", 300, 100);
+            
+            ctx.textAlign = "start";            //글씨의 시작점을 기준(기본값)
+            ctx.fillText("Hello World", 300, 250);
+            
+            ctx.textAlign = "end";              //글씨의 끝점을 기준으로
+            ctx.fillText("Hello World", 300, 300);
+            
+            ctx.textAlign = "left";             //글씨의 왼쪽을 기준으로
+            ctx.fillText("Hello World", 300, 350);
+            
+            ctx.textAlign = "right";            //글시의 오른쪽으로 기준으로
+            ctx.fillText("Hello World", 300, 400);
+            
+            ctx.textAlign = "center";           //글씨의 중심을 기준으로
+            ctx.fillText("Hello World", 300, 450);
+        }
+        
+        draw()
+    </script>
+</body>
+</html>

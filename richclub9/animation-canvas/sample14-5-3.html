@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        * {margin: 0; padding: 0; background: #000;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    
+    <script type="text/javascript" src="../assets2/js/jquery-1.12.4.min.js"></script>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        var canW = canvas.width;
+        var canH = canvas.height;
+        var speed = 0.5;
+        
+        
+        var enemyImage = new Image();
+        enemyImage.src = "img/b.png";
+        
+        var enemies = [
+            {"id":"enemy1","x":100,"y":-70, "w":43, "h":61},
+            {"id":"enemy2","x":400,"y":-70, "w":43, "h":61},
+            {"id":"enemy3","x":700,"y":-70, "w":43, "h":61}];
+        
+        function Enemy(){
+            this.w = 43, this.h = 61;
+            
+            this.render = function(){
+                for(var i = 0; i < enemies.length; i++){
+                    var enemyY = enemies[i].y += speed;
+                    //ctx.strokeStyle = "red";
+                    //ctx.strokeRect(enemies[i].x, enemies[i].y, this.w, this.h);
+                    ctx.drawImage(enemyImage, enemies[i].x, enemyY);
+                }
+            };
+        }
+        
+        var enemy = new Enemy();
+        
+        function animate(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            enemy.render();
+        }
+        
+        setInterval(animate, 30);
+        
+        
+    </script>
+</body>
+</html>

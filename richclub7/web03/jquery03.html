@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {margin: 2px;}
+</style>
+</head>
+
+<body>
+
+    <h1>jQuery</h1>
+    <div id="sample">
+        <ul id="list1" class="list">
+            <li class="list1"><a href="#list2">list1</a></li>
+            <li class="list2"><a href="http://naver.com">list2</a></li>
+            <li class="list3"><a href="http://www.daum.net">list3</a></li>
+            <li class="list4"><a href="http://webstoryboy.co.kr" title="사이트">list4</a></li>
+            <li class="list5">list5</li>
+            <li class="list6">list6</li>
+            <li class="list7">list7</li>
+            <li class="list8">list8</li>
+            <li class="list9">list9</li>
+            <li class="list10">list10</li>
+</ul>
+        <ul id="list2" class="list">
+            <li class="list1">list1</li>
+            <li class="list2">list2</li>
+            <li class="list3">list3</li>
+            <li class="list4">list4</li>
+            <li class="list5"></li>
+            <li class="list6">list6</li>
+            <li class="list7">list7</li>
+            <li class="list8">list8</li>
+            <li class="list9">list9</li>
+            <li class="list10">list10
+                <ul>
+                    <li>list10-1</li>
+                    <li style="width:0; height:0; overflow:hidden;">list10-2</li>
+                    <li style="opacity:0;">list10-3</li>
+                    <li style="visibility:hidden;">list10-4</li>
+                    <li style="display:none;">list10-5</li>
+                    <li>list10-6</li>
+</ul>
+</li>
+</ul>
+</div>
+    
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        //list4를 활성화 할 수 있는 방법 8가지 써주세요~
+        //$(".list4").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li[class='list4']").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li[class^='list4']").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li[class$='list4']").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li[class*='list4']").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li:eq(3)").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li:contains('list4')").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li:nth-child(4)").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        
+        //$(".list").children().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("#list1 > li").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        
+        //$(".list").find("li").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("#list1 li").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        
+        //$(".list4").next().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$(".list4 + li").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$(".list4").prev().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$(".list4").nextAll().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$(".list4 ~ li").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$(".list4").prevAll().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$(".list4").parent().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$(".list4").parents().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$(".list4").siblings().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li:not(:eq(3))").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li").eq(3).css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li:eq(3)").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li").first().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li").last().css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li").has("ul").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li").find("ul").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li").filter(".list4").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li").not(".list4").css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+        //$("li").slice(2,6).css({ "border":"1px dashed #303f9f", "backgroundColor":"#bbdefb", "color":"#303f9f" });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

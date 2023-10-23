@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        ctx.beginPath();
+        ctx.moveTo(50,50);
+        ctx.lineTo(300,50);
+        ctx.arcTo(350,50,350,100, 50);
+        ctx.lineTo(350,200);
+        ctx.stroke();
+        
+    </script>
+</body>
+</html>

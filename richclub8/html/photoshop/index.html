@@ -1,0 +1,2560 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="webstoryboy">
+	<meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+	<meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+	<title>Photoshop</title>
+
+	<!-- web_font -->
+	<link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+
+	<!-- css -->
+	<link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+	<link href="../assets/css/custom.css" rel="stylesheet">
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../assets/css/jquery.fancybox.css" rel="stylesheet">
+
+	<!-- Prettify -->
+	<link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+	<!-- Icon -->
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+	<link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+
+	<!-- hmlt5 support -->
+	<!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+
+	<!-- IE6,7 support -->
+	<!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+
+	<!--[if lte IE 6]>
+	<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+	사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+	<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+	<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a> 
+	<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+	<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+	<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+	<![endif]-->
+
+	<style>
+		.face {
+			display: block;
+			margin: 20px auto;
+			width: 400px;
+		}
+
+		.face img {
+			width: 400px;
+			border-radius: 50%;
+		}
+
+		.face1 img {
+			width: 22%;
+			border-radius: 10%;
+			margin: 1%;
+		}
+
+		.member {
+			margin: 50px 0;
+		}
+
+		.member li {
+			width: 150px;
+			list-style: none;
+			display: inline-block;
+			margin: 6px;
+		}
+
+		.member li img {
+			border-radius: 50%;
+		}
+
+
+.screenshots ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.screenshots ul li {
+    float: left;
+    min-height: 100%;
+    width: 25%;
+    background-color: #000;
+    list-style: none;
+    font-size: 0;
+}
+.screenshots figure {
+    position: relative;
+    overflow: hidden;
+    padding:0;
+    margin:0;
+}
+.screenshots figure img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.screenshots figure:hover img, .screenshots figure:focus img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.screenshots figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25% 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 97, 132, 0.85);
+    text-align: center;
+    font-size: 15px;
+    opacity: 0;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.screenshots figcaption a {
+    color: #fff
+}
+.screenshots figcaption a:hover, .screenshots figcaption a:focus {
+    color: #73d0da
+}
+.screenshots figure:hover figcaption, .screenshots figure:focus figcaption {
+    opacity: 1
+}
+.visible {
+    opacity: 1
+}
+.screenshots figure.cs-hover figcaption {
+    opacity: 1
+}
+.screenshots figcaption i {
+    font-size: 35px
+}
+.screenshots figcaption p {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.screenshots figcaption .caption-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    width: 200px;
+    -webkit-transform: translate(0px, 15px);
+    -ms-transform: translate(0px, 15px);
+    transform: translate(0px, 15px);
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.screenshots figure:hover figcaption .caption-content, .screenshots figure:focus figcaption .caption-content {
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+}
+
+@media screen and (max-width:960px) {
+	.screenshots ul li {width: 50%;}
+}
+
+
+@media screen and (max-width:480px) {
+	.screenshots ul li {width: 100%;}
+}
+	</style>
+</head>
+
+
+
+<body>
+	<!-- nav -->
+	<div id="top-nav" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                </button>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li><a href="#">webstoryboy</a></li>
+						<li><a href="#">reference</a></li>
+						<li><a href="#">tutorial</a></li>
+						<li><a href="#">css</a></li>
+						<li><a href="#">html</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //nav -->
+
+	<!-- header -->
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="span12" style="text-align:center;">
+					<div class="header_tit">
+						<h1>Professional web publishers</h1>
+						<h2><a href="http://webstoryboy.co.kr">webstoryboy.co.kr</a></h2>
+					</div>
+					<div class="header_icon" id="wow">
+						<ul>
+							<li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+							<li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+							<li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+							<li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //header -->
+
+	<!-- contents -->
+	<div class="container" style="margin-top:20px;">
+		<div class="row-fluid">
+			<div class="span12">
+				<h1>Photoshop</h1>
+
+				<h2>파스텔 초상화 그리기</h2>
+				<ol>
+					<li>얼굴과 배경을 분리합니다.(펜툴 이용)</li>
+					<li>새로운 레이어 만들어서 배경 색(#8b93a3)을 넣어줍니다.</li>
+					<li>[Filter] - [Noise] - [Add Noise] - amount 15% - Monochromatice 체크</li>
+					<li>[Filter] - [Blur] - [Gaussian Blur] - Radius 1.5pixels</li>
+					<li>얼굴을 선택 후 [Level]로 밝기 조정</li>
+					<li>얼굴을 선택 후 [Hue/Saturation]으로 색상과 채도 조정</li>
+					<li>얼굴을 선택 후 [Filter] - [Sharpen] - [Unsharp Mask] - Amount 123% - Radius 7.7pixels</li>
+					<li>Smudge Tool로 파스텔 효과를 만듭니다.</li>
+					<li>Dodge Tool과 Burn Tool로 밝고 어두운 부분을 조정합니다.</li>
+					<li>새로운 레이어 만들어서 #808080 - [Filter] - [Texture] - [Texturizer] - sandstone - overlay 브렌드 효과</li>
+				</ol>
+
+				<div class="screenshots" id="screenshots">
+					<div class="container-fluid">
+						<div class="row">
+							<ul class="grid">
+								<li>
+									<figure>
+										<img src="img/01-sample1-500.jpg" alt="Screenshot 01">
+										<figcaption>
+										<div class="caption-content">
+											<a href="img/01-sample1-1500.jpg" class="fancybox">
+												<i class="fa fa-search">Brush</i><br>
+												<p>Photoshop</p>
+											</a>
+										</div>
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<img src="img/01-sample2-500.jpg" alt="Screenshot 01">
+										<figcaption>
+										<div class="caption-content">
+											<a href="img/01-sample2-1500.jpg" class="fancybox">
+												<i class="fa fa-search">Brush</i><br>
+												<p>Photoshop</p>
+											</a>
+										</div>
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<img src="img/01-sample3-500.jpg" alt="Screenshot 01">
+										<figcaption>
+										<div class="caption-content">
+											<a href="img/01-sample3-1500.jpg" class="fancybox">
+												<i class="fa fa-search">Brush</i><br>
+												<p>Photoshop</p>
+											</a>
+										</div>
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<img src="img/01-sample4-500.jpg" alt="Screenshot 01">
+										<figcaption>
+										<div class="caption-content">
+											<a href="img/01-sample4-1500.jpg" class="fancybox">
+												<i class="fa fa-search">Brush</i><br>
+												<p>Photoshop</p>
+											</a>
+										</div>
+										</figcaption>
+									</figure>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+
+                <br><br> 
+                <h3>인기있는 단축키</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>자유 변환</td>
+                            <td>Control + T</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 크기 감소</td>
+                            <td>[</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 크기 확대</td>
+                            <td>]</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 경도 감소</td>
+                            <td>{</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 경도 확대</td>
+                            <td>}</td>
+                        </tr>
+                        <tr>
+                            <td>전경색/배경색 기본값</td>
+                            <td>D</td>
+                        </tr>
+                        <tr>
+                            <td>전경색/배경색 바꾸기</td>
+                            <td>X</td>
+                        </tr>
+                        <tr>
+                            <td>복사를 통한 새 레이어</td>
+                            <td>Control + J</td>
+                        </tr>
+                        <tr>
+                            <td>자르기를 통한 새 레이어</td>
+                            <td>Shift + Control + J</td>
+                        </tr>
+                        <tr>
+                            <td>선택 항목에 추가</td>
+                            <td>Any selection tool + Shift-drag</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 또는 스왓치 삭제</td>
+                            <td>Alt-click brush or swatch</td>
+                        </tr>
+                        <tr>
+                            <td>이동 도구를 사용하여 자동 선택 전환</td>
+                            <td>Control-click</td>
+                        </tr>
+                        <tr>
+                            <td>모든 모달 대화상자 창 취소(작업영역 시작 포함)</td>
+                            <td>Escape</td>
+                        </tr>
+                        <tr>
+                            <td>도구 모음의 첫 번째 편집 필드를 선택</td>
+                            <td>Enter</td>
+                        </tr>
+                        <tr>
+                            <td>필드 간 이동</td>
+                            <td>Tab</td>
+                        </tr>
+                        <tr>
+                            <td>반대 방향으로 필드 간 이동</td>
+                            <td>Tab + Shift</td>
+                        </tr>
+                        <tr>
+                            <td>재설정으로 취소 변경</td>
+                            <td>Alt</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h3>기능 단축키</h3>
+
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>도움말</td>
+                            <td>F1</td>
+                        </tr>
+                        <tr>
+                            <td>취소/다시 실행</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>자르기</td>
+                            <td>F2</td>
+                        </tr>
+                        <tr>
+                            <td>복사</td>
+                            <td>F3</td>
+                        </tr>
+                        <tr>
+                            <td>붙여넣기</td>
+                            <td>F4</td>
+                        </tr>
+                        <tr>
+                            <td>브러시패널 보기/숨기기</td>
+                            <td>F5</td>
+                        </tr>
+                        <tr>
+                            <td>컬러패널 보기/숨기기</td>
+                            <td>F6</td>
+                        </tr>
+                        <tr>
+                            <td>레이어패널 보기/숨기기</td>
+                            <td>F7</td>
+                        </tr>
+                        <tr>
+                            <td>인포패널 보기/숨기기</td>
+                            <td>F8</td>
+                        </tr>
+                        <tr>
+                            <td>액션패널 보기/숨기기</td>
+                            <td>F9</td>
+                        </tr>
+                        <tr>
+                            <td>되돌리기</td>
+                            <td>F12</td>
+                        </tr>
+                        <tr>
+                            <td>채우기</td>
+                            <td>Shift + F5</td>
+                        </tr>
+                        <tr>
+                            <td>패더 선택</td>
+                            <td>Shift + F6</td>
+                        </tr>
+                        <tr>
+                            <td>역선택</td>
+                            <td>Shift + F7</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>선택 도구</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>바로 가기 키가 동일한 도구를 순환</td>
+                            <td>Shift-press 바로 가기 키(도구 스위치 기본 설정에 Shift 키를 사용한 경우)</td>
+                        </tr>
+                        <tr>
+                            <td>숨겨진 도구를 차례로 살펴보기</td>
+                            <td>Alt-click + 도구(앵커 점 추가, 앵커 점 삭제 및 점 변환 도구 제외)</td>
+                        </tr>
+                        <tr>
+                            <td>움직이기 도구</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>직사각형 마퀴 도구</td>
+                            <td>M</td>
+                        </tr>
+                        <tr>
+                            <td>타원형 마퀴 도구</td>
+                            <td>M</td>
+                        </tr>
+                        <tr>
+                            <td>라소 도구</td>
+                            <td>L</td>
+                        </tr>
+                        <tr>
+                            <td>다각형 라소 도구</td>
+                            <td>L</td>
+                        </tr>
+                        <tr>
+                            <td>자석 라소 도구</td>
+                            <td>L</td>
+                        </tr>
+                        <tr>
+                            <td>마술봉 도구</td>
+                            <td>W</td>
+                        </tr>
+                        <tr>
+                            <td>빠른 선택 도구</td>
+                            <td>W</td>
+                        </tr>
+                        <tr>
+                            <td>자르기 도구</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>슬라이스 도구</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>슬라이스 선택 도구</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>아이드로퍼 도구</td>
+                            <td>I</td>
+                        </tr>
+                        <tr>
+                            <td>스포이드 도구</td>
+                            <td>I</td>
+                        </tr>
+                        <tr>
+                            <td>자 도구</td>
+                            <td>I</td>
+                        </tr>
+                        <tr>
+                            <td>노트 도구</td>
+                            <td>I</td>
+                        </tr>
+                        <tr>
+                            <td>스폿 복구 브러시 도구</td>
+                            <td>J</td>
+                        </tr>
+                        <tr>
+                            <td>복구 브러시 도구</td>
+                            <td>J</td>
+                        </tr>
+                        <tr>
+                            <td>패치 도구</td>
+                            <td>J</td>
+                        </tr>
+                        <tr>
+                            <td>적목현상 도구</td>
+                            <td>J</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 도구</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>연필 도구</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>색상 교체 도구</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>믹서 브러시 도구</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>복제 스탬프 도구</td>
+                            <td>S</td>
+                        </tr>
+                        <tr>
+                            <td>패턴 스탬프 도구</td>
+                            <td>S</td>
+                        </tr>
+                        <tr>
+                            <td>히스토리 브러시 도구</td>
+                            <td>Y</td>
+                        </tr>
+                        <tr>
+                            <td>아트 히스토리 브러시 도구</td>
+                            <td>Y</td>
+                        </tr>
+                        <tr>
+                            <td>지우개 도구</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>백그라운드 지우개 도구</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>마술 지우개 도구</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>그라디언트 도구</td>
+                            <td>G</td>
+                        </tr>
+                        <tr>
+                            <td>페인트 버킷 도구</td>
+                            <td>G</td>
+                        </tr>
+                        <tr>
+                            <td>닷지 도구</td>
+                            <td>O</td>
+                        </tr>
+                        <tr>
+                            <td>태우기 도구</td>
+                            <td>O</td>
+                        </tr>
+                        <tr>
+                            <td>스폰지 도구</td>
+                            <td>O</td>
+                        </tr>
+                        <tr>
+                            <td>펜 도구</td>
+                            <td>P</td>
+                        </tr>
+                        <tr>
+                            <td>자유형 펜 도구</td>
+                            <td>P</td>
+                        </tr>
+                        <tr>
+                            <td>수평 유형 도구</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>수직 유형 도구</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>수평 유형 마스크 도구</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>수직 유형 마스크 도구</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>패스 선택 도구</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>직접 선택 도구</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>사각형 도구</td>
+                            <td>U</td>
+                        </tr>
+                        <tr>
+                            <td>둥근 사각형 도구</td>
+                            <td>U</td>
+                        </tr>
+                        <tr>
+                            <td>타원 도구</td>
+                            <td>U</td>
+                        </tr>
+                        <tr>
+                            <td>다각형 도구</td>
+                            <td>U</td>
+                        </tr>
+                        <tr>
+                            <td>선 도구</td>
+                            <td>U</td>
+                        </tr>
+                        <tr>
+                            <td>사용자 지정 모양 도구</td>
+                            <td>U</td>
+                        </tr>
+                        <tr>
+                            <td>손 도구</td>
+                            <td>H</td>
+                        </tr>
+                        <tr>
+                            <td>회전 보기 도구</td>
+                            <td>R</td>
+                        </tr>
+                        <tr>
+                            <td>줌 도구</td>
+                            <td>Z</td>
+                        </tr>
+                        <tr>
+                            <td>전경색/배경색 기본값</td>
+                            <td>D</td>
+                        </tr>
+                        <tr>
+                            <td>전경색/배경색 바꾸기</td>
+                            <td>X</td>
+                        </tr>
+                        <tr>
+                            <td>표준/빠른 마스크 모드 전환</td>
+                            <td>Q</td>
+                        </tr>
+                        <tr>
+                            <td>컨텐츠 인식 이동 도구</td>
+                            <td>J</td>
+                        </tr>
+                        <tr>
+                            <td>원근 자르기 도구</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>아트보드 도구</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>회전 보기 도구</td>
+                            <td>R</td>
+                        </tr>
+                        <tr>
+                            <td>투명성 유지 전환</td>
+                            <td>/ (forward slash)</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 경도 감소</td>
+                            <td>{</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 경도 증가</td>
+                            <td>}</td>
+                        </tr>
+                        <tr>
+                            <td>이전 브러시</td>
+                            <td>,</td>
+                        </tr>
+                        <tr>
+                            <td>다음 브러시</td>
+                            <td>.</td>
+                        </tr>
+                        <tr>
+                            <td>처음 브러시</td>
+                            <td>&lt;</td>
+                        </tr>
+                        <tr>      
+                            <td>마지막 브러시</td>
+                            <td>&gt;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>이미지</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>열려 있는 문서를 순환</td>
+                            <td>Control + Tab</td>
+                        </tr>
+                        <tr>
+                            <td>이전 문서로 전환</td>
+                            <td>Shift + Control + Tab</td>
+                        </tr>
+                        <tr>
+                            <td>Photoshop에서 파일 닫기 및 브리지 열기</td>
+                            <td>Shift-Control-W</td>
+                        </tr>
+                        <tr>
+                            <td>표준 모드와 빠른 마스크 모드 전환</td>
+                            <td>Q</td>
+                        </tr>
+                        <tr>
+                            <td>표준 화면 모드, 메뉴 표시줄이 있는 전체 화면 모드 및 전체 화면 모드 간에 전환(앞으로)</td>
+                            <td>F</td>
+                        </tr>
+                        <tr>
+                            <td>표준 화면 모드, 메뉴 표시줄이 있는 전체 화면 모드 및 전체 화면 모드 간에 전환(뒤로)</td>
+                            <td>Shift + F</td>
+                        </tr>
+                        <tr>
+                            <td>캔버스 색상 전환(앞으로)</td>
+                            <td>Spacebar + F (또는 캔버스 배경을 마우스 오른쪽 버튼으로 클릭하고 색 선택)</td>
+                        </tr>
+                        <tr>
+                            <td>캔버스 색상 전환(뒤로)</td>
+                            <td>Spacebar + Shift + F</td>
+                        </tr>
+                        <tr>
+                            <td>창에 이미지 맞춤</td>
+                            <td>Double-click Hand tool</td>
+                        </tr>
+                        <tr>
+                            <td>100% 확대</td>
+                            <td>Double-click Zoom tool or</td>
+                        </tr>
+                        <tr>
+                            <td>100% 확대</td>
+                            <td>Ctrl + 1</td>
+                        </tr>
+                        <tr>
+                            <td>수동 도구로 전환(텍스트 편집 모드가 아닌 경우))</td>
+                            <td>Spacebar</td>
+                        </tr>
+                        <tr>
+                            <td>수동 도구를 사용하여 여러 문서 동시 이동</td>
+                            <td>Shift-drag</td>
+                        </tr>
+                        <tr>
+                            <td>확대 도구로 전환</td>
+                            <td>Control + spacebar</td>
+                        </tr>
+                        <tr>
+                            <td>축소 도구로 전환</td>
+                            <td>Alt + spacebar</td>
+                        </tr>
+                        <tr>
+                            <td>확대/축소 도구를 사용하여 끄는 동안 확대/축소 행렬 이동</td>
+                            <td>Spacebar-drag</td>
+                        </tr>
+                        <tr>
+                            <td>확대/축소 비율을 적용하고 확대/축소 비율 상자를 활성 상태로 유지</td>
+                            <td>Shift + Enter 네비게이터 패널 확대/축소 비율 상자 안에서</td>
+                        </tr>
+                        <tr>
+                            <td>이미지의 지정된 영역 확대</td>
+                            <td>네비게이터 패널에서 미리보기 제어-끌기</td>
+                        </tr>
+                        <tr>
+                            <td>일시적으로 이미지 확대</td>
+                            <td>H를 누른 다음 이미지를 클릭하고 마우스 버튼을 누른 상태로 유지</td>
+                        </tr>
+                        <tr>
+                            <td>수동 도구를 사용하여 이미지 스크롤</td>
+                            <td>네비게이터 패널의 스페이스바-끌기 또는 뷰 영역 상자</td>
+                        </tr>
+                        <tr>
+                            <td>1개의 화면 위로 또는 아래로 스크롤</td>
+                            <td>Page Up or Page Down</td>
+                        </tr>
+                        <tr>
+                            <td>10개 유닛 위로 또는 아래로 스크롤</td>
+                            <td>Shift + Page Up or Page Down</td>
+                        </tr>
+                        <tr>
+                            <td>보기를 왼쪽 위 모서리 또는 오른쪽 아래 모서리로 이동</td>
+                            <td>Home or End</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 마스크를 루빌리스로 설정/해제(레이어 마스크를 선택해야 함)</td>
+                            <td>\ (backslash)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>모서리 새로 고침</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>모서리 새로 고침 대화 상자 열기</td>
+                            <td>Control + Alt + R</td>
+                        </tr>
+                        <tr>
+                            <td>미리 보기 모드를 통해 주기(앞으로)</td>
+                            <td>F</td>
+                        </tr>
+                        <tr>
+                            <td>미리 보기 모드를 통해 주기(뒤로)</td>
+                            <td>Shift + F</td>
+                        </tr>
+                        <tr>
+                            <td>원본 영상과 선택 미리 보기 간에 전환</td>
+                            <td>X</td>
+                        </tr>
+                        <tr>
+                            <td>원래 선택과 고급 버전 간 전환</td>
+                            <td>P</td>
+                        </tr>
+                        <tr>
+                            <td>반지름 미리 보기 켜기/끄기</td>
+                            <td>J</td>
+                        </tr>
+                        <tr>
+                            <td>Refine Radius 및 Erase Refinements 도구 간 전환</td>
+                            <td>Shift + E</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>필터 갤러리</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>선택한 상단에 새 필터 적용</td>
+                            <td>Alt-click a filter</td>
+                        </tr>
+                        <tr>
+                            <td>마지막 사용한 필터 적용</td>
+                            <td>Control + Alt + F</td>
+                        </tr>
+                        <tr>
+                            <td>모든 공개 삼각망 열기/닫기</td>
+                            <td>Alt-click a disclosure triangle</td>
+                        </tr>
+                        <tr>
+                            <td>취소 버튼을 기본값으로 변경</td>
+                            <td>Control</td>
+                        </tr>
+                        <tr>
+                            <td>Cancel(취소) 버튼을 Reset(재설정)으로 변경</td>
+                            <td>Alt</td>
+                        </tr>
+                        <tr>
+                            <td>취소/다시 실행</td>
+                            <td>Control + Z</td>
+                        </tr>
+                        <tr>
+                            <td>앞으로 가기</td>
+                            <td>Control + Shift + Z</td>
+                        </tr>
+                        <tr>
+                            <td>뒤로 가기</td>
+                            <td>Control + Alt + Z</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>리퀴파이 필터</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>전방 Warp 도구</td>
+                            <td>W</td>
+                        </tr>
+                        <tr>
+                            <td>도구 재구성</td>
+                            <td>R</td>
+                        </tr>
+                        <tr>
+                            <td>시계 방향 회전 도구</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>푸커 도구</td>
+                            <td>S</td>
+                        </tr>
+                        <tr>
+                            <td>블롯 도구</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>왼쪽 푸시 도구</td>
+                            <td>O</td>
+                        </tr>
+                        <tr>
+                            <td>거울 도구</td>
+                            <td>M</td>
+                        </tr>
+                        <tr>
+                            <td>터뷸런스 도구</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>마스크 고정 도구</td>
+                            <td>F</td>
+                        </tr>
+                        <tr>
+                            <td>손 마스크 도구</td>
+                            <td>D</td>
+                        </tr>
+                        <tr>
+                            <td>Bloat, Pucker, Push Left 및 Mirror 공구의 역방향</td>
+                            <td>Alt + tool</td>
+                        </tr>
+                        <tr>
+                            <td>변형을 지속적으로 샘플링</td>
+                            <td>재구성 도구, 변위, 앰프 또는 Affine 모드를 선택한 상태에서 미리보기에서의 Alt-끌기</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 크기를 2만큼 감소/증가 또는 밀도, 압력, 속도 또는 난류 지터를 1만큼 감소/증가</td>
+                            <td>브러시 크기, 밀도, 압력, 속도 또는 난류 지터 텍스트 상자의 아래쪽 화살표/위쪽 화살표</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 크기를 2만큼 감소/증가 또는 밀도, 압력, 속도 또는 난류 지터를 1만큼 감소/증가</td>
+                            <td>브러시 크기, 밀도, 압력, 속도 또는 난류 지터 슬라이더가 표시된 왼쪽 화살표/오른쪽 화살표</td>
+                        </tr>
+                        <tr>
+                            <td>오른쪽 상단에서 컨트롤을 차례로 선택</td>
+                            <td>Tab</td>
+                        </tr>
+                        <tr>
+                            <td>오른쪽에서 컨트롤을 차례로 선택</td>
+                            <td>Shift + Tab</td>
+                        </tr>
+                        <tr>
+                            <td>재설정으로 취소 변경</td>
+                            <td>Alt</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>배니싱 포인트</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>확대/축소 2배(임시)</td>
+                            <td>X</td>
+                        </tr>
+                        <tr>
+                            <td>확대</td>
+                            <td>Control + + (plus)</td>
+                        </tr>
+                        <tr>
+                            <td>축소</td>
+                            <td>Control + - (hyphen)</td>
+                        </tr>
+                        <tr>
+                            <td>화면에 맞추기</td>
+                            <td>Control + 0 (zero), Double-click Hand tool</td>
+                        </tr>
+                        <tr>
+                            <td>중심으로부터 100%</td>
+                            <td>Double-click Zoom tool</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 크기 증가(브러시, 스탬프 도구)</td>
+                            <td>]</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 크기 감소(브러시, 스탬프 도구)</td>
+                            <td>[</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 경도 증가(브러시, 스탬프 도구)</td>
+                            <td>Shift + ]</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 경도 감소(브러시, 스탬프 도구)</td>
+                            <td>Shift + [</td>
+                        </tr>
+                        <tr>
+                            <td>마지막 작업 실행 취소</td>
+                            <td>Control + Z</td>
+                        </tr>
+                        <tr>
+                            <td>마지막 작업 다시 하기</td>
+                            <td>Control + Shift + Z</td>
+                        </tr>
+                        <tr>
+                            <td>모든선택 취소</td>
+                            <td>Control + D</td>
+                        </tr>
+                        <tr>
+                            <td>선택 항목 및 평면 숨기기</td>
+                            <td>Control + H</td>
+                        </tr>
+                        <tr>
+                            <td>선택 항목 1px 움직이기</td>
+                            <td>Arrow keys</td>
+                        </tr>
+                        <tr>
+                            <td>선택 항목 10px 움직이기</td>
+                            <td>Shift + arrow keys</td>
+                        </tr>
+                        <tr>
+                            <td>복사</td>
+                            <td>Control + C</td>
+                        </tr>
+                        <tr>
+                            <td>붙여넣기</td>
+                            <td>Control + V</td>
+                        </tr>
+                        <tr>
+                            <td>마지막 복제 반복 및 이동</td>
+                            <td>Control + Shift + T</td>
+                        </tr>
+                        <tr>
+                            <td>현재 선택에서 부동 선택 생성</td>
+                            <td>Control + Alt + T</td>
+                        </tr>
+                        <tr>
+                            <td>포인터 아래에 있는 이미지로 선택 항목 채우기</td>
+                            <td>Control-drag</td>
+                        </tr>
+                        <tr>
+                            <td>부동 선택으로 선택 항목의 복제 생성</td>
+                            <td>Control + Alt-drag</td>
+                        </tr>
+                        <tr>
+                            <td>선택 항목을 15° 회전으로 제한</td>
+                            <td>Alt + Shift to rotate</td>
+                        </tr>
+                        <tr>
+                            <td>선택한 다른 평면 아래에서 평면 선택</td>
+                            <td>Control-click the plane</td>
+                        </tr>
+                        <tr>
+                            <td>상위 평면에서 90도 평면 작성</td>
+                            <td>Control-drag</td>
+                        </tr>
+                        <tr>
+                            <td>평면을 생성하는 동안 마지막 노드 삭제</td>
+                            <td>Backspace</td>
+                        </tr>
+                        <tr>
+                            <td>카메라에 직사각형의 완전한 캔버스 평면 만들기</td>
+                            <td>Double-click the Create Plane tool</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>카메라 원시 상자</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>확대/축소 도구</td>
+                            <td>Z</td>
+                        </tr>
+                        <tr>
+                            <td>손 도구</td>
+                            <td>H</td>
+                        </tr>
+                        <tr>
+                            <td>화이트 밸런스 도구</td>
+                            <td>I</td>
+                        </tr>
+                        <tr>
+                            <td>컬러 샘플러 도구</td>
+                            <td>S</td>
+                        </tr>
+                        <tr>
+                            <td>자르기 도구</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>직선 도구</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>스폿 제거 도구</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>적목현상 제거 도구</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>기본 패널</td>
+                            <td>Ctrl + Alt + 1</td>
+                        </tr>
+                        <tr>
+                            <td>톤 곡선 패널</td>
+                            <td>Ctrl + Alt + 2</td>
+                        </tr>
+                        <tr>
+                            <td>자세한 패널</td>
+                            <td>Ctrl + Alt + 3</td>
+                        </tr>
+                        <tr>
+                            <td>HSL/Grayscale 패널</td>
+                            <td>Ctrl + Alt + 4</td>
+                        </tr>
+                        <tr>
+                            <td>Tonning 분할 패널</td>
+                            <td>Ctrl + Alt + 5</td>
+                        </tr>
+                        <tr>
+                            <td>렌즈 보정 패널</td>
+                            <td>Ctrl + Alt + 6</td>
+                        </tr>
+                        <tr>
+                            <td>카메라 보정 패널</td>
+                            <td>Ctrl + Alt + 7</td>
+                        </tr>
+                        <tr>
+                            <td>사전 설정 패널</td>
+                            <td>Ctrl + Alt + 9</td>
+                        </tr>
+                        <tr>
+                            <td>스냅샷 열기 패널</td>
+                            <td>Ctrl + Alt + 9</td>
+                        </tr>
+                        <tr>
+                            <td>모수 곡선 대상 조정 도구</td>
+                            <td>Ctrl + Alt + Shift + T</td>
+                        </tr>
+                        <tr>
+                            <td>색상 대상 조정 도구</td>
+                            <td>Ctrl + Alt + Shift + H</td>
+                        </tr>
+                        <tr>
+                            <td>채도 대상 조정 도구</td>
+                            <td>Ctrl + Alt + Shift + S</td>
+                        </tr>
+                        <tr>
+                            <td>휘도 대상 조정 도구</td>
+                            <td>Ctrl + Alt + Shift + L</td>
+                        </tr>
+                        <tr>
+                            <td>그레이스케일 혼합 대상 조정 도구</td>
+                            <td>Ctrl + Alt + Shift + G</td>
+                        </tr>
+                        <tr>
+                            <td>마지막 사용한 대상 조정 도구</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 조정 도구</td>
+                            <td>K</td>
+                        </tr>
+                        <tr>
+                            <td>그라데이션 필터 도구</td>
+                            <td>G</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 크기 증가/감소</td>
+                            <td>] / [</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 패더 증가/감소</td>
+                            <td>Shift + ] / Shift + [</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 도구 흐름 10 증분 증가/감소</td>
+                            <td>= (equal sign) / - (hyphen)</td>
+                        </tr>
+                        <tr>
+                            <td>조정 브러시 도구의 경우 추가 모드에서 지우기로 일시적으로 전환하거나 지우기에서 추가 모드로 전환</td>
+                            <td>Alt</td>
+                        </tr>
+                        <tr>
+                            <td>임시 브러시 도구 크기 증가/감소</td>
+                            <td>Alt + ] / Alt + [</td>
+                        </tr>
+                        <tr>
+                            <td>임시 브러시 도구 패더 증가/감소</td>
+                            <td>Alt + Shift + ] / Alt + Shift + [</td>
+                        </tr>
+                        <tr>
+                            <td>임시 브러시 도구 흐름 10씩 증가/감소</td>
+                            <td>Alt + = (equal sign) / Alt + - (hyphen)</td>
+                        </tr>
+                        <tr>
+                            <td>조정 브러시 도구 또는 그라데이션 필터의 추가 또는 지우기 모드에서 새 모드로 전환</td>
+                            <td>N</td>
+                        </tr>
+                        <tr>
+                            <td>조정용 자동 마스크 전환 브러시 도구</td>
+                            <td>M</td>
+                        </tr>
+                        <tr>
+                            <td>조정을 위한 마스크 표시/교정 브러시 도구</td>
+                            <td>Y</td>
+                        </tr>
+                        <tr>
+                            <td>조정 브러시 도구용 핀 전환</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>그라데이션된 필터, 스폿 제거 도구 또는 빨간색 눈 제거 도구의 오버레이 전환</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>이미지 왼쪽으로 회전</td>
+                            <td>L or Ctrl + ]</td>
+                        </tr>
+                        <tr>
+                            <td>이미지 오른쪽으로 회전</td>
+                            <td>R or Ctrl + [</td>
+                        </tr>
+                        <tr>
+                            <td>확대</td>
+                            <td>Ctrl + + (plus)</td>
+                        </tr>
+                        <tr>
+                            <td>축소</td>
+                            <td>Ctrl + - (hyphen)</td>
+                        </tr>
+                        <tr>
+                            <td>일시적으로 확대 도구로 전환</td>
+                            <td>Ctrl(직접 공구 선택 시 작동하지 않음) Crop tool이 활성 상태인 경우 일시적으로 Tool로 전환</td>
+                        </tr>
+                        <tr>
+                            <td>일시적으로 Zoom Out 도구로 전환하고 Open Image(영상 열기) 버튼을 Open Copy(복사)로, Cancel(취소) 버튼을 Reset(재설정)으로 변경</td>
+                            <td>Alt</td>
+                        </tr>
+                        <tr>
+                            <td>미리 보기 전환</td>
+                            <td>P</td>
+                        </tr>
+                        <tr>
+                            <td>풀 스크린 모드</td>
+                            <td>F</td>
+                        </tr>
+                        <tr>
+                            <td>일시적으로 White Balance 도구를 활성화하고 Open Image(이미지 열기) 버튼을 Open Object(개체 열기)로 변경</td>
+                            <td>Shift(자르기 도구가 활성인 경우 작동하지 않음)</td>
+                        </tr>
+                        <tr>
+                            <td>원곡선 패널에서 여러 점 선택</td>
+                            <td>첫 번째 점 클릭; 추가 점 이동 클릭</td>
+                        </tr>
+                        <tr>
+                            <td>원곡선 패널에서 원곡선에 점 추가</td>
+                            <td>Control-click in preview</td>
+                        </tr>
+                        <tr>
+                            <td>원곡선 패널에서 선택한 점 이동(1개)</td>
+                            <td>Arrow keys</td>
+                        </tr>
+                        <tr>
+                            <td>원곡선 패널에서 선택한 점 이동(10개)</td>
+                            <td>Shift-arrow</td>
+                        </tr>
+                        <tr>
+                            <td>Bridge의 Camera Raw(카메라 원시) 상자에서 선택한 영상 열기</td>
+                            <td>Ctrl + R</td>
+                        </tr>
+                        <tr>
+                            <td>Bridge 바이패스 Camera Raw(카메라 원시) 상자에서 선택한 영상 열기</td>
+                            <td>Shift + double-click image</td>
+                        </tr>
+                        <tr>
+                            <td>미리 보기에서 잘라낼 하이라이트 표시</td>
+                            <td>Alt-drag Exposure, Recovery, or Black sliders</td>
+                        </tr>
+                        <tr>
+                            <td>잘라내기 경고 강조 표시</td>
+                            <td>O</td>
+                        </tr>
+                        <tr>
+                            <td>그림자 자르기 경고</td>
+                            <td>U</td>
+                        </tr>
+                        <tr>
+                            <td>(필름스트립 모드) 1 - 5 스타 등급 추가</td>
+                            <td>Ctrl +1 - 5</td>
+                        </tr>
+                        <tr>
+                            <td>(필름스트립 모드) 등급 상승/감소</td>
+                            <td>Ctrl +. (period) / Ctrl+, (comma)</td>
+                        </tr>
+                        <tr>
+                            <td>(필름 스트립 모드) 빨간색 라벨 추가</td>
+                            <td>Ctrl + 6</td>
+                        </tr>
+                        <tr>
+                            <td>(필름 스트립 모드) 노란색 라벨 추가</td>
+                            <td>Ctrl + 7</td>
+                        </tr>
+                        <tr>
+                            <td>(필름 스트립 모드) 초록색 라벨 추가</td>
+                            <td>Ctrl + 8</td>
+                        </tr>
+                        <tr>
+                            <td>(필름 스트립 모드) 파란색 라벨 추가</td>
+                            <td>Ctrl + 9</td>
+                        </tr>
+                        <tr>
+                            <td>(필름 스트립 모드) 보라색 라벨 추가</td>
+                            <td>Ctrl + Shift + 0</td>
+                        </tr>
+                        <tr>
+                            <td>카메라 원시 환경설정</td>
+                            <td>Ctrl + K</td>
+                        </tr>
+                        <tr>
+                            <td>어도비 카메라 원시 설정 제거</td>
+                            <td>Ctrl + Alt (on open)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>흑백 대화 상자</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>흑백 대화 상자 열기</td>
+                            <td>Shift + Control + Alt + B</td>
+                        </tr>
+                        <tr>
+                            <td>선택한 값을 1% 증가/감소</td>
+                            <td>Up Arrow/Down Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>선택한 값을 10% 증가/감소</td>
+                            <td>Shift + Up Arrow/Down Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>가장 가까운 색 슬라이더의 값 변경</td>
+                            <td>Click-drag on the image</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>곡선</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>곡선 대화 상자 열기</td>
+                            <td>Control + M</td>
+                        </tr>
+                        <tr>
+                            <td>곡선에서 다음 점 선택</td>
+                            <td>+ (plus)</td>
+                        </tr>
+                        <tr>
+                            <td>곡선에서 이전 점 선택</td>
+                            <td>– (minus)</td>
+                        </tr>
+                        <tr>
+                            <td>곡선에서 여러 점 선택</td>
+                            <td>Shift-click the points</td>
+                        </tr>
+                        <tr>
+                            <td>점 선택 취소</td>
+                            <td>Control + D</td>
+                        </tr>
+                        <tr>
+                            <td>곡선에서 점을 삭제</td>
+                            <td>Select a point and press Delete</td>
+                        </tr>
+                        <tr>
+                            <td>선택한 포인트 1 유닛 이동</td>
+                            <td>Arrow keys</td>
+                        </tr>
+                        <tr>
+                            <td>선택한 포인트 10 유닛 이동</td>
+                            <td>Shift + Arrow keys</td>
+                        </tr>
+                        <tr>
+                            <td>잘릴 하이라이트 및 그림자 표시</td>
+                            <td>Alt-드래그 검은색/흰색 점 슬라이더</td>
+                        </tr>
+                        <tr>
+                            <td>복합 원곡선에 점 설정</td>
+                            <td>Control-click the image</td>
+                        </tr>
+                        <tr>
+                            <td>채널 곡선에 점 설정</td>
+                            <td>Shift + Control-click the image</td>
+                        </tr>
+                        <tr>
+                            <td>그리드 크기 전환</td>
+                            <td>Alt-click the field</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>대상 선택과 움직이기</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reposition marquee while selectin</td>
+                            <td>Any marquee tool (단일 열 및 단일 행 제외) + spacebar-drag</td>
+                        </tr>
+                        <tr>
+                            <td>선택 항목에 추가</td>
+                            <td>Any selection tool + Shift-drag</td>
+                        </tr>
+                        <tr>
+                            <td>선택에서 빼기</td>
+                            <td>Any selection tool + Alt-drag</td>
+                        </tr>
+                        <tr>
+                            <td>선택 교차</td>
+                            <td>Any selection tool (빠른 선택 도구 제외) + Shift-Alt-drag</td>
+                        </tr>
+                        <tr>
+                            <td>행렬을 사각형 또는 원으로 제한(다른 선택이 활성화되어 있지 않은 경우)</td>
+                            <td>Shift-drag</td>
+                        </tr>
+                        <tr>
+                            <td>중앙에서 행렬 그리기(다른 선택이 활성화되어 있지 않은 경우)</td>
+                            <td>Alt-drag</td>
+                        </tr>
+                        <tr>
+                            <td>모양을 제한 하고 중심에서 행렬을 끌어오기</td>
+                            <td>Shift + Alt-drag</td>
+                        </tr>
+                        <tr>
+                            <td>이동 도구로 전환</td>
+                            <td>Control (수동, 슬라이스, 경로, 모양 또는 펜 도구를 선택한 경우는 제외)</td>
+                        </tr>
+                        <tr>
+                            <td>자석 라소 도구에서 라소 도구로 전환</td>
+                            <td>Alt-drag</td>
+                        </tr>
+                        <tr>
+                            <td>자석 라소 도구에서 다각형 라소 도구로 전환</td>
+                            <td>Alt-click</td>
+                        </tr>
+                        <tr>
+                            <td>자석 라소의 작동 중지/취소</td>
+                            <td>Enter/Esc or Control + . (period)</td>
+                        </tr>
+                        <tr>
+                            <td>선택 사항의 복사본 이동</td>
+                            <td>Move tool + Alt-drag selection</td>
+                        </tr>
+                        <tr>
+                            <td>선택 영역 1px 이동</td>
+                            <td>Any selection + Right Arrow, Left Arrow, Up Arrow, or Down Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>선택 영역 1px 이동</td>
+                            <td>Move tool + Right Arrow, Left Arrow, Up Arrow, or Down Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>레이어에서 선택된 항목이 없는 경우 레이어 1픽셀 이동</td>
+                            <td>Control + Right Arrow, Left Arrow, Up Arrow, or Down Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>감지 폭 증가/감소</td>
+                            <td>Magnetic Lasso tool + [ or ]</td>
+                        </tr>
+                        <tr>
+                            <td>자르기 또는 자르기 종료 허용</td>
+                            <td>Crop tool + Enter or Esc</td>
+                        </tr>
+                        <tr>
+                            <td>자르기 차폐 끄기 및 켜기</td>
+                            <td>/ (forward slash)</td>
+                        </tr>
+                        <tr>
+                            <td>프로텍터 만들기</td>
+                            <td>Ruler tool + Alt-drag end point</td>
+                        </tr>
+                        <tr>
+                            <td>눈금자 눈금에 스냅 가이드(보기 > 스냅을 선택하지 않은 경우는 제외)</td>
+                            <td>Shift-drag guide</td>
+                        </tr>
+                        <tr>
+                            <td>Convert between horizontal and vertical guide</td>
+                            <td>Alt-drag guide</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>선택 항목 변형, 경계와 패스 선택</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>중심에서 변환 또는 반사</td>
+                            <td>Alt</td>
+                        </tr>
+                        <tr>
+                            <td>제한하기</td>
+                            <td>Shift</td>
+                        </tr>
+                        <tr>
+                            <td>비틀기</td>
+                            <td>Control</td>
+                        </tr>
+                        <tr>
+                            <td>적용하기</td>
+                            <td>Enter</td>
+                        </tr>
+                        <tr>
+                            <td>취소하기</td>
+                            <td>Control + . (period) or Esc</td>
+                        </tr>
+                        <tr>
+                            <td>중복된 데이터로 자유롭게 변환</td>
+                            <td>Control + Alt + T</td>
+                        </tr>
+                        <tr>
+                            <td>중복 데이터로 다시 변환</td>
+                            <td>Control + Shift + Alt + T</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>패스 수정</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>여러 앵커 포인트 선택</td>
+                            <td>Direct selection tool + Shift-click</td>
+                        </tr>
+                        <tr>
+                            <td>모든 패스 선택</td>
+                            <td>Direct selection tool + Alt-click</td>
+                        </tr>
+                        <tr>
+                            <td>패스 복사</td>
+                            <td>Pen (any Pen tool), Path Selection or Direct Selection tool + Control + Alt-drag</td>
+                        </tr>
+                        <tr>
+                            <td>패스 선택, 펜, 앵커 점 추가, 앵커 점 삭제 또는 점 변환 도구를 직접 선택 도구로 전환</td>
+                            <td>Control</td>
+                        </tr>
+                        <tr>
+                            <td>포인터가 앵커 또는 방향 포인트에 있을 때 펜 도구 또는 자유형 펜에서 점 변환 도구로 전환</td>
+                            <td>Alt</td>
+                        </tr>
+                        <tr>
+                            <td>패스 닫기</td>
+                            <td>Magnetic Pen tool-double-click</td>
+                        </tr>
+                        <tr>
+                            <td>직선 세그먼트로 패스 닫기</td>
+                            <td>Magnetic Pen tool + Alt-double-click</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>페인팅</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>색상 선택기에서 전경색 선택</td>
+                            <td>Any painting tool + Shift + Alt + right-click and drag</td>
+                        </tr>
+                        <tr>
+                            <td>아이드로퍼 도구로 이미지에서 전경색 선택</td>
+                            <td>Any painting tool + Alt or any shape tool + Alt (패스 옵션을 선택한 경우는 제외)</td>
+                        </tr>
+                        <tr>
+                            <td>배경색 선택</td>
+                            <td>Eyedropper tool + Alt-click</td>
+                        </tr>
+                        <tr>
+                            <td>컬러샘플 도구</td>
+                            <td>Eyedropper tool + Shift</td>
+                        </tr>
+                        <tr>
+                            <td>색상표본 삭제</td>
+                            <td>Color sampler tool + Alt-click</td>
+                        </tr>
+                        <tr>
+                            <td>도색 모드에 대한 불투명도, 공차, 강도 또는 노출 설정</td>
+                            <td>모든 페인팅 또는 편집 도구 + 숫자 키(예: 0 = 100%, 1 = 10%, 4 및 5 연속 = 45%) (에어브러시 옵션이 활성화된 경우 Shift + 숫자 키 사용)</td>
+                        </tr>
+                        <tr>
+                            <td>페인팅 모드에 대한 흐름 설정</td>
+                            <td>모든 페인팅 또는 편집 도구 + Shift + 숫자 키(예: 0 = 100%, 1 = 10%, 4 및 5 연속 = 45%) (에어브러시 옵션이 활성화된 경우, Shift를 생략함)</td>
+                        </tr>
+                        <tr>
+                            <td>믹서 브러시 변경 사항 혼합 설정</td>
+                            <td>Alt + Shift + number</td>
+                        </tr>
+                        <tr>
+                            <td>믹서 브러시 변경 습식 설정</td>
+                            <td>Number keys</td>
+                        </tr>
+                        <tr>
+                            <td>믹서 브러시 변경 습기 및 0으로 혼합</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>혼합 모드를 순환</td>
+                            <td>Shift + + (plus) or – (minus)</td>
+                        </tr>
+                        <tr>
+                            <td>배경 또는 표준 레이어에서 채우기 상자 열기</td>
+                            <td>Backspace or Shift + Backspace</td>
+                        </tr>
+                        <tr>
+                            <td>전경색 또는 배경색으로 채우기</td>
+                            <td>Alt + Backspace or Control + Backspace</td>
+                        </tr>
+                        <tr>
+                            <td>히스토리에서 채우기</td>
+                            <td>Control + Alt + Backspace</td>
+                        </tr>
+                        <tr>
+                            <td>채우기 상자 표시</td>
+                            <td>Shift + Backspace</td>
+                        </tr>
+                        <tr>
+                            <td>투명 픽셀 켜기/끄기</td>
+                            <td>/ (forward slash)</td>
+                        </tr>
+                        <tr>
+                            <td>직선으로 점 연결</td>
+                            <td>Any painting tool + Shift-click</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+
+                <h3>혼합 모드</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>혼합 모드를 순환</td>
+                            <td>Shift + + (plus) or – (minus)</td>
+                        </tr>
+                        <tr>
+                            <td>기본</td>
+                            <td>Shift + Alt + N</td>
+                        </tr>
+                        <tr>
+                            <td>섞기</td>
+                            <td>Shift + Alt + I</td>
+                        </tr>
+                        <tr>
+                            <td>뒤쪽(브러시만 해당)</td>
+                            <td>Shift + Alt + Q</td>
+                        </tr>
+                        <tr>
+                            <td>지우기(브러시만 해당)</td>
+                            <td>Shift + Alt + R</td>
+                        </tr>
+                        <tr>
+                            <td>Darken</td>
+                            <td>Shift + Alt + K</td>
+                        </tr>
+                        <tr>
+                            <td>Multiply</td>
+                            <td>Shift + Alt + M</td>
+                        </tr>
+                        <tr>
+                            <td>Color Burn</td>
+                            <td>Shift + Alt + B</td>
+                        </tr>
+                        <tr>
+                            <td>Linear Burn</td>
+                            <td>Shift + Alt + A</td>
+                        </tr>
+                        <tr>
+                            <td>Lighten</td>
+                            <td>Shift + Alt + G</td>
+                        </tr>
+                        <tr>
+                            <td>Screen</td>
+                            <td>Shift + Alt + S</td>
+                        </tr>
+                        <tr>
+                            <td>Color Dodge</td>
+                            <td>Shift + Alt + D</td>
+                        </tr>
+                        <tr>
+                            <td>Linear Dodge</td>
+                            <td>Shift + Alt + W</td>
+                        </tr>
+                        <tr>
+                            <td>Overlay</td>
+                            <td>Shift + Alt + O</td>
+                        </tr>
+                        <tr>
+                            <td>Soft Light</td>
+                            <td>Shift + Alt + F</td>
+                        </tr>
+                        <tr>
+                            <td>Hard Light</td>
+                            <td>Shift + Alt + H</td>
+                        </tr>
+                        <tr>
+                            <td>Vivid Light</td>
+                            <td>Shift + Alt + V</td>
+                        </tr>
+                        <tr>
+                            <td>Linear Light</td>
+                            <td>Shift + Alt + J</td>
+                        </tr>
+                        <tr>
+                            <td>Pin Light</td>
+                            <td>Shift + Alt + Z</td>
+                        </tr>
+                        <tr>
+                            <td>Hard Mix</td>
+                            <td>Shift + Alt + L</td>
+                        </tr>
+                        <tr>
+                            <td>Difference</td>
+                            <td>Shift + Alt + E</td>
+                        </tr>
+                        <tr>
+                            <td>Exclusion</td>
+                            <td>Shift + Alt + X</td>
+                        </tr>
+                        <tr>
+                            <td>Hue</td>
+                            <td>Shift + Alt + U</td>
+                        </tr>
+                        <tr>
+                            <td>Saturation</td>
+                            <td>Shift + Alt + T</td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td>Shift + Alt + C</td>
+                        </tr>
+                        <tr>
+                            <td>Luminosity</td>
+                            <td>Shift + Alt + Y</td>
+                        </tr>
+                        <tr>
+                            <td>Desaturate</td>
+                            <td>Sponge tool + Shift + Alt + D</td>
+                        </tr>
+                        <tr>
+                            <td>Saturate</td>
+                            <td>Sponge tool + Shift + Alt + S</td>
+                        </tr>
+                        <tr>
+                            <td>Dodge/burn shadows</td>
+                            <td>Dodge tool/Burn tool + Shift + Alt + S</td>
+                        </tr>
+                        <tr>
+                            <td>Dodge/burn midtones</td>
+                            <td>Dodge tool/Burn tool + Shift + Alt + M</td>
+                        </tr>
+                        <tr>
+                            <td>Dodge/burn highlights</td>
+                            <td>Dodge tool/Burn tool + Shift + Alt + H</td>
+                        </tr>
+                        <tr>
+                            <td>비트맵 영상의 경우 혼합 모드를 임계값으로, 다른 모든 영상의 경우 보통으로 설정</td>
+                            <td>Shift + Alt + N</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>텍스트 선택 및 편집</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>이미지의 유형 이동</td>
+                            <td>Control-drag type when Type layer is selected</td>
+                        </tr>
+                        <tr>
+                            <td>왼쪽/오른쪽 문자 1자 또는 아래쪽/위 행 1개 또는 왼쪽/오른쪽 단어 1개 선택</td>
+                            <td>Shift + Left Arrow/Right Arrow or Down Arrow/Up Arrow, or Control + Shift + Left Arrow/Right Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>삽입점에서 마우스 클릭점까지 문자 선택</td>
+                            <td>Shift-click</td>
+                        </tr>
+                        <tr>
+                            <td>왼쪽/오른쪽으로 문자 1자 이동, 아래쪽/위로 줄 이동 또는 왼쪽/오른쪽으로 단어 1개 이동</td>
+                            <td>Left Arrow/Right Arrow, Down Arrow/Up Arrow, or Control + Left Arrow/Right Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 패널에서 문자 도면층을 선택한 경우 새 문자 레이어 작성</td>
+                            <td>Shift-click</td>
+                        </tr>
+                        <tr>
+                            <td>단어, 줄, 단락 또는 스토리 선택</td>
+                            <td>Double-click, triple-click, quadruple-click, or quintuple-click</td>
+                        </tr>
+                        <tr>
+                            <td>선택한 유형에 선택 표시/숨기기</td>
+                            <td>Control + H</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트를 편집할 때 텍스트를 변환하기 위한 경계 상자 표시 또는 경계 상자 안에 커서가 있는 경우 이동 도구 활성화</td>
+                            <td>Control</td>
+                        </tr>
+                        <tr>
+                            <td>경계 상자 크기를 조정할 때 경계 상자 내에서 텍스트 축척</td>
+                            <td>Control-drag a bounding box handle</td>
+                        </tr>
+                        <tr>
+                            <td>텍스트 상자를 만드는 동안 텍스트 상자 이동</td>
+                            <td>Spacebar-drag</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>포맷 유형</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>왼쪽, 가운데 또는 오른쪽 정렬</td>
+                            <td>Horizontal Type tool + Control + Shift + L, C, or R</td>
+                        </tr>
+                        <tr>
+                            <td>상단, 중심 또는 하단 정렬</td>
+                            <td>Vertical Type tool + Control + Shift + L, C, or R</td>
+                        </tr>
+                        <tr>
+                            <td>100% 수평 스케일 선택</td>
+                            <td>Control + Shift + X</td>
+                        </tr>
+                        <tr>
+                            <td>100% 수직 스케일 선택e</td>
+                            <td>Control + Shift + Alt + X</td>
+                        </tr>
+                        <tr>
+                            <td>자동 리딩 선택</td>
+                            <td>Control + Shift + Alt + A</td>
+                        </tr>
+                        <tr>
+                            <td>트랙킹 0 선택</td>
+                            <td>Control + Shift + Q</td>
+                        </tr>
+                        <tr>
+                            <td>단락 맞춤, 왼쪽 맞춤 마지막 줄 맞춤</td>
+                            <td>Control + Shift + J</td>
+                        </tr>
+                        <tr>
+                            <td>단락 맞춤, 모두 맞춤</td>
+                            <td>Control + Shift + F</td>
+                        </tr>
+                        <tr>
+                            <td>단락 하이픈 설정/해제</td>
+                            <td>Control + Shift + Alt + H</td>
+                        </tr>
+                        <tr>
+                            <td>단일/모든 라인 구성 켜기/끄기</td>
+                            <td>Control + Shift + Alt + T</td>
+                        </tr>
+                        <tr>
+                            <td>선택한 텍스트 2 포인트 또는 픽셀의 유형 크기 축소 또는 증가</td>
+                            <td>Control + Shift</td>
+                        </tr>
+                        <tr>
+                            <td>선행 2점 또는 픽셀 감소 또는 증가</td>
+                            <td>Alt + Down Arrow or Up Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>기준선 이동 지점 2개 또는 픽셀 감소 또는 증가</td>
+                            <td>Shift + Alt + Down Arrow or Up Arrow</td>
+                        </tr>
+                        <tr>
+                            <td>연석 제거/추적 20/1000 ems 감소 또는 증가</td>
+                            <td>Alt + Left Arrow or Right Arrow</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>패널</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>새 항목에 대한 옵션 설정(액션, 애니메이션, 스타일, 브러시, 도구 사전 설정 및 레이어 콤프 패널 제외)</td>
+                            <td>Alt-click New button</td>
+                        </tr>
+                        <tr>
+                            <td>확인 없이 삭제(브러시 패널 제외)</td>
+                            <td>Alt-click Delete button</td>
+                        </tr>
+                        <tr>
+                            <td>값 적용 및 텍스트 상자 활성화 유지</td>
+                            <td>Shift + Enter</td>
+                        </tr>
+                        <tr>
+                            <td>모든 패널 표시/숨기기</td>
+                            <td>Tab</td>
+                        </tr>
+                        <tr>
+                            <td>도구 상자 및 옵션 막대를 제외한 모든 패널 표시/숨기기</td>
+                            <td>Shift + Tab</td>
+                        </tr>
+                        <tr>
+                            <td>옵션 모음 강조 표시</td>
+                            <td>Select tool and press Enter</td>
+                        </tr>
+                        <tr>
+                            <td>선택한 값을 10씩 증가/감소</td>
+                            <td>Shift + Up Arrow/Down Arrow</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>레이어 수정</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>조정할 특정 채널 선택</td>
+                            <td>Alt + 3 (red), 4 (green), 5 (blue)</td>
+                        </tr>
+                        <tr>
+                            <td>조정할 복합 채널 선택</td>
+                            <td>Alt + 2</td>
+                        </tr>
+                        <tr>
+                            <td>조정 계층 삭제</td>
+                            <td>Delete or Backspace</td>
+                        </tr>
+                        <tr>
+                            <td>수준 또는 곡선에 대한 자동 옵션 정의</td>
+                            <td>Alt-click Auto button</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <h3>브러시 패널</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>브러시 지우기</td>
+                            <td>Alt-click brush</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 이름재설정</td>
+                            <td>Double-click brush</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 크기 조정</td>
+                            <td>Alt + right-click + drag left or right</td>
+                        </tr>
+                        <tr>
+                            <td>브러시 부드러움/경도 감소/증가</td>
+                            <td>Alt + right-click + drag up or down</td>
+                        </tr>
+                        <tr>
+                            <td>이전/다음 브러시 크기 선택</td>
+                            <td>, (comma) or . (period)</td>
+                        </tr>
+                        <tr>
+                            <td>첫 번째/마지막 브러시 선택</td>
+                            <td>Shift + , (comma) or . (period)</td>
+                        </tr>
+                        <tr>
+                            <td>브러시를 위한 정확한 십자선 표시</td>
+                            <td>Caps Lock or Shift + Caps Lock</td>
+                        </tr>
+                        <tr>
+                            <td>에어브러시 옵션 전환</td>
+                            <td>Shift + Alt + P</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <br>
+                <p>MAC ONLY </p> 
+                <h3>클론 소스 패널</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>복제 소스 표시(이미지 오버레이)</td>
+                            <td>⌥ + ⇧</td>
+                        </tr>
+                        <tr>
+                            <td>클론 소스 넛지</td>
+                            <td>⌥ + ⇧ + arrow keys</td>
+                        </tr>
+                        <tr>
+                            <td>클론 소스 회전</td>
+                            <td>⌥ + ⇧ </td>
+                        </tr>
+                        <tr>
+                            <td>클론 소스 확장(크기 증가 또는 감소)</td>
+                            <td>⌥ + ⇧ + [ or ]</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h3>컬러 패널</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>배경색 선택</td>
+                            <td>Alt-click color in color bar</td>
+                        </tr>
+                        <tr>
+                            <td>컬러바 메뉴 표시</td>
+                            <td>Right-click color bar</td>
+                        </tr>
+                        <tr>
+                            <td>색상 선택 항목을 순환</td>
+                            <td>Shift-click color bar</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h3>히스토리 패널</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>새로운 스냅샷 만들기</td>
+                            <td>Alt + New Snapshot</td>
+                        </tr>
+                        <tr>
+                            <td>스냅샵 이름 설정</td>
+                            <td>Double-click snapshot name</td>
+                        </tr>
+                        <tr>
+                            <td>이미지 상태를 앞으로 이동</td>
+                            <td>Control + Shift + Z</td>
+                        </tr>
+                        <tr>
+                            <td>이미지 상태를 뒤로 이동</td>
+                            <td>Control + Alt + Z</td>
+                        </tr>
+                        <tr>
+                            <td>현재 상태를 제외한 모든 이미지 상태 복제</td>
+                            <td>Alt-click the image state</td>
+                        </tr>
+                        <tr>
+                            <td>영구적으로 기록 지우기(실행 취소 안 함)</td>
+                            <td>Alt + Clear History (내역 패널 팝업 메뉴)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h3>레이어 패널</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>레이어 투명도를 선택 항목으로 로드</td>
+                            <td>Control-click layer thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>현재 선택 항목에 추가</td>
+                            <td>Control + Shift-click layer thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>현재 선택에서 빼기</td>
+                            <td>Control + Alt-click layer thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>현재 선택과 교차</td>
+                            <td>Control + Shift + Alt-click layer thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>필터 마스크를 선택 항목으로 로드</td>
+                            <td>Control-click filter mask thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>새로운 레이어</td>
+                            <td>Control + Shift+ N</td>
+                        </tr>
+                        <tr>
+                            <td>복사를 통해 새 레이어 만들기</td>
+                            <td>Control + J</td>
+                        </tr>
+                        <tr>
+                            <td>자르기를 통해 새 레이어 만들기</td>
+                            <td>Shift + Control + J</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 그룹화</td>
+                            <td>Control + G</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 그룹화 풀기</td>
+                            <td>Control + Shift + G</td>
+                        </tr>
+                        <tr>
+                            <td>클리핑 마스크 만들기/해제</td>
+                            <td>Control + Alt + G</td>
+                        </tr>
+                        <tr>
+                            <td>모든 레이어 선택</td>
+                            <td>Control + Alt + A</td>
+                        </tr>
+                        <tr>
+                            <td>보이는 레이어 합치기</td>
+                            <td>Control + Shift + E</td>
+                        </tr>
+                        <tr>
+                            <td>대화 상자를 사용하여 새 빈 레이어 생성</td>
+                            <td>Alt-click New Layer button</td>
+                        </tr>
+                        <tr>
+                            <td>대상 레이어 아래에 새 레이어 생성</td>
+                            <td>Control-click New Layer button</td>
+                        </tr>
+                        <tr>
+                            <td>제일 위에 있는 레이어 선택</td>
+                            <td>Alt + . (period)</td>
+                        </tr>
+                        <tr>
+                            <td>제일 아래에 있는 레이어 선택</td>
+                            <td>Alt + , (comma)</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 패널에서 레이어 선택에 추가</td>
+                            <td>Shift + Alt + [ or ]</td>
+                        </tr>
+                        <tr>
+                            <td>다음 레이어 다운/업 선택</td>
+                            <td>Alt + [ or ]</td>
+                        </tr>
+                        <tr>
+                            <td>대상 레이어 아래로/위로 이동</td>
+                            <td>Control + [ or ]</td>
+                        </tr>
+                        <tr>
+                            <td>표시되는 모든 레이어의 복사본을 대상 레이어로 병합</td>
+                            <td>Control + Shift + Alt + E</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 합치기</td>
+                            <td>병합할 레이어를 강조 표시한 다음 Control + E</td>
+                        </tr>
+                        <tr>
+                            <td>레이어를 맨 아래 또는 맨 위로 이동</td>
+                            <td>Control + Shift + [ or ]</td>
+                        </tr>
+                        <tr>
+                            <td>현재 레이어를 아래 레이어에 복사</td>
+                            <td>Alt + Merge Down command from the Panel pop‑up menu</td>
+                        </tr>
+                        <tr>
+                            <td>현재 선택된 레이어 위에 표시되는 모든 레이어를 새 레이어로 병합</td>
+                            <td>Alt + Merge Visible command from the Panel pop‑up menu</td>
+                        </tr>
+                        <tr>
+                            <td>이 레이어 또는 레이어 그룹만 표시/숨기기 또는 모든 레이어 또는 레이어 그룹</td>
+                            <td>Right-click the eye icon</td>
+                        </tr>
+                        <tr>
+                            <td>현재 표시된 다른 모든 레이어 표시/숨기기</td>
+                            <td>Alt-click the eye icon</td>
+                        </tr>
+                        <tr>
+                            <td>대상 레이어 또는 마지막으로 적용된 잠금 투명도 전환</td>
+                            <td>/ (forward slash)</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 효과/스타일 편집, 옵션</td>
+                            <td>Double-click layer effect/style</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 효과/스타일 숨기기</td>
+                            <td>Alt-double-click layer effect/style</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 효과/스타일 편집/td><td>Double-click layer</td>
+                        </tr>
+                        <tr>
+                            <td>벡터 마스크 사용 안 함/활성화</td>
+                            <td>Shift-click vector mask thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 마스크 표시 옵션 대화 상자</td>
+                            <td>Double-click layer mask thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 마스크 켜기/끄기</td>
+                            <td>Shift-click layer mask thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>필터 마스크 켜기/끄기</td>
+                            <td>Shift-click filter mask thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 마스크/복합 이미지 간 전환</td>
+                            <td>Alt-click layer mask thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>필터 마스크/복합 이미지 전환</td>
+                            <td>Alt-click filter mask thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 마스크 켜기/끄기에 대한 rubylith 모드 전환</td>
+                            <td>\ (backslash), or Shift + Alt-click</td>
+                        </tr>
+                        <tr>
+                            <td>모든 유형 선택, 임시로 유형 선택 도구</td>
+                            <td>Double-click type layer thumbnail</td>
+                        </tr>
+                        <tr>
+                            <td>클리핑 마스크 만들기</td>
+                            <td>Alt-click the line dividing two layers</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 이름 재설정</td>
+                            <td>Double-click the layer name</td>
+                        </tr>
+                        <tr>
+                            <td>필터 세팅 편집</td>
+                            <td>Double-click the filter effect</td>
+                        </tr>
+                        <tr>
+                            <td>필터 혼합 옵션 편집</td>
+                            <td>Double-click the Filter Blending icon</td>
+                        </tr>
+                        <tr>
+                            <td>현재 레이어 또는 레이어 집합 아래에 새 레이어 그룹 생성</td>
+                            <td>Control-click New Group button</td>
+                        </tr>
+                        <tr>
+                            <td>대화상자를 사용하여 새 레이어 그룹 작성</td>
+                            <td>Alt-click New Group button</td>
+                        </tr>
+                        <tr>
+                            <td>모든/선택을 숨기는 레이어 마스크 작성</td>
+                            <td>Alt-click Add Layer Mask button</td>
+                        </tr>
+                        <tr>
+                            <td>all/path 영역을 표시하는 벡터 마스크 작성</td>
+                            <td>Control-click Add Layer Mask button</td>
+                        </tr>
+                        <tr>
+                            <td>모든 경로를 숨기거나 경로 영역을 표시하는 벡터 마스크 작성</td>
+                            <td>Control + Alt-click Add Layer Mask button</td>
+                        </tr>
+                        <tr>
+                            <td>레이어 그룹 특성 표시</td>
+                            <td>Right-click layer group and choose Group Properties, or double-click group</td>
+                        </tr>
+                        <tr>
+                            <td>여러 연속 레이어 선택/선택 해제</td>
+                            <td>Shift-click</td>
+                        </tr>
+                        <tr>
+                            <td>여러 연속 레이어 선택/선택 해제</td>
+                            <td>Control-click</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h3>패스 패널</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>선택 항목으로 패스 불러오기</td>
+                            <td>Control-click pathname</td>
+                        </tr>
+                        <tr>
+                            <td>선택 항목에 패스 추가</td>
+                            <td>Control + Shift-click pathname</td>
+                        </tr>
+                        <tr>
+                            <td>선택 항목에서 패스 추출</td>
+                            <td>Control + Alt-click pathname</td>
+                        </tr>
+                        <tr>
+                            <td>패스 교차점을 선택으로 유지</td>
+                            <td>Control + Shift + Alt-click pathname</td>
+                        </tr>
+                        <tr>
+                            <td>패스 숨기기</td>
+                            <td>Control + Shift + H</td>
+                        </tr>
+                        <tr>
+                            <td>전경 색상 버튼을 사용하여 채우기 패스 옵션 설정, 브러시를 사용한 스트로크 패스, 선택 버튼으로 로드 패스 로드 버튼, 선택에서 작업 패스 만들기 버튼 및 새 패스 만들기 버튼</td>
+                            <td>Alt-click button</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h3>스와치 패널</h3>
+                <table class="table table table-striped">
+                    <thead>
+                        <tr>
+                            <th>설명</th>
+                            <th>단축키</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>전경색에서 새 스왓치 만들기</td>
+                            <td>Click in empty area of panel</td>
+                        </tr>
+                        <tr>
+                            <td>배경색에서 새 스왓치 만들기</td>
+                            <td>Control-click swatch</td>
+                        </tr>
+                        <tr>
+                            <td>스왓치 지우기</td>
+                            <td>Alt-click swatch</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+			</div>
+			<!--//span12-->
+		</div>
+		<!--//row-fluid-->
+	</div>
+	<!-- //contents -->
+
+	<!-- //footer -->
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h5>Webstoryboy</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+
+	<!-- script -->
+	<script src="../assets/js/jquery-1.9.1.min.js"></script>
+	<script src="../assets/js/bootstrap-collapse.js"></script>
+	<script src="../assets/js/bootstrap-transition.js"></script>
+	<script src="../assets/js/google-code-prettify/prettify.js"></script>
+	<script src="../assets/js/application.js"></script>
+	<script src="../assets/js/jquery.fancybox.pack.js"></script>
+    <script>
+	   $(".fancybox").fancybox();
+	</script>
+</body>
+
+</html>

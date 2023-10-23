@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        * {margin: 0; padding: 0; background: #000;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    
+    <script type="text/javascript" src="../assets2/js/jquery-1.12.4.min.js"></script>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        var ctxW = ctx.canvas.width + 100;
+        var ctxH = ctx.canvas.height + 100;
+        
+        
+       
+        var snowflakes = [];
+        //var totalCount = 10;
+        
+        var bgImage = new Image();
+        bgImage.src = "https://steamuserimages-a.akamaihd.net/ugc/780658586478492921/694B16D99031AB6EB094B130F3522520379BB98E/";
+        
+        
+        function addSnowflakes() {
+            
+            var x = Math.floor(Math.random() * ctxW) - 100;
+            var y = 0;
+            var size = Math.floor(Math.random() * 8) + 1;
+            
+            snowflakes.push({"x":x, "y":y, "size": size});
+        }
+        
+        function snow(){
+            addSnowflakes();
+            
+            ctx.fillStyle = "rgba(255,255,255,0.75)";
+            for(var i in snowflakes){
+                ctx.beginPath();
+                var ty = snowflakes[i].y += snowflakes[i].size * 0.5;
+                ctx.arc(snowflakes[i].x, ty, snowflakes[i].size * 0.5, 0, Math.PI*2);
+                ctx.fill();
+                
+                if(snowflakes[i].y > ctxH){
+                    snowflakes.splice(i, 1);
+                }
+            }
+        }
+        
+        function displayCount(){
+            ctx.fillStyle = "white";
+            ctx.font = "bold 14px Arial, sans-serif";
+            ctx.fillText(snowflakes.length,10,20);
+        }
+        
+        
+        function animate(){
+            ctx.save();
+            ctx.clearRect(0,0, ctxW, ctxH);
+            ctx.drawImage(bgImage, 0, 0);
+            
+            displayCount();
+            ctx.rotate(-0.2);
+            snow();
+            ctx.restore();
+        }
+        
+        
+        var animateInterval = setInterval(animate, 30);
+        
+    </script>
+</body>
+</html>

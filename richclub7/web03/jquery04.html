@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .li9 {color: brown}
+        .li10 {color: chocolate;}
+    </style>
+</head>
+<body>
+    <h1>변경</h1>
+    <ul class="list">
+        <li class="li1">.clone() </li>
+        <li class="li2">.unwrap() </li>
+        <li class="li3">.wrap()</li>
+        <li class="li4">.wrapAll()</li>
+    </ul>
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(".list").append("<li class='li5'>.wrapInner()</li>");
+        $(".list").prepend("<li class='li6'>.append()</li>");
+        
+        $("<li class='li7'>.appendTo()</li>").appendTo(".list");
+        $("<li class='li8'>.prepend()</li>").prependTo(".list");
+        
+        $(".li1").before("<li class='li9'>.after()</li>");
+        $(".li1").after("<li class='li10'>.before()</li>");
+        
+        $("<li class='li11'>.after()</li>").insertBefore(".li4");
+        $("<li class='li12'>.after()</li>").insertAfter(".li4");
+        
+        //제목 부분 컬러를 빨간색으로 변경해주세요!
+        //$("h1").css("color","red");
+        
+        $("h1").replaceWith("<h1>MANIPULATION</h1>");
+        $("h1").css("color","red");
+        $("h1").text("다시 변경");
+        $("h1").html("또 <em>다시</em> 변경");
+        
+        var text = $("h1").text();
+        var text2 = $("h1").clone();
+        //alert(text);
+        
+        $("body").prepend(text2);
+        $(".li10").remove();
+        
+        $(".list").wrap("<div />");
+    </script>
+</body>
+</html>
+
+
+
+

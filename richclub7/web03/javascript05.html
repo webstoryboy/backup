@@ -1,0 +1,42 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        // 변수 x = 100;
+        var x = 111;
+        
+        if( x % 2 == 0 ){
+            document.write("짝수입니다.");
+        } else {
+            document.write("홀수입니다.");
+        }
+        
+        var y = window.prompt("숫자를 입력해주세요!");
+        if( y % 2 == 0){
+            document.write("당신이 입력한 숫자는 짝수입니다.");
+        } else {
+            document.write("당신이 입력한 숫자는 홀수입니다.");
+        }
+        
+        var useID = window.prompt("아이디를 입력해주세요");
+        var usePW = window.prompt("비밀번호를 입력해주세요");
+        
+        if( useID == "webstoryboy" && usePW == "1234"){
+            //두개의 조건이 맞으면 로그인
+            alert("환영합니다.");
+        } else {
+            //두개중에 하나라도 틀리면 로그인 못함
+            alert("아이디 또는 비밀번호가 틀렸습니다.");
+        }
+        
+        
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+
+

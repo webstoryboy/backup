@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        li {margin: 8px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    </style>
+</head>
+<body>
+    <h1>.attr()</h1>
+    <div class="choice">
+        <a href="#" class="btn1">src 값을 가져옵니다.</a>
+        <a href="#" class="btn2">alt 값을 가져옵니다.</a>
+        <a href="#" class="btn3">width 값을 가져옵니다.</a><br>
+        <a href="#" class="btn4">이미지의 크기를 400으로 변경합니다.</a>
+        <a href="#" class="btn5">이미지의 크기를 500으로 변경합니다.</a>
+        <a href="#" class="btn6">이미지의 크기를 600으로 변경합니다.</a><br>
+        <a href="#" class="btn7">이미지(img02)를 변경합니다.</a>
+        <a href="#" class="btn8">이미지(img03)를 변경합니다.</a>
+        <a href="#" class="btn9">이미지(img04)를 변경합니다.</a><br>
+        <a href="#" class="btn10">이미지(img02)와 크기(400)를 변경합니다.</a>
+        <a href="#" class="btn11">이미지(img03)와 크기(500)를 변경합니다.</a>
+        <a href="#" class="btn12">이미지(img04)와 크기(600)를 변경합니다.</a><br>
+    </div>
+    <div class="list">
+        <img src="assets/img/img01.png" alt="이미지1" width="300">
+        <p class="text"></p>
+    </div>
+    
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(".choice .btn1").click(function(){
+            var text = $(".list img").attr("src");
+            $(".list .text").text(text);
+        });
+        $(".choice .btn2").click(function(){
+            var text = $(".list img").attr("alt");
+            $(".list .text").text(text);
+        });
+        $(".choice .btn3").click(function(){
+            var text = $(".list img").attr("width");
+            $(".list .text").text(text);
+        });
+        
+        $(".choice .btn4").click(function(){
+            $(".list img").attr("width","400");
+        });
+        $(".choice .btn5").click(function(){
+            $(".list img").attr("width","500");
+        });
+        $(".choice .btn6").click(function(){
+            $(".list img").attr("width","600");
+        });
+        
+        $(".choice .btn7").click(function(){
+            $(".list img").attr("src","assets/img/img02.png");
+        });
+        $(".choice .btn8").click(function(){
+            $(".list img").attr("src","assets/img/img03.png");
+        });
+        $(".choice .btn9").click(function(){
+            $(".list img").attr("src","assets/img/img04.png");
+        });
+        
+        $(".choice .btn10").click(function(){
+            $(".list img").attr({"src":"assets/img/img02.png","width":"400"});
+            $(".list .text").text("이미지 주소값 : "+$(".list img").attr("src") + " / " + "이미지 위드 값: " + $(".list img").attr("width") )
+        });
+        $(".choice .btn11").click(function(){
+            $(".list img").attr({"src":"assets/img/img03.png","width":"500"});
+            $(".list .text").text("이미지 주소값 : "+$(".list img").attr("src") + " / " + "이미지 위드 값: " + $(".list img").attr("width") )
+        });
+        $(".choice .btn12").click(function(){
+            $(".list img").attr({"src":"assets/img/img04.png","width":"600"});
+            $(".list .text").text("이미지 주소값 : "+$(".list img").attr("src") + " / " + "이미지 위드 값: " + $(".list img").attr("width") )
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0;}
+        li {list-style: none}
+        a {text-decoration: none;}
+        #tab-menu {width: 300px; margin: 100px auto;}
+        #tab-tit {overflow: hidden;}
+        #tab-tit li {float: left; width: 25%; text-align: center;}
+        #tab-tit li a {display: block; background: #777; color: #fff; padding: 10px; text-transform: uppercase}
+        
+    </style>
+</head>
+<body>
+    
+    
+    <div id="tab-menu">
+        <div id="tab-tit">
+            <ul>
+                <li><a href="#">tab1</a></li>
+                <li><a href="#">tab2</a></li>
+                <li><a href="#">tab3</a></li>
+                <li><a href="#">tab4</a></li>
+            </ul>
+        </div>
+        <div id="tab-img">
+            <img src="assets/img/aimg1.png" alt="이미지" width="300">
+        </div>
+    </div>
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        //텍스트 클릭하면 글씨 색을 빨간색으로 변경해주세요!
+        $("#tab-tit a").click(function(){
+            //$("#tab-tit a").css("color","red");
+            $(this).css("color","red");
+            
+            //this를 쓰는 경우
+            //자기자신을 표현할 때
+            //클릭한 타겟을 설정할 때
+        });
+        
+        //텍스트 클릭하면 클릭한 텍스트를 MENU로 변경하세요!
+         $("#tab-tit a").click(function(){ 
+            $(this).text("MENU");
+         });
+        
+        //이미지 박스의 아이디 값을 출력하세요
+        var id = $("img").parent().attr("id");
+        //alert(id);
+        
+        //세번째 탭 메뉴의 글씨를 출력해주세요!
+        var text = $("#tab-tit ul li").eq(2).text();
+        //alert(text);
+        
+        //이미지 박스의 아이디를 tabImg로 변경해주세요!
+        $("img").parent().attr("id","tabImg");
+        
+        $("#tab-tit ul li").eq(0).click(function(){
+            $("#tabImg > img").attr({"src":"assets/img/aimg1.png", "alt":"이미지1"  });
+        });
+        $("#tab-tit ul li").eq(1).click(function(){
+            $("#tabImg > img").attr({"src":"assets/img/aimg2.png", "alt":"이미지2"  });
+        });
+        $("#tab-tit ul li").eq(2).click(function(){
+            $("#tabImg > img").attr({"src":"assets/img/aimg1.png", "alt":"이미지3"  });
+        });
+        $("#tab-tit ul li").eq(3).click(function(){
+            $("#tabImg > img").attr({"src":"assets/img/aimg2.png", "alt":"이미지4"  });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

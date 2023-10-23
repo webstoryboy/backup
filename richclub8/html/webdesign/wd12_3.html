@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웹 디자인 기능사 - 탭메뉴</title>
+
+    <style>
+        /* reset */
+        * {margin: 0; padding: 0;}
+        a {color: #333; text-decoration: none;}
+        li {list-style: none;}
+        table {border-spacing: 0;}
+        .clearfix::before, .clearfix::after {display: block; content:''; clear:both;}
+
+        /* header */
+        #header {
+          position: relative; z-index: 1000;
+          width: 1190px; margin: 0 auto; 
+          border: 2px solid #000; height: 100px; 
+          padding: 10px;
+        }
+        #header .logo {
+          float: left; width:250px; height:98px;  
+          border: 1px solid #000; 
+          line-height: 98px; 
+          text-align: center;
+        }
+
+
+
+
+
+        /*#header .nav {
+          float: right; width:600px; height:39px; 
+          border: 1px solid #000; margin-top: 28px;
+
+        #header .nav li {
+          position: relative; float: left; 
+          width: 25%; text-align: center; 
+          border-right: 1px solid #000; 
+          box-sizing: border-box;
+        }
+        #header .nav li:last-child {border-right: 0;}
+        #header .nav li a {padding: 10px; display: block; }
+        #header .nav li a:hover {background: #ccc;}
+        #header .nav li ul.submenu {
+          display: none;
+          position: absolute; left: 0; top: 40px;
+          background: #fff;
+          border: 1px solid #000;
+        }
+        #header .nav li ul.submenu li {
+          width: 100%;
+          border-right: 0;
+        }
+        #header .nav li ul.submenu li a:hover{
+          background: #ccc;
+        }*/
+
+        /* banner */
+        #banner {
+          position: relative; z-index: 900;
+          width: 1210px; margin: 0 auto; 
+          border: 2px solid #000;
+          margin-top:10px;
+          text-align: center;
+          overflow: hidden; height: 363px;
+        }
+
+        /* contents */
+        #contents {
+          width: 1190px; margin: 0 auto; 
+          border: 2px solid #000; height: 250px; 
+          margin-top:10px; padding: 10px;
+        }
+        #contents > div {
+          float: left; 
+          width: 32.444%; 
+          height: 247px; 
+          border: 1px solid #000; 
+          box-shadow: border-box; 
+          margin-right: 1%;
+        }
+        #contents > div:last-child {margin-right: 0;}
+        #contents > div {text-align: center; line-height: 247px; }
+        #contents > div a {color: #e12261;}
+
+        /* footer */
+        #footer {
+          width: 1200px; margin: 0 auto; 
+          border: 2px solid #000; 
+          height: 150px; margin-top: 10px; 
+          padding: 5px; line-height: 150px; 
+          text-align: center;
+        }
+
+
+
+/*.menu {}
+.menu li {float: left; width: 25%; position: relative; background: #555;}
+.menu li a {display: block; padding: 10px; background: #ddd;}
+.menu li a:hover {background: #ccc;}
+.menu li ul.subMenu {width: 150px; position: absolute; left: 0; top: 45px;}
+.menu li ul.subMenu li {float: none; width: 150px;}
+.menu li ul.subMenu li a {background: #eee;}
+.menu li ul.subMenu li a:hover {background: #999;}*/
+
+.nav {
+    width: 600px;
+    height: 45px;
+    line-height: 45px;
+    float: right;
+    text-align: center;
+    z-index: 1000;
+}
+
+.nav ul {background: red}
+.nav ul > li {width: 25%; float: left; position: relative; background: #ccc;}
+.nav ul > li > a:hover {background-color: #0076BE;color: #fff;}
+.nav ul > li > ul.subMenu {display: none; width: 150px; position: absolute; top: 45px; background-color: #999;}
+.nav ul > li > ul.subMenu > li {display: block; width: 150px; height: 45px;}
+.nav ul > li > ul.subMenu > li > a {color: #fff; }
+.nav ul > li > ul.subMenu > li > a:hover{background-color: #000;color: #fff;}
+
+
+
+      #header {
+          position: absolute;
+          left: 50%; top: 0;
+          transform: translateX(-50%);
+          height: 100px;
+      }
+      #banner {
+        margin-top: 140px;
+      }
+      .nav {
+        margin-top: 50px;
+      }
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+      
+   
+    <header id="header" class="clearfix">
+        <h1 class="logo"><a href="#">로고</a></h1>
+        
+        <nav class="nav clearfix">
+          <ul>
+              <li>
+                  <a href="#">개인</a>
+                  <ul class="subMenu">
+                      <li><a href="#">조회</a></li>
+                      <li><a href="#">이체</a></li>
+                      <li><a href="#">공과금</a></li>
+                      <li><a href="#">예금/신탁</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">기업</a>
+                  <ul class="subMenu">
+                      <li><a href="#">조회</a></li>
+                      <li><a href="#">이체</a></li>
+                      <li><a href="#">전자결재</a></li>
+                      <li><a href="#">수표/어음</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">금융상품</a>
+                  <ul class="subMenu">
+                      <li><a href="#">저축상품</a></li>
+                      <li><a href="#">대출상품</a></li>
+                      <li><a href="#">투자상품</a></li>
+                      <li></li>
+                  </ul>
+              </li>
+              <li><a href="#">카드</a>
+                  <ul class="subMenu">
+                      <li><a href="#">카드정보</a></li>
+                      <li><a href="#">카드신청</a></li>
+                      <li><a href="#">이용내역조회</a></li>
+                      <li></li>
+                  </ul>
+              </li>
+          </ul>
+      </nav>  
+
+    </header>
+    <!-- //header -->
+    
+    <section id="banner">
+       
+    </section>
+    <!-- //banner -->
+    
+    <section id="contents" class="clearfix">
+        <div class="cont1">
+            <h2>공지사항</h2>
+        </div>
+        <div class="cont2">
+            <h2>갤러리</h2>
+        </div>
+        <div class="cont3">
+            <h2>팝업</h2>
+        </div>
+    </section>
+    <!-- //contents -->
+    
+    <footer id="footer">
+        <h2>푸터</h2>
+    </footer>
+    <!-- //footer -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+
+      // $(".nav > ul > li").mouseover(function(){
+      //     $(this).find(".subMenu").stop().slideDown(200);
+      // });
+      // $(".nav > ul > li").mouseout(function(){
+      //     $(this).find(".subMenu").stop().slideUp(200);
+      // });
+
+      // $(".nav > ul > li").mouseenter(function(){        
+      //   $(".nav > ul > li > ul").stop().slideDown(200);    
+      // });
+
+      // $(".nav > ul > li").mouseleave(function(){
+      //   $(".nav > ul > li > ul").stop().slideUp(200);
+      // });
+
+      $(".nav > ul > li").mouseenter(function(){        
+        $(".nav > ul > li > ul").stop().slideDown(200);   
+        $("#header").stop().animate({height : "260px"},300);
+      });
+
+      $(".nav > ul > li").mouseleave(function(){
+        $(".nav > ul > li > ul").stop().slideUp(200);
+        $("#header").stop().animate({height : "100px"},300);
+      });
+
+
+
+      
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+

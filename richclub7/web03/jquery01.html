@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <style>
+        /* #list1 글씨 색을 red로 변경 */
+        #list1 li {color: blue}
+    </style>
+    <script>
+        window.onload = function(){
+            var list2 = document.getElementById("list2");
+            var liList = list2.getElementsByTagName("li");
+            
+            for(var i =0; i <= liList.length; i++){
+                var li = liList[i];
+                li.style.color = "#f00";
+            }
+        }
+    </script>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#list3 li").css("color","yellow");
+        });
+    </script>
+    
+    
+</head>
+<body>
+    <h1>jquery</h1>
+    <ul id="list1" class="list">
+        <li class="one1">one1</li>
+        <li class="one2">one2</li>
+        <li class="one3">one3</li>
+        <li class="one4">one4</li>
+        <li class="one5">one5</li>
+        <li class="one6">one6</li>
+        <li class="one7">one7</li>
+        <li class="one8">one8</li>
+        <li class="one9">one9</li>
+        <li class="one10">one10</li>
+    </ul>
+    <ul id="list2" class="list">
+        <li class="one1">one1</li>
+        <li class="one2">one2</li>
+        <li class="one3">one3</li>
+        <li class="one4">one4</li>
+        <li class="one5">one5</li>
+        <li class="one6">one6</li>
+        <li class="one7">one7</li>
+        <li class="one8">one8</li>
+        <li class="one9">one9</li>
+        <li class="one10">one10</li>
+    </ul>
+    <ul id="list3" class="list">
+        <li class="one1">one1</li>
+        <li class="one2">one2</li>
+        <li class="one3">one3</li>
+        <li class="one4">one4</li>
+        <li class="one5">one5</li>
+        <li class="one6">one6</li>
+        <li class="one7">one7</li>
+        <li class="one8">one8</li>
+        <li class="one9">one9</li>
+        <li class="one10">one10</li>
+    </ul>
+</body>
+</html>

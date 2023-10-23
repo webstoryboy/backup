@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A Documentation by JavaScript.">
+	<meta name="author" content="JavaScript documentation">
+
+	<title>jQuery Animation</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="../assets2/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Documentation extras -->
+	<link href="../assets2/css/docs.min.css" rel="stylesheet">
+	<link href="../assets2/css/prism.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+
+	<!-- web font -->
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+    
+    <style>
+        .box {position: relative; min-height: 200px;}
+        .circle {
+            width: 90px; height: 90px;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+            color: #fff;
+            line-height: 90px;
+            border-radius: 50%;
+            position: absolute;
+            margin: 5px;
+            text-align: center;
+            font-size: 13px;
+            border: 0 solid #72afd3;
+        }
+        .btn0 {
+            display: inline-block;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+            padding: 3px 10px 0 10px;
+            margin: 2px 2px 5px 2px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #fff;
+        }
+        .btn0:hover, .btn0:active, .btn0:focus {color: #fff;}
+    </style>
+    
+    
+
+</head>
+
+<body>
+	<a class="sr-only" href="#content">Skip to main content</a>
+
+	<header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand">webstoryboy &lt;/doc&gt;</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../jquery/jquery.html">jQuery</a></li>
+					<li><a href="../javascript/javascript.html">JavaScript</a></li>
+                    <li><a href="../animation-css/index.html">CSS Animation</a></li>
+                    <li><a href="../animation-js/index.html">JS Animation</a></li>
+                    <li><a href="../animation-canvas/index.html">Canvas Animation</a></li>
+                    <li><a href="../animation-svg/index.html">SVG Animation</a></li>
+                    <li><a href="../animation-gsap/index.html">GSAP Animation</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="bs-header" style="background-image: linear-gradient(45deg, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);" id="content">
+		<div class="container">
+			<h1>jQuery Animation v1.0 &lt;/doc&gt;</h1>
+			<p><a href="https://webstoryboy.co.kr">webstoryboy.co.kr</a></p>
+		</div>
+	</div>
+
+	<div class="container bs-docs-container">
+		<div class="row">
+			
+            <div class="col-md-9">
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro1" class="page-header">ANIMAITON</h2>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>유형</th>
+                                    <th>메서드</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Basic</td>
+                                    <td>.hide()</td>
+                                    <td>선택한 요소를 숨깁니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.show()</td>
+                                    <td>선택한 요소를 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.toggle() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소를 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="4">Fading</td>
+                                    <td>.fadeIn()</td>
+                                    <td>선택한 요소를 천천히 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeOut()</td>
+                                    <td>선택한 요소를 천천히 숨김니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeto()</td>
+                                    <td>선택한 요소를 투명도를 조절합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeToggle()</td>
+                                    <td>선택한 요소를 천천히 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Sliding</td>
+                                    <td>.slideDown()</td>
+                                    <td>선택한 요소를 슬라이딩으로 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.slideToggle()</td>
+                                    <td>선택한 요소를 슬라이딩으로 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.slideUp()</td>
+                                    <td>선택한 요소를 슬라이딩으로 숨김니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="7">custom</td>
+                                    <td>.animate() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소에 애니메이션을 적용합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.clearQueue()</td>
+                                    <td>선택한 요소에 첫 번째 큐만 실행하고 대기 중인 큐는 모두 삭제합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.delay()</td>
+                                    <td>선택한 요소의 애니메이션 효과를 지연합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.dequeue()</td>
+                                    <td>선택한 요소 스택에 쌓인 큐를 모두 제거합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.finish()</td>
+                                    <td>선택한 요소의 진행중인 애니메이션을 강제로 종료합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.queue()</td>
+                                    <td>선택한 요소 스택에 대기 중인 큐를 반환하거나 추가할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.stop()</td>
+                                    <td>선택한 요소의 실행중인 애니메이션을 정지합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+				</div>
+				<!-- //Introduction -->
+                
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro2" class="page-header">.animate()</h2>
+                    
+                    <p class="bs-callout bs-callout-info">
+                        $("selector").animate(properties);<br>
+                        $("selector").animate(properties, duration);<br>
+                        $("selector").animate(properties, duration, easing);<br>
+                        $("selector").animate(properties, duration, easing, collback);
+                    </p>
+                    <p>properties는 애니메이션의 속성과 값을 설정합니다.</p>
+                    <p class="bs-callout bs-callout-info">
+                        properties에 올 수 있는 값:<br>
+                        border, margin, padding, height, width, font-size, bottom, left, top, right, line-height;<br>
+                        properties에 올 수 없는 값:<br>
+                        background-color, transform
+                    </p>
+                    <p>속성 표기 방법</p>
+                    <p class="bs-callout bs-callout-info">
+                        //폰트 사이즈를 현재 크기에서 20px로 2초동안 애니메이션합니다.<br>
+                        $("selector").animate({ "font-size":"20px" },2000);<br>
+                        $("selector").animate({ fontSize:"20px"},2000);<br>
+                        //선택한 요소의 왼쪽 오른쪽 마진값을 100px로 600밀리세컨드 동안 애니메이션 합니다.<br>
+                        $("selector").animate({ marginLeft:100, marginRight:100 },600);<br>
+                        $("selector").animate({ "margin-Left":"100px", "margin-right":"100px" },"slow");<br>
+                        //선택한 요소의 현재 위치를 기준으로 오른쪽으로 2초마다 20px만큼 이동한 후, 콜백함수를 호출합니다.<br>
+                        $("selector").animate({ left:"+=20" },2000,function(){});
+                    </p>
+                    
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro3" class="page-header">.animate() </h4>
+                    <p>기본적인 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn3">Start</a>
+                    <div class="well">
+                        <div class="box box3">
+                            <div class="circle">Circle</div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">$(".btn3").click(function(){
+    $(".box3 > .circle")
+        .animate({ left: "80%" },1000)
+        .animate({ top: "60%" },1000)
+        .animate({ left: "0%" },1000)
+        .animate({ top: "0%" },1000);
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro4" class="page-header">easing </h4>
+                    <p>제이쿼리 애니메이션 움직임 효과입니다.</p>
+                    <div class="btn-wrap">
+                        <span class="btn0" data-easing="linear">linear</span>
+                        <span class="btn0" data-easing="swing">swing</span>
+                        <span class="btn0" data-easing="easeInQuad">easeInQuad</span>
+                        <span class="btn0" data-easing="easeOutQuad">easeOutQuad</span>
+                        <span class="btn0" data-easing="easeInOutQuad">easeInOutQuad</span>
+                        <span class="btn0" data-easing="easeInCubic">easeInCubic</span>
+                        <span class="btn0" data-easing="easeOutCubic">easeOutCubic</span>
+                        <span class="btn0" data-easing="easeInOutCubic">easeInOutCubic</span>
+                        <span class="btn0" data-easing="easeInQuart">easeInQuart</span>
+                        <span class="btn0" data-easing="easeOutQuart">easeOutQuart</span>
+                        <span class="btn0" data-easing="easeInOutQuart">easeInOutQuart</span>
+                        <span class="btn0" data-easing="easeInQuint">easeInQuint</span>
+                        <span class="btn0" data-easing="easeOutQuint">easeOutQuint</span>
+                        <span class="btn0" data-easing="easeInOutQuint">easeInOutQuint</span>
+                        <span class="btn0" data-easing="easeInSine">easeInSine</span>
+                        <span class="btn0" data-easing="easeOutSine">easeOutSine</span>
+                        <span class="btn0" data-easing="easeInOutSine">easeInOutSine</span>
+                        <span class="btn0" data-easing="easeInExpo">easeInExpo</span>
+                        <span class="btn0" data-easing="easeOutExpo">easeOutExpo</span>
+                        <span class="btn0" data-easing="easeInOutExpo">easeInOutExpo</span>
+                        <span class="btn0" data-easing="easeInCirc">easeInCirc</span>
+                        <span class="btn0" data-easing="easeOutCirc">easeOutCirc</span>
+                        <span class="btn0" data-easing="easeInOutCirc">easeInOutCirc</span>
+                        <span class="btn0" data-easing="easeInElastic">easeInElastic</span>
+                        <span class="btn0" data-easing="easeOutElastic">easeOutElastic</span>
+                        <span class="btn0" data-easing="easeInOutElastic">easeInOutElastic</span>
+                        <span class="btn0" data-easing="easeInBack">easeInBack</span>
+                        <span class="btn0" data-easing="easeOutBack">easeOutBack</span>
+                        <span class="btn0" data-easing="easeInOutBack">easeInOutBack</span>
+                        <span class="btn0" data-easing="easeInBounce">easeInBounce</span>
+                        <span class="btn0" data-easing="easeOutBounce">easeOutBounce</span>
+                        <span class="btn0" data-easing="easeInOutBounce">easeInOutBounce</span>
+                    </div>
+                    
+                    <div class="well mt10">
+                        <div class="box box4">
+                            <div class="circle">Circle</div>
+                        </div>
+                    </div>
+                    <pre class="line-numbers"><code class="language-js">$(".btn-wrap > span").click(function(e){
+    e.preventDefault();
+
+    var easing = $(this).attr("data-easing");
+    $(".box4 > .circle")
+        .animate({ left: "80%" },500, easing)
+        .animate({ top: "55%" },500, easing)
+        .animate({ left: "0%" },500, easing)
+        .animate({ top: "0%" },500, easing);
+});</code></pre>
+                    
+				</div>
+				<!-- //Introduction -->
+                
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro5" class="page-header">.delay()</h4>
+                    <p>제이쿼리 delay 효과입니다.</p>
+                    <a href="#" class="btn0 btn5">Start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box5">
+                            <div class="circle">Circle</div>
+                            <div class="circle">Circle</div>
+                            <div class="circle">Circle</div>
+                            <div class="circle">Circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn5").click(function(e){
+    e.preventDefault();
+    $(".box5 > div").eq(0).delay(100).animate({ left: "90%"},1000, "easeOutCirc").animate({ left:"0" },1000);
+    $(".box5 > div").eq(1).delay(200).animate({ left: "90%"},1000, "easeOutCirc").animate({ left:"0" },1000);
+    $(".box5 > div").eq(2).delay(300).animate({ left: "90%"},1000, "easeOutCirc").animate({ left:"0" },1000);
+    $(".box5 > div").eq(3).delay(400).animate({ left: "90%"},1000, "easeOutCirc").animate({ left:"0" },1000);
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro6" class="page-header">.stop()</h4>
+                    <p>
+                        $("selector").stop(clearQueue, goToEnd)<br>
+                        clearQueue : 큐에 대기 중인 효과들을 삭제할 것인지 여부를 결정합니다.(삭제: true, 기본값: false);<br>
+                        goToEnd : 진행 중인 애니메이션을 완료할 것인지를 결정합니다.(true이면 현재 진행 중인 애니메이션 종료 시점으로 
+                        이동하고, false(기본)이면 스톱이 진행된 지점에서 멈추고 끝납니다.)<br>
+                    </p>
+                    <ul>
+                        <li>.stop(true, true) : 일단 현재 진행되고 있는 효과는 정지되면서 효과의 맨 마지막으로 즉시 이동
+                        한 후 큐에 남아 있는 효과는 모두 지우고 끝납니다.</li>
+                        <li>.stop(true, false) : 일단 현재 진행되고 있는 효과는 즉시 그 지점에서 정지되고 남아 있는 효과는
+                        모두 지우고 끝냅니다.</li>
+                        <li>.stop(false, true) : 일단 현재 진행되고 있는 효과는 정지되면서 맨 마지막으로 즉시 이동한 후
+                        큐에 남아 있는 효과를 수행합니다.</li>
+                        <li>.stop(false, false) : 일단 현재 진행되고 있는 효과는 즉시 그 지점에서 정지되고 큐에 남아 있는
+                        효과를 수행합니다.</li>
+                    </ul>
+                    
+                    <a href="#" class="btn0 btn6-1">Start</a>
+                    <a href="#" class="btn0 btn6-2">Stop</a>
+                    <a href="#" class="btn0 btn6-3">Back</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box6" style="min-height: 100px;">
+                            <div class="circle">Circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn6-1").click(function(){
+    $(".box6").animate({ left: "90%" },3000, "easeOutCirc").animate({ left:"0" },3000);
+});
+$(".btn6-2").click(function(){
+    $(".box6").stop();
+});
+$(".btn6-3").click(function(){
+    $(".box6").animate({ left:"0" },3000);
+});</code></pre>
+                    
+                    <div class="mt40">
+                        
+                    </div>
+                    <a href="#" class="btn0 btn7-1">go</a>
+                    <a href="#" class="btn0 btn7-2">.stop(true, true)</a>
+                    <a href="#" class="btn0 btn7-3">.stop(true, false)</a>
+                    <a href="#" class="btn0 btn7-4">.stop(false, true)</a>
+                    <a href="#" class="btn0 btn7-5">.stop(false, false)</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box7" style="min-height: 100px;">
+                            <div class="circle">stop</div>
+                            <div class="circle">stop</div>
+                            <div class="circle">stop</div>
+                            <div class="circle">stop</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn7-1").click(function(){
+   $(".box7 > div").animate({ left: "90%" },3000, "easeOutCirc").animate({ left:"0" },3000);
+});
+$(".btn7-2").click(function(){
+   $(".box7 > div").eq(0).stop(true, true);
+});
+$(".btn7-3").click(function(){
+   $(".box7 > div").eq(1).stop(true, false);
+});
+$(".btn7-4").click(function(){
+   $(".box7 > div").eq(2).stop(false, true);
+});
+$(".btn7-5").click(function(){
+   $(".box7 > div").eq(3).stop(false, false);
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro8" class="page-header">.finish()</h4>
+                    <p>제이쿼리 finish 효과입니다.</p>
+                    <a href="#" class="btn0 btn8-1">Start</a>
+                    <a href="#" class="btn0 btn8-2">finish</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box8" style="min-height: 100px;">
+                            <div class="circle">finish</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn8-1").click(function(){
+    $(".box8").animate({ left: "90%" },3000, "easeOutCirc");
+});
+$(".btn8-2").click(function(){
+    $(".box8").finish();
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro9" class="page-header">Animation1 : width</h4>
+                    <p>가로 값을 변경한 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn9">Start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box9" style="min-height: 100px;">
+                            <div class="circle">ain</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn9").click(function(){
+    $(".box9 > div")
+        .animate({ left: "80%", width: "150px" },1000, "easeOutCirc")
+        .animate({ left: "0", width: "90px" },1000, "easeOutCirc");
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro10" class="page-header">Animation2 : slideToggle</h4>
+                    <p>슬라이딩 효과를 이용한 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn10">Start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box10" style="min-height: 100px;">
+                            <div class="circle">ain</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn9").click(function(){
+    
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro11" class="page-header">Animation3 : opacity</h4>
+                    <p>투명도 효과를 이용한 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn11">Start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box11" style="min-height: 100px;">
+                            <div class="circle" style="position:relative">ain</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn11").click(function(){
+    $(".box11 > div")
+        .animate({ left: "85%", width: 300, height: 300, opacity:0.5 },1000, "easeOutCirc")
+        .animate({ left: "0", width: 90, height: 90, opacity:1},1000, "easeOutCirc");
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro12" class="page-header">Animation4 : border-radius</h4>
+                    <p>border-radius를 이용한 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn12">Start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box12" style="min-height: 100px;">
+                            <div class="circle" style="position:relative">ain</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn12").click(function(){
+    $(".box12 > div")
+        .animate({ left: "70%", borderRadius:"0%"},1000,"easeOutQuint")
+        .animate({ height:300, opacity:0.5 },"slow","easeOutQuint")
+        .animate({ width:300, opacity:0.5, borderRadius:"50%" },"normal","easeOutQuint")
+        .animate({ width:90, opacity:1, borderRadius:"0%" },"fast","easeOutQuint")
+        .animate({ height:90, opacity:1 },1000,"easeOutQuint")
+        .animate({ left: 0, borderRadius:"50%" },1000,"easeOutQuint");
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro13" class="page-header">Animation5 : border-width</h4>
+                    <p>border-width를 이용한 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn13">Start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box13" style="min-height: 100px;">
+                            <div class="circle" style="position:relative">ain</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn13").click(function(){
+    $(".box13 > div")
+        .animate({ borderWidth: 100},"slow","easeOutQuint")
+        .animate({ borderWidth: 0},"slow","easeOutQuint")
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro14" class="page-header">Animation6 : 클릭하면 이동하는 애니메이션</h4>
+                    <p>클릭하면 이동하는 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn14-1">right</a>
+                    <a href="#" class="btn0 btn14-2">left</a>
+                    <a href="#" class="btn0 btn14-3">top</a>
+                    <a href="#" class="btn0 btn14-4">bottom</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box14">
+                            <div class="circle" style="position:relative">circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn14-1").click(function(){
+    $(".box14 > div").animate({ left: "+=100" },"slow","easeOutQuint");
+});
+$(".btn14-2").click(function(){
+    $(".box14 > div").animate({ left: "-=100" },"slow","easeOutQuint");
+});
+$(".btn14-3").click(function(){
+    $(".box14 > div").animate({ top: "-=100" },"slow","easeOutQuint");
+});
+$(".btn14-4").click(function(){
+    $(".box14 > div").animate({ top: "+=100" },"slow","easeOutQuint");
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro15" class="page-header">Animation7 : 무한 반복 애니메이션</h4>
+                    <p>무한 반복하는 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn15">start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box15" style="min-height: 100px;">
+                            <div class="circle" style="position:relative">circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn15").click(function(){
+    loop();
+});
+
+function loop(){
+    $(".box15 > div").animate({ left:"85%" },1000,"easeOutQuint").animate({ left:"0" },1000,"easeOutQuint",loop);
+}</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro16" class="page-header">Animation8 : 일정한 시간</h4>
+                    <p>일정한 시간으로 실행되는 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn16">start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box16" style="min-height: 100px;">
+                            <div class="circle" style="position:relative">circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn16").click(function(e){
+    setInterval(time, 4000);
+});
+
+function time(){
+    $(".box16 > div").animate({ left:"+=100" },500,"easeOutQuint").animate({ left:"-=50"},500,"easeOutQuint");
+}</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro17" class="page-header">Animation9 : 사라지는 애니메이션</h4>
+                    <p>일정한 시간이 지나면 사라지는 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn17">start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box17" style="min-height: 100px;">
+                            <div class="circle" style="position:relative">circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn17").click(function(e){
+    $(".box17 > div").animate({ left:"85%" },1000,"easeOutQuint").animate({ left:"0" },1000,"easeOutQuint");
+    setTimeout(out,4000)
+});
+
+function out(){
+    $(".box17").clearQueue().hide();
+}</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro18" class="page-header">Animation10 : 시간차 애니메이션</h4>
+                    <p>일정한 시간 간격으로 표현되는 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn18">start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box18">
+                            <div class="circle" style="position:relative">circle</div>
+                            <div class="circle" style="position:relative">circle</div>
+                            <div class="circle" style="position:relative">circle</div>
+                            <div class="circle" style="position:relative">circle</div>
+                            <div class="circle" style="position:relative">circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn18").click(function(e){
+    $(".box18 > div").each(function(index){
+        $(this).delay(index*200).animate({ left:"85%" },1000,"easeOutQuint").animate({ left:"0" },1000,"easeOutQuint");
+    });
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro19" class="page-header">Animation11 : 토글 애니메이션</h4>
+                    <p>토글 효과를 이용한 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn19">start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box19" style="min-height: 100px;">
+                            <div class="circle" style="position:relative;">circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn19").click(function(e){
+    $(".box19 > div").animate({ height:"toggle", opacity:"toggle" },"fast","easeOutQuint");
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro20" class="page-header">Animation12 : 콜백함수</h4>
+                    <p>콜백함수를 이용한 애니메이션입니다.</p>
+                    <a href="#" class="btn0 btn20">start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box20" style="min-height: 100px;">
+                            <div class="circle" style="position:relative;">circle</div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn20").click(function(e){
+    $(".box20 > div").animate({ left:"85%" },1000,"easeOutQuint",function(){
+        alert("도착");
+    });
+});</code></pre>
+				</div>
+				<!-- //Introduction -->
+                
+                <style type="text/css">
+                    .ybox {height: 500px; position: relative;}
+                    .ybox > div {width: 50px; height: 50px; background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%); color: #fff; text-align: center; line-height: 50px; border-radius: 50%; margin: 5px; border: 0 solid #72afd3; font-size: 12px; position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%);}
+                </style>
+                
+                <!-- Introduction -->
+				<div class="bs-docs-section">
+					<h4 id="intro21" class="page-header">자기 맘대로~₩</h4>
+                    <a href="#" class="btn0 btn21">start</a>
+                    
+                    <div class="well mt10">
+                        <div class="box box21" style="min-height: 400px;">
+                            <div class="ybox">
+                                <div class="ybox1">ani</div>
+                                <div class="ybox2">ani</div>
+                                <div class="ybox3">ani</div>
+                                <div class="ybox4">ani</div>
+                                <div class="ybox5">ani</div>
+                                <div class="ybox6">ani</div>
+                                <div class="ybox7">ani</div>
+                                <div class="ybox8">ani</div>
+                                <div class="ybox9">ani</div>
+                                <div class="ybox10">ani</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <pre class="line-numbers"><code class="language-js">$(".btn21").on("click",function(){
+    setInterval(star, 2000);
+    setInterval(star2, 3000);
+});
+
+function star(){
+    $(".ybox1").animate({ left: "10%",width: 140, height: 140, lineHeight:"140" },400,"easeOutQuint").animate({ left: "50%",width: 50, height: 50},400,"easeOutQuint");
+    $(".ybox2").animate({ top: "10%",width: 140, height: 140, lineHeight:"140" },400,"easeOutQuint").animate({ top: "50%",width: 50, height: 50},400,"easeOutQuint");
+    $(".ybox3").animate({ left: "90%",width: 140, height: 140, lineHeight:"140" },400,"easeOutQuint").animate({ left: "50%",width: 50, height: 50},400,"easeOutQuint");
+    $(".ybox4").animate({ top: "90%",width: 140, height: 140, lineHeight:"140" },400,"easeOutQuint").animate({ top: "50%",width: 50, height: 50},400,"easeOutQuint");
+}
+function star2(){
+    $(".ybox5").animate({ left: "30%" },400,"easeOutQuint").animate({ left: "50%" },400,"easeOutQuint");
+    $(".ybox6").animate({ top: "30%" },400,"easeOutQuint").animate({ top: "50%" },400,"easeOutQuint");
+    $(".ybox7").animate({ left: "70%" },400,"easeOutQuint").animate({ left: "50%" },400,"easeOutQuint");
+    $(".ybox8").animate({ top: "70%" },400,"easeOutQuint").animate({ top: "50%" },400,"easeOutQuint");
+}</code></pre>
+				</div>
+				<!-- //Introduction -->
+
+			</div>
+			<!-- //col-md-9 -->
+            
+
+			<div class="col-md-3">
+				<div class="bs-sidebar hidden-print" role="complementary">
+					<ul class="nav bs-sidenav">
+						<li><a href="#intro1">ANIMAITON</a></li>
+						<li><a href="#intro2">.ainimate()</a></li>
+                        <li><a href="#intro3">.ainimate() 기본</a></li>
+                        <li><a href="#intro4">easing</a></li>
+                        <li><a href="#intro5">.delay()</a></li>
+                        <li><a href="#intro6">.stop()</a></li>
+                        <li><a href="#intro8">.finish()</a></li>
+                        <li><a href="#intro9">width</a></li>
+                        <li><a href="#intro10">slideToggle</a></li>
+                        <li><a href="#intro11">opacity</a></li>
+                        <li><a href="#intro12">border-radius</a></li>
+                        <li><a href="#intro13">border-width</a></li>
+                        <li><a href="#intro14">클릭하면 이동하기</a></li>
+                        <li><a href="#intro15">무한반복하기</a></li>
+                        <li><a href="#intro16">일정한 시간</a></li>
+                        <li><a href="#intro17">사라지는 애니메이션</a></li>
+                        <li><a href="#intro18">시간차 애니메이션</a></li>
+                        <li><a href="#intro19">토글 애니메이션</a></li>
+                        <li><a href="#intro20">콜백함수</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //col-md-3 -->
+		</div>
+		<!-- //row -->
+
+	</div>
+	<!-- //container -->
+
+	<!-- Footer -->
+	<footer class="bs-footer" role="contentinfo">
+		<div class="container">
+			<ul class="footer-links muted">
+				<li>Currently v1.0</li>
+				<li>&middot;</li>
+				<li><a href="http://webstoryboy.co.kr">webstoryboy</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+			</ul>
+		</div>
+	</footer>
+	<!-- //Footer -->
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../assets2/js/bootstrap.min.js"></script>
+	<script src="../assets2/js/docs.min.js"></script>
+	<script src="../assets2/js/prism.js"></script>
+    <script>
+        $(".btn3").click(function(e){
+            e.preventDefault();
+            $(".box3 > .circle")
+                .animate({ left: "80%" },500)
+                .animate({ top: "55%" },500)
+                .animate({ left: "0%" },500)
+                .animate({ top: "0%" },500);
+        });
+        
+       
+        $(".btn-wrap > span").click(function(e){
+            e.preventDefault();
+            
+            var easing = $(this).attr("data-easing");
+            $(".box4 > .circle")
+                .animate({ left: "80%" },500, easing)
+                .animate({ top: "55%" },500, easing)
+                .animate({ left: "0%" },500, easing)
+                .animate({ top: "0%" },500, easing);
+        });
+        
+        $(".box5 > div").css("position","relative");
+        $(".btn5").click(function(e){
+            e.preventDefault();
+            $(".box5 > div").eq(0).delay(100).animate({ left: "90%"},1000, "easeOutCirc").animate({ left:"0" },1000);
+            $(".box5 > div").eq(1).delay(200).animate({ left: "90%"},1000, "easeOutCirc").animate({ left:"0" },1000);
+            $(".box5 > div").eq(2).delay(300).animate({ left: "90%"},1000, "easeOutCirc").animate({ left:"0" },1000);
+            $(".box5 > div").eq(3).delay(400).animate({ left: "90%"},1000, "easeOutCirc").animate({ left:"0" },1000);
+        });
+            
+        
+        $(".btn6-1").click(function(){
+            $(".box6").animate({ left: "90%" },3000, "easeOutCirc").animate({ left:"0" },3000);
+        });
+        $(".btn6-2").click(function(){
+            $(".box6").stop();
+        });
+        $(".btn6-3").click(function(){
+            $(".box6").animate({ left:"0" },3000);
+        });
+        
+        
+        $(".box7 > div").css("position","relative");
+        $(".btn7-1").click(function(){
+           $(".box7 > div").animate({ left: "90%" },3000, "easeOutCirc").animate({ left:"0" },3000);
+        });
+        $(".btn7-2").click(function(){
+           $(".box7 > div").eq(0).stop(true, true);
+        });
+        $(".btn7-3").click(function(){
+           $(".box7 > div").eq(1).stop(true, false);
+        });
+        $(".btn7-4").click(function(){
+           $(".box7 > div").eq(2).stop(false, true);
+        });
+        $(".btn7-5").click(function(){
+           $(".box7 > div").eq(3).stop(false, false);
+        });
+        
+        
+        $(".btn8-1").click(function(){
+            $(".box8").animate({ left: "90%" },3000, "easeOutCirc");
+        });
+        $(".btn8-2").click(function(){
+            $(".box8").finish();
+        });
+        
+        
+        $(".btn9").click(function(){
+            $(".box9 > div")
+                .animate({ left: "80%", width: "150px" },1000, "easeOutCirc")
+                .animate({ left: "0", width: "90px" },1000, "easeOutCirc");
+        });
+        
+        $(".btn10").click(function(){
+            $(".box10 > div")
+                .animate({ left: "85%" },1000, "easeOutCirc")
+                .slideUp()
+                .slideDown()
+                .animate({ left: "0"},1000, "easeOutCirc");
+        });
+        
+        $(".btn11").click(function(){
+            $(".box11 > div")
+                .animate({ left: "85%", width: 300, height: 300, opacity:0.5 },1000, "easeOutCirc")
+                .animate({ left: "0", width: 90, height: 90, opacity:1},1000, "easeOutCirc");
+        });
+        
+        $(".btn12").click(function(){
+            $(".box12 > div")
+                .animate({ left: "70%", borderRadius:"0%"},1000,"easeOutQuint")
+                .animate({ height:300, opacity:0.5 },"slow","easeOutQuint")
+                .animate({ width:300, opacity:0.5, borderRadius:"50%" },"normal","easeOutQuint")
+                .animate({ width:90, opacity:1, borderRadius:"0%" },"fast","easeOutQuint")
+                .animate({ height:90, opacity:1 },1000,"easeOutQuint")
+                .animate({ left: 0, borderRadius:"50%" },1000,"easeOutQuint");
+        });
+        
+        $(".btn13").click(function(){
+            $(".box13 > div")
+                .animate({ borderWidth: 100},"slow","easeOutQuint")
+                .animate({ borderWidth: 0},"slow","easeOutQuint")
+        });
+        
+        $(".btn14-1").click(function(){
+            $(".box14 > div").animate({ left: "+=100" },"slow","easeOutQuint");
+        });
+        $(".btn14-2").click(function(){
+            $(".box14 > div").animate({ left: "-=100" },"slow","easeOutQuint");
+        });
+        $(".btn14-3").click(function(){
+            $(".box14 > div").animate({ top: "-=100" },"slow","easeOutQuint");
+        });
+        $(".btn14-4").click(function(){
+            $(".box14 > div").animate({ top: "+=100" },"slow","easeOutQuint");
+        });
+        
+        
+        //무한 반복
+        $(".btn15").click(function(){
+            loop();
+        });
+            
+        function loop(){
+            $(".box15 > div").animate({ left:"85%" },1000,"easeOutQuint").animate({ left:"0" },1000,"easeOutQuint",loop);
+        }
+        
+        //일정한 시간
+        $(".btn16").click(function(e){
+            setInterval(time, 4000);
+        });
+        
+        function time(){
+            $(".box16 > div").animate({ left:"+=100" },500,"easeOutQuint").animate({ left:"-=50"},500,"easeOutQuint");
+        }
+        
+        //사라지는 애니메이션
+        $(".btn17").click(function(e){
+            $(".box17 > div").animate({ left:"85%" },1000,"easeOutQuint").animate({ left:"0" },1000,"easeOutQuint");
+            setTimeout(out,4000)
+        });
+        
+        function out(){
+            $(".box17").clearQueue().hide();
+        }
+        
+        //시간차 애니메이션
+        $(".btn18").click(function(e){
+            $(".box18 > div").each(function(index){
+                $(this).delay(index*200).animate({ left:"85%" },1000,"easeOutQuint").animate({ left:"0" },1000,"easeOutQuint");
+            });
+        });
+        
+        //토글 애니메이션
+        $(".btn19").click(function(e){
+            $(".box19 > div").animate({ height:"toggle", opacity:"toggle" },"fast","easeOutQuint");
+        });
+        
+        //콜백 함수
+        $(".btn20").click(function(e){
+            $(".box20 > div").animate({ left:"85%" },1000,"easeOutQuint",function(){
+                alert("도착");
+            });
+        });
+        
+        
+        //
+        $(".btn21").on("click",function(){
+			setInterval(star, 2000);
+			setInterval(star2, 3000);
+		});
+
+		function star(){
+			$(".ybox1").animate({ left: "10%",width: 140, height: 140, lineHeight:"140" },400,"easeOutQuint").animate({ left: "50%",width: 50, height: 50},400,"easeOutQuint");
+			$(".ybox2").animate({ top: "10%",width: 140, height: 140, lineHeight:"140" },400,"easeOutQuint").animate({ top: "50%",width: 50, height: 50},400,"easeOutQuint");
+			$(".ybox3").animate({ left: "90%",width: 140, height: 140, lineHeight:"140" },400,"easeOutQuint").animate({ left: "50%",width: 50, height: 50},400,"easeOutQuint");
+			$(".ybox4").animate({ top: "90%",width: 140, height: 140, lineHeight:"140" },400,"easeOutQuint").animate({ top: "50%",width: 50, height: 50},400,"easeOutQuint");
+		}
+		function star2(){
+			$(".ybox5").animate({ left: "30%" },400,"easeOutQuint").animate({ left: "50%" },400,"easeOutQuint");
+			$(".ybox6").animate({ top: "30%" },400,"easeOutQuint").animate({ top: "50%" },400,"easeOutQuint");
+			$(".ybox7").animate({ left: "70%" },400,"easeOutQuint").animate({ left: "50%" },400,"easeOutQuint");
+			$(".ybox8").animate({ top: "70%" },400,"easeOutQuint").animate({ top: "50%" },400,"easeOutQuint");
+		}
+        
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

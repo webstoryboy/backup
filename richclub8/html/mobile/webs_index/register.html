@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <title>Register</title>
+    
+    <!-- style -->
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	
+	<!-- webFont -->
+	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+</head>
+<body>
+	<section id="login">
+		<h1>
+	    	<img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x,assets/img/logo@3x.png 3x" alt="웹스 로고">
+	    	<em>WEBS</em>
+	    </h1>
+	    <div class="top">
+	    	<h2>Get started for free</h2>
+	    	<p>Free forever. No credit card needed</p>
+	    </div>
+
+	    <div class="select">
+	    	<div class="container">
+	    		<div class="box active">
+		    		<img src="assets/img/15.png" srcset="assets/img/15@2x.png 2x,assets/img/15@3x.png 3x" alt="관리자 로그인">
+		    		<h3>Administrator</h3>
+		    		<p>Full access to allSettings</p>
+		    	</div>
+		    	<div class="box">
+		    		<img src="assets/img/16.png" srcset="assets/img/16@2x.png 2x,assets/img/16@3x.png 3x" alt="운영자 로그인">
+		    		<h3>Operator</h3>
+		    		<p>Full access to allSettings</p>
+		    	</div>
+	    	</div>
+	    	
+	    </div>
+
+	    <div class="in">
+	    	<div class="container">
+		    	<div class="name"> 
+			    	<label for="uemail">FULL NAME</label>
+			    	<input id="uemail" type="text" placeholder="Webstoryboy" title="이메일" class="input_style1">
+			    </div>
+			    <div class="email"> 
+			    	<label for="uemail">EMAIL ADDRESS</label>
+			    	<input id="uemail" type="text" placeholder="Webstoryboy@naver.com" title="이메일" class="input_style1">
+			    </div>
+			    <div class="pass">
+			    	<label for="upass">PASSWORD</label>
+			    	<input id="upass" type="PASSWORD" placeholder="********" maxlength="20" class="input_style1">
+			    </div>
+			    <div>
+			    	<button class="btn" type="button" title="로그인">Create Account</button>
+			    	<p class="sign">Already have an account?  <strong>Sign In</strong></p>
+			    </div>
+		    </div>
+	    </div>
+	</section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    	$(".box").click(function(){
+    		$(this).toggleClass("active");
+    	});
+    </script>
+    
+    
+</body>
+</html>

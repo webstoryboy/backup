@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {width: 5000px; height: 5000px;}
+        #box {width: 100px; height: 100px; background: #555;}
+        .text {position: fixed; left: 130px; top: 0; }
+</style>
+    
+</head>
+<body>
+    
+    <div class="text">
+        <span>offset().left =</span><span class="ol">0</span><br>     
+        <span>offset().top =</span><span class="ot">0</span><br>        
+        <span>position().left =</span><span class="pl">0</span><br>        
+        <span>position().top =</span><span class="pt">0</span><br>        
+        <span>scrollLeft() =</span><span class="sl">0</span><br>        
+        <span>scrollTop() =</span><span class="st">0</span><br>        
+</div>
+    
+    <div id="box"></div>
+
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script>
+        
+        
+        
+        
+        $( "#box" ).draggable({
+            drag: function() {
+                $(".ol").text($("#box").offset().left);
+                $(".ot").text($("#box").offset().top);
+                $(".pl").text($("#box").position().left);
+                $(".pt").text($("#box").position().top);
+            }
+        });
+        
+        $(window).scroll(function(){
+            $(".sl").text( $(window).scrollLeft() );
+            $(".st").text( $(window).scrollTop() );
+        });
+        
+
+</script>
+</body>
+</html>
+
+
+
+

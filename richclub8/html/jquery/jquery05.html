@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+    <style>
+        /* CSS : 첫번째 리스트 색을 변경 */
+        #list1 li {color: #F00;}
+    </style>
+    <script type="text/javascript">
+        //자바스크립트 : 두번째 리스트 색을 변경
+        window.onload = function(){
+            var list2 = document.getElementById("list2");      //#list2 찾아서 변수에 할당
+            var liList = list2.getElementsByTagName("li");     //list2에서 li 태그를 찾아 변수에 할당
+            for(var i = 0; i < liList.length; i++){            //li태그를 하나씩 접근해서
+                var li =  liList[i];                           //배열로 할당해서 변수에 저장
+                li.style.color = "#0f0";
+            }
+        };
+    </script>
+    
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        //제이쿼리 : 세번째 리스트 색을 변경
+        $(document).ready(function(){
+            $("#list3 li").css("color","#00f");
+        });
+    </script>
+</head>
+<body>
+    
+    <h1>jquery</h1>
+    <div>
+        <ul id="list1" class="list">
+            <li class="one1">one1</li>
+            <li class="one2">one2</li>
+            <li class="one3">one3</li>
+            <li class="one4">one4</li>
+            <li class="one5">one5</li>
+            <li class="one6">one6</li>
+            <li class="one7">one7</li>
+            <li class="one8">one8</li>
+            <li class="one9">one9</li>
+            <li class="one10">one10</li>
+        </ul>
+        <ul id="list2" class="list">
+            <li class="one1">one1</li>
+            <li class="one2">one2</li>
+            <li class="one3">one3</li>
+            <li class="one4">one4</li>
+            <li class="one5">one5</li>
+            <li class="one6">one6</li>
+            <li class="one7">one7</li>
+            <li class="one8">one8</li>
+            <li class="one9">one9</li>
+            <li class="one10">one10</li>
+        </ul>
+        <ul id="list3" class="list">
+            <li class="one1">one1</li>
+            <li class="one2">one2</li>
+            <li class="one3">one3</li>
+            <li class="one4">one4</li>
+            <li class="one5">one5</li>
+            <li class="one6">one6</li>
+            <li class="one7">one7</li>
+            <li class="one8">one8</li>
+            <li class="one9">one9</li>
+            <li class="one10">one10</li>
+        </ul>
+    </div>            
+</body>
+</html>

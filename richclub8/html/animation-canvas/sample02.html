@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="300"></canvas>
+    
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        //라인 그리기
+        ctx.beginPath();
+        ctx.moveTo(50,50);
+        ctx.lineTo(50,140);
+        ctx.stroke();
+        
+        //선 10개 만들기
+        for(var i = 0; i < 10; i++){
+            ctx.beginPath();
+            ctx.moveTo(50+i*20,150);
+            ctx.lineTo(50+i*20,240);
+            ctx.stroke();
+        }
+        
+        //선 라이 두께 다르게 하기
+        for(var i = 0; i < 10; i++){
+            ctx.lineWidth = 1 + i;
+            ctx.beginPath();
+            ctx.moveTo(50+i*20,250);
+            ctx.lineTo(50+i*20,340);
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        .circle-wrap {width: 1000px; height: 300px; position: relative; padding: 50px; margin: 150px 50px;}
+        .circle {width: 100px; height: 100px; color: #c7254e; background-color:#f9f2f4; border-radius:50%;
+        border: 1px dashed #a51a3d; text-align: center; line-height: 100px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .choice {position: fixed; left: 0; top: 0; z-index: 1000;}
+    </style>
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function() {
+            $("#draggable").draggable({
+                drag: function() {
+                    $(".ol").text( $(".circle").offset().left + "px" );
+                    $(".ot").text( $(".circle").offset().top + "px" );
+                    $(".pl").text( $(".circle").position().left + "px" );
+                    $(".pt").text( $(".circle").position().top + "px" );
+                }
+            });
+            
+            $(window).scroll(function(){
+                $(".sl").text( $(window).scrollLeft() );
+                $(".st").text( $(window).scrollTop() );
+            });
+             
+        });
+    </script>
+</head>
+<body style="width: 3000px; height: 10000px;">    
+    <div class="choice">
+        <span>offset().left = </span><span class="ol">0</span><br>
+        <span>offset().top = </span><span class="ot">0</span><br>
+        <span>position().left = </span><span class="pl">0</span><br>
+        <span>position().top = </span><span class="pt">0</span><br>
+        <span>scrollLeft() = </span><span class="sl">0</span><br>
+        <span>scrollTop() = </span><span class="st">0</span><br>
+    </div>
+    
+    <div class="circle-wrap onBlue">
+        <div id="draggable" class="circle">
+            circle
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

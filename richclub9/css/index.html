@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="webstoryboy">
+	<meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+	<meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+	<title>HTML Reference</title>
+    
+    <!-- web_font -->
+    <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+    
+    <!-- css -->
+    <link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+    <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    
+    <!-- Prettify -->
+    <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+	
+	<!-- Icon -->
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+	<link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+	
+	<!-- hmlt5 support -->
+	<!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+	
+	<!-- IE6,7 support -->
+	<!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+	
+	<!--[if lte IE 6]>
+	<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+	사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+	<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+	<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a> 
+	<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+	<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+	<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+	<![endif]-->
+
+	<style>
+	.face {display:block; margin:20px auto; width:400px; }
+	.face img {width:400px; border-radius:50%; }
+	.face1 img {width:22%; border-radius:10%; margin:1%;}
+	.member {margin:50px 0;}
+	.member li {width:150px; list-style:none; display:inline-block; margin:6px; }
+	.member li img { border-radius:50%;}
+        
+    .ir_pm {display:block; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px;}
+    .ir_wa {display:block; overflow:hidden; position:relative; z-index:-1; width:100%; height: 100%;}
+    .ir_su {overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;}    
+	
+    .icon_skin {width: 60px; height: 60px; display: block; float: left;
+        background: url(img/icon03_test.png) no-repeat;}   
+    .icon_skin.icon1 {background-position: -290px 0;}
+    .icon_skin.icon2 {background-position: -290px -60px;}
+    .icon_skin.icon3 {background-position: -290px -120px;}
+    .icon_skin.icon4 {background-position: -290px -180px;}
+    
+@media
+    only screen and (max-width:820px) and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (max-width:820px) and (min-device-pixel-ratio: 1.5),
+    only screen and (max-width:820px) and (min-resolution: 1.5dppx) {
+        .icon_skin {width: 60px; height: 60px; display: block;
+            background: url(img/icon03_test.png) no-repeat;
+            background-size: 175px;
+        } 
+        .icon_skin.icon1 {background-position: 0px 0;}
+        .icon_skin.icon2 {background-position: 0px -60px;}
+        .icon_skin.icon3 {background-position: 0px -120px;}
+        .icon_skin.icon4 {background-position: 0px -180px;}
+}
+        
+    </style>
+</head>
+
+
+
+<body>
+	<!-- nav -->
+    <div id="top-nav" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                </button>
+                <div class="nav-collapse collapse">
+                	<ul class="nav pull-right">
+                		<li><a href="#">webstoryboy</a></li>
+                		<li><a href="#">reference</a></li>
+                		<li><a href="#">tutorial</a></li>
+                		<li><a href="#">css</a></li>
+                		<li><a href="#">html</a></li>
+                	</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //nav -->
+    
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span12" style="text-align:center;">
+                    <div class="header_tit">
+	                	<h1>Professional web publishers</h1>
+						<h2><a href="http://webstoryboy.co.kr">webstoryboy.co.kr</a></h2>
+		            </div>
+		            <div class="header_icon" id="wow">
+		                <ul>
+		                    <li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+		                    <li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+		                    <li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+		                    <li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+		                </ul>
+		            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+    
+    <!-- contents -->
+	<div class="container" style="margin-top:20px;">
+		<div class="row-fluid">
+			<div class="span12">
+				<h1>CSS Reference</h1>
+                
+                <h2>CSS</h2>
+                <p class="well">CSS(Cascading Style Sheets)는 HTML을 꾸며주는 디자인 언어 스타일시트입니다.</p>
+
+			    <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <colgroup>
+                            <col style="width:30%">
+                            <col style="width:70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>align-content</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>align-items</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>align-self</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>all</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation-delay</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation-direction</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation-duration</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation-fill-mode</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation-iteration-count</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation-name</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation-play-state</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>animation-timing-function</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>backface-visibility</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>background</td>
+                                <td>배경이미지의 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-attachment</td>
+                                <td>배경이미지를 스크롤 했을 때 고정 여부를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-blend-mode</td>
+                                <td>배경을 혼합했을 때의 상태를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-clip</td>
+                                <td>배경이미지와 경계선 고정 여부를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-color</td>
+                                <td>배경이미지 색상을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-image</td>
+                                <td>배경이미지를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-origin</td>
+                                <td>배경이미지 방향 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-position</td>
+                                <td>배경이미지 위치 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-repeat</td>
+                                <td>배경이미지 반복 여부를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>background-size</td>
+                                <td>배경이미지 사이즈 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border</td>
+                                <td>테두리 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-bottom</td>
+                                <td>테두리 아래쪽 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-bottom-color</td>
+                                <td>테두리 아래쪽 컬러 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-bottom-left-radius</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-bottom-right-radius</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-bottom-style</td>
+                                <td>테두리 아래쪽 스타일 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-bottom-width</td>
+                                <td>테두리 아래쪽 두께 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-collapse</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-color</td>
+                                <td>테두리 컬러 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-image</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-image-outset</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-image-repeat</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-image-slice</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-image-source</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-image-width</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-left</td>
+                                <td>테두리 왼쪽 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-left-color</td>
+                                <td>테두리 왼쪽 컬러 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-left-style</td>
+                                <td>테두리 왼쪽 스타일 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-left-width</td>
+                                <td>테두리 왼쪽 두께 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-radius</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-right</td>
+                                <td>테두리 오른쪽 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-right-color</td>
+                                <td>테두리 오른쪽 컬러 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-right-style</td>
+                                <td>테두리 오른쪽 스타일 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-right-width</td>
+                                <td>테두리 오른쪽 두께 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-spacing</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-style</td>
+                                <td>테두리 스타일 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-top</td>
+                                <td>테두리 위쪽 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-top-color</td>
+                                <td>테두리 위쪽 컬러 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-top-left-radius</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-top-right-radius</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>border-top-style</td>
+                                <td>테두리 위쪽 스타일 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-top-width </td>
+                                <td>테두리 위쪽 두께 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>border-width</td>
+                                <td>테두리 두께 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>bottom</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>box-decoration-break</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>box-shadow</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>box-sizing</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>caption-side</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>caret-color</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>clear</td>
+                                <td>float 요소의 성질을 차단합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>clip</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>color</td>
+                                <td>글씨 색을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>column-count</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>column-fill</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>column-gap</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>column-rule </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>column-rule-color</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>column-rule-style</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>column-rule-width</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>column-span</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>column-width</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>columns</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>content</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>counter-increment</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>counter-reset</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>cursor</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>direction</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>display</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>empty-cells</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>filter</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>flex</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>flex-basis</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>flex-direction</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>flex-flow</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>flex-grow</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>flex-shrink</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>flex-wrap</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>float</td>
+                                <td>블록 요소의 정렬 상태를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>font</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>font-family</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>font-size</td>
+                                <td>폰트 사이즈 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>font-size-adjust</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>font-stretch</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>font-style</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>font-variant</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>font-weight</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-area</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-auto-columns</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-auto-flow</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-auto-rows</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-column</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-column-end</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-column-gap</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-column-start</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-gap</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-row</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-row-end</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-row-gap</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-row-start</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-template</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-template-area</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-template-columns</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>grid-template-rows</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>hanging-punctuation</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>height</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>hyphens</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>isolation</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>justify-content</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>left</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>letter-spacing</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>line-height</td>
+                                <td>문장과 문장 사이의 간격을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>list-style</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>list-style-image</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>list-style-position</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>list-style-type</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>margin</td>
+                                <td>요소의 바깥쪽 여백을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>margin-bottom</td>
+                                <td>요소의 아래 바깥쪽 여백을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>margin-left</td>
+                                <td>요소의 왼쪽 바깥쪽 여백을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>margin-right</td>
+                                <td>요소의 오른쪽 바깥쪽 여백을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>margin-top</td>
+                                <td>요소의 위 바깥쪽 여백을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>max-height</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>max-width </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>min-height</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>min-width</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>mix-blend-mode</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>object-fit</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>object-position</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>opacity</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>order</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>outline</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>outline-color</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>outline-offset</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>outline-style</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>outline-width</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>overflow</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>overflow-x</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>overflow-y</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>padding</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>padding-bottom</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>padding-left</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>padding-right</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>padding-top</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>page-break-after</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>page-break-before</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>page-break-inside</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>perspective</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>perspective-origin</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>pointer-events</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>position</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>quotes</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>resize</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>right</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>tab-size</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>table-layout</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-align</td>
+                                <td>텍스트 정렬 방식을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>text-align-last</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-decoration</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-decoration-color </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-decoration-line</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-decoration-style</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-indent</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-justify</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-overflow</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-shadow</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>text-transform</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>top</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>transform</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>transform-origin</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>transform-style</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>transition</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>transition-delay</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>transition-duration</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>transition-property</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>transition-timing-function</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>unicode-bidi</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>user-select</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>vertical-align</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>visibility</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>white-space</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>width</td>
+                                <td>요소의 가로 값을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>word-break</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>word-spacing</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>word-wrap</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>z-index</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>@charset</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>:active</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>:focus</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>:hover</td>
+                                <td></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
+                <br>
+                <h2>CSS 선택자</h2>
+                <p class="well">선택자를 통하여 요소를 선택하고 속성을 줄 수 있습니다.</p>
+				<ul>
+				    <li>id 선택자
+				        <ul>
+				            <li>하나의 태그만 식별하기 위한 선택자입니다.</li>
+				            <li>하나의 태그에 하나만 사용할 수 있습니다.</li>
+				            <li>"#"으로 표시합니다.</li>
+				        </ul>
+				    </li>
+				    <li>class 선택자
+				        <ul>
+				            <li>여러개의 태그를 식별하기 위한 선택자입니다.</li>
+				            <li>하나의 태그에 여러개를 사용할 수 있습니다.</li>
+				            <li>"."으로 표시합니다.</li>
+				        </ul>
+				    </li>
+				</ul>
+				
+				<h4>속성 선택자</h4>
+				<table>
+				    
+				</table>
+				
+				<h4>상태 선택자</h4>
+				<table>
+				    
+				</table>
+				
+				<h4>링크 선택자</h4>
+				<table>
+				    
+				</table>
+				
+				
+				<br>
+				<h2>CSS 단위</h2>
+				
+				<br>
+				<h2>CSS 색상</h2>
+				
+				<br>
+				<h2>CSS 선언 방법</h2>
+				
+				<br>
+				<h2>상대주소와 절대주소</h2>
+				
+				<br>
+				<h2>float으로 인한 영역깨짐(height:0) 방지법</h2>
+				<p class="well">float을 사용하면 height 값을 0으로 인식합니다.</p>
+				<ol>
+				    <li>깨지는 영역에 똑같이 float을 사용합니다.(X) 모든 영역에 float을 사용하게 되고 정확히 깨지는 영역을 알 수가 없습니다.</li>
+				    <li>float의 성질을 차단하는 clear:both를 사용합니다. (X) 깨지는 영역을 정확히 확인 할 수 없습니다.</li>
+				    <li>float을 사용한 부모박스한테 overflow:hidden을 사용합니다.(0)</li>
+				    <li></li>
+				</ol>
+				
+				<br>
+				<h2>컨텐츠 영역을 보이지 않게 하는 방법</h2>
+				<ol>
+				    <li>display:none; -- display:block; (영역 사라짐)</li>
+				    <li>visibility:hidden; -- visibility:visible; (영역 유지)</li>
+				    <li>opacity:0; -- opacity:1; (영역 유지)</li>
+				    <li>width:0; height: 0; overflow:hidden; (IR)</li>
+				</ol>
+				
+				
+				<br>
+				<h2>이미지 표현 방법</h2>
+				<p class="well">웹 문서에 이미지를 표현할 수 있는 방법은 다양합니다.</p>
+				
+				<ul>
+				    <li>&lt;img&gt; 태그로 표현하는 방법 : 이미지에 의미가 있는 경우
+                        <div>
+                            <img src="img/icon01.png" alt="아이콘1">
+                            <img src="img/icon02.png" alt="아이콘2">
+                            <img src="img/icon03.png" alt="아이콘3">
+                            <img src="img/icon04.png" alt="아이콘4">
+                        </div>
+				    </li>
+				    <li>background 속성으로 표현하는 방법 : 이미지가 의미가 없고 장식용인 경우
+				        <div>
+                            <span style="display: inline-block; width:60px; height: 60px; background: url(img/icon01.png)"></span>
+                            <span style="display: inline-block; width:60px; height: 60px; background: url(img/icon02.png)"></span>
+                            <span style="display: inline-block; width:60px; height: 60px; background: url(img/icon03.png)"></span>
+                            <span style="display: inline-block; width:60px; height: 60px; background: url(img/icon04.png)"></span>
+                        </div>
+				    </li>
+				</ul>
+				
+				<ul>
+				    <li>이미지를 60px로 설정한 경우 : 피시 화면
+                        <div>
+                            <img src="img/icon01.png" alt="아이콘1">
+                            <img src="img/icon02.png" alt="아이콘2">
+                            <img src="img/icon03.png" alt="아이콘3">
+                            <img src="img/icon04.png" alt="아이콘4">
+                        </div>
+				    </li>
+				    <li>이미지를 120px로 설정한 경우 : 모바일 화면
+                        <div>
+                            <img src="img/icon01@2.png" width="60" alt="아이콘1">
+                            <img src="img/icon02@2.png" width="60" alt="아이콘2">
+                            <img src="img/icon03@2.png" width="60" alt="아이콘3">
+                            <img src="img/icon04@2.png" width="60" alt="아이콘4">
+                        </div>
+				    </li>
+				</ul>
+				
+				<br>
+				<h2>이미지 스프라이트</h2>
+				<p class="well">아이콘 또는 장식을 위한 이미지 요소들은 
+				스프라이트 기법을 활용하여 파일의 사이즈를 최소화하고 효율성을 높일 수 있습니다.</p>
+				<ul>
+				    <li>여러번의 서버 요청을 한 번으로 줄일 수 있습니다. </li>
+				    <li>이미지 수정이나 관리가 간편합니다.</li>
+				    <li>웹 접근성을 준수하기 위해서 IR 효과를 설정해야 합니다.</li>
+				</ul>
+				
+				<ul>
+				    <li>이미지 스프라이트 기법을 통해서 넣는 방법(60px)
+				        <div>
+				            <span style="width: 60px; height: 60px; display:inline-block; 
+				                background-image: url(img/icon_sprite.png);
+				                background-position: 0px 0px;    
+				                background-repeat: no-repeat;"></span>
+				            <span style="width: 60px; height: 60px; display:inline-block; 
+				                background-image: url(img/icon_sprite.png);
+				                background-position: 0px -60px; 
+				                background-repeat: no-repeat;"></span>
+				            <span style="width: 60px; height: 60px; display:inline-block; 
+				                background-image: url(img/icon_sprite.png);
+				                background-position: 0px -120px;    
+				                background-repeat: no-repeat"></span>
+				            <span style="width: 60px; height: 60px; display:inline-block; 
+				                background-image: url(img/icon_sprite.png);
+				                background-position: 0px -180px; 
+				                background-repeat: no-repeat"></span>
+				        </div>
+				    </li>
+				    <li>이미지 스프라이트 기법을 통해서 넣는 방법(120px)
+				        <div>
+				            <span style="width: 60px; height: 60px; display:inline-block; 
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px 0px;    
+				                background-repeat: no-repeat;
+				                background-size: 60px;
+				                "></span>
+				            <span style="width: 60px; height: 60px; display:inline-block; 
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -60px; 
+				                background-repeat: no-repeat;
+				                background-size: 60px;
+				                "></span>
+				            <span style="width: 60px; height: 60px; display:inline-block; 
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -120px;    
+				                background-repeat: no-repeat;
+				                background-size: 60px;
+				                "></span>
+				            <span style="width: 60px; height: 60px; display:inline-block; 
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -180px; 
+				                background-repeat: no-repeat;
+				                background-size: 60px;
+				                "></span>
+				        </div>
+				    </li>
+				</ul>
+				
+				
+				<br>
+				<h2>IR 효과</h2>
+				<p class="well">IR 기법은 이미지 대체텍스트 제공을 위한 CSS 기법으로 다양한 CSS 기법을 사용하여
+				이미지 대체텍스트를 제공할 수 있습니다.</p>
+				
+				<pre class="pre-show prettyprint linenums">
+.ir_pm {display:block; overflow:hidden; font-size:0; line-height:0; text-indent:-9999px;}
+.ir_wa {display:block; overflow:hidden; position:relative; z-index:-1; width:100%; height: 100%;}
+.ir_so {overflow: hidden; position:absolute; width:0; height:0; line-height:0; text-indent:-9999px;}</pre>
+				
+				<ul>
+				    <li>Phark Method : 의미 있는 이미지의 대체 텍스트를 제공하는 경우 : 이미지로 대체할 엘리먼트에 
+                    배경이미지를 설정하고 글자는 text-indent를 이용하여 화면 바깥으로(-9999px만큼 내어 쓰기) 빼내어 보이지 않게 하는 방법
+				        <div style="overflow:hidden;">
+				            <span style="width: 60px; height: 60px; display:block; float:left; 
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px 0px;    
+				                background-repeat: no-repeat;
+				                background-size: 60px;">아이콘1</span>
+				            <span style="width: 60px; height: 60px; display:block; float:left; 
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -60px; 
+				                background-repeat: no-repeat;
+				                background-size: 60px;">아이콘2</span>
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -120px;    
+				                background-repeat: no-repeat;
+				                background-size: 60px;"><span class="ir_pm">아이콘3</span></span>
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -180px; 
+				                background-repeat: no-repeat;
+				                background-size: 60px;"><span class="ir_pm">아이콘4</span></span>
+				        </div>
+				    </li>
+				    <li>WA IR : 의미 있는 이미지의 대체 텍스트로 이미지를 off시에도 대체 텍스트를 보여주고자 할 때 :
+                    이미지로 대체할 엘리먼트에 배경이미지를 설정하고 글자는 span 태그로 감싼 후 z-index:-1을 이용하여 화면에 안보이게 처리
+				        <div style="overflow:hidden;">
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px 0px;    
+				                background-repeat: no-repeat;
+				                background-size: 60px;">아이콘1</span>
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -60px; 
+				                background-repeat: no-repeat;
+				                background-size: 60px;">아이콘2</span>
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -120px;    
+				                background-repeat: no-repeat;
+				                background-size: 60px;"><span class="ir_wa">아이콘3</span></span>
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -180px; 
+				                background-repeat: no-repeat;
+				                background-size: 60px;"><span class="ir_wa">아이콘4</span></span>
+				        </div>
+				    </li>
+				    <li>Screen Out : 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때
+				        <div style="overflow: hidden;">
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px 0px;    
+				                background-repeat: no-repeat;
+				                background-size: 60px;">아이콘1</span>
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -60px; 
+				                background-repeat: no-repeat;
+				                background-size: 60px;">아이콘2</span>
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -120px;    
+				                background-repeat: no-repeat;
+				                background-size: 60px;"><span class="ir_su">아이콘3</span></span>
+				            <span style="width: 60px; height: 60px; display:block; float:left;
+				                background-image: url(img/icon_sprite@2.png);
+				                background-position: 0px -180px; 
+				                background-repeat: no-repeat;
+				                background-size: 60px;"><span class="ir_su">아이콘4</span></span>
+				        </div>
+				    </li>
+				</ul>
+
+                
+				<h2>이미지 최적화</h2>
+                <p class="well">디바이스에 따라서 이미지를 다르게 나오게 하는 기법입니다.</p>
+                <p>만약에 당신이 일반 피시로 보고 있다면 아이콘에 1이 표시되고, 만약 당신이 모바일이나 레티나 모니터로 보고 있다면 2가 표시됩니다.</p>
+                
+                <div style="overflow:hidden">
+                    <span class="icon_skin icon1"></span>
+                    <span class="icon_skin icon2"></span>
+                    <span class="icon_skin icon3"></span>
+                    <span class="icon_skin icon4"></span>
+                </div>
+				
+				<pre class="pre-show prettyprint linenums">
+.icon_skin {width: 60px; height: 60px; display: block; float: left; background: url(img/icon03_test.png) no-repeat;}   
+.icon_skin.icon1 {background-position: -290px 0;}
+.icon_skin.icon2 {background-position: -290px -60px;}
+.icon_skin.icon3 {background-position: -290px -120px;}
+.icon_skin.icon4 {background-position: -290px -180px;}
+    
+@media
+    only screen and (max-width:820px) and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (max-width:820px) and (min-device-pixel-ratio: 1.5),
+    only screen and (max-width:820px) and (min-resolution: 1.5dppx) {
+        .icon_skin {width: 60px; height: 60px; display: block; background: url(img/icon03_test.png) no-repeat; background-size: 175px;} 
+        .icon_skin.icon1 {background-position: 0px 0;}
+        .icon_skin.icon2 {background-position: 0px -60px;}
+        .icon_skin.icon3 {background-position: 0px -120px;}
+        .icon_skin.icon4 {background-position: 0px -180px;}
+    }
+				</pre>
+
+                <h2>미디어 쿼리</h2>
+                <p class="well">미디어 쿼리는 화면 크기에 따른 각각의 속성 값을 지정하여, 여러가지 화면을 구성하는 기술입니다.</p>
+                <p>@media only all and (조건문) {실행문}</p>
+                <ul>
+                    <li>@media : 미디어 쿼리가 시작됨을 표시합니다.</li>
+                    <li>only : 미디어 쿼리 구문을 해석하라는 명령어입니다.(생략가능)</li>
+                    <li>all : 미디어 쿼리를 해석해야 할 대상을 나타냅니다.(생략가능)
+                        <ul>
+                            <li>all : 모든 미디어 유형에 사용할 CSS를 정의합니다.</li>
+                            <li>screen : 컴퓨터 화면에서 사용할 CSS를 정의합니다.</li>
+                            <li>print : 인쇄 장치에서 사용할 CSS를 정의합니다.</li>
+                            <li>handheld : 휴대용 장비에서 사용할 CSS를 정의합니다.</li>
+                            <li>tv : 텔레비젼에서 사용할 CSS를 정의합니다.</li>
+                            <li>aural : 음성 출력기에서 사용할 CSS를 정의합니다.</li>
+                            <li>braille : 점자 출력기에서 사용할 CSS를 정의합니다.</li>
+                            <li>projection : 프로젝터에서 사용할 CSS를 정의합니다.</li>
+                            <li>tty : 고정폭을 가지는 텔레타이프에서 사용할 CSS를 정의합니다.</li>
+                        </ul>
+                    </li>
+                    <li>and : 앞과 뒤의 조건을 나타냅니다.(생략가능)</li>
+                    <li>(조건문) : 해당 조건을 설정합니다.</li>
+                    <li>(실행문) : 조건에 따른 실행을 설정합니다.</li>
+                </ul>
+                <table class="table table-bordered table-striped">
+                    <colgroup>
+                        <col width="20%">
+                        <col width="80%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>특성</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>width</td>
+                            <td>화면의 폭을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <td>height</td>
+                            <td>화면의 높이를 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>asepct-ratio</td>
+                            <td>화면의 종횡비를 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>device-width</td>
+                            <td>장치의 폭을 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>device-height</td>
+                            <td>장치의 높이를 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>device-aspect-ratio</td>
+                            <td>장치의 종횡비를 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>orientation</td>
+                            <td>화면의 방향을 지정한다. portrait, landscape 두 가지 방향이 있다.</td>
+                        </tr>
+                        <tr>
+                            <td>color</td>
+                            <td>색상 비트수를 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>color-index</td>
+                            <td>색상수를 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>monochrome</td>
+                            <td>흑백 프레임 버퍼의 픽셀당 비트수를 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>resolution</td>
+                            <td>화면의 밀도를 dpi나 dpcm 단위로 지정한다.</td>
+                        </tr>
+                        <tr>
+                            <td>scan</td>
+                            <td>tv의 스캐닝 방법을 지정한다. progressive 또는 interlace가 있다.</td>
+                        </tr>
+                        <tr>
+                            <td>grid</td>
+                            <td>출력 장치가 그리드 또는 비트맵인지 지정한다</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                                        
+
+				
+				<br><br>
+				<h1>CSS Description</h1>
+				
+				<h2>background-color</h2>
+				<p class="well">백그라운드 색상을 설정합니다.</p>
+				<ul>
+				    <li>background-color : #fff; - 백그라운드 색을 설정합니다.</li>    
+				    <li>background-color : transparent; - 백그라운드 색을 투명하게 설정합니다.</li>    
+				</ul>
+				
+				<h2>background-image</h2>
+				<p class="well">백그라운드 이미지를 설정합니다.</p>
+				<ul>
+				    <li>background-image : none; - 백그라운드 이미지 속성을 설정하지 않습니다.</li>    
+				    <li>background-image : url(이미지경로); - 백그라운드 이미지를 설정합니다.</li>    
+				</ul>
+				
+				<h2>background-position</h2>
+				<p class="well">백그라운드 위치를 설정합니다.</p>
+				<ul>
+				    <li>background-position : left top</li>    
+				    <li>background-position : left center</li>   
+				    <li>background-position : left bottom</li>   
+				    <li>background-position : right top</li>   
+				    <li>background-position : right center</li> 
+				    <li>background-position : right bottom</li>   
+				    <li>background-position : center top</li>   
+				    <li>background-position : center center</li>   
+				    <li>background-position : center bottom</li>   
+				    <li>background-position : 10px 20px</li>   
+				    <li>background-position : 10% 5%</li> 
+				    <li>background-position : 10% 5%, 10px 40px, center top</li> 
+				</ul>
+				
+				<h2>background-repeat</h2>
+				<p class="well">백그라운드 이미지 반복 여부를 설정합니다.</p>
+				<ul>
+				    <li>background-repeat : repeat(기본); - 이미지를 X축 Y축으로 반복 설정합니다.</li>
+				    <li>background-repeat : repeat-x; - 이미지를 X축으로 반복 설정합니다.</li>
+				    <li>background-repeat : repeat-y; - 이미지를 Y축으로 반복 설정합니다.</li>
+				    <li>background-repeat : no-repeat; - 이미지를 반복하지 않고 하나만 나오게 합니다.</li>
+                </ul>
+                
+                <h2>background-size</h2>
+				<p class="well">백그라운드 이미지 사이즈 설정합니다.</p>
+				<ul>
+                    <li>background-size : 30px 40px; - length </li>
+                    <li>background-size : 100% 50%; - 퍼센트 </li>
+                    <li>background-size : auto(기본); </li>
+                    <li>background-size : contain; - 이미지를 요소 크기에 맞게 설정합니다. 가로와 세로 비율을 유지되면서 설정 </li>
+                    <li>background-size : cover; - 이미지를 요소 크기에 맞게 설정합니다. 화면 크기에 맞게 공백 없이 설정 </li>
+                </ul>
+                
+                <h2>background-attachment</h2>
+				<p class="well">백그라운드 이미지 고정여부를 설정합니다.</p>
+				<ul>
+                    <li>background-attachment : scroll(기본); </li>
+                    <li>background-attachment : fixed; - 배경이미지를 고정하고, 콘텐츠만 움직입니다.</li>
+                    <li>background-attachment : local; - 배경이미지와 콘텐츠가 같이 움직입니다.</li>
+                </ul>
+                
+                <h2>border</h2>
+                <p class="well">테두리 속성을 설정합니다.</p>
+                <ul>
+                    <li>border-width : 테두리 두께</li>
+                    <li>border-style : 테두리 스타일</li>
+                    <li>border-color : 테두리 색</li>
+                    <li>border-image : 테두리 이미지</li>
+                    <li>border-radius : 테두리 굴곡</li>
+                </ul>
+                
+                <h2>border-style</h2>
+                <p class="well">테두리 스타일 속성을 설정합니다.</p>
+                <ul>
+                    <li>border-style : none;</li>
+                    <li>border-style : hidden;</li>
+                    <li style="border: 2px dotted #666; margin-bottom: 3px;">border-style : dotted;</li>
+                    <li style="border: 2px dashed #666; margin-bottom: 3px;">border-style : dashed;</li>
+                    <li style="border: 2px solid #666; margin-bottom: 3px;">border-style : solid;</li>
+                    <li style="border: 5px double #666; margin-bottom: 3px;">border-style : double;</li>
+                    <li style="border: 5px groove #666; margin-bottom: 3px;">border-style : groove;</li>
+                    <li style="border: 5px ridge #666; margin-bottom: 3px;">border-style : ridge;</li>
+                    <li style="border: 5px inset #666; margin-bottom: 3px;">border-style : inset;</li>
+                    <li style="border: 5px outset #666; margin-bottom: 3px;">border-style : outset;</li>
+                </ul>
+                
+                <h2>border-width</h2>
+                <p class="well">테두리 두께 속성을 설정합니다.</p>
+                <ul>
+                    <li style="border-top-width : 1px; border-style: solid; margin-bottom: 3px;">border-top-width : 1px;</li>
+                    <li style="border-right-width : 1px; border-style: solid; margin-bottom: 3px;">border-right-width : 2px;</li>
+                    <li style="border-bottom-width : 1px; border-style: solid; margin-bottom: 3px;">border-bottom-width : 3px;</li>
+                    <li style="border-left-width : 1px; border-style: solid; margin-bottom: 3px;">border-left-width : 4px;</li>
+                    <li style="border-width: 1px 2px 3px 4px; border-style: solid; margin-bottom: 3px;">border-width: 1px 2px 3px 4px;</li>
+                    <li style="border-width: 1px 2px 3px; border-style: solid; margin-bottom: 3px;">border-width: 1px 2px 3px;</li>
+                    <li style="border-width: 1px 2px; border-style: solid; margin-bottom: 3px;">border-width: 1px 2px;</li>
+                    <li style="border-width: 1px; border-style: solid; margin-bottom: 3px;">border-width: 1px;</li>
+                    <li style="border-width: thin; border-style: solid; margin-bottom: 3px;">border-width: thin(1px)</li>
+                    <li style="border-width: medium; border-style: solid; margin-bottom: 3px;">border-width: medium(3px)</li>
+                    <li style="border-width: thick; border-style: solid; margin-bottom: 3px;">border-width: thick(5px)</li>
+                </ul>
+                
+                <h2>font-size</h2>
+				<p class="well">폰트 사이즈 속성을 설정합니다.</p>
+                <ul>
+                    <li style="font-size: xx-small">font-size: xx-small(X)</li>
+                    <li style="font-size: x-small">font-size: x-small(X)</li>
+                    <li style="font-size: small">font-size: small(X)</li>
+                    <li style="font-size: xx-large">font-size: xx-large(X)</li>
+                    <li style="font-size: x-large">font-size: x-large(X)</li>
+                    <li style="font-size: large">font-size: large(X)</li>
+                    <li style="font-size: smaller">font-size: smaller(X)</li>
+                    <li style="font-size: larger">font-size: larger(X)</li>
+                    <li style="font-size: medium">font-size: medium(X)</li>
+                    <li style="font-size: 14px">font-size: 14px(length)</li>
+                    <li style="font-size: 20%">font-size: 20%(percentage)</li>
+                </ul>
+                
+                <h2>position</h2>
+                <p class="well">요소의 위치를 설정합니다.</p>
+                <ul>
+                    <li>postion: static; - 기본값</li>
+                    <li>postion: absolute; - 절대 좌표와 함께 위치를 지정해 줄 수 있습니다.</li>
+                    <li>postion: relative;
+                        <ol>
+                            <li>position: absolute의 기준점 역할을 합니다.</li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                    </li>
+                    <li>postion: fixed; - 요소의 위치를 고정을 설정합니다.</li>
+                </ul>
+				
+				<h2>margin</h2>
+				<p class="well">박스 요소의 바깥쪽 여백을 설정합니다.</p>
+				<ul>
+				    <li>margin-top : 10px; - 요소의 위 바깥쪽 여백을 설정합니다.</li>
+				    <li>margin-right : 11px; - 요소의 오른쪽 바깥쪽 여백을 설정합니다.</li>
+				    <li>margin-bottom : 12px; - 요소의 아래 바깥쪽 여백을 설정합니다.</li>
+				    <li>margin-left: 13px; - 요소의 왼쪽 바깥쪽 여백을 설정합니다.</li>
+				    <li>margin : 10px 11px 12px 13px; - 위쪽/오른쪽/아래/왼쪽</li>
+				    <li>margin : 10px 11px 12px; - 위쪽(10px)/왼쪽,오른쪽(11px)/아래(12px)</li>
+				    <li>margin : 10px 11px; - 위쪽,아래쪽(10px)/왼쪽,오른쪽(11px)</li>
+				    <li>margin : 10px; - 위쪽/오른쪽/아래/왼쪽(10px)</li>
+				    <li>margin : auto; - 자동값, 기본값</li>
+				    <li>margin : 0 auto; - 블록구조를 가운데 정렬 할 때 사용</li>
+				</ul>
+				
+				<h2>text-align</h2>
+				<p class="well">텍스트 정렬 방식을 설정합니다.</p>
+				<ul>
+				    <li>text-align: left; - 텍스트의 정렬을 왼쪽으로 설정합니다.</li>
+				    <li>text-align: right; - 텍스트의 정렬을 오른쪽으로 설정합니다.</li>
+				    <li>text-align: center; - 텍스트의 정렬을 양쪽으로 설정합니다.</li>
+				    <li>text-align: justify; - 텍스트의 정렬을 양쪽으로 설정합니다. </li>
+				</ul>
+
+                <h2>box-sizing</h2>
+
+                <h2>컨텐츠 요소를 가운데 정렬하는 방법</h2>
+                <ul>
+                    <li>인라인 요소를 가운데 정렬하는 방법(text-align: center)</li>
+                    <li>블록 요소를 가운데 정렬하는 방법(margin: 0 auto)</li>
+                    <li>테이블을 이용한 가운데 정렬하는 방법(vertical-align: middle)</li>
+                    <li>포지션을 이용한 가운데 정렬하는 방법(margin)</li>
+                    <li>포지션을 이용한 가운데 정렬하는 방법(translate)</li>
+                    <li>포지션을 이용한 가운데 정렬하는 방법(margin:auto)</li>
+                    <li>플렉스를 이용한 가운데 정렬하는 방법(display:flex)</li>
+                </ul>
+                <br>
+                <h3>인라인 구조를 가운데 정렬하는 방법</h3>
+                <p data-height="400" data-theme-id="26135" data-slug-hash="BvOpKo" data-default-tab="result" data-user="webstoryboy" data-pen-title="Center Type1" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/BvOpKo/">Center Type1</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                
+                <br>
+                <h3>블록 요소를 가운데 정렬하는 방법</h3>
+                <p data-height="400" data-theme-id="26135" data-slug-hash="zyJNwL" data-default-tab="result" data-user="webstoryboy" data-pen-title="Center Type2" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/zyJNwL/">Center Type2</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    
+                <br>
+                <h3>테이블을 이용한 가운데 정렬하는 방법</h3>
+                <p data-height="400" data-theme-id="26135" data-slug-hash="qLMRXg" data-default-tab="result" data-user="webstoryboy" data-pen-title="Center Type3" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/qLMRXg/">Center Type3</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                <br>
+                <h3>포지션을 이용한 가운데 정렬하는 방법</h3>
+                <p data-height="400" data-theme-id="26135" data-slug-hash="REYKMP" data-default-tab="result" data-user="webstoryboy" data-pen-title="Center Type4" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/REYKMP/">Center Type4</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+                <br>
+                <h3>포지션을 이용한 가운데 정렬하는 방법</h3>
+                <p data-height="400" data-theme-id="26135" data-slug-hash="dwqNex" data-default-tab="result" data-user="webstoryboy" data-pen-title="Center Type5" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/dwqNex/">Center Type5</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+                <br>
+                <h3>포지션을 이용한 가운데 정렬하는 방법</h3>
+                <p data-height="400" data-theme-id="26135" data-slug-hash="PXdWBG" data-default-tab="result" data-user="webstoryboy" data-pen-title="Center Type6" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/PXdWBG/">Center Type6</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    
+                <br>
+                <h3>플렉스를 이용한 가운데 정렬하는 방법(display:flex)</h3>
+                <p data-height="400" data-theme-id="26135" data-slug-hash="ZVMLMR" data-default-tab="result" data-user="webstoryboy" data-pen-title="Center Type7" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/ZVMLMR/">Center Type7</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+			</div>
+			<!--//span12-->
+		</div>
+		<!--//row-fluid-->
+	</div>  
+	<!-- //contents -->
+    
+    <!-- //footer -->
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <h5>Webstoryboy</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+	<!-- //footer -->
+
+	<!-- script -->
+	<script src="../assets/js/jquery-1.9.1.min.js"></script> 
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/google-code-prettify/prettify.js"></script>
+    <script src="../assets/js/application.js"></script>
+</body>
+</html>

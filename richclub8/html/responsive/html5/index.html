@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="author" content="webstoryboy">
+	<meta name="description" content="반응형 사이트 따라하기">
+	<meta name="keywords" content="반응형사이트, 웹퍼블리셔, 웹접근성, HTML5">
+	<title>반응형 사이트 만들기</title>
+
+	<!-- style -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/slick.css">
+
+	<!-- Facebook meta tags -->
+	<meta property="og:type" content="HTML5">
+	<meta property="og:title" content="반응형 사이트 만들기">
+	<meta property="og:url" content="http://richclub8.dothome.co.kr">
+	<meta property="og:image" content="http://richclub8.dothome.co.kr">
+	<meta property="og:site_name" content="반응형 사이트 만들기">
+	<meta property="og:description" content="반응형 사이트 따라하기">
+
+	<!-- twitter meta tags -->
+	<meta property="twitter:card" content="HTML5">
+	<meta property="twitter:site" content="@webstoryboy">
+	<meta property="twitter:title" content="반응형 사이트">
+	<meta property="twitter:description" content="반응형 사이트 만들기">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="icon/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="icon/favicon-152.png">
+	<link rel="icon" href="path/to/favicon.png">
+	<link rel="icon" href="icon/favicon-16.png" sizes="16x16"> 
+	<link rel="icon" href="icon/favicon-32.png" sizes="32x32"> 
+	<link rel="icon" href="icon/favicon-48.png" sizes="48x48"> 
+	<link rel="icon" href="icon/favicon-64.png" sizes="64x64"> 
+	<link rel="icon" href="icon/favicon-128.png" sizes="128x128">
+	
+	<!-- 웹 폰트 -->
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+	
+	<!-- HTLM5shiv ie6~8 -->
+	<!--[if lt IE 9]> 
+		<script src="js/html5shiv.min.js"></script>
+		<script type="text/javascript">
+			alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
+		</script>
+	<![endif]-->
+</head>
+<body>
+	
+	<header id="header">
+		<div class="container">
+			<div class="row">
+				<div class="header">
+					<div class="header_menu">
+						<a href="http://websedu.tistory.com/">Blog</a>
+						<a href="https://www.facebook.com/webstoryboys">facebook</a>
+						<a href="http://richclub8.dothome.co.kr/webstandard/web/index.html">Webstandard</a>
+					</div>
+					<!-- //header_menu -->
+					<div class="header_tit">
+						<h1>Professional Web Publisher</h1><br>
+						<a href="http://webstoryboy.co.kr">webstoryboy.co.kr</a>
+					</div>
+					<!-- //header_tit -->
+					<div class="header_icon">
+						<ul>
+							<li><a href="#"><i class="fa fa-html5" aria-hidden="true"></i><span>HTML5</span></a></li>
+							<li><a href="#"><i class="fa fa-gitlab" aria-hidden="true"></i><span>GitHub</span></a></li>
+							<li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i><span>Fackbook</span></a></li>
+							<li><a href="#"><i class="fa fa-css3" aria-hidden="true"></i><span>CSS3</span></a></li>
+						</ul>
+					</div>
+					<!-- //header_icon -->
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<nav id="nav">
+		<div class="container">
+			<div class="row">
+				<div class="nav">
+					<h2 class="ir_su">전체 메뉴</h2>
+					<div>
+			            <h3>HTML Reference</h3>
+			            <ol>
+			                <li><a href="http://richclub8.dothome.co.kr">HTML 태그(Tag)</a></li>
+			                <li><a href="http://richclub8.dothome.co.kr">블록 요소/인라인 요소</a></li>
+			                <li><a href="http://richclub8.dothome.co.kr">DTD 선언</a></li>
+			                <li><a href="http://richclub8.dothome.co.kr">언어 속성 설정</a></li>
+			                <li><a href="http://richclub8.dothome.co.kr">HTML &lt;title&gt;</a></li>
+			                <li><a href="http://richclub8.dothome.co.kr">HTML &lt;meta&gt;</a></li>
+			                <li><a href="http://richclub8.dothome.co.kr">특수문자</a></li>
+			                <li><a href="http://richclub8.dothome.co.kr">하이퍼 링크</a></li>
+			                <li><a href="http://richclub8.dothome.co.kr">HTML &lt;style&gt;</a></li>
+			                <li><a href="#">HTML &lt;html&gt;</a></li>
+			                <li><a href="#">HTML &lt;head&gt;</a></li>
+			                <li><a href="#">HTML &lt;div&gt;</a></li>
+			                <li><a href="#">HTML &lt;colgroup&gt;</a></li>
+			                <li><a href="#">HTML &lt;caption&gt;</a></li>
+			            </ol>
+			        </div>
+			        <div>
+			            <h3>CSS Reference</h3>
+			            <ol>
+			                <li><a href="#">CSS 선택자</a></li>
+			                <li><a href="#">CSS 단위</a></li>
+			                <li><a href="#">CSS 색상</a></li>
+			                <li><a href="#">CSS 선언 방법</a></li>
+			                <li><a href="#">상대주소와 절대주소</a></li>
+			                <li><a href="#">CSS float</a></li>
+			                <li><a href="#">이미지 표현 방법</a></li>
+			                <li><a href="#">이미지 스프라이트</a></li>
+			                <li><a href="#">IR 효과</a></li>
+			                <li><a href="#">이미지 최적화</a></li>
+			                <li><a href="#">background-color</a></li>
+			                <li><a href="#">border-style</a></li>
+			                <li><a href="#">font-size</a></li>
+			                <li><a href="#">text-align</a></li>
+			            </ol>
+			        </div>
+			        <div>
+			            <h3>Responsive</h3>
+			            <ol>
+			                <li><a href="#">반응형사이트</a></li>
+			                <li><a href="#">미디어쿼리</a></li>
+			                <li><a href="#">CSS3</a></li>
+			                <li><a href="#">웹 접근성 연구소</a></li>
+			                <li><a href="#">네이버 널리</a></li>
+			                <li><a href="#">다음 다룸</a></li>
+			                <li><a href="#">Webstandard</a></li>
+			            </ol>
+			        </div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- //nav -->
+
+	<article id="title">
+		<div class="container">
+			<div class="title">
+				<h2>"나는 퍼블리셔다."</h2>
+				<a href="#" class="btn"><i class="fa fa-angle-down" aria-hidden="true"></i><span class="ir_su">전체메뉴 보기</span></a>
+			</div>
+		</div>
+	</article>
+	<!-- //title -->
+
+	<main>
+		<section id="contents">
+			<div class="container">
+				<h2 class="ir_su">반응형 사이트 컨텐츠</h2>
+				<section id="cont_left">
+					<h3 class="ir_su">메뉴 및 게시판 컨텐츠 영역</h3>
+					<article class="column col1">
+						<h4 class="col_tit">Menu</h4>
+						<p class="col_desc">Box-shadow를 이용한 마우스 오버 효과 메뉴입니다.</p>
+						<!-- 메뉴 -->
+						<div class="menu">
+							<ul>
+								<li><a href="#">Cafe <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+								<li><a href="#">Tutorial <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+								<li><a href="#">WebSite <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+								<li><a href="#">Reference <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+								<li><a href="#">CSS3 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+								<li><a href="#">HTML5 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+						<!--//메뉴 -->
+					</article>
+					<!-- //col1 -->
+
+					<article class="column col2">
+						<h4 class="col_tit">Notice</h4>
+						<p class="col_desc">게시판 영역의 한줄 효과와 두줄 효과 게시판입니다.</p>
+						<!-- 게시판 -->
+						<div class="notice1">
+							<h5>Notice1</h5>
+							<ul>
+								<li><a href="#">이 줄은 한줄 효과입니다. 이 줄은 한줄 효과입니다.</a></li>
+								<li><a href="#">이 줄은 한줄 효과입니다. 이 줄은 한줄 효과입니다.</a></li>
+								<li><a href="#">이 줄은 한줄 효과입니다. 이 줄은 한줄 효과입니다.</a></li>
+								<li><a href="#">이 줄은 한줄 효과입니다. 이 줄은 한줄 효과입니다.</a></li>
+							</ul>
+							<a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+						</div>
+						<!--//게시판 -->
+						<!-- 게시판2 -->
+						<div class="notice2 mt15">
+							<h5>Notice2</h5>
+							<ul>
+								<li><a href="#">이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다.</a></li>
+								<li><a href="#">이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다.</a></li>
+								<li><a href="#">이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다.</a></li>
+								<li><a href="#">이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다. 이 줄은 두줄 효과입니다.</a></li>
+							</ul>
+							<a href="#" class="more" title="더 보기">More <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+						</div>
+						<!--//게시판2 -->
+					</article>
+					<!-- //col2 -->
+
+					<article class="column col3">
+						<h4 class="col_tit">Blog</h4>
+						<p class="col_desc">웹 반응형 사이트 영역의 제목 설명 부분입니다.</p>
+						<!-- blog -->
+						<div class="blog1">
+							<h5>반응형 웹 페이지</h5>
+							<figure>
+								<a href="#">
+                                    <img src="img/blog1_@1.jpg" class="img-normal" alt="normal image">
+                                    <img src="img/blog1_@2.jpg" class="img-retina" alt="retina image">
+								    <figcaption>반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다.</figcaption>
+							    </a>
+							</figure>
+						</div>
+						<!--//blog -->
+						<!-- blog2 -->
+						<div class="blog2 mt15">
+							<h5>반응형 웹 페이지2</h5>
+							<figure>
+								<a href="#"><img src="img/blog2_@2.jpg"></a>
+								<figcaption>반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다.</figcaption>
+							</figure>
+						</div>
+						<!--//blog2 -->
+					</article>
+					<!-- //col3 -->
+				</section>
+				<!-- //cont_left -->
+				<section id="cont_center">
+					<h3 class="ir_su">이미지 및 동영상 컨텐츠 영역</h3>
+					<article class="column col4">
+						<h4 class="col_tit">Slick Slider Plugin</h4>
+						<p class="col_desc">슬릭 플러그인을 이용한 이미지 슬라이더 예제입니다.</p>
+						<!-- 이미지 슬라이드 -->
+						<div class="slider">
+							<div><img src="img/slider01.jpg" alt="이미지1"></div>
+							<div><img src="img/slider02.jpg" alt="이미지2"></div>
+							<div><img src="img/slider03.jpg" alt="이미지3"></div>
+							<div><img src="img/slider04.jpg" alt="이미지4"></div>
+							<div><img src="img/slider05.jpg" alt="이미지5"></div>
+						</div>
+						<!--//이미지 슬라이드 -->
+					</article>
+					<!-- //col4 -->
+
+					<article class="column col5">
+						<h4 class="col_tit">Title</h4>
+						<p class="col_desc">웹 반응형 사이트 영역의 제목 설명 부분입니다.</p>
+						<!-- lightbox -->
+						<div class="lightbox square clearfix">
+							<a href="img/img01.jpg"><img src="img/img01_s.jpg" alt="이미지"></a>
+							<a href="img/img02.jpg"><img src="img/img02_s.jpg" alt="이미지"></a>
+							<a href="img/img03.jpg"><img src="img/img03_s.jpg" alt="이미지"></a>
+							<a href="img/img04.jpg"><img src="img/img04_s.jpg" alt="이미지"></a>
+							<a href="img/img05.jpg"><img src="img/img05_s.jpg" alt="이미지"></a>
+							<a href="img/img06.jpg"><img src="img/img06_s.jpg" alt="이미지"></a>
+							<a href="img/img07.jpg"><img src="img/img07_s.jpg" alt="이미지"></a>
+							<a href="img/img08.jpg"><img src="img/img08_s.jpg" alt="이미지"></a>
+							<a href="img/img09.jpg"><img src="img/img09_s.jpg" alt="이미지"></a>
+							<a href="img/img10.jpg"><img src="img/img10_s.jpg" alt="이미지"></a>
+						</div>
+						<!--//lightbox -->
+					</article>
+					<!-- //col5 -->
+
+					<article class="column col6">
+						<h4 class="col_tit">Video</h4>
+						<p class="col_desc">웹 반응형 사이트 영역의 제목 설명 부분입니다.</p>
+						<!-- video -->
+						<!-- <video autoplay="autoplay" controls="controls" loop="loop">
+							<source src="img/video.mp4" type="video/mp4">
+						</video> -->
+						<div class="video">
+							<iframe src="https://www.youtube.com/embed/5Dwq-T3akzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<!--//video -->
+					</article>
+					<!-- //col6 -->
+				</section>
+				<!-- //cont_center -->
+				<section id="cont_right">
+					<h3 class="ir_su">이미지 컨텐츠 영역</h3>
+					<article class="column col7">
+						<h4 class="col_tit">Effect1</h4>
+						<p class="col_desc">웹 반응형 사이트 영역의 제목 설명 부분입니다.</p>
+						<!-- side1 -->
+						<div class="side1">
+							<a href="#">
+								<div class="front">
+									<img src="img/side1.jpg" alt="이미지1">
+								</div>
+								<div class="back">
+									<i class="fa fa-heart fa-4x" aria-hidden="true"></i>
+								</div>
+							</a>
+						</div>
+						<!--//side1 -->
+					</article>
+					<!-- //col7 -->
+					<article class="column col8">
+						<h4 class="col_tit">Effect2</h4>
+						<p class="col_desc">웹 반응형 사이트 영역의 제목 설명 부분입니다.</p>
+						<!-- side2 -->
+						<div class="side2">
+							<figure>
+								<img src="img/side2.jpg" alt="이미지2">
+								<figcaption>
+									<h5>Mouse Hover<em>Effect</em></h5>
+								</figcaption>
+							</figure>
+						</div>
+						<!--//side2 -->
+					</article>
+					<!-- //col8 -->
+					<article class="column col9">
+						<h4 class="col_tit">Title</h4>
+						<p class="col_desc">웹 반응형 사이트 영역의 제목 설명 부분입니다.</p>
+						<!-- side3 -->
+						<div class="side3">
+							<img src="img/side3.jpg" alt="이미지1">
+						</div>
+						<!--//side3 -->
+					</article>
+					<!-- //col9 -->
+				</section>
+				<!-- //cont_right -->
+			</div>
+		</section>
+		<!-- //contents -->
+	</main>
+	
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<h2 class="ir_su">반응형 사이트 푸터</h2>
+				<div class="footer">
+					<ul>
+						<li><a href="#">사이트 도움말</a></li>
+						<li><a href="#">사이트 이용약관</a></li>
+						<li><a href="#">사이트 운영원칙</a></li>
+						<li><a href="#"><strong>개인정보취급방침</strong></a></li>
+						<li><a href="#">책임의 한계와 법적고지</a></li>
+						<li><a href="#">게시중단요청서비스</a></li>
+						<li><a href="#">고객센터</a></li>
+					</ul>
+					<address>
+						Copyright &copy;
+						<a href="http://webstoryboy.co.kr">webstoryboyr</a>
+						All Right Reserved
+					</address>
+				</div>
+			</div>
+			
+
+		</div>
+	</footer>
+	<!-- //footer -->
+
+	<!-- Script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script>
+		$(".slider").slick({
+			dots: true,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			arrows: false,
+			responsive: [
+			    {
+				    breakpoint: 768,
+				    settings: {
+				        arrows: true,
+				        dots: false
+			      	}
+			    }
+			]
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

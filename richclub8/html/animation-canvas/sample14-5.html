@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        * {margin: 0; padding: 0; background: #000;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    
+    <script type="text/javascript" src="../assets2/js/jquery-1.12.4.min.js"></script>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        var canW = canvas.width;
+        var canH = canvas.height;
+        
+        console.log("canW" + canW, "canH" + canH);
+        var speed = 5;
+        var keyCodeValue;
+      
+        var fighterImage = new Image();
+        fighterImage.src = "img/a.png";
+        
+        
+        function Player(){
+            this.y = canH - 220,
+            this.x = canW * 0.5 - 150,
+            this.w = 200,
+            this.h = 200;
+            this.render = function(){
+                ctx.strokeStyle = "red";
+                ctx.strokeRect(this.x, this.y, this.w, this.h);
+                ctx.drawImage(fighterImage, this.x, this.y);
+            };
+        }
+
+        function update(){
+            if(keyCodeValue === "A"){
+                player.x -= speed;
+            } else if (keyCodeValue === "D"){
+                player.x += speed;
+            }
+            
+            if(player.x < 0){
+                player.x = 0;
+            } else if (player.x > (canW - player.w)){
+                player.x = canW - player.w;
+            }
+        }
+        
+        $(document).keydown(function(event){
+            keyCodeValue = String.fromCharCode(event.keyCode);
+            console.log(event.keyCode+"|"+keyCodeValue);
+        });
+        
+        $(document).keyup(function(event){
+            keyCodeValue = "";
+        });
+        
+        var player  = new Player();
+        
+        function animate(){
+            ctx.clearRect(0,0,canW, canH);
+            update();
+            player.render();
+        }
+        
+        setInterval(animate, 30);
+        
+        
+    </script>
+</body>
+</html>

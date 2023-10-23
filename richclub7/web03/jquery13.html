@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>마우스 이벤트</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    li {list-style: none;}
+    body {background:#1a237e;}
+    .effect {max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box; padding: 3%; overflow: hidden;}
+    .effect li {float: left; width: 31.3333%; margin: 1%; cursor: pointer; border: 7px solid #283593; position: relative; box-sizing: border-box; }
+    .effect li img {width: 100%; display: block;}
+    .effect li em {position: absolute; bottom: 0; left: 0; width: 100%; padding: 5%; box-sizing: border-box; background-color: rgba(0,0,0,0.7); color: #fff;}
+  </style>
+</head>
+<body>
+  
+  <div class="effect">
+    <ul>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg01.png" alt=""><em>.click()</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg02.png" alt=""><em>.dblclick()</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg03.png" alt=""><em>.hover()</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg04.png" alt=""><em>.mousedown()</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg05.png" alt=""><em>.mouseout()</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg06.png" alt=""><em>.mouseover</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg07.png" alt=""><em>.mouseup()</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg08.png" alt=""><em>.mouseenter()</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg09.png" alt=""><em>.mouseleave()</em></li>
+      <li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg10.png" alt=""><em>.mousemove()</em></li>
+    </ul>
+  </div>
+  
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <script>
+      //글씨를 클릭하면 글씨 색을 빨간색으로 변경하세요!
+      
+      //글씨를 클릭하면 글씨를 HOVER라고 변경해주세요~
+      
+      $(".effect > ul > li:eq(0)").on("click",function(){
+          $(this).find("em").text("클릭했습니다.");
+      });
+      $(".effect > ul > li:eq(1)").on("dblclick",function(){
+          $(this).find("em").text("더블클릭했습니다.");
+      });
+      
+      $(".effect > ul > li:eq(2)").hover(function(){
+        $(this).find("em").text("마우스를 올렸습니다.");
+      },function(){
+        $(this).find("em").text("마우스가 벗어났습니다.");
+      });
+      
+      $(".effect > ul > li:eq(3)").on("mousedown",function(){
+          $(this).find("em").text("마우스 버튼을 눌렀습니다.");
+      });
+      
+      $(".effect > ul > li:eq(4)").on("mouseout",function(){
+          $(this).find("em").text("마우스가 벗어났습니다.");
+      });
+      
+      $(".effect > ul > li:eq(5)").on("mouseover",function(){
+          $(this).find("em").text("마우스를 올렸습니다.");
+      });
+      
+      $(".effect > ul > li:eq(6)").on("mouseup",function(){
+          $(this).find("em").text("마우스를 올렸다가 떼었습니다.");
+      });
+      
+      $(".effect > ul > li:eq(7)").on("mouseenter",function(){
+          $(this).find("em").text("마우스를 버튼을 올렸습니다.");
+      });
+      
+      $(".effect > ul > li:eq(8)").on("mouseleave",function(){
+          $(this).find("em").text("마우스가 벗어났습니다.");
+      });
+      
+      $(".effect > ul > li:eq(9)").on("mousemove",function(){
+          $(this).find("em").text("마우스가 움직였습니다..");
+      });
+      
+  </script>
+  
+  
+</body>
+</html>
+
+
+
+
+
+

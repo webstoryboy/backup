@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+    
+    <script type="text/javascript" src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script>
+        //javascript
+        var canvas = document.getElementById("#myCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        //jquery
+        var canvas = $("#myCanvas").get(0);
+        var ctx = canvas.getContext("2d");
+    </script>
+</body>
+</html>

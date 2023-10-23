@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	
+	<h1>변경(MANIPULATION)</h1>
+	<ol class="list">
+		<li class="li1">.clone() : 선택한 요소를 복사합니다.</li>
+		<li class="li2">.unwrap() : 선택한 요소의 부모 요소를 삭제합니다.</li>
+		<li class="li3">.wrap() : 선택한 요소에 새로운 요소를 추가합니다.</li>
+		<li class="li4">.wrapAll() : 선택한 요소에 새로운 요소를 한꺼번에 추가합니다.</li>
+		
+	</ol>
+	
+	<!-- jQuery Script -->
+	<script src="assets/js/jquery.min_1.12.4.js"></script>
+	<script>
+		$(".list").append("<li class='li5'>.append() : 선택한 요소 마지막 위치에 새로운 요소를 추가합니다.</li>");
+		$(".list").prepend("<li class='li6'>.prepend() : 선택한 요소 처음 위치에 새로운 요소를 추가합니다.</li>");
+		
+		$("<li class='li7'>.appendTo(target) : 선택한 요소(타겟) 마지막 위치에 새로운 요소를 추가합니다.</li>").appendTo(".list");
+		$("<li class='li8'>.prependTo(target) : 선택한 요소(타겟) 처음 위치에 새로운 요소를 추가합니다.</li>").prependTo(".list");
+		
+		$(".li1").before("<li class='li9'>.before() :선택한 요소 이전 위치에 새로운 요소를 추가합니다.</li>");
+		$(".li1").after("<li class='li10'>.after() :선택한 요소 이후 위치에 새로운 요소를 추가합니다.</li>");
+		
+		$("<li class='li11'>.insertbefore() :선택한 요소(타겟) 이전 위치에 새로운 요소를 추가합니다.</li>").insertBefore(".li4");
+		$("<li class='li12'>.insertafter() :선택한 요소(타겟) 이전 위치에 새로운 요소를 추가합니다.</li>").insertAfter(".li4");
+		
+		//제목 태그의 컬러를 빨간색으로 변경해주세요!
+		$("h1").css("color","red");
+		$(":header").css("color","red");
+		
+		$("h1").replaceWith("<h1 style='color:red'>MANIPULATION</h1>")
+		$("h1").text("MANIPULATIONN");
+		$("h1").html("MANIPULATIONN<em>N<em>")
+		
+		var cl = $(".li1").text();
+		var cl2 = $(".li1").clone();
+		
+		$(".list").append(cl2);
+		$(".list").append(cl);
+		
+		$(".list li:last-child").remove();
+		
+		$(".list").wrap("<div />");
+		$(".list li").wrapInner("<a />");
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

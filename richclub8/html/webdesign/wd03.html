@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>대한투어</title>
+        
+        <style>
+            /*reset */
+            * {margin:0; padding: 0;}
+            a {text-decoration: none; color:#fff;}
+            li {list-style: none;}
+            .clearfix:before, clearfix:after{content: ''; display: block; clear: both;}
+            
+            /* 레이아웃 */
+            #wrap {width: 1200px; margin: 0 auto; color: #fff;}
+            #header {width: 1200px; height: 100px; background: #ccc;}
+            #slide {width: 1200px; height: 300px; background: #ddd;}
+            #contents {width: 1200px; height: 200px; background: #eee;}
+            #footer {width: 1200px; height: 100px; background: #999;}
+            
+            /* header */
+            #header {}
+            #header h1 {float: left; width: 200px; height: 100px; background: #333; }
+            #header .nav {float: right; width: 800px; margin-top: 61px;}
+            #header .nav li {float: left; width: 200px; text-align: center; background: #333;}
+            #header .nav li a {padding: 10px; display: block;}
+            
+            /* slide */
+            #slide {}
+            #slide h2 {text-align: center; line-height: 300px; background: #444;}
+            
+            /* contents */
+            #contents {}
+            #contents .cont1 {float: left; width: 33.333%; line-height: 200px; background: #555; text-align: center;}
+            #contents .cont2 {float: left; width: 33.333%; line-height: 200px; background: #666; text-align: center;}
+            #contents .cont3 {float: left; width: 33.333%; line-height: 200px; background: #777; text-align: center;}
+            
+            /* footer */
+            #footer {text-align: center;}
+            #footer .footer_infor {float: left; width: 1000px; height: 100px; background: #111; line-height: 100px;}
+            #footer .footer_sns {float: left; width: 200px; height: 50px; background: #222; line-height: 50px;}
+            #footer .footer_family {float: left; width: 200px; height: 50px; background: #333; line-height: 50px;}
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header id="header" class="clearfix">
+                <h1><a href="#">로고</a></h1>
+                <nav class="nav">
+                    <ul class="clearfix">
+                        <li><a href="#">menu1</a></li>
+                        <li><a href="#">menu1</a></li>
+                        <li><a href="#">menu1</a></li>
+                        <li><a href="#">menu1</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- //header -->
+            
+            <section id="slide">
+                <h2>이미지 슬라이드</h2>
+            </section>
+            <!-- //slide -->
+            
+            <section id="contents" class="clearfix">
+                <article class="cont1"><h3>공지사항</h3></article>
+                <article class="cont2"><h3>갤러리</h3></article>
+                <article class="cont3"><h3>바로가기</h3></article>
+            </section>
+            <!-- //contents -->
+            
+            <footer id="footer" class="clearfix">
+                <address class="footer_infor"><h3>copyright</h3></address>
+                <div class="footer_sns"><h3>SNS</h3></div>
+                <div class="footer_family"><h3>패밀리 사이트</h3></div>
+            </footer>
+            <!-- //footer -->
+        </div>
+    </body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        function draw() {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            
+            ctx.fillStyle = "red";
+            ctx.fillRect(20,20,100,100);
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.fillStyle = "blue";
+            ctx.fillRect(50,50,100,100);
+        }
+        
+        draw()
+        
+        
+        
+    </script>
+</body>
+</html>

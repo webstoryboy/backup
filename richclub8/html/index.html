@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="webstoryboy">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design">
+    <title>webstoryboy</title>
+
+    <!-- web_font -->
+    <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css' rel='stylesheet' type='text/css' />
+
+    <!-- css -->
+    <link href="assets/css/bootstrapTheme.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/isotope.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/ico/icon_57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/ico/icon_114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/ico/icon_72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/ico/icon_144.png">
+
+    <!-- hmlt5 support -->
+    <!--[if lt IE 9]><script src="assets/js/html5shiv.js"></script><![endif]-->
+
+    <!-- IE6,7 support -->
+    <!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+
+    <!--[if lte IE 6]>
+	<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+	사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+	<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+	<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a>
+	<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+	<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+	<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+	<![endif]-->
+
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58059b3c799af94c"></script>
+</head>
+
+
+
+
+<body>
+    <!-- nav -->
+    <div id="top-nav" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li><a href="https://webstoryboy.co.kr" target="_blank">webstoryboy</a></li>
+                        <li><a href="https://webstoryboy.co.kr" target="_blank">Tistory</a></li>
+                        <li><a href="https://codepen.io/webstoryboy/" target="_blank">Codepen</a></li>
+                        <li><a href="https://github.com/webstoryboy" target="_blank">Github</a></li>
+                        <li><a href="https://dribbble.com/webstoryboy" target="_blank">Dribbble</a></li>
+                        <li><a href="http://richclub2.dothome.co.kr/wordpress/" target="_blank">wordpress</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //nav -->
+
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span12" style="text-align:center;">
+                    <div class="header_tit">
+                        <h1>Professional web publishers</h1>
+                        <h2><a href="http://webstoryboy.co.kr">webstoryboy.co.kr</a></h2>
+                    </div>
+                    <div class="header_icon">
+                        <ul>
+                            <li class="icon_tit1"><a href="intro.html" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+
+
+
+    <div id="contents_tit">
+
+        <div class="titt">
+            <p><a href="#" class="tit_btn">&quot;나는 퍼블리셔다&quot;</a></p>
+        </div>
+
+    </div>
+
+
+
+    <!-- contents -->
+    <div id="customizing">
+        <div class="container">
+
+            <div class="row">
+                <div id="options" class="gridly">
+                    <ul class="filter option-set" data-filter-group="color">
+                        <li><a href="#filter-color-any" data-filter-value="" class="selected">ALL</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".class">CLASS</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".infor">INFOR</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".refer">REFERENCE</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".desing">DESIGN</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".script">SCRIPT</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".animation">ANIMATION</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".css3">CSS3</a></li>
+                        <li class="webstandard"><a href="#filter-color-webstandard" data-filter-value=".site">SITE</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="row" id="middle" style="margin-left:16px;">
+                <div id="container" class="clearfix">
+                    
+                    
+
+                    <div class="color-shape class">
+                        <a href="class/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">CLASS1</span>
+                                    <span class="overlay-text-thumb">CLASS</span>
+                                    <span class="overlay-text-thumb1">수업과 관련된 스케쥴입니다.</span>
+                                    <span class="overlay-text-thumb2">CLASS</span>
+                                </div>
+                                <img src="assets/img/tit2.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>CLASS1</h5>
+                                    <p>수업과 관련된 스케쥴입니다.</p>
+                                    <span>CLASS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="color-shape refer">
+                        <a href="html/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">HTML</span>
+                                    <span class="overlay-text-thumb">HTML</span>
+                                    <span class="overlay-text-thumb1">HTML 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">HTML</span>
+                                </div>
+                                <img src="assets/img/tit2.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>HTML</h5>
+                                    <p>HTML 레퍼런스입니다.</p>
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape refer">
+                        <a href="css/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">CSS</span>
+                                    <span class="overlay-text-thumb">CSS</span>
+                                    <span class="overlay-text-thumb1">CSS 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">CSS</span>
+                                </div>
+                                <img src="assets/img/tit2.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>CSS</h5>
+                                    <p>CSS 레퍼런스입니다.</p>
+                                    <span>CSS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape infor">
+                        <a href="layout/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">LAYOUT</span>
+                                    <span class="overlay-text-thumb">LAYOUT</span>
+                                    <span class="overlay-text-thumb1">LAYOUT 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">LAYOUT</span>
+                                </div>
+                                <img src="assets/img/tit2.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>LAYOUT</h5>
+                                    <p>LAYOUT 레퍼런스입니다.</p>
+                                    <span>LAYOUT</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-5913874937139786"
+     data-ad-slot="8022027654"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                    <div class="color-shape infor">
+                        <a href="infor/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">INFOR</span>
+                                    <span class="overlay-text-thumb">INFOR</span>
+                                    <span class="overlay-text-thumb1">INFOR 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">INFOR</span>
+                                </div>
+                                <img src="assets/img/tit2.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>INFOR</h5>
+                                    <p>INFOR 레퍼런스입니다.</p>
+                                    <span>INFOR</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape site">
+                        <a href="webstandard/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">WEBSTANDARD</span>
+                                    <span class="overlay-text-thumb">WEBSTANDARD</span>
+                                    <span class="overlay-text-thumb1">WEBSTANDARD 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">WEBSTANDARD</span>
+                                </div>
+                                <img src="assets/img/tit1.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>WEBSTANDARD</h5>
+                                    <p>WEBSTANDARD 레퍼런스입니다.</p>
+                                    <span>WEBSTANDARD</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape infor">
+                        <a href="font/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">WEB FONT</span>
+                                    <span class="overlay-text-thumb">WEB FONT</span>
+                                    <span class="overlay-text-thumb1">WEB FONT 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">WEB FONT</span>
+                                </div>
+                                <img src="assets/img/tit1.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>WEB FONT</h5>
+                                    <p>WEB FONT 레퍼런스입니다.</p>
+                                    <span>WEB FONT</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape site">
+                        <a href="responsive/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">RESPONSIVE</span>
+                                    <span class="overlay-text-thumb">RESPONSIVE</span>
+                                    <span class="overlay-text-thumb1">RESPONSIVE 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">RESPONSIVE</span>
+                                </div>
+                                <img src="assets/img/tit1.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>RESPONSIVE</h5>
+                                    <p>RESPONSIVE 레퍼런스입니다.</p>
+                                    <span>RESPONSIVE</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape css3">
+                        <a href="box-shadow/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">BOX-SHADOW</span>
+                                    <span class="overlay-text-thumb">BOX-SHADOW</span>
+                                    <span class="overlay-text-thumb1">BOX-SHADOW 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">BOX-SHADOW</span>
+                                </div>
+                                <img src="assets/img/tit3.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>BOX-SHADOW</h5>
+                                    <p>BOX-SHADOW 레퍼런스입니다.</p>
+                                    <span>BOX-SHADOW</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape css3">
+                        <a href="border-radius/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">BORDER-RADIUS</span>
+                                    <span class="overlay-text-thumb">BORDER-RADIUS</span>
+                                    <span class="overlay-text-thumb1">BORDER-RADIUS 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">BORDER-RADIUS</span>
+                                </div>
+                                <img src="assets/img/tit3.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>BORDER-RADIUS</h5>
+                                    <p>BORDER-RADIUS 레퍼런스입니다.</p>
+                                    <span>BORDER-RADIUS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape css3">
+                        <a href="background/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">BACKGROUND</span>
+                                    <span class="overlay-text-thumb">BACKGROUND</span>
+                                    <span class="overlay-text-thumb1">BACKGROUND 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">BACKGROUND</span>
+                                </div>
+                                <img src="assets/img/tit3.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>BACKGROUND</h5>
+                                    <p>BACKGROUND 레퍼런스입니다.</p>
+                                    <span>BACKGROUND</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape css3">
+                        <a href="blend/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">BLEND EFFECT</span>
+                                    <span class="overlay-text-thumb">BLEND EFFECT</span>
+                                    <span class="overlay-text-thumb1">BLEND EFFECT 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">BLEND EFFECT</span>
+                                </div>
+                                <img src="assets/img/tit3.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>BLEND EFFECT</h5>
+                                    <p>BLEND EFFECT 레퍼런스입니다.</p>
+                                    <span>BLEND EFFECT</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape css3">
+                        <a href="transform/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">TRANSFORM</span>
+                                    <span class="overlay-text-thumb">TRANSFORM</span>
+                                    <span class="overlay-text-thumb1">TRANSFORM 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">TRANSFORM</span>
+                                </div>
+                                <img src="assets/img/tit3.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>TRANSFORM</h5>
+                                    <p>TRANSFORM 레퍼런스입니다.</p>
+                                    <span>TRANSFORM</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="animation-css/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">CSS ANIMATION</span>
+                                    <span class="overlay-text-thumb">CSS ANIMATION</span>
+                                    <span class="overlay-text-thumb1">CSS ANIMATION 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">CSS ANIMATION</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>CSS ANIMATION</h5>
+                                    <p>CSS ANIMATION 레퍼런스입니다.</p>
+                                    <span>CSS ANIMATION</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="color-shape animation">
+                        <a href="animation-js/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">JS ANIMATION</span>
+                                    <span class="overlay-text-thumb">JS ANIMATION</span>
+                                    <span class="overlay-text-thumb1">JS ANIMATION 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">JS ANIMATION</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>JS ANIMATION</h5>
+                                    <p>JS ANIMATION 레퍼런스입니다.</p>
+                                    <span>JS ANIMATION</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="color-shape animation">
+                        <a href="animation-svg/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">SVG ANIMATION</span>
+                                    <span class="overlay-text-thumb">SVG ANIMATION</span>
+                                    <span class="overlay-text-thumb1">SVG ANIMATION 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">SVG ANIMATION</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>SVG ANIMATION</h5>
+                                    <p>SVG ANIMATION 레퍼런스입니다.</p>
+                                    <span>SVG ANIMATION</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="color-shape animation">
+                        <a href="animation-canvas/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">CANVAS ANIMATION</span>
+                                    <span class="overlay-text-thumb">CANVAS ANIMATION</span>
+                                    <span class="overlay-text-thumb1">CANVAS ANIMATION 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">CANVAS ANIMATION</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>CANVAS ANIMATION</h5>
+                                    <p>CANVAS ANIMATION 레퍼런스입니다.</p>
+                                    <span>CANVAS ANIMATION</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="color-shape animation">
+                        <a href="animation-gsap/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">GSAP ANIMATION</span>
+                                    <span class="overlay-text-thumb">GSAP ANIMATION</span>
+                                    <span class="overlay-text-thumb1">GSAP ANIMATION 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">GSAP ANIMATION</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>GSAP ANIMATION</h5>
+                                    <p>GSAP ANIMATION 레퍼런스입니다.</p>
+                                    <span>GSAP ANIMATION</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="color-shape animation">
+                        <a href="photoshop/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">PHOTOSHOP</span>
+                                    <span class="overlay-text-thumb">PHOTOSHOP</span>
+                                    <span class="overlay-text-thumb1">PHOTOSHOP 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">PHOTOSHOP</span>
+                                </div>
+                                <img src="assets/img/tit4.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>PHOTOSHOP</h5>
+                                    <p>PHOTOSHOP 레퍼런스입니다.</p>
+                                    <span>PHOTOSHOP</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="illustrator/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">ILLUSTRATOR</span>
+                                    <span class="overlay-text-thumb">ILLUSTRATOR</span>
+                                    <span class="overlay-text-thumb1">ILLUSTRATOR 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">ILLUSTRATOR</span>
+                                </div>
+                                <img src="assets/img/tit4.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>ILLUSTRATOR</h5>
+                                    <p>ILLUSTRATOR 레퍼런스입니다.</p>
+                                    <span>ILLUSTRATOR</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="megabox/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">MAGABOX</span>
+                                    <span class="overlay-text-thumb">MAGABOX</span>
+                                    <span class="overlay-text-thumb1">MAGABOX 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">MAGABOX</span>
+                                </div>
+                                <img src="assets/img/tit4.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>MAGABOX</h5>
+                                    <p>MAGABOX 레퍼런스입니다.</p>
+                                    <span>MAGABOX</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="javascript/javascript.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">JAVASCRIPT</span>
+                                    <span class="overlay-text-thumb">JAVASCRIPT</span>
+                                    <span class="overlay-text-thumb1">JAVASCRIPT 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">JAVASCRIPT</span>
+                                </div>
+                                <img src="assets/img/tit4.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>JAVASCRIPT</h5>
+                                    <p>JAVASCRIPT 레퍼런스입니다.</p>
+                                    <span>JAVASCRIPT</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="jquery/jquery.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">JQUERY</span>
+                                    <span class="overlay-text-thumb">JQUERY</span>
+                                    <span class="overlay-text-thumb1">JQUERY 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">JQUERY</span>
+                                </div>
+                                <img src="assets/img/tit4.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>JQUERY</h5>
+                                    <p>JQUERY 레퍼런스입니다.</p>
+                                    <span>JQUERY</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="color-shape animation">
+                        <a href="animation-sample/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">ANIMATION-SAMPLE</span>
+                                    <span class="overlay-text-thumb">ANIMATION-SAMPLE</span>
+                                    <span class="overlay-text-thumb1">ANIMATION-SAMPLE 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">ANIMATION-SAMPLE</span>
+                                </div>
+                                <img src="assets/img/tit5.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>ANIMATION-SAMPLE</h5>
+                                    <p>ANIMATION-SAMPLE 레퍼런스입니다.</p>
+                                    <span>ANIMATION-SAMPLE</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="color-shape animation">
+                        <a href="sample/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">JQEURY SAMPLE</span>
+                                    <span class="overlay-text-thumb">JQEURY SAMPLE</span>
+                                    <span class="overlay-text-thumb1">JQEURY SAMPLE 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">JQEURY SAMPLE</span>
+                                </div>
+                                <img src="assets/img/tit5.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>JQEURY SAMPLE</h5>
+                                    <p>JQEURY SAMPLE 레퍼런스입니다.</p>
+                                    <span>JQEURY SAMPLE</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="color-shape animation">
+                        <a href="parallax-sample/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">PARALLAX SAMPLE</span>
+                                    <span class="overlay-text-thumb">PARALLAX SAMPLE</span>
+                                    <span class="overlay-text-thumb1">PARALLAX SAMPLE 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">PARALLAX SAMPLE</span>
+                                </div>
+                                <img src="assets/img/tit5.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>PARALLAX SAMPLE</h5>
+                                    <p>PARALLAX SAMPLE 레퍼런스입니다.</p>
+                                    <span>PARALLAX SAMPLE</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="color-shape animation">
+                        <a href="animation-hover/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">HOVER EFFECT</span>
+                                    <span class="overlay-text-thumb">HOVER EFFECT</span>
+                                    <span class="overlay-text-thumb1">HOVER EFFECT 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">HOVER EFFECT</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>HOVER EFFECT</h5>
+                                    <p>HOVER EFFECT 레퍼런스입니다.</p>
+                                    <span>HOVER EFFECT</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="color-shape animation">
+                        <a href="mobile/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">MOBILE</span>
+                                    <span class="overlay-text-thumb">MOBILE</span>
+                                    <span class="overlay-text-thumb1">MOBILE 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">MOBILE</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>MOBILE</h5>
+                                    <p>MOBILE 레퍼런스입니다.</p>
+                                    <span>MOBILE</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="scss/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">SCSS</span>
+                                    <span class="overlay-text-thumb">SCSS</span>
+                                    <span class="overlay-text-thumb1">SCSS 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">SCSS</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>SCSS</h5>
+                                    <p>SCSS 레퍼런스입니다.</p>
+                                    <span>SCSS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="webdesign/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">WEBDESIGN</span>
+                                    <span class="overlay-text-thumb">WEBDESIGN</span>
+                                    <span class="overlay-text-thumb1">WEBDESIGN 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">WEBDESIGN</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>WEBDESIGN</h5>
+                                    <p>WEBDESIGN 레퍼런스입니다.</p>
+                                    <span>WEBDESIGN</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="algo/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">ALGO</span>
+                                    <span class="overlay-text-thumb">ALGO</span>
+                                    <span class="overlay-text-thumb1">ALGO 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">ALGO</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>ALGO</h5>
+                                    <p>ALGO 레퍼런스입니다.</p>
+                                    <span>ALGO</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                        
+                    <div class="color-shape animation">
+                        <a href="mysql/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">MYSQL</span>
+                                    <span class="overlay-text-thumb">MYSQL</span>
+                                    <span class="overlay-text-thumb1">MYSQL 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">MYSQL</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>MYSQL</h5>
+                                    <p>MYSQL 레퍼런스입니다.</p>
+                                    <span>MYSQL</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="php/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">PHP</span>
+                                    <span class="overlay-text-thumb">PHP</span>
+                                    <span class="overlay-text-thumb1">PHP 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">PHP</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>PHP</h5>
+                                    <p>PHP 레퍼런스입니다.</p>
+                                    <span>PHP</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="portfolio/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">PORTFOLIO</span>
+                                    <span class="overlay-text-thumb">PORTFOLIO</span>
+                                    <span class="overlay-text-thumb1">PORTFOLIO 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">PORTFOLIO</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>PORTFOLIO</h5>
+                                    <p>PORTFOLIO 레퍼런스입니다.</p>
+                                    <span>PORTFOLIO</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="color-shape animation">
+                        <a href="jiho/in.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img">JOHO PROJECT</span>
+                                    <span class="overlay-text-thumb">JOHO PROJECT</span>
+                                    <span class="overlay-text-thumb1">JOHO PROJECT 레퍼런스입니다.</span>
+                                    <span class="overlay-text-thumb2">JOHO PROJECT</span>
+                                </div>
+                                <img src="assets/img/tit6.jpg" alt="webstandard">
+                                <div class="img-text">
+                                    <h5>JOHO PROJECT</h5>
+                                    <p>JOHO PROJECT 레퍼런스입니다.</p>
+                                    <span>JOHO PROJECT</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                
+
+                <div class="insta" style="padding-right: 20px;" >
+                  <!-- LightWidget WIDGET -->
+                  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/c1ce8d280b695be09fd212297724db3d.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                </div>
+                
+            </div>
+            <!-- //row -->
+        </div>
+        <!-- //container-->
+    </div>
+    <!-- //contents -->
+
+    <!-- //footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h5>Webstoryboy</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+
+    <!--<script src="js/jquery-1.7.1.min.js"></script>-->
+    <script src="assets/js/jquery.isotope.min.js"></script>
+    <script id="dsq-count-scr" src="//richclub3-1.disqus.com/count.js" async></script>
+
+    <script>
+        $(function() {
+
+            var $container = $('#container'),
+                filters = {};
+
+            $container.isotope({
+                itemSelector: '.color-shape',
+                masonry: {
+                    columnWidth: 57
+                }
+            });
+
+            // filter buttons
+            $('.filter a').click(function() {
+                var $this = $(this);
+                // don't proceed if already selected
+                if ($this.hasClass('selected')) {
+                    return;
+                }
+
+                var $optionSet = $this.parents('.option-set');
+                // change selected class
+                $optionSet.find('.selected').removeClass('selected');
+                $this.addClass('selected');
+
+                // store filter value in object
+                // i.e. filters.color = 'red'
+                var group = $optionSet.attr('data-filter-group');
+                filters[group] = $this.attr('data-filter-value');
+                // convert object into array
+                var isoFilters = [];
+                for (var prop in filters) {
+                    isoFilters.push(filters[prop])
+                }
+                var selector = isoFilters.join('');
+                $container.isotope({
+                    filter: selector
+                });
+
+                return false;
+            });
+
+
+            $('.tit_btn').on('click', function(e) {
+                e.preventDefault();
+                $('.nav_container').toggleClass('on');
+            });
+
+
+            $(".click").click(function() {
+                $(".view").fadeToggle();
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>

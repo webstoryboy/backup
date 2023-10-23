@@ -1,0 +1,32 @@
+
+body {background: rgba(0,0,0,0.1);}
+
+/* container */
+.container {max-width: 800px; width:100%; margin: 0 auto; background: #fff; }
+.row {padding: 0 30px;}
+
+/* header */
+.header {padding-top: 60px;}
+.header h1 {color: #110f51; font-weight: bold; font-size: 25px; font-family: 'Rubik', sans-serif;}
+.header p {color: #7b798e; padding-top: 10px;}
+
+/* signup */
+.signup {padding: 50px 0;}
+.signup label {display: none;}
+.signup .email {margin-bottom: 20px;}
+.signup .pass {margin-bottom: 20px;}
+.signup .name {margin-bottom: 20px;}
+.signup .birth {margin-bottom: 20px; overflow: hidden;}
+.signup .birth .selectBox {float: left; width: 33%;}
+.signup .genderWrap label {display: block;}
+.signup .error {}
+.signup .submitBtn {margin-top: 20px; text-align: center;}
+.signup .submitBtn input {background-color: #0000fe; border: 0; color: #fff; width: 100%; border-radius: 25px; padding: 5px; font-size: 18px; font-weight: 300; display: block; }
+
+/* input */
+.input_style1::-webkit-input-placeholder {color: #7b798e; }
+.input_style1::-moz-placeholder {color: #7b798e; }
+.input_style1:-ms-input-placeholder {color: #7b798e; }
+.input_style1:-moz-placeholder {color: #7b798e; }
+.input_style1 {width: 100%; border: 0; border-bottom: 1px solid #d9d9d9; height: 30px; line-height: 30px;}
+

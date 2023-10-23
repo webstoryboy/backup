@@ -1,0 +1,65 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+	&lt;div class="img-box"&gt;
+		&lt;img src="assets/img/img01.png" width="100" alt=""&gt;
+		&lt;img src="assets/img/img02.png" width="100" alt=""&gt;
+		&lt;img src="assets/img/img03.png" width="100" alt=""&gt;
+		&lt;img src="assets/img/img04.png" width="100" alt=""&gt;
+		&lt;img src="assets/img/img05.png" width="100" alt=""&gt;
+	&lt;/div&gt;
+	
+	&lt;!-- jQuery Script --&gt;
+	&lt;script src="assets/js/jquery.min_1.12.4.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		//두번째 이미지를 삭제해 주세요!!
+//		$(".img-box img:eq(1)").remove();
+//		$(".img-box img").eq(1).remove();
+//		$(".img-box:nth-child(2)").remove();
+//		$(".img-box img").eq(1).css("display","none");
+		
+		//이미지 위에 버튼 태그를 만들어 주세요!
+		$("body").prepend("&lt;button class='btn1'&gt;remove&lt;/button&gt;");
+		$("body").prepend("&lt;button class='btn2'&gt;prepend&lt;/button&gt;");
+		$("body").prepend("&lt;button class='btn3'&gt;append&lt;/button&gt;");
+		$("body").prepend("&lt;button class='btn4'&gt;random&lt;/button&gt;");
+		
+		//버튼1번을 클릭하면 2번 이미지를 지워주세요!
+		$(".btn1").click(function(){
+			$(".img-box img:eq(1)").remove();
+		});
+		
+		$(".btn2").click(function(){
+			$(".img-box").prepend("&lt;img src='assets/img/img05.png' width='100' alt=''&gt;");
+		});
+		
+		$(".btn3").click(function(){
+			$(".img-box").append("&lt;img src='assets/img/img03.png' width='100' alt=''&gt;");
+		});
+		
+		//이미지가 랜덤으로 나오는 함수
+		function random(){
+			var imgNumber = Math.ceil(Math.random()*5);
+			//alert(imgNumber);
+			var imgPath = "&lt;img src='assets/img/img0"+imgNumber+".png' width='100' alt=''&gt;";
+			//alert(imgPath);
+			return imgPath;
+		}
+		
+		$(".btn4").click(function(){
+			$(".img-box").append(random);
+		});
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none; display: inline;}
+        img { font-size: 0; line-height: 0;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+    </style>
+</head>
+<body>    
+    
+    <h3>이미지 랜덤으로 나오기</h3>
+   
+    <div class="list">
+        <ul>
+            <li><img src="assets/img/img01.png" alt=""></li>
+            <li><img src="assets/img/img02.png" alt=""></li>
+            <li><img src="assets/img/img03.png" alt=""></li>
+        </ul>
+    </div>
+    
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function() {
+            //모든 이미지의 크기를 100px로 설정해주세요!
+            $("img").css("width","100px");
+            
+          
+            $("h3").after("<div class='choice'></div>");
+            $(".choice").append("<a href='#' class='btn1'>클릭하면 뒤쪽에 이미지가 추가됩니다.</a>");
+            $(".choice").append("<a href='#' class='btn2'>클릭하면 앞쪽에 이미지가 추가됩니다.</a>");
+            $(".choice").append("<a href='#' class='btn3'>클릭하면 뒤쪽에 이미지가 삭제합니다.</a>");
+            $(".choice").append("<a href='#' class='btn4'>클릭하면 앞쪽에 이미지가 삭제합니다.</a>");
+            $(".choice").append("<a href='#' class='btn5'>클릭하면 뒤쪽에 이미지를 랜덤으로 추가합니다.</a>");
+            
+            $(".choice .btn1").click(function(){
+                $(".list ul").append("<li><img src='assets/img/img04.png' alt='' width='100'></li>");
+            });
+            $(".choice .btn2").click(function(){
+                $(".list ul").prepend("<li><img src='assets/img/img05.png' alt='' width='100'></li>");
+            });
+            
+            $(".choice .btn3").click(function(){
+                $(".list ul li:first").remove();
+            });
+            $(".choice .btn4").click(function(){
+                $(".list ul li:last").remove();
+            });
+            
+            //이미지가 랜덤으로 나오는 함수
+            function random(){
+                var imgNumber = Math.ceil(Math.random()*5);
+                var imgPath = "<li><img src='assets/img/img0"+imgNumber+".png' alt='' width='100'></li>";
+                return imgPath;
+            }
+            
+            $(".choice .btn5").click(function(){
+                $(".list ul").append(random);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

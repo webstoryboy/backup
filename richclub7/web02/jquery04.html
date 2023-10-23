@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>선택자</title>
+	</head>
+  
+<body>
+  <h1>jQuery</h1>
+  <div id="sample">
+    <ul id="list1" class="list">
+      <li class="list1"><a href="#list2">list1</a></li>
+      <li class="list2"><a href="http://naver.com">list2</a></li>
+      <li class="list3"><a href="http://www.daum.net">list3</a></li>
+      <li class="list4"><a href="http://webstoryboy.co.kr" title="사이트">list4</a></li>
+      <li class="list5">list5</li>
+      <li class="list6">list6</li>
+      <li class="list7">list7</li>
+      <li class="list8">list8</li>
+      <li class="list9">list9</li>
+      <li class="list10">list10</li>
+		</ul>
+    <ul id="list2" class="list">
+      <li class="list1">list1</li>
+      <li class="list2">list2</li>
+      <li class="list3">list3</li>
+      <li class="list4">list4</li>
+      <li class="list5"></li>
+      <li class="list6">list6</li>
+      <li class="list7">list7</li>
+      <li class="list8">list8</li>
+      <li class="list9">list9</li>
+      <li class="list10">list10
+        <ul>
+          <li>list10-1</li>
+          <li style="width:0; height:0; overflow:hidden;">list10-2</li>
+          <li style="opacity:0;">list10-3</li>
+          <li style="visibility:hidden;">list10-4</li>
+          <li style="display:none;">list10-5(display:none)</li>
+          <li>list10-6</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+  
+  <style>
+/*     li {background-color: #bbdefb; border: 1px dashed #303f9f;} */
+</style>
+  
+  <!-- jQuery Script -->
+	<script src="assets/js/jquery.min_1.12.4.js"></script>
+	<script>
+   
+    //$(" li ").css( "background-color","#bbdefb" );
+    //$(" li ").css( "border","1px dashed #303f9f" );
+    //$(" li ").css({ "background-color":"#bbdefb", "border":"1px dashed #303f9f" });
+    //$(" li ").css({ "background-color":"#bbdefb", border:"1px dashed #303f9f" });
+    //$(" li ").css({ backgroundColor:"#bbdefb", border:"1px dashed #303f9f" });
+    //태그 선택자
+    //$(" li ").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //클래스 선택자
+    //$(".list3").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //아이디 선택자
+    //$("#list2").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //그룹 선택자
+    //$(".list2, .list5").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //전체 선택자
+    //$("*").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    
+    //자손 선택자
+    //$(".list li").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$(".list > li").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$(".list3 + li").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$(".list3 ~ li").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    
+    //속성 선택자
+    //$("li a[href='#list2']").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li a[href^='http']").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li a[href$='com']").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li a[href*='web']").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li a[href!='http://naver.com']").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li a[href][title]").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+  
+    //기본필터 선택자
+    //$("li:eq(4)").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:lt(4)").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:gt(4)").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$(":header").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:first").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:last").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:odd").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:even").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:not(:eq(4))").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    
+    //내용필터 선택자
+    //$("li:contains('list7')").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:empty").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("ul:has('li')").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:parent").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+  
+    //보임필터 선택자
+    //컨텐츠 요소를 보이지 않게 하는 방법
+    //1. display: none; <-> display:block  (영역까지 사라짐)
+    //2. opacity: 0; <-> opacity:1;  (영역은 유지)
+    //3. visibility: hidden; <-> visibility: visible; (영역은 유지)
+    //4. width:0; height:0;(IR)
+    
+    //보임 필터 선택자
+    //$("li:hidden").show();
+    //$("li:visible").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+  
+    //자식 요소 선택자
+    //$("li:first").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:first-child").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:last").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:last-child").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:nth-child(3)").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:nth-child(even)").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:nth-child(odd)").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:nth-child(3n)").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:nth-child(2n+1)").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+    //$("li:only-child").css({ backgroundColor:'#bbdefb', border:'1px dashed #303f9f' });
+</script>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+

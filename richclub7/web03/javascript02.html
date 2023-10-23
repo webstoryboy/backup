@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var x = 100;        //전역변수 x에 숫자 100을 저장
+        var y = 200;        //전역변수 y에 숫자 200을 저장
+        var z = "500";      //전역변수 z에 문자 500을 저장
+        
+        document.write("전역변수");
+        document.write("<br>");
+        document.write(x);
+        document.write("<br>");
+        document.write(y);
+        document.write("<br>");
+        document.write(z);
+        document.write("<br><br>");
+        
+        function func( ){ 
+            var x = 300;        //지역변수 x에 숫자 300을 저장
+            var y = 400;        //지역변수 y에 숫자 400을 저장
+            x = 500;             //지역변수 x에 숫자 300에서 500변경
+            z = "600";           //전역변수 z에 문자 500에서 600변경
+                     
+            document.write("지역변수");
+            document.write("<br>");
+            document.write(x);
+            document.write("<br>");
+            document.write(y);
+            document.write("<br>");
+            document.write(z);
+        };
+        
+        func()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

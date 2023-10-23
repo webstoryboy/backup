@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript</title>
+  <script type="text/javascript">
+    var x = 100;    //변수(전역) x에 숫자 100을 저장
+    var y = 200;    //변수(전역) y에 숫자 200을 저장
+    var z = 900;    //변수(전역) z에 숫자 900을 저장
+
+    function area(){
+      var x = 300;    //변수(지역) x에 숫자 300을 저장
+      var y = 400;    //변수(지역) y에 숫자 400을 저장
+      y = 600;        //변수(지역) y에 숫자 400 --> 600으로 변경
+      z = 800;        //변수(전역) Z에 숫자 900 --> 800으로 변경
+
+      document.write("area 함수 안<br>");
+      document.write(x);
+      document.write("<br>");
+      document.write(y);
+      document.write("<br>");
+      document.write(z);
+      document.write("<br><br>");
+    }
+    area();
+
+    document.write("area 함수 밖 <br>");
+    document.write(x);
+    document.write("<br>");
+    document.write(y);
+    document.write("<br>");
+    document.write(z);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

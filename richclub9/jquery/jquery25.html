@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none; display: inline;}
+        img { font-size: 0; line-height: 0;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+    </style>
+</head>
+<body>    
+    
+    <h3>2초에 한번씩 이미지 이동하기</h3>
+    <div class="choice">
+        <a href="#" class="btn1">클릭하면 이미지를 2초에 한번씩 이동합니다.</a>
+        <a href="#" class="btn2">클릭하면 이미지를 2초에 한번씩 삭제해주세요!.</a>
+        <a href="#" class="btn3">클릭하면 이미지를 2초에 한번씩 추가해주세요!.</a>
+        <a href="#" class="btn4">클릭하면 이미지를 멈춥니다.</a>
+    </div>
+
+    <div class="list">
+        <img src="assets/img/img01.png" alt="">
+        <img src="assets/img/img02.png" alt="">
+        <img src="assets/img/img03.png" alt="">
+    </div>
+    
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function() {
+            //모든 이미지의 크기를 150px로 설정해주세요!
+            $("img").attr("width","150px");
+            
+            var timer;
+            
+            $(".choice .btn1").click(function(){
+                timer = setInterval(function(){
+                    $(".list img").last().prependTo(".list");
+                },1000);
+            });
+            
+            $(".choice .btn2").click(function(){
+                timer = setInterval(function(){
+                    $(".list img").last().remove();
+                },1000);
+            });
+            
+            $(".choice .btn3").click(function(){
+                timer = setInterval(function(){
+                    $(".list").last().append("<img src='assets/img/img05.png' alt='' width='150'>");
+                },1000);
+            });
+            
+            $(".choice .btn4").click(function(){
+                clearInterval(timer);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

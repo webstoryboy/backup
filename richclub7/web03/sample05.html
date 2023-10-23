@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <style>
+        * {margin: 0; padding: 0;}
+        body {font-family: 'Do Hyeon', sans-serif;}
+        #nav {position: fixed; left: 0; top: 0;width: 100%; background-color: rgba(255,255,255,0.2);}
+        #nav h1 {float: left; color: #fff; font-size: 40px; padding:10px 0 0 10px; }
+        #nav ul {float: right; padding-right: 10px; }
+        #nav ul li {display: inline; }
+        #nav ul li a {display: inline-block; padding: 20px; text-decoration: none; color: #fff;}
+        #nav ul li.active a {color: #283593; border-bottom: 3px solid #283593;}
+
+        #contents {text-align: center; }
+        #contents > div {height: 100vh; line-height: 100vh;}
+        #contents > div h1 {font-size: 4vw; color: #fff;}
+        #section1 {background-color: #c0ca33;}
+        #section2 {background-color: #7cb342;}
+        #section3 {background-color: #ffa726;}
+        #section4 {background-color: #8d6e63;}
+        #section5 {background-color: #ff7043;}
+        #section6 {background-color: #03a9f4;}
+        
+        #section1 h1 {opacity: 0; }
+        #section2 h1 {opacity: 0; }
+        #section3 h1 {opacity: 0; }
+        #section4 h1 {opacity: 0; }
+        #section5 h1 {opacity: 0; }
+        #section6 h1 {opacity: 0; }
+        
+        #section1.show h1 {opacity: 1; animation: jello 1s ease;}
+        #section2.show h1 {opacity: 1; animation: rubberBand 1s ease;}
+        #section3.show h1 {opacity: 1; animation: wobble 1s ease;}
+        #section4.show h1 {opacity: 1; animation: tada 1s ease;}
+        #section5.show h1 {opacity: 1; animation: pulse 1s ease;}
+        #section6.show h1 {opacity: 1; animation: flash 1s ease;}
+    </style>
+</head>
+<body>
+
+    <nav id="nav">
+        <h1>웹스</h1>
+        <ul>
+            <li class="active"><a href="#section1">어록1</a></li>
+            <li><a href="#section2">어록2</a></li>
+            <li><a href="#section3">어록3</a></li>
+            <li><a href="#section4">어록4</a></li>
+            <li><a href="#section5">어록5</a></li>
+            <li><a href="#section6">어록6</a></li>
+        </ul>
+    </nav>
+
+    <div id="contents">
+        <div id="section1"><h1>용기란 공포를 1분 더 참는 것이다</h1></div>
+        <div id="section2"><h1>모든 진실이 모든 이의 귀에 들리는 것은 아니다</h1></div>
+        <div id="section3"><h1>알면 사랑한다</h1></div>
+        <div id="section4"><h1>개가 짖어도 기차는 달릴 수밖에 없다!</h1></div>
+        <div id="section5"><h1>의리를 지키려면 불리할 때에 지키는 것이다</h1></div>
+        <div id="section6"><h1>프랑스어 사전에 불가능이란 단어는 없다</h1></div>
+    </div>
+    
+    
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script>
+        var btn = $("#nav ul li"); 
+        var cont = $("#contents > div");
+        
+        //버튼을 클릭하면 컨텐츠 글씨를 메뉴 오버 했을 때 글씨 색으로 변경해주세요~
+        btn.click(function(event){
+            event.preventDefault();
+            var target = $(this);
+            var index = target.index();
+            //alert(index);
+            var section = cont.eq(index);
+            var offset = section.offset().top;
+            //alert(offset);
+            
+            $("html,body").animate({ scrollTop:offset },600,"easeInOutExpo");
+        });
+        
+        $(window).scroll(function(){
+            var wScroll = $(this).scrollTop();
+            
+            if(wScroll >= cont.eq(0).offset().top){
+                btn.removeClass("active");
+                btn.eq(0).addClass("active");
+            }
+            if(wScroll >= cont.eq(1).offset().top){
+                btn.removeClass("active");
+                btn.eq(1).addClass("active");
+            }
+            if(wScroll >= cont.eq(2).offset().top){
+                btn.removeClass("active");
+                btn.eq(2).addClass("active");
+            }
+            if(wScroll >= cont.eq(3).offset().top){
+                btn.removeClass("active");
+                btn.eq(3).addClass("active");
+            }
+            if(wScroll >= cont.eq(4).offset().top){
+                btn.removeClass("active");
+                btn.eq(4).addClass("active");
+            }
+            if(wScroll >= cont.eq(5).offset().top){
+                btn.removeClass("active");
+                btn.eq(5).addClass("active");
+            }
+            
+            
+            if(wScroll >= cont.eq(0).offset().top - $(window).height()/2 ){
+                cont.eq(0).addClass("show");
+            }
+            if(wScroll >= cont.eq(1).offset().top - $(window).height()/2 ){
+                cont.eq(1).addClass("show");
+            }
+            if(wScroll >= cont.eq(2).offset().top - $(window).height()/2 ){
+                cont.eq(2).addClass("show");
+            }
+            if(wScroll >= cont.eq(3).offset().top - $(window).height()/2 ){
+                cont.eq(3).addClass("show");
+            }
+            if(wScroll >= cont.eq(4).offset().top - $(window).height()/2 ){
+                cont.eq(4).addClass("show");
+            }
+            if(wScroll >= cont.eq(5).offset().top - $(window).height()/2){
+                cont.eq(5).addClass("show");
+            }
+        });
+        
+        
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

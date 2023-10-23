@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {color: #666; text-decoration:none; border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+    </style>
+</head>
+<body>    
+    <h1>.prop()</h1>
+    <div class="choice">
+        <a href="#" class="btn1">.attr</a>
+        <a href="#" class="btn2">.prop</a>
+        <a href="#" class="btn3">.is</a>
+    </div>
+    <div class="list">
+        <input id="check" type="checkbox" checked="checked">
+        <label for="check">체크</label>
+        <p class="text"></p>
+    </div>
+    
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(".choice .btn1").click(function(){
+            $(".list input").change(function(){
+                var input = $(this);
+                $(".list .text").html(".attr(\"checked\"):" +input.attr("checked"))
+            }).change();
+        });
+        
+        $(".choice .btn2").click(function(){
+            $(".list input").change(function(){
+                var input = $(this);
+                $(".list .text").html(".prop(\"checked\"):" +input.prop("checked"))
+            }).change();
+        });
+        
+        $(".choice .btn3").click(function(){
+            $(".list input").change(function(){
+                var input = $(this);
+                $(".list .text").html(".is(\"checked\"):" +input.is("checked"))
+            }).change();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

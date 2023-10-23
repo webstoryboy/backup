@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {color: #666; text-decoration:none; border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+    </style>
+</head>
+<body>    
+    <h1>.val()</h1>
+    <div class="choice">
+        <a href="#" class="btn1">클릭하면 input 박스에 글씨를 넣어줍니다.</a>
+        <a href="#" class="btn2">클릭하면 input 박스에 글씨를 안나오게 해주세요!.</a>
+    </div>
+    <div class="list">
+        input : <input type="text" value="입력해주세요!" class="input">
+    </div>
+    
+    <div class="list2">
+        select : 
+        <select name="select" id="select" class="select">
+            <option value="https://www.naver.com/">네이버</option>
+            <option value="https://www.daum.net/">다음</option>
+            <option value="https://www.nate.com/">네이트</option>
+            <option value="https://www.google.co.kr/">구글</option>
+        </select>
+        <p class="text"></p>
+    </div>
+    
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(".choice .btn1").click(function(){
+            $(".list .input").val( $(this).text() );
+        });
+        $(".choice .btn2").click(function(){
+            $(".list .input").val("");
+        });
+        $(".list .input").click(function(){
+            $(".list .input").val("");
+        });
+        
+        $("#select").change(function(){
+            var url = $(this).val();
+            if(url){
+                location.href=url;
+            }
+        });
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

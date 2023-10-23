@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웹 디자인 기능사 - 탭메뉴</title>
+
+    <style>
+        * {margin: 0; padding: 0;}
+        a {color: #333; text-decoration: none;}
+        li {list-style: none;}
+        table {border-spacing: 0;}
+        .clearfix::before, .clearfix::after {
+          display: block; content:''; clear:both;
+        }
+
+        #wrap {
+          border: 2px solid #000;
+          width: 1200px;
+          margin: 0 auto;
+          padding: 5px;
+        }
+        .aside {
+          border: 1px solid #000;
+          float: left;
+          width: 300px;
+          height: 660px;
+          margin-right: 5px;
+        }
+        .aside .logo {
+          border: 1px solid #000; margin: 5px;
+          text-align: center;
+          height: 100px; line-height: 100px;
+        }
+        .aside .nav {border: 1px solid #000; margin: 5px;}
+        .aside .nav li {text-align: center; border-bottom: 1px solid #000;}
+        .aside .nav li:last-child {border-bottom:0;}
+        .aside .nav li a {padding: 10px;display: block;}
+        .aside .nav li a:hover {background: #ccc;}
+
+        .contents {
+          border: 1px solid #000;
+          float: left;
+          width: 870px;
+          height: 640px;
+          padding: 10px;
+        }
+        .contents > div {
+          width: 100%;
+          border: 1px solid #000;
+          margin-bottom: 10px;
+          height: 200px;
+        }
+        .contents > div h2 {
+          text-align: center;
+          line-height: 200px;
+        }
+
+        .footer {
+          float: left;
+          border: 1px solid #000;
+          float: left;
+          width: 1195px;
+          height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap" class="clearfix">
+      <aside class="aside">
+        <h1 class="logo"><a href="#">로고</a></h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Menu1</a>
+              <ul class="submenu">
+                <li><a href="#">SubMenu1</a></li>
+                <li><a href="#">SubMenu2</a></li>
+                <li><a href="#">SubMenu3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Menu2</a>
+              <ul class="submenu">
+                <li><a href="#">SubMenu1</a></li>
+                <li><a href="#">SubMenu2</a></li>
+                <li><a href="#">SubMenu3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Menu3</a>
+              <ul class="submenu">
+                <li><a href="#">SubMenu1</a></li>
+                <li><a href="#">SubMenu2</a></li>
+                <li><a href="#">SubMenu3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Menu4</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <section class="contents">
+      </section>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      var nav = $(".nav > ul > li");
+      var subMenu = $(".nav > ul > li > ul");
+
+      subMenu.hide();
+
+      nav.hover(
+        function(){
+          $(this).find(".submenu").stop().slideDown();
+      },function(){
+          $(this).find(".submenu").stop().slideUp();
+      });
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+

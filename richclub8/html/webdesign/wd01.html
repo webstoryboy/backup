@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JUST 쇼핑몰</title>
+    
+    <style>
+        /* reset */
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #000;}
+        li {list-style: none;}
+        .clearfix:before, .clearfix:after {display: block; clear: both; content: '';}
+        
+        /* layout */
+        #wrap {width: 1223px; margin: 0 auto; border: 2px solid #000; padding: 10px;}
+        #header {width: 1200px; height: 100px; border: 2px solid #000; margin-bottom: 10px; }
+        #banner {width: 1200px; height: 300px; border: 2px solid #000; margin-bottom: 10px;}
+        #contents {width: 1200px; height: 200px; border: 2px solid #000; margin-bottom: 10px;}
+        #footer {width: 1200px; height: 100px; border: 2px solid #000; margin-bottom: 10px;}
+        
+        /* header */
+        #header h1 {float: left; width: 200px; border: 1px solid #000;}
+        #header .nav {float: right; width: 800px; border: 1px solid #000;}
+        #header .nav li {float: left; width: 100px;}
+        
+        /* banner */
+        
+        /* contents */
+        #contents > article {float: left; width: 33.3333%; border: 1px solid #000; }
+        
+        /* footer */
+        #footer {}
+        #footer .logo {float: left; width: 10%; border: 1px solid #000}
+        #footer .address {float: left; width: 80%; border: 1px solid #000}
+        #footer .sns{float: left; width: 10%; border: 1px solid #000}
+        
+    </style>
+    
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="css/style.css">-->
+    
+    <!-- script -->
+    <!-- <script type="text/javascript" src="script/script.js"></script> -->
+</head>
+<body>
+    
+    <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1><a href="#">로고</a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        
+        <section id="banner">
+            <h2>이미지 슬라이드</h2>
+        </section>
+        <!-- //banner -->
+        
+        <section id="contents" class="clearfix">
+            <article class="cont1">
+                <h2>공지사항</h2>
+            </article>
+            <article class="cont2">
+                <h2>배너</h2>
+            </article>
+            <article class="cont3">
+                <h2>바로가기</h2>
+            </article>
+        </section>
+        <!-- //contents -->
+        
+        <footer id="footer" class="clearfix">
+            <div class="logo">로고</div>
+            <address class="address">Copyright</address>
+            <div class="sns">SNS</div>
+        </footer>
+    </div>
+    
+</body>
+</html>

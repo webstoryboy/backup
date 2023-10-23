@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Sample</title>
+	<script>
+		//1부터 100까지 출력하기
+		var num = 1;
+		while(num <= 100) {
+			document.write(num);
+			num++;
+		}
+		
+		document.write("<br>");
+		//200보다 작은 숫자에서 짝수는 파란색, 홀수는 빨간색으로 출력하기
+		var num2 = 1;
+		while(num2 <= 200){
+			
+			if( num2 % 2 == 0 ){
+				document.write("<span style='color:blue'>" + num2 + "</span>" );
+			} else {
+				document.write("<span style='color:red'>" + num2 + "</span>");
+			}
+			num2++;
+		}
+		
+		document.write("<br>");
+		//200부터 400가지 숫자 중의 4의 배수는 초록색, 6의 배수는 빨간으로 출력하기
+		var num3 = 200;
+		while(num3 <= 400){
+			
+			if( num3 % 4 == 0 ){
+				document.write("<span style='color:green'>" + num3 + "</span>" );
+			} 
+			if ( num3 % 6 == 0 ) {
+				document.write("<span style='color:red'>" + num3 + "</span>");
+			}
+			if ( num3 % 4 == 0 && num3 % 6 == 0) {
+				document.write("<span style='color:blue'>" + num3 + "</span>");
+			}
+			num3++;
+		}
+		
+</script>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+
+
+
+

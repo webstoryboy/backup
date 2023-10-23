@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        #canvas {background: url(img/space2.jpg); background-size: cover;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script src="../assets2/js/jquery-1.12.4.min.js"></script>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var canW = canvas.width;
+        var canH = canvas.height;
+        var speed = 5;
+        var keyCodeValue;
+        var keysDown = {}; 
+        
+        //비행기 이미지
+        var fighterImage = new Image();
+        fighterImage.src = "img/roket2.png";
+        
+        function Player(){
+            this.x = canW * 0.5 - 50, this.y = 600, this.w = 100, this.h = 120;
+            this.missiles = [];
+            
+            this.render = function(){
+                ctx.strokeStyle = "red";
+                ctx.strokeRect(this.x, this.y, this.w, this.h);
+                ctx.drawImage(fighterImage, this.x, this.y);
+                
+                //미사일 이동
+                for(var i=0; i<this.missiles.length; i++){
+                    var m = this.missiles[i];
+                    ctx.fillStyle = m.bg;
+                    ctx.fillRect(m.x, m.y -=5, m.w, m.h);
+                    
+                    //화면 밖의 미사일은 삭제
+                    if(m.y <= 0){
+                        this.missiles.splice(i,1);
+                    }
+                }
+            }
+        }
+        
+        function update(){
+            if(65 in keysDown){
+                player.x -= speed;
+            } else if(68 in keysDown){
+                player.x += speed;
+            }
+            
+            //limit
+            if(player.x < 0){
+                player.x = 0;
+            } else if(player.x > (canW - player.w)){
+                player.x = canW - player.w;
+            }
+        }
+        
+        //키보드 클릭
+        $(document).keydown(function(event){
+            keysDown[event.keyCode] = true;
+            
+            //스페이스 바
+            if(event.keyCode === 32){
+                player.missiles.push({"x":player.x + player.w*0.5, "y":player.y -5, "w":10, "h":10, "bg":"red"});
+            }
+        });
+        
+        //키보드 해제
+        $(document).keyup(function(event){
+            delete keysDown[event.keyCode];
+        });
+        
+        var player = new Player();
+        
+        function animate(){
+            ctx.clearRect(0,0,canW,canH);
+            update();
+            player.render();
+        }
+
+        setInterval(animate, 30);
+    </script>
+</body>
+</html>
+
+
+
+
+
+

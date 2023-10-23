@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A Documentation by JavaScript.">
+	<meta name="author" content="JavaScript documentation">
+
+	<title>SVG Animation</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="../assets2/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Documentation extras -->
+	<link href="../assets2/css/docs.min.css" rel="stylesheet">
+	<link href="../assets2/css/prism.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+
+	<!-- web font -->
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-5913874937139786",
+              enable_page_level_ads: true
+         });
+    </script>
+    <style>
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 3px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .sample h5 {
+            position:relative; 
+            font-size: 16px; 
+            color: #000; 
+            padding-top: 20px; 
+            padding-bottom: 7px; 
+            font-weight: 300; 
+            border-bottom: 1px solid #e6e6e6;
+            background: #f2f2f2;
+            border-radius: 0;
+            padding: 7px 3px 3px 10px !important;
+            font-size: 12px !important;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .sample h5 .dot {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+        .sample h5 .dot i {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #aaa;
+            margin: 2px;
+        }
+        .sample .html {
+            padding: 15px 15px;
+        }
+        svg {width: 200px; height: 200px; background: #ffebee;}
+        .rect1 {width:140px; height:140px; fill:#f48fb1;}
+        .rect2 {width:140px; height:140px; fill:#f48fb1; stroke-width:5; stroke:#880e4f;}
+    </style>
+
+</head>
+
+<body>
+	<a class="sr-only" href="#content">Skip to main content</a>
+
+	<header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand">webstoryboy &lt;/doc&gt;</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../jquery/jquery.html">jQuery</a></li>
+					<li><a href="../javascript/javascript.html">JavaScript</a></li>
+                    <li><a href="../animation-css/index.html">CSS Animation</a></li>
+                    <li><a href="../animation-js/index.html">JS Animation</a></li>
+                    <li><a href="../animation-canvas/index.html">Canvas Animation</a></li>
+                    <li><a href="../animation-svg/index.html">SVG Animation</a></li>
+                    <li><a href="../animation-gsap/index.html">GSAP Animation</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="bs-header" style="background-image: linear-gradient(45deg, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);" id="content">
+		<div class="container">
+			<h1>SVG Animation v1.0 &lt;/doc&gt;</h1>
+			<p><a href="https://webstoryboy.co.kr">webstoryboy.co.kr</a></p>
+		</div>
+	</div>
+
+	<div class="container bs-docs-container">
+		<div class="row">
+			
+            <div class="col-md-9">
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro1" class="page-header">SVG</h2>
+                    <p>스케일러블 벡터 그래픽스(Scalable Vector Graphics, SVG)는 2차원 벡터 그래픽을 표현하기 위한 XML 기반의 파일 형식으로, 1999년 W3C(World Wide Web Consortium)의 주도하에 개발된 오픈 표준의 벡터 그래픽 파일 형식이다. SVG 형식의 이미지와 그 작동은 XML 텍스트 파일들로 정의 되어 검색화·목록화·스크립트화가 가능하며 필요하다면 압축도 가능하다.</p>
+                    
+                    <ul>
+                        <li>IE9 이상 지원합니다.</li>
+                        <li>XML을 이용하여 라인, 곡선, 기하학정인 그래픽 표현이 가능합니다.</li>
+                        <li>벡터 방식이기 때문에 확대하거나 축소가 가능합니다.</li>
+                        <li>DOM 단위로 컨트롤이 되어 문서 복잡도가 증가되어 렌더링이 느립니다.</li>
+                    </ul>
+                    
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro2" class="page-header">Rect</h2>
+                    <h5 class="pt10">사각형 만들기 <a href="svg01.html">View</a></h5>
+                    
+                    <!-- sample -->
+                    <div class="sample">
+                        <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+                        <div class="html">
+                            <svg><rect class="rect1" x="30" y="30"></rect></svg>
+                            <svg><rect class="rect2" x="30" y="30"></rect></svg>
+                            <svg><rect class="rect3" x="30" y="30"></rect></svg>
+                            <svg><rect class="rect4" x="30" y="30"></rect></svg>
+                        </div>
+                    </div>
+                    <!-- //sample -->
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;SVG&lt;/title&gt;
+    &lt;style&gt;
+        svg {width: 160px; height: 160px; background: #ffebee;}
+        .rect1 {width:100px; height:100px; fill:#f48fb1;}
+        .rect2 {width:100px; height:100px; fill:#f48fb1; stroke-width:5; stroke:#880e4f;}
+        
+        #canvas {width: 160px; height: 160px; background: #ffebee;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;svg&gt;
+        &lt;rect class="rect1" x="30" y="30"&gt;&lt;/rect&gt;
+    &lt;/svg&gt;
+    
+    &lt;svg&gt;
+        &lt;rect class="rect2" x="30" y="30"&gt;&lt;/rect&gt;
+    &lt;/svg&gt;
+    
+    &lt;canvas id="canvas"&gt;
+        
+    &lt;/canvas&gt;
+    
+    &lt;script&gt;
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        
+        ctx.fillStyle = "#f48fb1";
+        ctx.fillRect(50,25,200,100);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;           
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro3" class="page-header">Circle</h2>
+                    <h5 class="pt10">원 만들기 <a href="svg02.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">   
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro4" class="page-header">Circle</h2>
+                    <h5 class="pt10">둥근원 만들기 <a href="svg03.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">   
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro5" class="page-header">Polygon</h2>
+                    <h5 class="pt10">다각형 만들기 <a href="svg04.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">   
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro6" class="page-header">line</h2>
+                    <h5 class="pt10">라인 만들기 <a href="svg05.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">   
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro7" class="page-header">path</h2>
+                    <ul>
+                        <li>d: 패스를 만드는 정보를 의미합니다.</li>
+                        <li>m: Moveto(이동)</li>
+                        <li>l: lineto(라인)</li>
+                        <li>h: horizontal lineto(수평라인)</li>
+                        <li>v: vertical lineto(수직라인)</li>
+                        <li>c: curveto(곡선)</li>
+                        <li>s: smooth curveto(부드러운 곡선)</li>
+                        <li>q: quadratic Bezier curveto(2차 베지어 곡선)</li>
+                        <li>t: smooth quadratic Bezier curveto(부드러운 2차 베지어 곡선)</li>
+                        <li>a: elliptical Arc(둥근 모양)</li>
+                        <li>z: closepath(닫힌 패스)</li>
+                        <li>대문자일 경우는 절대 포지션을, 소문자일 경우는 상대 포지션을 의미합니다.</li>
+                    </ul>
+                    <h5 class="pt10">패스 만들기 <a href="svg06.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">   
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro8" class="page-header">linecap/dasharry</h2>
+                    
+                    <h5 class="pt10">라인 캡 만들기 <a href="svg07.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">   
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro9" class="page-header">Gradient</h2>
+                    
+                    <h5 class="pt10">그라디언트 만들기 <a href="svg08.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">   
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro10" class="page-header">Clip-path</h2>
+                    
+                    <h5 class="pt10">Clip-path <a href="svg09.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">   
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="intro11" class="page-header">Animation</h2>
+                    
+                    <h4 class="pt10" id="intro11-1">SVG Text-animation1</h4>
+                    <p class="codepen" data-height="300" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="BbYXvE" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="SVG - Text Animation">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/BbYXvE/">
+  SVG - Text Animation</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                   
+                   <h4 class="pt10" id="intro11-2">SVG Text-animation2</h4>
+                   <p class="codepen" data-height="300" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="VRQooB" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="SVG - Text Animation2">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/VRQooB/">
+  SVG - Text Animation2</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    
+                   <h4 class="pt10" id="intro11-3">SVG Text-animation3</h4>
+                   <p class="codepen" data-height="300" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="jJzNYy" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="SVG - Text Animation3">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/jJzNYy/">
+  SVG - Text Animation3</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                   
+                   <h4 class="pt10" id="intro11-4">SVG Text-animation4</h4>
+                   <p class="codepen" data-height="300" data-theme-id="29479" data-default-tab="result" data-user="webstoryboys" data-slug-hash="YgaKmz" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;" data-pen-title="SVG - Text Animation4">
+  <span>See the Pen <a href="https://codepen.io/webstoryboys/pen/YgaKmz/">
+  SVG - Text Animation4</a> by webstory (<a href="https://codepen.io/webstoryboys">@webstoryboys</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                    
+				</div>
+				<!-- //Introduction -->
+
+			</div>
+			<!-- //col-md-9 -->
+            
+
+			<div class="col-md-3">
+				<div class="bs-sidebar hidden-print" role="complementary">
+					<ul class="nav bs-sidenav">
+						<li><a href="#introduction1">SVG</a></li>
+						<li><a href="#intro2">Rect</a></li>
+						<li><a href="#intro3">Circle</a></li>
+						<li><a href="#intro4">ellipse</a></li>
+						<li><a href="#intro5">polygon</a></li>
+						<li><a href="#intro6">line</a></li>
+						<li><a href="#intro7">path</a></li>
+						<li><a href="#intro8">linecap</a></li>
+						<li><a href="#intro9">gradient</a></li>
+						<li><a href="#intro10">Clip-path</a></li>
+						<li><a href="#intro11">Animation</a>
+						    <ul class="nav">
+						        <li><a href="#intro11-1">Text Animation1</a></li>
+						        <li><a href="#intro11-2">Text Animation2</a></li>
+						        <li><a href="#intro11-3">Text Animation3</a></li>
+						        <li><a href="#intro11-4">Text Animation4</a></li>
+						    </ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //col-md-3 -->
+		</div>
+		<!-- //row -->
+
+	</div>
+	<!-- //container -->
+
+	<!-- Footer -->
+	<footer class="bs-footer" role="contentinfo">
+		<div class="container">
+			<ul class="footer-links muted">
+				<li>Currently v1.0</li>
+				<li>&middot;</li>
+				<li><a href="http://webstoryboy.co.kr">webstoryboy</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+			</ul>
+		</div>
+	</footer>
+	<!-- //Footer -->
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../assets2/js/bootstrap.min.js"></script>
+	<script src="../assets2/js/docs.min.js"></script>
+	<script src="../assets2/js/prism.js"></script>
+
+
+</body>
+</html>

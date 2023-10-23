@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script>
+        function draw() {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            for (var i = 0; i < 10; i++){
+                for (var j = 0; j < 10; j++){
+                    ctx.fillStyle = 'rgb(' + Math.floor(255 - 22.5 * i) + ', ' + Math.floor(255 - 22.5 * j) + ', 0)';
+                    ctx.fillRect(j*25, i*25, 25, 25);
+                    
+                }
+            }
+        }
+        
+        draw()
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //선언적 함수
+        function func1(){
+            document.write("function1이 실행되었습니다.<br><br>");
+        }
+        func1();
+        
+        //익명 함수
+        var func2 = function(){
+            document.write("function2이 실행되었습니다.<br><br>");
+        }
+        func2();
+        
+        //매개변수가 있는 함수
+        function func3(name){
+            document.write(name);
+        }
+        func3("function3이 실행되었습니다.<br><br>");
+        
+        //리턴값이 있는 함수
+        function func4(){
+            var str = "function4이 실행되었습니다.<br><br>";
+            return str;
+        }
+        var value = func4();
+        document.write(value);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+

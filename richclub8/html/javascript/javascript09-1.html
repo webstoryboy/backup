@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript</title>
+  <script type="text/javascript">
+    var site = window.prompt("네이버, 다음, 구글 중 자주가는 사이트는?");
+    var url;
+
+    switch (site) {
+      case "네이버":
+        url = "https://www.naver.com/";
+        break;
+      case "다음":
+        url = "https://www.naver.com/";
+        break;
+      case "구글":
+        url = "https://www.naver.com/";
+        break;
+
+      default:
+        document.write("그런 사이트는 없습니다.");
+        break;
+    }
+
+    if(url) {
+      location.href = url;
+    }
+
+    //if문으로 변환
+    var site2 = window.prompt("강인영, 김동현, 김세희, 김지호, 박종성, 손지원, 양아름, 이성희, 이정아, 이지수, 이혜인, 최한비, 하지헌 중 이동할 맛집은?")
+    var url2;
+
+    if ( site2 == "강인영") {
+      url2 = "http://kiy620.dothome.co.kr/"
+    } else if ( site2 == "김동현" ) {
+      url2 = "http://ehdgus441.dothome.co.kr/"
+    } else if ( site2 == "김세희" ) {
+      url2 = "http://tpgmll125.dothome.co.kr/"
+    } else if ( site2 == "김지호" ) {
+      url2 = "http://ghkim2571.dothome.co.kr/"
+    } else if ( site2 == "박종성" ) {
+      url2 = "http://wwer91.dothome.co.kr/"
+    } else if ( site2 == "손지원" ) {
+      url2 = "http://wldnjs7204.dothome.co.kr/"
+    } else if ( site2 == "양아름" ) {
+      url2 = "http://mm2800.dothome.co.kr/"
+    } else if ( site2 == "이성희" ) {
+      url2 = "http://won03048.dothome.co.kr/"
+    } else if ( site2 == "이정아" ) {
+      url2 = "http://jeongah2651.dothome.co.kr/"
+    } else if ( site2 == "이지수" ) {
+      url2 = "http://anastasia4.dothome.co.kr/"
+    } else if ( site2 == "이혜인" ) {
+      url2 = "http://leehye1204.dothome.co.kr/"
+    } else if ( site2 == "최한비" ) {
+      url2 = "http://bibibigcom.dothome.co.kr/"
+    } else if ( site2 == "하지헌" ) {
+      url2 = "http://qwlgjs.dothome.co.kr/"
+    } else {
+      document.write("사이트가 존재하지 않습니다.")
+    }
+
+    if(url2) location.href = url2;
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

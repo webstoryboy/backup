@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>php</title>
+
+	<script>
+		//변수명에 javascript를 저장하고 출력하세요!
+		var x = "javascript";
+
+		document.write(x);
+		document.write("<br>");
+		document.write("나는 " + x + "를 배우고 있습니다.");
+		document.write("<br><br>");
+	</script>
+</head>
+<body>
+	<?php
+		$php = "php";
+
+		echo $php;
+		echo "<br>";
+		echo "나는 " .$php. "를 배우고 있습니다.";
+		echo "<br>";
+		echo "나는 {$php}를 배우고 있습니다.";
+		echo "<br>";
+		echo "나는 \"php\"를 배우고 있습니다.";
+		echo "<br>";
+		echo "나는 \$15를 사용했습니다.";
+	?>
+</body>
+</html>
+
+
+
+
+
+

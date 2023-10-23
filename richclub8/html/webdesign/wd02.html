@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>해운대 빛축제</title>
+    
+    <style>
+        /* reset */
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #000;}
+        li {list-style: none;}
+        .clearfix:before .clearfix:after {display: block; content: ''; clear: both;}
+        
+        
+        /* layout */
+        #wrap {width: 1004px; margin: 0 auto; color: #fff;}
+        #side {float: left; width: 300px; height: 650px; background: #ccc;}
+        #contents {float: left; width: 700px; background: #ddd;}
+    
+        /* side */
+        #side {}
+        #side h1 {height: 100px; background: #333;}
+        #side .nav {}
+        
+        /* contents */
+        #contents {}
+        #slide {height: 350px; }
+        #cont {height: 200px;}
+        #footer {height: 100px;}
+        
+        /* cont */
+        #cont {}
+        #cont .article1 {float: left; width: 33.333%; height: 200px; background: #666;}
+        #cont .article2 {float: left; width: 33.333%; height: 200px; background: #555;}
+        #cont .article3 {float: left; width: 33.333%; height: 200px; background: #444;}
+        
+        /* footer */
+        #footer {}
+        #footer .footer-logo {float: left; width: 100px; height: 100px; background: #999;}
+        #footer .footer-menu {float: left; width: 600px; height: 50px; background: #888;}
+        #footer .footer-infor {float: left; width: 600px; height: 50px;
+        background: #777;}
+    </style>
+</head>
+<body>
+    
+    <div id="wrap" class="clearfix">
+        <aside id="side">
+            <h1><a href="#">logo</a></h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section id="contents">
+            <section id="slide">
+                <h2>이미지 슬라이드</h2>
+            </section>
+            <section id="cont" class="clearfix">
+                <article class="article1">
+                    <h3>공지사항</h3>
+                </article>
+                <article class="article2">
+                    <h3>배너</h3>
+                </article>
+                <article class="article3">
+                    <h3>바로가기</h3>
+                </article>
+            </section>
+            <section id="footer" class="clearfix">
+                <div class="footer-logo">로고</div>
+                <div class="footer-menu">하단 메뉴</div>
+                <address class="footer-infor">Copyright</address>
+            </section>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2959 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A Documentation by JavaScript.">
+	<meta name="author" content="JavaScript documentation">
+
+	<title>jQuery Reference</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Documentation extras -->
+	<link href="assets/css/docs.min.css" rel="stylesheet">
+	<link href="assets/css/prism.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.assets/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+
+	<!-- web font -->
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+	<a class="sr-only" href="#content">Skip to main content</a>
+
+	<header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand">webstoryboy &lt;/doc&gt;</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="#">jQuery</a></li>
+					<li><a href="../javascript/javascript.html">JavaScript</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="bs-header" style="background-image: linear-gradient(45deg, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);" id="content">
+		<div class="container">
+			<h1>jQuery Reference v1.0 &lt;/doc&gt;</h1>
+			<p>webstoryboy.co.kr</p>
+		</div>
+	</div>
+
+	<div class="container bs-docs-container">
+		<div class="row">
+			
+			<div class="col-md-9" role="main">
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="introduction1" class="page-header">제이쿼리</h2>
+                    <p>제이쿼리는 자바스크립트 라이브러리를 이용해 만든 언어입니다. 제이쿼리는
+                    HTML에 포함되어 있는 클라이언트 사이트 스크립트 언어를 단순화하도록 설계된
+                    웹 브라우저 호환성을 가진 자바스크리브 라이브러리입니다. 라이브러리는 
+                    자주 사용하는 코드를 재사용 및 효율성 있게 사용할 수 있도록 만들어진 함수의
+                    집합을 의미합니다.</p>
+                    
+                    <h3 class="pt30">제이쿼리 언어의 특징</h3>
+                    <ul>
+                        <li>제이쿼리는 CSS를 쉽게 적용할 수 있습니다.</li>
+                        <li>제이쿼리는 크로스브라우징을 지원합니다.</li>
+                        <li>제이쿼리는 플러그인이 풍부합니다.</li>
+                        <li>제이쿼리는 코드를 적게, 효율적으로 작성할 수 있습니다.</li>
+                        <li>제이쿼리는 좋은 확장성과 ajax 기능을 구현합니다.</li>
+                    </ul>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="introduction2" class="page-header">제이쿼리 기초</h2>
+                    
+                    <h3 class="pt30">제이쿼리 사용방법</h3>
+                    <p>jQuery 라이브러리는 <a href="http://jquery.com/" target="_blank">jQuery</a> 공식 사이트에서 다운 받을 수 있습니다.</p>
+                    
+                    <h5 class="pt10">다운 받아서 사용하는 방법</h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    
+    &lt;!-- 제이쿼리 3.x 버전 --&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+    
+    &lt;!-- 제이쿼리 2.x 버전 --&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+    
+    &lt;!-- 제이쿼리 1.x 버전 --&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+
+    &lt;!-- 제이쿼리 UI 버전 --&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h5 class="pt10">구글 CDN(Content Delivery Network) 사용하는 방법</h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    
+    &lt;!-- 제이쿼리 3.x 버전 --&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;
+    
+    &lt;!-- 제이쿼리 2.x 버전 --&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"&gt;&lt;/script&gt;
+    
+    &lt;!-- 제이쿼리 1.x 버전 --&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+
+    &lt;!-- 제이쿼리 UI 버전 --&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h5 class="pt10">제이쿼리 위치 <a href="jquery03.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jquery&lt;/title&gt;
+    
+    &lt;!-- head 안에 사용하는 경우 --&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        // 제이쿼리 사용 영역
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+    &lt;!-- body 안에 사용하는 경우 --&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        // 제이쿼리 사용 영역
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    <h5 class="pt10">제이쿼리 준비 <a href="jquery04.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jquery&lt;/title&gt;
+    
+    &lt;!-- 제이쿼리 사용 준비 --&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        jQuery(document).ready(function(){
+            //실행 코드
+        });
+    &lt;/script&gt;
+    
+    &lt;!-- jQuery 키워드를 $로 치환 --&gt;
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function(){
+            //실행 코드
+        });
+    &lt;/script&gt;
+    
+    &lt;!-- 단축해서 사용 --&gt;
+    &lt;script type="text/javascript"&gt;
+        $(function(){
+            //실행 코드
+        });
+    &lt;/script&gt;
+    
+    &lt;!-- 자바스크립트 사용 준비 --&gt;
+    &lt;script type="text/javascript"&gt;
+        window.onload = function(){
+            //실행 코드
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                     <h5 class="pt10">제이쿼리를 사용하는 이유 <a href="jquery05.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Jquery&lt;/title&gt;
+    &lt;style&gt;
+        /* CSS : 첫번째 리스트 색을 변경 */
+        #list1 li {color: #F00;}
+    &lt;/style&gt;
+    &lt;script type="text/javascript"&gt;
+        //자바스크립트 : 두번째 리스트 색을 변경
+        window.onload = function(){
+            var list2 = document.getElementById("list2");      //#list2 찾아서 변수에 할당
+            var liList = list2.getElementsByTagName("li");     //list2에서 li 태그를 찾아 변수에 할당
+            for(var i = 0; i &lt; liList.length; i++){            //li태그를 하나씩 접근해서
+                var li =  liList[i];                           //배열로 할당해서 변수에 저장
+                li.style.color = "#0f0";
+            }
+        };
+    &lt;/script&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        //제이쿼리 : 세번째 리스트 색을 변경
+        $(document).ready(function(){
+            $("#list3 li").css("color","#00f");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h1&gt;jquery&lt;/h1&gt;
+    &lt;div&gt;
+        &lt;ul id="list1" class="list"&gt;
+            &lt;li class="one1"&gt;one1&lt;/li&gt;
+            &lt;li class="one2"&gt;one2&lt;/li&gt;
+            &lt;li class="one3"&gt;one3&lt;/li&gt;
+            &lt;li class="one4"&gt;one4&lt;/li&gt;
+            &lt;li class="one5"&gt;one5&lt;/li&gt;
+            &lt;li class="one6"&gt;one6&lt;/li&gt;
+            &lt;li class="one7"&gt;one7&lt;/li&gt;
+            &lt;li class="one8"&gt;one8&lt;/li&gt;
+            &lt;li class="one9"&gt;one9&lt;/li&gt;
+            &lt;li class="one10"&gt;one10&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul id="list2" class="list"&gt;
+            &lt;li class="one1"&gt;one1&lt;/li&gt;
+            &lt;li class="one2"&gt;one2&lt;/li&gt;
+            &lt;li class="one3"&gt;one3&lt;/li&gt;
+            &lt;li class="one4"&gt;one4&lt;/li&gt;
+            &lt;li class="one5"&gt;one5&lt;/li&gt;
+            &lt;li class="one6"&gt;one6&lt;/li&gt;
+            &lt;li class="one7"&gt;one7&lt;/li&gt;
+            &lt;li class="one8"&gt;one8&lt;/li&gt;
+            &lt;li class="one9"&gt;one9&lt;/li&gt;
+            &lt;li class="one10"&gt;one10&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul id="list3" class="list"&gt;
+            &lt;li class="one1"&gt;one1&lt;/li&gt;
+            &lt;li class="one2"&gt;one2&lt;/li&gt;
+            &lt;li class="one3"&gt;one3&lt;/li&gt;
+            &lt;li class="one4"&gt;one4&lt;/li&gt;
+            &lt;li class="one5"&gt;one5&lt;/li&gt;
+            &lt;li class="one6"&gt;one6&lt;/li&gt;
+            &lt;li class="one7"&gt;one7&lt;/li&gt;
+            &lt;li class="one8"&gt;one8&lt;/li&gt;
+            &lt;li class="one9"&gt;one9&lt;/li&gt;
+            &lt;li class="one10"&gt;one10&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;            
+    
+    
+    &lt;!-- script --&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="introduction3" class="page-header">선택자</h2>
+                    
+                    <h3 id="introduction3-1" class="page-header">기본 선택자</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>태그 선택자</td>
+                                    <td>$("p")</td>
+                                    <td>기본 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>클래스 선택자</td>
+                                    <td>$(".class")</td>
+                                    <td>클래스 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>아이디 선택자</td>
+                                    <td>$("#id")</td>
+                                    <td>아이디 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>그룹 선택자</td>
+                                    <td>$("p, .class, #id")</td>
+                                    <td>여러가지 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>전체 선택자</td>
+                                    <td>$("*")</td>
+                                    <td>전체 태그를 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>	
+                    
+                    <h3 id="introduction3-2" class="page-header">계층 선택자</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>자손 선택자</td>
+                                    <td>$("div li")</td>
+                                    <td>자식(하위) 태그 모두 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>child 선택자</td>
+                                    <td>$("div > p")</td>
+                                    <td>자식(하위) 태그만 선택합니다.(자손은 포함안됨)</td>
+                                </tr>
+                                <tr>
+                                    <td>sibling 선택자</td>
+                                    <td>$("div + p")</td>
+                                    <td>자식 태그 다음 형제 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>siblings 선택자</td>
+                                    <td>$("div ~ li")</td>
+                                    <td>자식 태그 다음 모든 형제태그를 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>	
+                    
+                    <h3 id="introduction3-3" class="page-header">속성 선택자</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>예시</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[name="value"]</td>
+                                    <td>$("li a[href='#page']")</td>
+                                    <td>속성 중에 #page와 일치하는 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>[name^="value"]</td>
+                                    <td>$("li a[href^='http']")</td>
+                                    <td>속성 중에 http로 시작하는 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>[name$="value"]</td>
+                                    <td>$("li a[href$='.com']")</td>
+                                    <td>속성 중에 .com로 끝나는 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>[name*="value"]</td>
+                                    <td>$("li a[href*='web']")</td>
+                                    <td>속성 중에 "web"가 포함되어 있는 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>[name!="value"]</td>
+                                    <td>$("li a[href!='naver.com']")</td>
+                                    <td>속성 중에 naver.com와 일치하지 않는 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>[name="value"][name="value"]</td>
+                                    <td>$("li a[href][class]")</td>
+                                    <td>속성 중에 href 속성과 class 속성이 있는 태그를 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>	
+                    <h3 id="introduction3-4" class="page-header">기본 필터 선택자</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:animated</code></td>
+                                    <td>show, hide, slideDown, slideUp등의 애니메이션 태그를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:eq(index)</code></td>
+                                    <td>선택된 태그들의 인덱스 번호를 통해 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:gt(index)</code></td>
+                                    <td>선택된 집합에서 인덱스보다 큰 인덱스를 가지고 있는 태그들을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:lt(index)</code></td>
+                                    <td>선택된 집합에서 인덱스보다 작은 인덱스를 가지고 있는 태그들을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:header</code></td>
+                                    <td>제목 요소(h1~h6) 태그들을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:first</code></td>
+                                    <td>선택된 요소 중에서 첫 번째 요소를 찾아 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:last</code></td>
+                                    <td>선택된 요소 중에서 마지막 번째 요소를 찾아 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:odd</code></td>
+                                    <td>선택된 요소 중에서 홀수 번째 요소를 찾아 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:even</code></td>
+                                    <td>선택된 요소 중에서 짝수 번째 요소를 찾아 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:not()</code></td>
+                                    <td>현재 선택한 요소의 반대 요소를 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3 id="introduction3-5" class="page-header">내용 필터 선택자</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:contains()</code></td>
+                                    <td>()안의 텍스트와 일치하는 문자열이 요소의 내용 중에 있을 때 그 요소를 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:empty</code></td>
+                                    <td>요소에 텍스트 없을 때 선택됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:has()</code></td>
+                                    <td>요소 내부에서 찾고 싶은 태그를 후손 요소까지 살펴본 후 요소가 있으면 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:parent</code></td>
+                                    <td>empty와 반대로 요소에 텍스트가 존재할 때에 선택됩니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>	
+                    
+                    <h3 id="introduction3-6" class="page-header">보임 필터 선택자</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:hidden</code></td>
+                                    <td>보이지 않는 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:visible</code></td>
+                                    <td>보이는 요소를 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>	
+                    <h4>컨텐츠를 보이지 않게 하는 방법</h4>
+                    <ul>
+                        <li>display:none </li>
+                        <li>opacity:0; </li>
+                        <li>visibility: hidden</li>
+                        <li>width:0; height:0;</li>
+                        <li>form 요소 중에 type="hidden"</li>
+                        <li>부모요소가 보이지 않거나 숨겨져 있을 때</li>
+                    </ul>
+                    <p>visibility: hidden이나 opacity:0;은 위치가 제거되지 않았기 때문에 :hidden 선택자에게 
+                        선택되지 않습니다.</p>
+                    
+                    <h3 id="introduction3-7" class="page-header">자식요소 필터 선택자</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:first-child</code></td>
+                                    <td>첫 번째 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:last-child</code></td>
+                                    <td>마지막 번째 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:first-of-type</code></td>
+                                    <td>자식 중 첫 번째 유형의 자식요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:last-of-type</code></td>
+                                    <td>자식 중 마지막 번째 유형의 자식요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:nth-child(index)</code></td>
+                                    <td>index번째에 있는 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:nth-child(even)</code></td>
+                                    <td>짝수번째에 있는 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:nth-child(odd)</code></td>
+                                    <td>홀수번째에 있는 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:nth-child(2n)</code></td>
+                                    <td>2배수 번째에 있는 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:nth-child(2n+1)</code></td>
+                                    <td>2배수+1 번째에 있는 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:nth-last-child(index)</code></td>
+                                    <td>index 번째에 있는 마지막 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:nth-last-of-type(index)</code></td>
+                                    <td>index 번째에 있는 마지막 유형의 자식 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:only-child</code></td>
+                                    <td>자식 요소가 오직 하나인 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:only-child-type</code></td>
+                                    <td>자식 요소가 오직 하나 유형인 요소를 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>	
+                    
+                    <h3 id="introduction3-8" class="page-header">폼 필터 선택자</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:input</code></td>
+                                    <td>모든 입력 양식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:file</code></td>
+                                    <td>파일 업로드 양식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:hidden</code></td>
+                                    <td>숨겨진 입력 양식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:image</code></td>
+                                    <td>이미지 입력 양식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:password</code></td>
+                                    <td>암호 입력 양식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:radio</code></td>
+                                    <td>라디오 버튼 입력 양식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:reset</code></td>
+                                    <td>리셋 입력 양식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:submit</code></td>
+                                    <td>데이터 보내기 입력 양식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>:text</code></td>
+                                    <td>텍스트 박스 양식을 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h5 class="pt10">선택자 <a href="jquery06.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {margin: 1px;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;jquery&lt;/h1&gt;
+    &lt;div id="sample"&gt;
+        &lt;ul id="list1" class="list"&gt;
+            &lt;li class="one1"&gt;&lt;a href="#list3"&gt;one1&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one2"&gt;&lt;a href="https://www.naver.com"&gt;one2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one3"&gt;&lt;a href="https://www.daum.net"&gt;one3&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one4"&gt;&lt;a href="https://webstoryboy.co.kr" target="_blank"&gt;one4&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one5"&gt;&lt;a href="#"&gt;one5&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one6"&gt;&lt;a href="#"&gt;one6&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one7"&gt;&lt;a href="#"&gt;one7&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one8"&gt;&lt;a href="#"&gt;one8&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one9"&gt;&lt;a href="#"&gt;one9&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one10"&gt;&lt;a href="#"&gt;one10&lt;/a&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;one10-1&lt;/li&gt;
+                    &lt;li&gt;one10-2&lt;/li&gt;
+                    &lt;li&gt;one10-3&lt;/li&gt;
+                    &lt;li&gt;one10-4&lt;/li&gt;
+                    &lt;li&gt;one10-5&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul id="list2" class="list"&gt;
+            &lt;li class="one1"&gt;&lt;a href="#list3"&gt;one1&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one2"&gt;&lt;a href="https://www.naver.com"&gt;one2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one3"&gt;&lt;a href="https://www.daum.net"&gt;one3&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one4"&gt;&lt;a href="https://webstoryboy.co.kr" target="_blank"&gt;one4&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one5"&gt;&lt;a href="#"&gt;one5&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one6"&gt;&lt;a href="#"&gt;one6&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one7"&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one8"&gt;&lt;a href="#"&gt;one8&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one9"&gt;&lt;a href="#"&gt;one9&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one10"&gt;&lt;a href="#"&gt;one10&lt;/a&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;one10-1&lt;/li&gt;
+                    &lt;li&gt;one10-2&lt;/li&gt;
+                    &lt;li&gt;one10-3&lt;/li&gt;
+                    &lt;li&gt;one10-4&lt;/li&gt;
+                    &lt;li&gt;one10-5&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul id="list3" class="list"&gt;
+            &lt;li class="one1"&gt;&lt;a href="#list3"&gt;one1&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one2"&gt;&lt;a href="https://www.naver.com"&gt;one2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one3"&gt;&lt;a href="https://www.daum.net"&gt;one3&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one4"&gt;&lt;a href="https://webstoryboy.co.kr" target="_blank"&gt;one4&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one5"&gt;&lt;a href="#"&gt;one5&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one6"&gt;&lt;a href="#"&gt;one6&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one7"&gt;&lt;a href="#"&gt;one7&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one8"&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one9"&gt;&lt;a href="#"&gt;one9&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="one10"&gt;&lt;a href="#"&gt;one10&lt;/a&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;one10-1&lt;/li&gt;
+                    &lt;li style="width:0; height:0; overflow: hidden"&gt;one10-2&lt;/li&gt;
+                    &lt;li style="opacity:0"&gt;one10-3&lt;/li&gt;
+                    &lt;li style="visibility:hidden;"&gt;one10-4&lt;/li&gt;
+                    &lt;li style="display:none"&gt;one10-5&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul&gt;
+            &lt;li class="one1"&gt;&lt;a href="#"&gt;one1&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        
+        //$("li").css("background-color","#bbdefb");
+        //$("li").css({"background-color":"#bbdefb", "border":"1px dashed #303f9f"});
+        //기본 선택자
+        //$("li").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        //$(".one3").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        //$("#list2").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        //$("*").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        //$(".one3, .one5").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        
+        //계층 선택자
+        //$(".list &gt; li").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        //$(".list &gt; li").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        //$(".one4 + li").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        //$(".one4 ~ li").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f"});
+        
+        //속성 선택자
+        //$("li a[href='#list3']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li a[href^='https']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li a[href$='com']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li[class~='one4']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li a[href*='web']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li a[href|='web']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li a[href!='https://www.naver.com']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li a[href][target]").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        
+        //기본 필터 선택자
+        //$("li:eq(4)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:gt(4)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:lt(4)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(":header").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:first").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:last").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:even").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:even").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        
+        //내용 필터 선택자
+        //$("li:contains('one5')").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li a:empty").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:parent").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:has(li)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+    
+        //보임 필터 선택자
+        //$("li:hidden").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:visible").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+           
+        //자식요소 필터 선택자
+        //$("li:first").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:first-child").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:last").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:last-child").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:nth-child(4)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:nth-child(even)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:nth-child(odd)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:nth-child(2n+1)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:nth-child(2n+4)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li:only-child").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="introduction4" class="page-header">탐색</h2>
+                    <p>탐색은 제이쿼리의 선택자를 기준으로 선택한 요소에서 원하는 요소를 다시
+                    한번 선택하는 메서드입니다. 탐색은 트리구조와 필어 영역으로 나눌 수 있으며
+                    역할과 성질은 선택자와 비슷합니다.</p>
+                    
+                    <h3>탐색(Traversing)</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>유형</th>
+                                    <th>메서드</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce va" rowspan="13">트리구조 탐색(Tree traversal)</td>
+                                    <td>.children()</td>
+                                    <td>선택한 요소의 바로 아래 자식 요소만 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.closest()</td>
+                                    <td>선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.find() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.next()</td>
+                                    <td>선택한 요소를 다음 형제 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.nextAll()</td>
+                                    <td>선택한 요소의 다음 모든 형제 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.nextUntil()</td>
+                                    <td>선택한 요소의 다음 요소 중 조건에 맞을 때까지 찾아 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.parent()</td>
+                                    <td>선택한 요소의 부모 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.parents()</td>
+                                    <td>선택한 요소의 모든 부모 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.parentsUntil()</td>
+                                    <td>선택한 요소의 모든 부모 요소 중 조건에 맞을 때까지 찾아 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.prev()</td>
+                                    <td>선택한 요소의 이전 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.prevAll()</td>
+                                    <td>선택한 요소의 이전 모든 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.prevUntil()</td>
+                                    <td>선택한 요소의 이전 모든 요소 중 조건에 맞을 때까지 찾아 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.siblings()</td>
+                                    <td>선택한 요소의 형제 요소를 모두 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="9">필터링(Filtering)</td>
+                                    <td>.eq(index)</td>
+                                    <td>선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.filter()</td>
+                                    <td>선택한 요소에서 선택하거나 함수를 사용할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.first()</td>
+                                    <td>선택한 요소에서 첫 번째 자식을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.has()</td>
+                                    <td>선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.is()</td>
+                                    <td>선택한 요소 객체의 특징을 판별합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.last()</td>
+                                    <td>선택한 요소에서 마지막 번째 자식을 선택합니다</td>
+                                </tr>
+                                <tr>
+                                    <td>.map()</td>
+                                    <td>선택한 요소 배열 집을 새롭게 변경합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.not()</td>
+                                    <td>선택한 요소에서 조건에 맞지 않는 것을 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.slice()</td>
+                                    <td>선택한 요소에서 조건의 범위로 재 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="5">기타(Miscellaneous)</td>
+                                    <td>.add()</td>
+                                    <td>선택한 요소에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.addBack()</td>
+                                    <td>선택한 요소의 상위 요소도 같이 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.contents()</td>
+                                    <td>선택한 요소와 일치하는 콘텐츠 요소를 선택합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.each() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소들을 각각 순차적으로 실행합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.end()</td>
+                                    <td>선택한 요소의 필터링이 일어나기 이전의 요소를 선택합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                     <h5 class="pt10 page-header" id="introduction4-1">트리구조 탐색 <a href="jquery07.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {margin: 3px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .on {background-color: #bbdefb; border: 1px dashed #303f9f;}
+        .onRed {color: #c7254e; 
+        white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; 
+        border-bottom: 1px dashed #a51a3d; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;탐색(Traversing)&lt;/h1&gt;
+    
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="off1"&gt;reset&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;.children()&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;.find()&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;.next()&lt;/a&gt;
+        &lt;a href="#" class="btn4"&gt;.nextAll()&lt;/a&gt;
+        &lt;a href="#" class="btn5"&gt;.nextUntil()&lt;/a&gt;
+        &lt;a href="#" class="btn6"&gt;.prev()&lt;/a&gt;
+        &lt;a href="#" class="btn7"&gt;.prevAll()&lt;/a&gt;
+        &lt;a href="#" class="btn8"&gt;.prevUntil()&lt;/a&gt;
+        &lt;a href="#" class="btn9"&gt;.parent()&lt;/a&gt;
+        &lt;a href="#" class="btn10"&gt;.parentAll()&lt;/a&gt;
+        &lt;a href="#" class="btn11"&gt;.parentUntil()&lt;/a&gt;
+        &lt;a href="#" class="btn12"&gt;.siblings()&lt;/a&gt;
+        &lt;a href="#" class="btn13"&gt;.closest()&lt;/a&gt;
+        &lt;a href="#" class="btn14"&gt;"탐색" 단어 선택하기&lt;/a&gt;
+        &lt;a href="#" class="btn15"&gt;"선택자" 단어 선택하기&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li class="select"&gt;트리구조 탐색(Tree traversal)
+                &lt;ul&gt;
+                    &lt;li class="list1"&gt;.children() : 선택한 요소의 바로 아래 자식 요소만 선택합니다.
+                        &lt;ul&gt;
+                            &lt;li class="parent"&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                            &lt;li&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                            &lt;li&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;.closest() : 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.&lt;/li&gt;
+                    &lt;li&gt;.find() : 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.&lt;/li&gt;
+                    &lt;li class="until"&gt;.next() : 선택한 요소를 다음 형제 요소를 선택합니다.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="select"&gt;필터링(Filtering)
+                &lt;ul&gt;
+                    &lt;li class="until2"&gt;.eq(index) : 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.
+                        &lt;ul&gt;
+                            &lt;li&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                            &lt;li&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                            &lt;li&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;.filter() : 선택한 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+                    &lt;li&gt;.first() : 선택한 요소에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+                    &lt;li class="list2"&gt;.has() : 선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p class="text"&gt;탐색은 제이쿼리의 선택자를 기준으로 선택한 요소에서 원하는 요소를 다시 한번 선택하는 메서드입니다. 탐색은 트리구조와 필어 영역으로 나눌 수 있으며 역할과 성질은 선택자와 비슷합니다.&lt;/p&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+       $(".choice .off1").click(function(){
+           $("*").removeClass("on");
+           $("*").removeClass("onRed");
+       }); 
+       $(".choice .btn1").click(function(){
+           $(".list li").children().addClass("on");
+       }); 
+       $(".choice .btn2").click(function(){
+           $(".list li").find("li").addClass("on");
+       }); 
+       $(".choice .btn3").click(function(){
+           $(".list1").next().addClass("on");
+       }); 
+       $(".choice .btn4").click(function(){
+           $(".list1").nextAll().addClass("on");
+       }); 
+       $(".choice .btn5").click(function(){
+           $(".list1").nextUntil(".until").addClass("on");
+       }); 
+        
+       $(".choice .btn6").click(function(){
+           $(".list2").prev().addClass("on");
+       });
+       $(".choice .btn7").click(function(){
+           $(".list2").prevAll().addClass("on");
+       }); 
+       $(".choice .btn8").click(function(){
+           $(".list2").prevUntil(".until2").addClass("on");
+       }); 
+        
+       $(".choice .btn9").click(function(){
+           $(".parent").parent().addClass("on");
+       });
+       $(".choice .btn10").click(function(){
+           $(".parent").parents().addClass("on");
+       });
+       $(".choice .btn11").click(function(){
+           $(".parent").parentsUntil(".select").addClass("on");
+       });
+        
+       $(".choice .btn12").click(function(){
+           $(".list1").siblings().addClass("on");
+       });
+        
+       $(".choice .btn13").click(function(){
+           $(".list1").closest("li").addClass("on");
+       });
+        
+       //텍스트를 span 요소로 감싼뒤 마우스 오버 효과를 줍니다.
+       var text = $(".until").text().split(" ").join("&lt;/span&gt; &lt;span&gt;");
+       text = "&lt;span&gt;" + text + "&lt;/span&gt;"; 
+       
+       $(".until").html(text).find("span").hover(function(){
+           $(this).addClass("onRed");
+       },function(){
+           $(this).removeClass("onRed");
+       });
+        
+       //"탐색" 단어를 선택하여 효과 주기
+       var text2 = $(".text").text().split(" ").join("&lt;/span&gt; &lt;span&gt;");
+       text2 = "&lt;span&gt;" + text2 + "&lt;/span&gt;";  
+       
+       $(".choice .btn14").click(function(){
+           $(".text").html(text2).find(":contains('탐색')").addClass("onRed");
+       });
+       
+       //"선택자" 단어를 선택하여 효과 주기
+       $(".choice .btn15").click(function(){
+           $(".text").html(text2).find(":contains('선택자')").addClass("onRed");
+       });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                     <h5 class="pt10 page-header" id="introduction4-2">필터링 <a href="jquery08.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {margin: 3px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .on {background-color: #bbdefb; border: 1px dashed #303f9f;}
+        .onRed {color: #c7254e; white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; 
+        border-bottom: 1px dashed #a51a3d; }
+        .select:before {content:'select'; padding: 4px 4px 2px 4px; font-size: 90%;
+        color: #3d90b7; white-space: nowrap; background-color: #e7f6fd;
+        border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;탐색(Traversing)&lt;/h1&gt;
+    
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="off1"&gt;reset&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;.eq(2)&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;.eq(-1)()&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;.filter(":even")&lt;/a&gt;
+        &lt;a href="#" class="btn4"&gt;.filter(".select")&lt;/a&gt;
+        &lt;a href="#" class="btn5"&gt;.first()&lt;/a&gt;
+        &lt;a href="#" class="btn6"&gt;.last()&lt;/a&gt;
+        &lt;a href="#" class="btn7"&gt;.has("ul")&lt;/a&gt;
+        &lt;a href="#" class="btn8"&gt;.has(".select")&lt;/a&gt;
+        &lt;a href="#" class="btn9"&gt;.is("li")&lt;/a&gt;
+        &lt;a href="#" class="btn10"&gt;.not(".select")&lt;/a&gt;
+        &lt;a href="#" class="btn11"&gt;.slice(2)&lt;/a&gt;
+        &lt;a href="#" class="btn12"&gt;.slice(2,4)&lt;/a&gt;
+        &lt;a href="#" class="btn13"&gt;.slice(-2)&lt;/a&gt;
+        &lt;a href="#" class="btn14"&gt;.slice(-2,-1)&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li class="liList"&gt;트리구조 탐색(Tree traversal)
+                &lt;ul&gt;
+                    &lt;li&gt;.children() : 선택한 요소의 바로 아래 자식 요소만 선택합니다.&lt;/li&gt;
+                    &lt;li&gt;.closest() : 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.&lt;/li&gt;
+                    &lt;li class="select"&gt;.find() : 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.&lt;/li&gt;
+                    &lt;li&gt;.next() : 선택한 요소를 다음 형제 요소를 선택합니다.&lt;/li&gt;
+                    &lt;li&gt;.is() : 선택한 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+                    &lt;li&gt;.last() : 선택한 요소에서 마지막 번째 자식을 선택합니다&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="liList"&gt;필터링(Filtering)
+                &lt;ul&gt;
+                    &lt;li&gt;.eq(index) : 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.
+                        &lt;ul&gt;
+                            &lt;li&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                            &lt;li&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                            &lt;li&gt;여기는 두 번째 자식입니다.&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;.filter() : 선택한 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+                    &lt;li&gt;.first() : 선택한 요소에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+                    &lt;li&gt;.has() : 선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        //선택자를 이용해서 .find() 줄에 CSS 효과를 넣어주세요!(7가지 이상)
+        //$(".list1").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li[class='list1']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li[class^='list1']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li[class$='list1']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$("li[class*='list1']").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".select li:eq(0)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".select li:lt(1)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".select li:first").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".select li:first-child").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".select li:contains('children')").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".select li:first-of-type").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".select li:nth-child(1)").css({backgroundColor:"#bbdefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".select li:nth-child(4n+1)").css({backgroundColor:"#bbdefb", "border":"1px dashed #303f9f", display:"block"});
+        //$("li.list1:visible").css({backgroundColor:"#bbbefb", border:"1px dashed #303f9f", display:"block"});
+        //$(".list1:parent").css({backgroundColor:"#bbbefb", border:"1px dashed #303f9f", display:"block"});
+        
+        $(".choice .off1").click(function(){
+            $("*").removeClass("on");
+        });
+        
+        $(".choice .btn1").click(function(){
+            $(".liList li").eq(2).addClass("on");
+        });
+        
+        $(".choice .btn2").click(function(){
+            $(".liList li").eq(-1).addClass("on");
+        });
+        
+        $(".choice .btn3").click(function(){
+            $(".liList li").filter(":even").addClass("on");
+        });
+        
+        $(".choice .btn4").click(function(){
+            $(".liList li").filter(".select").addClass("on");
+        });
+        
+        $(".choice .btn5").click(function(){
+            $(".liList li").first().addClass("on");
+        });
+        
+        $(".choice .btn6").click(function(){
+            $(".liList li").last().addClass("on");
+        });
+        
+        $(".choice .btn7").click(function(){
+            $(".liList li").has("ul").addClass("on");
+        });
+        
+        $(".choice .btn8").click(function(){
+            $(".list li").has(".select").addClass("on");
+        });
+        
+        $(".choice .btn9").click(function(){
+            if($(".list li").is("li")){
+                $(".list li.select").addClass("on");
+            }
+        });
+        
+        $(".choice .btn10").click(function(){
+            $(".list li").not(".select").addClass("on");
+        });
+        
+        $(".choice .btn11").click(function(){
+            $(".list li").slice(2).addClass("on");
+        });
+        $(".choice .btn12").click(function(){
+            $(".list li").slice(2,4).addClass("on");
+        });
+        
+        $(".choice .btn13").click(function(){
+            $(".list li").slice(-2).addClass("on");
+        });
+        $(".choice .btn14").click(function(){
+            $(".list li").slice(-2,-1).addClass("on");
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                     <h5 class="pt10 page-header" id="introduction4-3">is() <a href="jquery09.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {margin: 8px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;탐색(Traversing)&lt;/h1&gt;
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;리스트 클릭하면 strong 태그가 두개 있으면 파란색, 하나 있으면 빨간색으로 표현됩니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 li의 부모가 ul인지 확인합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 li의 부모가 div인지 확인합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.children() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;의 바로 아래 자식 &lt;strong&gt;요소&lt;/strong&gt;만 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.closest() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;를 포함하면서 가장 가까운 상위 &lt;strong&gt;요소&lt;/strong&gt;를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;의 자식 요소 중 조건에 맞는 &lt;strong&gt;요소&lt;/strong&gt;를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;를 다음 형제 &lt;strong&gt;요소&lt;/strong&gt;를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.is() : 선택한 &lt;strong&gt;요소&lt;/strong&gt; 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li&gt;.last() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;에서 마지막 번째 자식을 선택합니다&lt;/li&gt;
+            &lt;li&gt;.filter() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.has() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p class="text"&gt;&lt;/p&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".list li").click(function(){
+            var li = $(this);
+            var two = li.is(function(){
+                return $("strong",this).length === 2;
+            });
+            
+            if(two){
+                li.addClass("onBlue");
+            } else {
+                li.addClass("onRed");
+            }
+        });
+       
+        $(".choice .btn2").click(function(){
+            var is = $(".list li").parent().is("ul");
+            $(".text").text("li의 부모가 맞으면 'true' 아니면 'false'를 반환합니다. = " + is);
+        });
+        
+        $(".choice .btn3").click(function(){
+            var is = $(".list li").parent().is("div");
+            $(".text").text("li의 부모가 맞으면 'true' 아니면 'false'를 반환합니다. = " + is);
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction4-4">each() <a href="jquery10.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {margin: 8px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;탐색(Traversing)&lt;/h1&gt;
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;.addClass("onBlue")&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;.each()&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;setTimeout&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.children() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;의 바로 아래 자식 &lt;strong&gt;요소&lt;/strong&gt;만 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.closest() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;를 포함하면서 가장 가까운 상위 &lt;strong&gt;요소&lt;/strong&gt;를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;의 자식 요소 중 조건에 맞는 &lt;strong&gt;요소&lt;/strong&gt;를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;를 다음 형제 &lt;strong&gt;요소&lt;/strong&gt;를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.is() : 선택한 &lt;strong&gt;요소&lt;/strong&gt; 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li&gt;.last() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;에서 마지막 번째 자식을 선택합니다&lt;/li&gt;
+            &lt;li&gt;.filter() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.has() : 선택한 &lt;strong&gt;요소&lt;/strong&gt;의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice .btn1").click(function(){
+            $(".list li").addClass("onBlue");
+        });
+        
+        $(".choice .btn2").click(function(){
+            $(".list li").each(function(){
+                $(this).addClass("onBlue");
+            });
+        });
+        
+        $(".choice .btn3").click(function(){
+            $(".list li").each(function(index){
+                setTimeout(function(){
+                    $(".list li").eq(index).addClass("onRed");
+                },100*(index+1));
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="introduction5" class="page-header">속성</h2>
+                    
+                    <h3>속성(Attributes)</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>유형</th>
+                                    <th>메서드</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce va" rowspan="5">Attributes</td>
+                                    <td>.attr() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소의 HTML 속성 값을 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.prop()</td>
+                                    <td>선택한 요소의 javascript 속성 값을 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.removeAttr()</td>
+                                    <td>선선택한 요소의 HTML 속성 값을 제거합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.removeprop()</td>
+                                    <td>선택한 요소의 javascript 속성 값을 제거합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.val()</td>
+                                    <td>선택한 폼 요소의 속성 값을 설정하거나 반환합니다.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="ce va" rowspan="5">CSS</td>
+                                    <td>.addClass() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소의 클래스를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.css() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소의 CSS 속성 값을 설정하거나 변경합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.hasClass() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소의 클래스가 있는지를 찾습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.removeClass()</td>
+                                    <td>선택한 요소의 클래스를 삭제합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.toggleClass() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소에 클래스의 추가/제거를 연속하여 사용할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="6">Dimensions</td>
+                                    <td>.height()</td>
+                                    <td>선택한 요소의 높이(패딩/마진/보더 불포함)를 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.innerHeight()</td>
+                                    <td>선택한 요소의 높이(패딩포함, 마진/보더 불포함)를 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.innerWidth()</td>
+                                    <td>선택한 요소의 가로(패딩포함, 마진/보더 불포함)를 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.outerHeight()</td>
+                                    <td>선택한 요소의 높이(패딩/보더포함, 마진 불포함)를 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.outerWidth()</td>
+                                    <td>선택한 요소의 가로(패딩/보더포함, 마진 불포함)를 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.width()</td>
+                                    <td>선택한 요소의 가로(패딩/마진/보더 불포함)를 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="5">offset</td>
+                                    <td>.offset() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.offsetParent()</td>
+                                    <td>선택한 요소의 부모 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.position()</td>
+                                    <td>선택한 요소의 위치 좌표 값(기준점 기준)을 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.scrollLeft() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소의 가로 스크롤 값을 설정하거나 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.scrollTop() <span style="color:red">&hearts;</span></td>
+                                    <td>선택한 요소의 세로 스크롤 값을 설정하거나 반환합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    
+                    <h3 class="pt50">Attribute</h3>
+                    
+                    <h5 class="pt10 page-header" id="introduction5-1">.attr() 기본<a href="jquery11.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {margin: 8px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;.attr()&lt;/h1&gt;
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;src 값을 가져옵니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;alt 값을 가져옵니다.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;width 값을 가져옵니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn4"&gt;이미지의 크기를 400으로 변경합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn5"&gt;이미지의 크기를 500으로 변경합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn6"&gt;이미지의 크기를 600으로 변경합니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn7"&gt;이미지(img02)를 변경합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn8"&gt;이미지(img03)를 변경합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn9"&gt;이미지(img04)를 변경합니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn10"&gt;이미지(img02)와 크기(400)를 변경합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn11"&gt;이미지(img03)와 크기(500)를 변경합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn12"&gt;이미지(img04)와 크기(600)를 변경합니다.&lt;/a&gt;&lt;br&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;img src="assets/img/img01.png" alt="이미지1" width="300"&gt;
+        &lt;p class="text"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice .btn1").click(function(){
+            var text = $(".list img").attr("src");
+            $(".list .text").text(text);
+        });
+        $(".choice .btn2").click(function(){
+            var text = $(".list img").attr("alt");
+            $(".list .text").text(text);
+        });
+        $(".choice .btn3").click(function(){
+            var text = $(".list img").attr("width");
+            $(".list .text").text(text);
+        });
+        
+        $(".choice .btn4").click(function(){
+            $(".list img").attr("width","400");
+        });
+        $(".choice .btn5").click(function(){
+            $(".list img").attr("width","500");
+        });
+        $(".choice .btn6").click(function(){
+            $(".list img").attr("width","600");
+        });
+        
+        $(".choice .btn7").click(function(){
+            $(".list img").attr("src","assets/img/img02.png");
+        });
+        $(".choice .btn8").click(function(){
+            $(".list img").attr("src","assets/img/img03.png");
+        });
+        $(".choice .btn9").click(function(){
+            $(".list img").attr("src","assets/img/img04.png");
+        });
+        
+        $(".choice .btn10").click(function(){
+            $(".list img").attr({"src":"assets/img/img02.png","width":"400"});
+            $(".list .text").text("이미지 주소값 : "+$(".list img").attr("src") + " / " + "이미지 위드 값: " + $(".list img").attr("width") )
+        });
+        $(".choice .btn11").click(function(){
+            $(".list img").attr({"src":"assets/img/img03.png","width":"500"});
+            $(".list .text").text("이미지 주소값 : "+$(".list img").attr("src") + " / " + "이미지 위드 값: " + $(".list img").attr("width") )
+        });
+        $(".choice .btn12").click(function(){
+            $(".list img").attr({"src":"assets/img/img04.png","width":"600"});
+            $(".list .text").text("이미지 주소값 : "+$(".list img").attr("src") + " / " + "이미지 위드 값: " + $(".list img").attr("width") )
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction5-2">.attr() 함수 <a href="jquery12.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {margin: 8px; display: inline; list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;.attr()&lt;/h1&gt;
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 이미지를 순차적으로 크게 해줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src="assets/img/img01.png" alt="이미지1" width="200"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="assets/img/img02.png" alt="이미지2" width="200"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="assets/img/img03.png" alt="이미지3" width="200"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="assets/img/img04.png" alt="이미지4" width="200"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="assets/img/img05.png" alt="이미지5" width="200"&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        
+        &lt;p class="text"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice .btn1").click(function(){
+            $(".list img").attr("width",function(i){
+                return (i+1)*50;
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction5-3">.attr() 탭메뉴 <a href="jquery13.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {text-decoration: none; color: #666;}
+        #tab-menu {width: 350px; margin: 50px auto;}
+        .tab-btn {margin-bottom: 1px;}
+        .tab-btn ul {overflow: hidden;}
+        .tab-btn li {float: left; width: 20%; text-align: center;}
+        .tab-btn li a {padding: 14px 10px 10px 10px; display: block; background-color: #1e88e5;
+        margin-right: 1px; color: #fff;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;div id="tab-menu"&gt;
+        &lt;div class="tab-btn"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab3&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab4&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab5&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="tab-cont"&gt;
+            &lt;img src="assets/img/img01.png" alt="이미지1" width="350"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        //글씨를 클릭하면 Tab --&gt; menu로 변경해주세요!
+//         $(".tab-btn ul li").click(function(){
+//             $(".tab-btn ul li a").text("Menu");
+//         });
+        
+        //글씨를 클릭하면 클릭한 글씨만 Tab --&gt; menu로 변경해주세요!
+//         $(".tab-btn ul li").click(function(){
+//             $(this).find("a").text("Menu");
+//         });
+        
+        //글씨를 클릭하면 클릭한 글씨를 tab3 --&gt; menu3로 변경해주세요!
+//         $(".tab-btn ul li").click(function(){
+//             var target = $(this)
+//             var index = target.index()+1;
+//             //alert(index);
+//             target.find("a").text("Menu"+index);
+//         });
+        
+        //해당 버튼을 클릭하면 해당 이미지 나오게 하기
+//         $(".tab-btn ul li:eq(0)").click(function(){
+//             $(".tab-cont img").attr({"src":"assets/img/img01.png","alt":"이미지1"});
+//         });
+//         $(".tab-btn ul li:eq(1)").click(function(){
+//             $(".tab-cont img").attr({"src":"assets/img/img02.png","alt":"이미지2"});
+//         });
+//         $(".tab-btn ul li:eq(2)").click(function(){
+//             $(".tab-cont img").attr({"src":"assets/img/img03.png","alt":"이미지3"});
+//         });
+//         $(".tab-btn ul li:eq(3)").click(function(){
+//             $(".tab-cont img").attr({"src":"assets/img/img04.png","alt":"이미지4"});
+//         });
+//         $(".tab-btn ul li:eq(4)").click(function(){
+//             $(".tab-cont img").attr({"src":"assets/img/img05.png","alt":"이미지5"});
+//         });
+        
+        //한번에 쓰기
+        $(".tab-btn ul li").click(function(){
+            var target = $(this);
+            var index = target.index()+1;
+            target.find("a").text("Menu"+index);
+            $(".tab-cont img").attr({"src":"assets/img/img0"+index+".png","alt":"이미지"+index});
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    
+                    
+                    <h5 class="pt10 page-header" id="introduction5-4">.prop() 기본<a href="jquery14.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {color: #666; text-decoration:none; border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;h1&gt;.prop()&lt;/h1&gt;
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;.attr&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;.prop&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;.is&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;input id="check" type="checkbox" checked="checked"&gt;
+        &lt;label for="check"&gt;체크&lt;/label&gt;
+        &lt;p class="text"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice .btn1").click(function(){
+            $(".list input").change(function(){
+                var input = $(this);
+                $(".list .text").html(".attr(\"checked\"):" +input.attr("checked"))
+            }).change();
+        });
+        
+        $(".choice .btn2").click(function(){
+            $(".list input").change(function(){
+                var input = $(this);
+                $(".list .text").html(".prop(\"checked\"):" +input.prop("checked"))
+            }).change();
+        });
+        
+        $(".choice .btn3").click(function(){
+            $(".list input").change(function(){
+                var input = $(this);
+                $(".list .text").html(".is(\"checked\"):" +input.is("checked"))
+            }).change();
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction5-5">.val() 기본<a href="jquery15.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {color: #666; text-decoration:none; border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;h1&gt;.val()&lt;/h1&gt;
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 input 박스에 글씨를 넣어줍니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 input 박스에 글씨를 안나오게 해주세요!.&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        input : &lt;input type="text" value="입력해주세요!" class="input"&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="list2"&gt;
+        select : 
+        &lt;select name="select" id="select" class="select"&gt;
+            &lt;option value="https://www.naver.com/"&gt;네이버&lt;/option&gt;
+            &lt;option value="https://www.daum.net/"&gt;다음&lt;/option&gt;
+            &lt;option value="https://www.nate.com/"&gt;네이트&lt;/option&gt;
+            &lt;option value="https://www.google.co.kr/"&gt;구글&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;p class="text"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice .btn1").click(function(){
+            $(".list .input").val( $(this).text() );
+        });
+        $(".choice .btn2").click(function(){
+            $(".list .input").val("");
+        });
+        $(".list .input").click(function(){
+            $(".list .input").val("");
+        });
+        
+        $("#select").change(function(){
+            var url = $(this).val();
+            if(url){
+                location.href=url;
+            }
+        });
+        
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                     <h3 class="pt50">CSS</h3>
+                     
+                     <h5 class="pt10 page-header" id="introduction5-6">.addClass() 기본<a href="jquery16.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {color: #666; text-decoration:none; border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;h1&gt;.addClass()&lt;/h1&gt;
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 addClass를 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 클래스를 순차적으로 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 select 클래스를 찾은 후 효과주기&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.children() : 선택한 요소의 바로 아래 자식 요소만 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.closest() : 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() : 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() : 선택한 요소를 다음 형제 요소를 선택합니다.&lt;/li&gt;
+            &lt;li class="select"&gt;.is() : 선택한 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li&gt;.last() : 선택한 요소에서 마지막 번째 자식을 선택합니다&lt;/li&gt;
+            &lt;li&gt;.filter() : 선택한 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() : 선택한 요소에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.has() : 선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        //버튼1을 클릭하면 addClass("onRed")를 추가해주세요!
+        $(".choice .btn1").click(function(){
+            $(".list li").addClass("onRed");
+        });
+        
+        $(".choice .btn2").click(function(){
+            $(".list li").addClass(function(index){
+                return "onRed"+index;
+            });
+        });
+        
+        $(".choice .btn3").click(function(){
+            $(".list li").addClass(function(index, currentClass){
+                var addClass;
+                
+                if(currentClass === "select"){
+                    addClass ="onRed";
+                }
+                return addClass;
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction5-7">.addClass() 탭메뉴 <a href="jquery17.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {text-decoration: none; color: #666;}
+        #tab-menu {width: 350px; margin: 50px auto;}
+        #tab-btn {margin-bottom: 1px;}
+        #tab-btn ul {overflow: hidden;}
+        #tab-btn li {float: left; width: 20%; text-align: center;}
+        #tab-btn li a {padding: 14px 10px 10px 10px; display: block; background-color: #1e88e5;
+        margin-right: 1px; color: #fff;}
+        #tab-cont {width: 350px; height: 300px;}
+        #tab-cont.img1 {background:url(assets/img/img01.png) no-repeat; background-size: 350px;}
+        #tab-cont.img2 {background:url(assets/img/img02.png) no-repeat; background-size: 350px;}
+        #tab-cont.img3 {background:url(assets/img/img03.png) no-repeat; background-size: 350px;}
+        #tab-cont.img4 {background:url(assets/img/img04.png) no-repeat; background-size: 350px;}
+        #tab-cont.img5 {background:url(assets/img/img05.png) no-repeat; background-size: 350px;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;div id="tab-menu"&gt;
+        &lt;div id="tab-btn"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab3&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab4&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tab5&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div id="tab-cont" class="img1"&gt;
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        //글씨를 클릭하면 tab --&gt; menu로 변경해주세요!!
+//         $("#tab-btn ul li").click(function(){
+//             $("#tab-btn ul li a").text("Menu");
+//         });
+        
+        //글씨를 클릭하면 클릭한 글씨만 tab --&gt; menu로 변경해주세요!!
+//         $("#tab-btn ul li a").click(function(){
+//             $(this).text("Menu");
+//         });
+        
+        //글씨를 클릭하면 tab1 --&gt; menu1로 변경해주세요!!
+//         $("#tab-btn ul li").click(function(){
+//             $("#tab-btn ul li").each(function(index){
+//                 $("#tab-btn ul li").eq(index).find("a").text("Menu"+(index+1))
+//             });
+//         });
+        
+        //글씨를 클릭하면 클릭한 글씨만 tab1 --&gt; menu1로 변경해주세요!!
+//         $("#tab-btn ul li").click(function(){
+//             var target = $(this);
+//             var index = target.index()+1;
+//             target.find("a").text("Menu"+index);
+//         });
+        
+        
+        //해당 버튼을 클릭하면 해당 이미지 나오게 하기
+        $("#tab-btn ul li:eq(0)").click(function(){
+            $("#tab-cont").removeClass().addClass("img1");
+        });
+        $("#tab-btn ul li:eq(1)").click(function(){
+            $("#tab-cont").removeClass().addClass("img2");
+        });
+        $("#tab-btn ul li:eq(2)").click(function(){
+            $("#tab-cont").removeClass().addClass("img3");
+        });
+        $("#tab-btn ul li:eq(3)").click(function(){
+            $("#tab-cont").removeClass().addClass("img4");
+        });
+        $("#tab-btn ul li:eq(4)").click(function(){
+            $("#tab-cont").removeClass().addClass("img5");
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction5-8">.css() 기본<a href="jquery18.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 글씨의 컬러 값을 알려줍니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 글씨의 여러가지 속성을 알려줍니다.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 글씨의 색은 빨간색으로 변경해주세요~&lt;/a&gt;
+        &lt;a href="#" class="btn4"&gt;클릭하면 글씨의 색은 파란색으로 크기는 30px로 변경해주세요~&lt;/a&gt;
+        &lt;a href="#" class="btn5"&gt;글씨를 클릭할 때마다 크게 해주세요~&lt;/a&gt;
+        &lt;a href="#" class="btn6"&gt;글씨를 클릭할 때마다 작게 해주세요~&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.children() : 선택한 요소의 바로 아래 자식 요소만 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.closest() : 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() : 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() : 선택한 요소를 다음 형제 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.is() : 선택한 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li&gt;.last() : 선택한 요소에서 마지막 번째 자식을 선택합니다&lt;/li&gt;
+            &lt;li&gt;.filter() : 선택한 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() : 선택한 요소에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.has() : 선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p class="text"&gt;&lt;/p&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice .btn1").click(function(){
+            var value = $(".list li").css("color");
+            $(".list .text").text("이 폰트의 색은 : "+ value);
+        });
+        
+        $(".choice .btn2").click(function(){
+            var html = ["이 글씨의 속성은 :"];
+            var val = $(".list li").css(["color","font-size","display","text-align","list-style-type"]);
+
+            $.each(val, function(prop, val){
+                html.push(prop + ":" + val);
+            });
+
+            $(".list .text").html( html.join("") );
+        });
+        
+        $(".choice .btn3").click(function(){
+            $(".list li").css("color","red");
+        });
+        
+        $(".choice .btn4").click(function(){
+            $(".list li").css({"color":"blue","font-size":"30px"});
+        });
+        
+        $(".choice .btn5").click(function(){
+            $(".list li").css({fontSize:function(index, value){
+                return parseFloat(value) * 1.2;
+            }});
+        });
+        
+        $(".choice .btn6").click(function(){
+            $(".list li").css({fontSize:function(index, value){
+                return parseFloat(value) * 0.8;
+            }});
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction5-9">.hasClass() 기본 <a href="jquery19.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 select 클래스를 찾은 후 효과를 줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.children() : 선택한 요소의 바로 아래 자식 요소만 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.closest() : 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() : 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() : 선택한 요소를 다음 형제 요소를 선택합니다.&lt;/li&gt;
+            &lt;li class="select"&gt;.is() : 선택한 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li&gt;.last() : 선택한 요소에서 마지막 번째 자식을 선택합니다&lt;/li&gt;
+            &lt;li&gt;.filter() : 선택한 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() : 선택한 요소에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.has() : 선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice .btn1").click(function(){
+            if( $(".list li").hasClass("select") ){
+                $(".select").addClass("onBlue");
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction5-10">.toggleClass() 기본 <a href="jquery20.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 toggleClass 효과를 줍니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 세번째 줄만 toggleClass 효과를 줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.children() : 선택한 요소의 바로 아래 자식 요소만 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.closest() : 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() : 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() : 선택한 요소를 다음 형제 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.is() : 선택한 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li&gt;.last() : 선택한 요소에서 마지막 번째 자식을 선택합니다&lt;/li&gt;
+            &lt;li&gt;.filter() : 선택한 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() : 선택한 요소에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.has() : 선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice .btn1").click(function(){
+            $(".list li").toggleClass("onBlue");
+        });
+        $(".choice .btn2").click(function(){
+            $(".list li").eq(2).toggleClass("onBlue");
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h3 class="pt50">Dimensions</h3>
+                    
+                    <h5 class="pt10 page-header" id="introduction5-11">Dimensions 기본 <a href="jquery21.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block;
+        border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onRed {padding: 5px; margin: 5px;
+            font-size: 90%;  color: #c7254e; 
+            white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body sytle="height:4000px"&gt;    
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 리스트의 높이(.height()) 값을 구합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 리스트의 높이(.css("height")) 값을 구합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 문서의 높이 값을 구합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn4"&gt;클릭하면 브라우저의 높이 값을 구합니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn5"&gt;클릭하면 리스트의 가로(.width()) 값을 구합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn6"&gt;클릭하면 리스트의 가로(.css("width")) 값을 구합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn7"&gt;클릭하면 문서의 가로 값을 구합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn8"&gt;클릭하면 브라우저의 가로 값을 구합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="list"&gt;
+        &lt;ul class="onRed"&gt;
+            &lt;li&gt;.children() : 선택한 요소의 바로 아래 자식 요소만 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.closest() : 선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() : 선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() : 선택한 요소를 다음 형제 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.is() : 선택한 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li&gt;.last() : 선택한 요소에서 마지막 번째 자식을 선택합니다&lt;/li&gt;
+            &lt;li&gt;.filter() : 선택한 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() : 선택한 요소에서 첫 번째 자식을 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.has() : 선택한 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p class="prop onBlue"&gt;&lt;/p&gt;
+        &lt;p class="text"&gt;&lt;/p&gt;
+        &lt;div class="choice2"&gt;
+            &lt;a href="#" class="btn1"&gt;.height()&lt;/a&gt;
+            &lt;a href="#" class="btn2"&gt;.innerHeight()&lt;/a&gt;
+            &lt;a href="#" class="btn3"&gt;.outerHeight()&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="choice3"&gt;
+            &lt;a href="#" class="btn1"&gt;.width()&lt;/a&gt;
+            &lt;a href="#" class="btn2"&gt;.innerWidth()&lt;/a&gt;
+            &lt;a href="#" class="btn3"&gt;.outerWidth()&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="choice4"&gt;
+            &lt;a href="#" class="btn1"&gt;.height("200")&lt;/a&gt;
+            &lt;a href="#" class="btn2"&gt;.height("400")&lt;/a&gt;
+            &lt;a href="#" class="btn3"&gt;.width("400")&lt;/a&gt;
+            &lt;a href="#" class="btn4"&gt;.width("800")&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;   
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        
+        function showHeight(element,height){
+            $(".text").text( element + " 값은 " + height +"px.");
+        }
+        
+        $(".choice .btn1").click(function(){
+            showHeight("높이(.height())",$(".list").height());
+        });
+        
+        $(".choice .btn2").click(function(){
+            showHeight("높이(.css('height'))",$(".list").css("height"));
+        });
+        
+        $(".choice .btn3").click(function(){
+            showHeight("문서의 높이", $(document).height() );
+        });
+        
+        $(".choice .btn4").click(function(){
+            showHeight("브라우저의 높이", $(window).height() );
+        });
+        
+        $(".choice .btn5").click(function(){
+            showHeight("가로(.width())",$(".list").width());
+        });
+        
+        $(".choice .btn6").click(function(){
+            showHeight("가로(.css('width'))",$(".list").css("width"));
+        });
+        
+        $(".choice .btn7").click(function(){
+            showHeight("문서의 가로", $(document).width() );
+        });
+        
+        $(".choice .btn8").click(function(){
+            showHeight("브라우저의 가로", $(window).width() );
+        });
+        
+        
+        var html = ["이 리스트의 속성은:"];
+        var value = $(".list ul").css(["margin","padding","border-width"]);
+        
+        $.each(value,function(prop,value){
+            html.push(prop+ ":" + value);
+        });
+        
+        $(".list .prop").html(html.join("&lt;br&gt;"));
+        
+        $(".choice2 .btn1").click(function(){
+            showHeight("리스트의 .height()의 ", $(".list ul").height() );
+        });
+        $(".choice2 .btn2").click(function(){
+            showHeight("리스트의 .innerHeight()의 ", $(".list ul").innerHeight() );
+        });
+        $(".choice2 .btn3").click(function(){
+            showHeight("리스트의 .outerHeight()의 ", $(".list ul").outerHeight() );
+        });
+        
+        $(".choice3 .btn1").click(function(){
+            showHeight("리스트의 .width()의 ", $(".list ul").height() );
+        });
+        $(".choice3 .btn2").click(function(){
+            showHeight("리스트의 .innerWidth()의 ", $(".list ul").innerWidth() );
+        });
+        $(".choice3 .btn3").click(function(){
+            showHeight("리스트의 .outerWidth()의 ", $(".list ul").outerWidth() );
+        });
+        
+        $(".choice4 .btn1").click(function(){
+            $(".list ul").height("200");
+        });
+        $(".choice4 .btn2").click(function(){
+            $(".list ul").height("400");
+        });
+        $(".choice4 .btn3").click(function(){
+            $(".list ul").width("400");
+        });
+        $(".choice4 .btn4").click(function(){
+            $(".list ul").width("800");
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction5-12">Offset, Scroll 기본 <a href="jquery22.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        .circle-wrap {width: 1000px; height: 300px; position: relative; padding: 50px; margin: 150px 50px;}
+        .circle {width: 100px; height: 100px; color: #c7254e; background-color:#f9f2f4; border-radius:50%;
+        border: 1px dashed #a51a3d; text-align: center; line-height: 100px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7;
+            white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .choice {position: fixed; left: 0; top: 0; z-index: 1000;}
+    &lt;/style&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function() {
+            $("#draggable").draggable({
+                drag: function() {
+                    $(".ol").text( $(".circle").offset().left + "px" );
+                    $(".ot").text( $(".circle").offset().top + "px" );
+                    $(".pl").text( $(".circle").position().left + "px" );
+                    $(".pt").text( $(".circle").position().top + "px" );
+                }
+            });
+            
+            $(window).scroll(function(){
+                $(".sl").text( $(window).scrollLeft() );
+                $(".st").text( $(window).scrollTop() );
+            });
+             
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="width: 3000px; height: 10000px;"&gt;    
+    &lt;div class="choice"&gt;
+        &lt;span&gt;offset().left = &lt;/span&gt;&lt;span class="ol"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;offset().top = &lt;/span&gt;&lt;span class="ot"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;position().left = &lt;/span&gt;&lt;span class="pl"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;position().top = &lt;/span&gt;&lt;span class="pt"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;scrollLeft() = &lt;/span&gt;&lt;span class="sl"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;scrollTop() = &lt;/span&gt;&lt;span class="st"&gt;0&lt;/span&gt;&lt;br&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="circle-wrap onBlue"&gt;
+        &lt;div id="draggable" class="circle"&gt;
+            circle
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>      
+                   
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="introduction6" class="page-header">변경</h2>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>유형</th>
+                                    <th>메서드</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce">Copying</td>
+                                    <td>.clone()</td>
+                                    <td>선택한 요소 본사본을 만듭니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Dom Insertion, Around</td>
+                                    <td>.wrap()</td>
+                                    <td>선택한 요소에 새로운 태그를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.wrapAll()</td>
+                                    <td>선택한 모든 요소에 새로운 태그를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.wrapInner()</td>
+                                    <td>선택한 요소에 각각 새로운 태그를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="6">Dom Insertion, Inside</td>
+                                    <td>.append() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소 마지막 위치에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.appendTo()</td>
+                                    <td>선택한 타겟 마지막 위치에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.html() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소 내부의 HTML을 읽거나 변경합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.prepend()</td>
+                                    <td>선택한 요소 처음 위치에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.prependTo()</td>
+                                    <td>선택한 타겟 처음 위치에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.text() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소 내부의 텍스트를 읽거나 변경합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="4">Dom Insertion, outsdie</td>
+                                    <td>.after()</td>
+                                    <td>선택한 요소 다음 위치에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.before()</td>
+                                    <td>선택한 요소 이전 위치에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.insertAfter()</td>
+                                    <td>선택한 타겟 요소 다음에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.insertBefore()</td>
+                                    <td>선택한 타겟 요소 이전에 새로운 요소를 추가합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="4">Dom Insertion, Removal</td>
+                                    <td>.detach()</td>
+                                    <td>선택한 요소(데이터 및 이벤트 불포함)를 제거합니다..</td>
+                                </tr>
+                                <tr>
+                                    <td>.empty()</td>
+                                    <td>선택한 요소의 하위 요소를 제거합니다..</td>
+                                </tr>
+                                <tr>
+                                    <td>.remove() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소(데이터 및 이벤트 포함)를 제거합니다..</td>
+                                </tr>
+                                <tr>
+                                    <td>.unwrap()</td>
+                                    <td>선택한 요소의 부모 요소를 제거합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="2">Dom Insertion, Replacement</td>
+                                    <td>.replaceAll()</td>
+                                    <td>선택한 요소를 새로운 요소로 바꿉니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.replaceWith()</td>
+                                    <td>선택한 요소를 새로운 컨텐츠로 바꿉니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                     <h5 class="pt10 page-header" id="introduction6-1">기본 <a href="jquery23.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+         a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    
+    &lt;h1&gt;변경&lt;/h1&gt;
+    &lt;div class="list"&gt;
+        &lt;p&gt;.clone() : 선택한 요소 본사본을 만듭니다.&lt;/p&gt;
+        &lt;p&gt;.wrap() : 선택한 요소에 새로운 태그를 추가합니다.&lt;/p&gt;
+        &lt;p&gt;.wrapAll() : 선택한 모든 요소에 새로운 태그를 추가합니다.&lt;/p&gt;
+        &lt;p&gt;.wrapInner() : 선택한 요소에 각각 새로운 태그를 추가합니다.&lt;/p&gt;
+        &lt;p&gt;.append() : 선택한 요소 마지막 위치에 새로운 요소를 추가합니다.&lt;/p&gt;
+        &lt;p&gt;.appendTo() : 선택한 타겟 마지막 위치에 새로운 요소를 추가합니다.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="chocie"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 p태그에 div로 감쌉니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 컨텐츠 요소를 div태그에 넣어줍니다.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 p태그 요소를 한번에 div태그에 넣어줍니다.&lt;/a&gt;
+        &lt;a href="#" class="btn4"&gt;클릭하면 p태그 요소안에 div태그에 넣어줍니다.&lt;/a&gt;
+        &lt;a href="#" class="btn5"&gt;클릭하면 마지막 요소에 컨텐츠를 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn6"&gt;클릭하면 처음 요소에 컨텐츠를 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn7"&gt;제목 요소를 마지막 요소에 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn8"&gt;제목 요소를 처음 요소에 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn9"&gt;클릭하면 타겟에 마지막 요소에 컨텐츠를 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn10"&gt;클릭하면 타겟에 처음 요소에 컨텐츠를 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn11"&gt;클릭하면 첫 번째 줄의 요소를 가져와서 출력합니다.(.html())&lt;/a&gt;
+        &lt;a href="#" class="btn12"&gt;클릭하면 첫 번째 줄의 요소를 가져와서 출력합니다.(.text())&lt;/a&gt;
+        &lt;a href="#" class="btn13"&gt;클릭하면 .html() 메서드로 요소를 출력합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn14"&gt;클릭하면 .text() 메서드로 요소를 출력합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn15"&gt;클릭하면 .after() 메서드로 요소를 출력합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn16"&gt;클릭하면 .before() 메서드로 요소를 출력합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn17"&gt;클릭하면 마지막 요소를 지웁니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function() {
+            $(".chocie .btn1").click(function(){
+                $(".list p").wrap("&lt;div class='onBlue'&gt;&lt;/div&gt;")
+            });
+            $(".chocie .btn2").click(function(){
+                $(".list p").wrap(function(){
+                    return "&lt;div class='onBlue'&gt;" + $(this).text() + "&lt;/div&gt;";
+                });
+            });
+            $(".chocie .btn3").click(function(){
+                $(".list p").wrapAll("&lt;div class='onBlue'&gt;&lt;/div&gt;")
+            });
+            $(".chocie .btn4").click(function(){
+                $(".list p").wrapInner("&lt;div class='onBlue'&gt;&lt;/div&gt;")
+            });
+            
+            $(".chocie .btn5").click(function(){
+                $(".list").append("&lt;p class='onRed'&gt;.html() : 선택한 요소 내부의 HTML을 읽거나 변경합니다.&lt;/p&gt;")
+            });
+            $(".chocie .btn6").click(function(){
+                $(".list").prepend("&lt;p class='onRed'&gt;.text() : 선택한 요소 내부의 텍스트를 읽거나 변경합니다.&lt;/p&gt;")
+            });
+            
+            $(".chocie .btn7").click(function(){
+               $(".list").append( $("h1") );
+            });
+            $(".chocie .btn8").click(function(){
+               $(".list").prepend( $("h1") );
+            });
+            
+            $(".chocie .btn9").click(function(){
+                $("&lt;p class='onBlue'&gt;.after() : 선택한 요소 다음 위치에 새로운 요소를 추가합니다.&lt;/p&gt;").appendTo(".list");
+            });
+            $(".chocie .btn10").click(function(){
+                $("&lt;p class='onBlue'&gt;.before() : 선택한 요소 이전 위치에 새로운 요소를 추가합니다.&lt;/p&gt;").prependTo(".list");
+            });
+            
+            $(".chocie .btn11").click(function(){
+               var htmlString = $(".list p").eq(0).html();
+               alert(htmlString);
+            });
+            $(".chocie .btn12").click(function(){
+               var textString = $(".list p").eq(0).text();
+               alert(textString);
+            });
+            $(".chocie .btn13").click(function(){
+                $(".list p:last-child").html(".detach():선택한 요소(&lt;strong class='onBlue'&gt;데이터&lt;/strong&gt; 및 이벤트 불포함)를 제거합니다.")
+            });
+            $(".chocie .btn14").click(function(){
+                $(".list p:last-child").text(".detach():선택한 요소(&lt;strong class='onBlue'&gt;데이터&lt;/strong&gt; 및 이벤트 불포함)를 제거합니다.")
+            });
+            
+            $(".chocie .btn15").click(function(){
+                $(".list p:first-child").after("&lt;p class='onBlue'&gt;.remove() :선택한 요소(데이터 및 이벤트 포함)를 제거합니다.&lt;/p&gt;");
+            });
+            $(".chocie .btn16").click(function(){
+                $(".list p:first-child").before("&lt;p class='onBlue'&gt;.remove() :선택한 요소(데이터 및 이벤트 포함)를 제거합니다.&lt;/p&gt;");
+            });
+            $(".chocie .btn17").click(function(){
+                $(".list p:last").remove();
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                      <h5 class="pt10 page-header" id="introduction6-2">.prepend() : 랜덤 이미지<a href="jquery24.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;   
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none; display: inline;}
+        img { font-size: 0; line-height: 0;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    
+    &lt;h3&gt;이미지 랜덤으로 나오기&lt;/h3&gt;
+   
+    &lt;div class="list"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src="assets/img/img01.png" alt=""&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="assets/img/img02.png" alt=""&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="assets/img/img03.png" alt=""&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function() {
+            //모든 이미지의 크기를 100px로 설정해주세요!
+            $("img").css("width","100px");
+            
+          
+            $("h3").after("&lt;div class='choice'&gt;&lt;/div&gt;");
+            $(".choice").append("&lt;a href='#' class='btn1'&gt;클릭하면 뒤쪽에 이미지가 추가됩니다.&lt;/a&gt;");
+            $(".choice").append("&lt;a href='#' class='btn2'&gt;클릭하면 앞쪽에 이미지가 추가됩니다.&lt;/a&gt;");
+            $(".choice").append("&lt;a href='#' class='btn3'&gt;클릭하면 뒤쪽에 이미지가 삭제합니다.&lt;/a&gt;");
+            $(".choice").append("&lt;a href='#' class='btn4'&gt;클릭하면 앞쪽에 이미지가 삭제합니다.&lt;/a&gt;");
+            $(".choice").append("&lt;a href='#' class='btn5'&gt;클릭하면 뒤쪽에 이미지를 랜덤으로 추가합니다.&lt;/a&gt;");
+            
+            $(".choice .btn1").click(function(){
+                $(".list ul").append("&lt;li&gt;&lt;img src='assets/img/img04.png' alt='' width='100'&gt;&lt;/li&gt;");
+            });
+            $(".choice .btn2").click(function(){
+                $(".list ul").prepend("&lt;li&gt;&lt;img src='assets/img/img05.png' alt='' width='100'&gt;&lt;/li&gt;");
+            });
+            
+            $(".choice .btn3").click(function(){
+                $(".list ul li:first").remove();
+            });
+            $(".choice .btn4").click(function(){
+                $(".list ul li:last").remove();
+            });
+            
+            //이미지가 랜덤으로 나오는 함수
+            function random(){
+                var imgNumber = Math.ceil(Math.random()*5);
+                var imgPath = "&lt;li&gt;&lt;img src='assets/img/img0"+imgNumber+".png' alt='' width='100'&gt;&lt;/li&gt;";
+                return imgPath;
+            }
+            
+            $(".choice .btn5").click(function(){
+                $(".list ul").append(random);
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <h5 class="pt10 page-header" id="introduction6-3">.prependTo() : 이미지 변하기<a href="jquery25.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;   
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none; display: inline;}
+        img { font-size: 0; line-height: 0;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    
+    &lt;h3&gt;2초에 한번씩 이미지 이동하기&lt;/h3&gt;
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 이미지를 2초에 한번씩 이동합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 이미지를 2초에 한번씩 삭제해주세요!.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 이미지를 2초에 한번씩 추가해주세요!.&lt;/a&gt;
+        &lt;a href="#" class="btn4"&gt;클릭하면 이미지를 멈춥니다.&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class="list"&gt;
+        &lt;img src="assets/img/img01.png" alt=""&gt;
+        &lt;img src="assets/img/img02.png" alt=""&gt;
+        &lt;img src="assets/img/img03.png" alt=""&gt;
+    &lt;/div&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function() {
+            //모든 이미지의 크기를 150px로 설정해주세요!
+            $("img").attr("width","150px");
+            
+            var timer;
+            
+            $(".choice .btn1").click(function(){
+                timer = setInterval(function(){
+                    $(".list img").last().prependTo(".list");
+                },1000);
+            });
+            
+            $(".choice .btn2").click(function(){
+                timer = setInterval(function(){
+                    $(".list img").last().remove();
+                },1000);
+            });
+            
+            $(".choice .btn3").click(function(){
+                timer = setInterval(function(){
+                    $(".list").last().append("&lt;img src='assets/img/img05.png' alt='' width='150'&gt;");
+                },1000);
+            });
+            
+            $(".choice .btn4").click(function(){
+                clearInterval(timer);
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="introduction7" class="page-header">효과</h2>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>유형</th>
+                                    <th>메서드</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Basic</td>
+                                    <td>.hide()</td>
+                                    <td>선택한 요소를 숨깁니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.show()</td>
+                                    <td>선택한 요소를 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.toggle() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소를 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="4">Fading</td>
+                                    <td>.fadeIn()</td>
+                                    <td>선택한 요소를 천천히 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeOut()</td>
+                                    <td>선택한 요소를 천천히 숨김니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeto()</td>
+                                    <td>선택한 요소를 투명도를 조절합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.fadeToggle()</td>
+                                    <td>선택한 요소를 천천히 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="3">Sliding</td>
+                                    <td>.slideDown()</td>
+                                    <td>선택한 요소를 슬라이딩으로 보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.slideToggle()</td>
+                                    <td>선택한 요소를 슬라이딩으로 숨김/보여줍니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.slideUp()</td>
+                                    <td>선택한 요소를 슬라이딩으로 숨김니다.</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce va" rowspan="7">custom</td>
+                                    <td>.animate() <span style="color:red">♥</span></td>
+                                    <td>선택한 요소에 애니메이션을 적용합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.clearQueue()</td>
+                                    <td>선택한 요소에 첫 번째 큐만 실행하고 대기 중인 큐는 모두 삭제합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.delay()</td>
+                                    <td>선택한 요소의 애니메이션 효과를 지연합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.dequeue()</td>
+                                    <td>선택한 요소 스택에 쌓인 큐를 모두 제거합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.finish()</td>
+                                    <td>선택한 요소의 진행중인 애니메이션을 강제로 종료합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.queue()</td>
+                                    <td>선택한 요소 스택에 대기 중인 큐를 반환하거나 추가할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>.stop()</td>
+                                    <td>선택한 요소의 실행중인 애니메이션을 정지합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                    
+                    <h5 class="pt10 page-header" id="introduction7-1">기본 <a href="jquery26.html">View</a></h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;   
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none; display: inline;}
+        img { font-size: 0; line-height: 0;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+
+    &lt;div class="choice"&gt;
+        &lt;a href="#" class="btn1"&gt;.hide()&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;.show()&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;.toggle()&lt;/a&gt;
+        &lt;a href="#" class="btn4"&gt;.fadeOut()&lt;/a&gt;
+        &lt;a href="#" class="btn5"&gt;.fadeIn()&lt;/a&gt;
+        &lt;a href="#" class="btn6"&gt;.fadeToggle()&lt;/a&gt;
+        &lt;a href="#" class="btn7"&gt;.fadeTo(0.2)&lt;/a&gt;
+        &lt;a href="#" class="btn8"&gt;.fadeTo(0.4)&lt;/a&gt;
+        &lt;a href="#" class="btn9"&gt;.fadeTo(0.6)&lt;/a&gt;
+        &lt;a href="#" class="btn10"&gt;.slideUp(100)&lt;/a&gt;
+        &lt;a href="#" class="btn11"&gt;.slideDown("fast")&lt;/a&gt;
+        &lt;a href="#" class="btn12"&gt;.slideToggle("slow")&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="list"&gt;
+        &lt;img src="assets/img/img01.png" alt=""&gt;
+        &lt;img src="assets/img/img02.png" alt=""&gt;
+        &lt;img src="assets/img/img03.png" alt=""&gt;
+    &lt;/div&gt;
+    
+    &lt;script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function() {
+            //이미지 크기를 200을 설정해주세요!
+            $("img").css("width","200");
+            
+            //h1태그를 만들고 글씨를 "Effect"라고 설정해주세요!
+            $("body").prepend("&lt;h1&gt;Effect&lt;/h1&gt;");
+            
+            $(".choice .btn1").click(function(){
+                $(".list").hide();
+            });
+            $(".choice .btn2").click(function(){
+                $(".list").show();
+            });
+            $(".choice .btn3").click(function(){
+                $(".list").toggle();
+            });
+            
+            $(".choice .btn4").click(function(){
+                $(".list").fadeOut();
+            });
+            $(".choice .btn5").click(function(){
+                $(".list").fadeIn();
+            });
+            $(".choice .btn6").click(function(){
+                $(".list").fadeToggle();
+            });
+            
+            $(".choice .btn7").click(function(){
+                $(".list").fadeTo(1000, 0.2);
+            });
+            $(".choice .btn8").click(function(){
+                $(".list").fadeTo(1000, 0.4);
+            });
+            $(".choice .btn9").click(function(){
+                $(".list").fadeTo(1000, 0.6);
+            });
+            
+            $(".choice .btn10").click(function(){
+                $(".list").slideUp(100);
+            });
+            $(".choice .btn11").click(function(){
+                $(".list").slideDown("fast");
+            });
+            $(".choice .btn12").click(function(){
+                $(".list").slideToggle("slow");
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h2 id="introduction8" class="page-header">이벤트</h2>
+				</div>
+				<!-- //Introduction -->
+			</div>
+			<!-- //col-md-9 -->
+
+			<div class="col-md-3">
+				<div class="bs-sidebar hidden-print" role="complementary">
+					<ul class="nav bs-sidenav">
+						<li><a href="#introduction1">제이쿼리</a></li>
+						<li><a href="#introduction2">제이쿼리 기초</a></li>
+						<li><a href="#introduction3">선택자</a>
+                            <ul class="nav">
+                                <li><a href="#introduction3-1">- 기본 선택자</a></li>
+                                <li><a href="#introduction3-2">- 계층 선택자</a></li>
+                                <li><a href="#introduction3-3">- 속성 선택자</a></li>
+                                <li><a href="#introduction3-4">- 기본 필터 선택자</a></li>
+                                <li><a href="#introduction3-5">- 내용 필터 선택자</a></li>
+                                <li><a href="#introduction3-6">- 보임 필터 선택자</a></li>
+                                <li><a href="#introduction3-7">- 자식요소 필터 선택자</a></li>
+                                <li><a href="#introduction3-8">- 폼 필터 선택자</a></li>
+                            </ul>
+                        </li>
+						<li><a href="#introduction4">탐색</a>
+                            <ul class="nav">
+                                <li><a href="#introduction4-1">트리구조 탐색</a></li>
+                                <li><a href="#introduction4-2">필터링</a></li>
+                                <li><a href="#introduction4-3">.is() 기본</a></li>
+                                <li><a href="#introduction4-4">.each() 기본</a></li>
+                            </ul>
+                        </li>
+						<li><a href="#introduction5">속성</a>
+                            <ul class="nav">
+                                <li><a href="#introduction5-1">.attr() 기본</a></li>
+                                <li><a href="#introduction5-2">.attr() 함수</a></li>
+                                <li><a href="#introduction5-3">.attr() 탭메뉴</a></li>
+                                <li><a href="#introduction5-4">.prop() 기본</a></li>
+                                <li><a href="#introduction5-5">.val() 기본</a></li>
+                                <li><a href="#introduction5-6">.addClass() 기본</a></li>
+                                <li><a href="#introduction5-7">.addClass() 탭메뉴</a></li>
+                                <li><a href="#introduction5-8">.css() 기본</a></li>
+                                <li><a href="#introduction5-9">.hasClass() 기본</a></li>
+                                <li><a href="#introduction5-10">.toggleClass() 기본</a></li>
+                                <li><a href="#introduction5-11">Dimensions 기본</a></li>
+                                <li><a href="#introduction5-12">Offset, Scroll 기본</a></li>
+                            </ul>
+                        </li>
+						<li><a href="#introduction6">변경</a>
+                            <ul class="nav">
+                                <li><a href="#introduction6-1">변경 기본</a></li>
+                                <li><a href="#introduction6-2">.prepend()</a></li>
+                                <li><a href="#introduction6-3">.prependTo()</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#introduction7">효과</a></li>
+                        <li><a href="#introduction8">이벤트</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //col-md-3 -->
+		</div>
+		<!-- //row -->
+
+	</div>
+	<!-- //container -->
+
+	<!-- Footer -->
+	<footer class="bs-footer" role="contentinfo">
+		<div class="container">
+			<ul class="footer-links muted">
+				<li>Currently v1.0</li>
+				<li>&middot;</li>
+				<li><a href="http://webstoryboy.co.kr">webstoryboy</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+			</ul>
+		</div>
+	</footer>
+	<!-- //Footer -->
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/docs.min.js"></script>
+	<script src="assets/js/prism.js"></script>
+
+
+</body>
+</html>

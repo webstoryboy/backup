@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+         a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none; color: #000; margin: 4px;}
+        .onBlue {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color:#e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+        .onRed {padding: 4px 6px 2px 6px; font-size: 90%;  color: #c7254e; white-space: nowrap; background-color:#f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d; }
+    </style>
+</head>
+<body>    
+    
+    <h1>변경</h1>
+    <div class="list">
+        <p>.clone() : 선택한 요소 본사본을 만듭니다.</p>
+        <p>.wrap() : 선택한 요소에 새로운 태그를 추가합니다.</p>
+        <p>.wrapAll() : 선택한 모든 요소에 새로운 태그를 추가합니다.</p>
+        <p>.wrapInner() : 선택한 요소에 각각 새로운 태그를 추가합니다.</p>
+        <p>.append() : 선택한 요소 마지막 위치에 새로운 요소를 추가합니다.</p>
+        <p>.appendTo() : 선택한 타겟 마지막 위치에 새로운 요소를 추가합니다.</p>
+    </div>
+    <div class="chocie">
+        <a href="#" class="btn1">클릭하면 p태그에 div로 감쌉니다.</a>
+        <a href="#" class="btn2">클릭하면 컨텐츠 요소를 div태그에 넣어줍니다.</a>
+        <a href="#" class="btn3">클릭하면 p태그 요소를 한번에 div태그에 넣어줍니다.</a>
+        <a href="#" class="btn4">클릭하면 p태그 요소안에 div태그에 넣어줍니다.</a>
+        <a href="#" class="btn5">클릭하면 마지막 요소에 컨텐츠를 추가합니다.</a>
+        <a href="#" class="btn6">클릭하면 처음 요소에 컨텐츠를 추가합니다.</a>
+        <a href="#" class="btn7">제목 요소를 마지막 요소에 추가합니다.</a>
+        <a href="#" class="btn8">제목 요소를 처음 요소에 추가합니다.</a>
+        <a href="#" class="btn9">클릭하면 타겟에 마지막 요소에 컨텐츠를 추가합니다.</a>
+        <a href="#" class="btn10">클릭하면 타겟에 처음 요소에 컨텐츠를 추가합니다.</a>
+        <a href="#" class="btn11">클릭하면 첫 번째 줄의 요소를 가져와서 출력합니다.(.html())</a>
+        <a href="#" class="btn12">클릭하면 첫 번째 줄의 요소를 가져와서 출력합니다.(.text())</a>
+        <a href="#" class="btn13">클릭하면 .html() 메서드로 요소를 출력합니다.</a>
+        <a href="#" class="btn14">클릭하면 .text() 메서드로 요소를 출력합니다.</a>
+        <a href="#" class="btn15">클릭하면 .after() 메서드로 요소를 출력합니다.</a>
+        <a href="#" class="btn16">클릭하면 .before() 메서드로 요소를 출력합니다.</a>
+        <a href="#" class="btn17">클릭하면 마지막 요소를 지웁니다.</a>
+    </div>
+    
+    
+    <script type="text/javascript" src="assets/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function() {
+            $(".chocie .btn1").click(function(){
+                $(".list p").wrap("<div class='onBlue'></div>")
+            });
+            $(".chocie .btn2").click(function(){
+                $(".list p").wrap(function(){
+                    return "<div class='onBlue'>" + $(this).text() + "</div>";
+                });
+            });
+            $(".chocie .btn3").click(function(){
+                $(".list p").wrapAll("<div class='onBlue'></div>")
+            });
+            $(".chocie .btn4").click(function(){
+                $(".list p").wrapInner("<div class='onBlue'></div>")
+            });
+            
+            $(".chocie .btn5").click(function(){
+                $(".list").append("<p class='onRed'>.html() : 선택한 요소 내부의 HTML을 읽거나 변경합니다.</p>")
+            });
+            $(".chocie .btn6").click(function(){
+                $(".list").prepend("<p class='onRed'>.text() : 선택한 요소 내부의 텍스트를 읽거나 변경합니다.</p>")
+            });
+            
+            $(".chocie .btn7").click(function(){
+               $(".list").append( $("h1") );
+            });
+            $(".chocie .btn8").click(function(){
+               $(".list").prepend( $("h1") );
+            });
+            
+            $(".chocie .btn9").click(function(){
+                $("<p class='onBlue'>.after() : 선택한 요소 다음 위치에 새로운 요소를 추가합니다.</p>").appendTo(".list");
+            });
+            $(".chocie .btn10").click(function(){
+                $("<p class='onBlue'>.before() : 선택한 요소 이전 위치에 새로운 요소를 추가합니다.</p>").prependTo(".list");
+            });
+            
+            $(".chocie .btn11").click(function(){
+               var htmlString = $(".list p").eq(0).html();
+               alert(htmlString);
+            });
+            $(".chocie .btn12").click(function(){
+               var textString = $(".list p").eq(0).text();
+               alert(textString);
+            });
+            $(".chocie .btn13").click(function(){
+                $(".list p:last-child").html(".detach():선택한 요소(<strong class='onBlue'>데이터</strong> 및 이벤트 불포함)를 제거합니다.")
+            });
+            $(".chocie .btn14").click(function(){
+                $(".list p:last-child").text(".detach():선택한 요소(<strong class='onBlue'>데이터</strong> 및 이벤트 불포함)를 제거합니다.")
+            });
+            
+            $(".chocie .btn15").click(function(){
+                $(".list p:first-child").after("<p class='onBlue'>.remove() :선택한 요소(데이터 및 이벤트 포함)를 제거합니다.</p>");
+            });
+            $(".chocie .btn16").click(function(){
+                $(".list p:first-child").before("<p class='onBlue'>.remove() :선택한 요소(데이터 및 이벤트 포함)를 제거합니다.</p>");
+            });
+            $(".chocie .btn17").click(function(){
+                $(".list p:last").remove();
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
