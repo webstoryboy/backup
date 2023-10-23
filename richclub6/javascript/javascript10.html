@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>조건문 연산자</title>
+    <script>
+    //숫자를 입력했을 때 
+    //숫자가 5보다 크면 "숫자가 5보다 큽니다" 출력
+    //숫자가 5보다 작은면 "숫자가 5보다 작습니다" 출력
+    //숫자가 5면 "빙고" 출력
+        
+    var num = window.prompt("숫자를 쓰세요~");   
+    if(num == 5){
+        document.write("빙고");
+    }else if(num > 5){
+        document.write("숫자가 5보다 큽니다");
+    }else if(num < 5){
+        document.write("숫자가 5보다 작습니다");
+    }
+    
+    //x:100, y:200 x*y의 값을 출력해주세요!
+    var x = 100;
+    var y = 200;
+    document.write(x*y);
+    document.write("<br>");
+    
+    //x:100, y:200 함수(num2)/를 이용해서 x*y의 값을 출력해주세요!
+    function num2(){
+        var x = 100;
+        var y = 200;
+        document.write(x*y);
+    }
+    num2();
+    
+    //매개변수를 100,200을 이용해 함수(num3)를 만들어서x*y의 값을 출력
+    function num3(n1,n2){
+        document.write(n1*n2);
+    }
+    num3(100,200);
+        
+    
+    //사용자가 숫자를 입력했을 때 홀수,짝수를 구별해서 출력해주세요~
+    
+    var num5 = window.prompt("숫자를 입력해주세요");
+    num5 = parseInt(num5);
+        
+//    if(num5 % 2 == 0){
+//        document.write("짝수");
+//    }else{
+//        document.write("홀수");
+//    }
+        
+    (num5 % 2 == 0) ? document.write("짝수"): document.write("홀수");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //변수를 이용해서 100+200+300의 값을 화면에 출력해주세요!
+        var num1 = 100;
+        var num2 = 200;
+        var num3 = 300;
+        document.write(num1+num2+num3,"<br>");
+        
+        //함수를 이용해서 100+200+300의 값을 화면에 출력해주세요!
+        function func(){
+            var num1 = 100;
+            var num2 = 200;
+            var num3 = 300;
+            document.write(num1+num2+num3,"<br>");
+        }
+        func();
+        
+        //배열를 이용해서 100+200+300의 값을 화면에 출력해주세요!
+        var arr1 = new Array(100,200,300);
+        var n1 = arr1[0];
+        var n2 = arr1[1];
+        var n3 = arr1[2];
+        document.write(n1+n2+n3,"<br>");
+        
+        //for문를 이용해서 100+200+300의 값을 화면에 출력해주세요!
+        var arr2 = new Array(100,200,300);
+        var sum = 0;
+        
+        for(var i=0; i<arr2.length; i++){
+            sum = sum + arr2[i];
+        }
+        document.write(sum,"<br>");
+        
+        //for문을 이용하여 화면에 50~100까지 숫자를 출력해주세요!
+        for(var j=50; j<=100; j++){
+            document.write(j,"<br>");
+        }
+        //함수를 이용하여 화면에 50~100까지 숫자를 출력해주세요!
+        function view(){
+            for(var j=50; j<=100; j++){
+                document.write(j);
+            }
+        }
+        view();
+        
+        //화면에 50~100까지 빨간색 숫자로 출력해주세요!
+        function view2(){
+            for(var j=50; j<=100; j++){
+                document.write("<span style='color:red'> "+j+"</span>");
+            }
+        }
+        view2();
+        
+        //화면에 50~100까지 홀수는 빨간색 짝수는 파란색 숫자로 출력해주세요!      
+        function view3(){
+            for(var j=50; j<=100; j++){
+                if(j % 2 == 0){
+                    document.write("<span style='color:red'> "+j+"</span>");
+                } else {
+                    document.write("<span style='color:blue'> "+j+"</span>");
+                }
+                
+            }
+        }
+        view3();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+

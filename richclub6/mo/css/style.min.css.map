@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAOA,AAAA,IAAI,AAAC,CACD,MAAM,CAAE,CAAC,CACZ",
+    "sources": [
+        "../scss/style.scss",
+        "../scss/partials/_base.scss",
+        "../scss/partials/_style.scss",
+        "../scss/partials/_variables.scss"
+    ],
+    "names": [],
+    "file": "style.min.css"
+}

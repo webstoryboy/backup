@@ -1,0 +1,48 @@
+@charset "UTF-8";
+.color {
+  color: #fff; 
+}
+
+/* 루트 */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 12px;
+}
+
+body {
+  color: #161616;
+  position: relative;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+/*# sourceMappingURL=style.css.map */

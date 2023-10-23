@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		li {list-style:none;}
+		.nav {width: 200px;}
+		.nav ul {border:1px solid #999;}
+		.nav ul li {border-bottom:1px solid #999; padding: 10px; position: relative;}
+		.nav .submenu {position: absolute; right: -80px; top: 0; display:none;
+			background: #ccc; }
+		.nav .submenu li {border:0; padding: 5px; }
+		.nav .submenu li:hover {background: #666;}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li>MENU1
+				<ul class="submenu">
+					<li>SubMenu1</li>
+					<li>SubMenu2</li>
+					<li>SubMenu3</li>
+					<li>SubMenu4</li>
+				</ul>
+			</li>
+			<li>MENU2
+				<ul class="submenu">
+					<li>SubMenu1</li>
+					<li>SubMenu2</li>
+					<li>SubMenu3</li>
+					<li>SubMenu4</li>
+				</ul>
+			</li>
+			<li>MENU3
+				<ul class="submenu">
+					<li>SubMenu1</li>
+					<li>SubMenu2</li>
+					<li>SubMenu3</li>
+					<li>SubMenu4</li>
+				</ul>
+			</li>
+			<li>MENU4</li>
+		</ul>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		$(".nav>ul>li").mouseover(function(){	
+			if($(this).children(".submenu").length > 0) {
+				$(this).children(".submenu").stop().slideDown(500);
+			}
+		});
+
+		$(".nav>ul>li").mouseleave(function(){
+			$(this).children(".submenu").stop().slideUp();
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+

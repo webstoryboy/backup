@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+	<style>
+		*{margin: 0; padding: 0;}
+		a {text-decoration: none; color:#fff;}
+		.box1 {width: 100px; height: 100px; background: #000;}
+		.info {
+			position: fixed; right: 10px; top: 60px;
+		}
+		.info span {
+			position: relative; background: rgba(0,0,0,0.6);
+			padding: 10px; border-radius: 50%; color: #fff;
+			width: 50px; height: 50px; display:inline-block;
+			margin: 3px; text-align: center; line-height: 50px;
+		}
+
+		.info .scroll_top:before {
+			content:''; position: absolute;
+			left: 50%; top: -40px; transform: translatex(-50%);
+		}
+
+
+		
+		#contents {}
+		#contents > div {}
+		.section1 {height: 3000px; background: rgba(0,0,0,1)  }
+		.section2 {height: 1000px; background: rgba(0,0,0,0.4)  }
+		.section3 {height: 1000px; background: rgba(0,0,0,0.3)  }
+		.section4 {height: 1000px; background: rgba(0,0,0,0.4)  }
+		.section5 {height: 1000px; background: rgba(0,0,0,0.3)  }
+		.section6 {height: 1000px; background: rgba(0,0,0,0.4)  }
+		.section7 {height: 1000px; background: rgba(0,0,0,0.3)  }
+
+
+		.container {width: 1200px; margin: 0 auto;}
+
+		#nav {position: fixed; left: 0; top: 0; z-index: 2000; width: 100%; height: 60px; background: rgba(255,255,255,0.123); overflow: hidden;}
+		#nav h1 {float: left; color: #fff; font-size: 32px; padding: 10px; text-transform: uppercase;}
+		#nav .menu {float: right;}
+		#nav .menu li {display: inline-block;}
+		#nav .menu li a {display: inline-block; padding: 20px;}
+		
+		/* sec1 */
+		.sec1 {position: relative;}
+		.sbox1 {text-align: center; padding-top: 200px; }
+		.sbox1 img {width: 80%;}
+		.sbox2 {position: fixed; left: 50%; top: 50%; 
+			width: 1080px;
+			transform:translate(-50%,-50%); font-size: 100px; color: #fff;font-family: 'Oswald', sans-serif; font-weight: bold; text-transform: uppercase;}
+		.sbox2 span {display: inline-block;}
+	</style>
+
+
+</head>
+<body>
+	<div class="info">
+		<span class="scroll_top">0</span>
+	</div>
+
+	
+	<nav id="nav">
+		<h1>webs</h1>
+		<menu class="menu">
+			<li><a href="#">Webs</a></li>
+			<li><a href="#">Webs</a></li>
+			<li><a href="#">Webs</a></li>
+			<li><a href="#">Webs</a></li>
+			<li><a href="#">Webs</a></li>
+			<li><a href="#">Webs</a></li>
+		</menu>
+	</nav>
+
+	<div id="contents">
+		<div class="section1">
+			<div class="container">
+				<div class="sec1">
+					<div class="sbox1" data-0="transform:scale(1); opacity:1" data-800="transform:scale(0.7); opacity:0.4"><img src="https://cdn.dribbble.com/users/501212/screenshots/5019335/43763960-722ba12e-9a2c-11e8-9591-7103aa8b5d1c.gif"></div>
+					<div class="sbox2" data-600="top: 50%;" data-800="top: 20%">
+						<span>Coding.</span>
+						<span data-800="opacity:1" data-1200="opacity:0.2">Site.</span>
+						<span data-800="opacity:1" data-1200="opacity:0.2">Portfolio.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section2"></div>
+		<div class="section3"></div>
+		<div class="section4"></div>
+		<div class="section5"></div>
+	</div>
+
+
+	<script src="assets/js/jquery-1.12.4.js"></script>
+	<script src="assets/js/jquery-ui-1.12.1.min.js"></script>
+	<script src="assets/js/skrollr.js"></script>
+	<script type="text/javascript">
+		var s = skrollr.init();
+
+		$(window).scroll(function(){
+			var wScroll = $(this).scrollTop();
+			wScroll = parseInt(wScroll);
+			$(".scroll_top").text(wScroll);
+		});
+	</script>
+</body>
+</html>
+
+
+

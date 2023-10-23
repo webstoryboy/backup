@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+* {margin: 0; padding: 0;}
+.box01 {width:100%; height:100vh; background-color:#f1f1f1;}
+
+.box02 {width:100%; height:100vh; background-color:#ccc;}
+
+</style>
+</head>
+
+
+
+<body>
+
+<div class='box01'></div>
+
+<div class='box02'></div>
+
+
+
+
+
+
+
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script>
+		$(document).on("mousewheel DOMMouseScroll",".box01",function(e){
+
+var box01 = $('.box01').offset();
+
+var box02 = $('.box02').offset();
+
+var EE = e.originalEvent
+
+console.log(EE.detail);
+
+if (EE.detail > 0){
+
+	$('html').animate({"scrollTop":box02.top},500);
+
+}else{
+
+	$('html').animate({"scrollTop":box01.top},500);
+
+}
+
+});
+
+
+
+	</script>
+</body>
+</html>

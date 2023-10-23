@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="webstoryboy">
+	<meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+	<meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+	<title>HTML Reference</title>
+    
+    <!-- web_font -->
+    <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+    
+    <!-- css -->
+    <link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+    <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    
+    <!-- Prettify -->
+    <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+	
+	<!-- Icon -->
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+	<link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+	
+	<!-- hmlt5 support -->
+	<!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+	
+	<!-- IE6,7 support -->
+	<!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+	
+	<!--[if lte IE 6]>
+	<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+	사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+	<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+	<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a> 
+	<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+	<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+	<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+	<![endif]-->
+
+	<style>
+	.face {display:block; margin:20px auto; width:400px; }
+	.face img {width:400px; border-radius:50%; }
+	.face1 img {width:22%; border-radius:10%; margin:1%;}
+	.member {margin:50px 0;}
+	.member li {width:150px; list-style:none; display:inline-block; margin:6px; }
+	.member li img { border-radius:50%;}
+	</style>
+</head>
+
+
+
+<body>
+	<!-- nav -->
+    <div id="top-nav" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                </button>
+                <div class="nav-collapse collapse">
+                	<ul class="nav pull-right">
+                		<li><a href="#">webstoryboy</a></li>
+                		<li><a href="#">reference</a></li>
+                		<li><a href="#">tutorial</a></li>
+                		<li><a href="#">css</a></li>
+                		<li><a href="#">html</a></li>
+                	</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //nav -->
+    
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span12" style="text-align:center;">
+                    <div class="header_tit">
+	                	<h1>Professional web publishers</h1>
+						<h2><a href="http://webstoryboy.co.kr">webstoryboy.co.kr</a></h2>
+		            </div>
+		            <div class="header_icon" id="wow">
+		                <ul>
+		                    <li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+		                    <li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+		                    <li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+		                    <li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+		                </ul>
+		            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+    
+    <!-- contents -->
+	<div class="container" style="margin-top:20px;">
+		<div class="row-fluid">
+			<div class="span12">
+				<h1>HTML Reference</h1>
+
+				<h2>HTML</h2>
+				<p class="well">HTML(HyperText Markup Language)은 웹 페이지를 만들기 위한 언어입니다.</p>
+				<ul>
+					<li>HT = HyperText : 문서와 문서를 연결</li>
+					<li>M = Markup : 마크업, 태그</li>
+					<li>L = Languate : 언어</li>
+					<li>HTML이란? 문서와 문서로 연결된 태그 언어를 말합니다.</li>
+				</ul>
+				
+				<br>
+				<h2>태그(Tag)</h2>
+				<p class="well">태그는 정보를 정의하는 방식을 의미합니다.</p>
+				<ul>
+					<li>태그는 열린태그와 닫는태그가 있습니다.</li>
+					<li>닫는 태그에는 "/" 있어야 합니다.</li>
+					<li>닫는 태그가 필요없는 것도 있습니다.(&lt;br&gt;,&lt;hr&gt;,&lt;img&gt;,&lt;input&gt;,&lt;meta&gt;)</li>
+					<li>HTML5에서는 "/"가 생략이 가능합니다.</li>
+				</ul>
+
+				<br>
+				<h2>블록 요소/인라인 요소(Block/Inline)</h2>
+				<p class="well">블록 요소는 박스, 인라인 요소는 텍스트를 의미합니다.</p>
+				<ul>
+					<li>블록 엘리먼트(Block Element)
+						<ul>
+							<li>독립된 박스 영역으로, 한 줄에 하나에 블록 요소만 포현 할 수 있습니다.</li>
+							<li>블록요소에는 블록요소 인라인 요소를 포함 할 수 있습니다.</li>
+							<li>&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;~&lt;h6&gt;, &lt;ul&gt;, &lt;li&gt;</li>
+						</ul>
+					</li>
+					<li>인라인 엘리먼트(Inline Element)
+						<ul>
+							<li>독립된 텍스트 영역으로, 한 줄에 여러개의 인라인 요소를 표현 할 수 있습니다.</li>
+							<li>인라인 요소에는 블록 요소가 포함 될 수 없지만, 인라인 요소는 포함 할 수 있습니다.</li>
+							<li>&lt;span&gt;, &lt;a&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;img&gt;</li>
+						</ul>
+					</li>
+				</ul>
+				<p><img src="http://i1.daumcdn.net/img-contents/darum/images/guide/1_02_02.jpg"></p>
+				
+				
+				<br>
+				<h2>DTD(Document Type Declaration) 선언</h2>
+				<div class="well">웹 페이지를 제작하기 위해서는 웹 문서 형식 유형을 설정하여야 합니다.</div>
+				<ul>
+					<li>독타입을 설정하지 않거나 잘못 설정하면 브라우저에 따라 화면이 다르게 나오거나 렌더링이 달라지기 때문에 독타입을 설정해야 합니다.</li>
+				</ul>
+
+<pre class="pre-show prettyprint linenums">
+&lt;!-- html5 --&gt;
+&lt;!DOCTYPE html&gt;
+
+&lt;!-- HTML 4.01 Strict --&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+
+&lt;!-- HTML 4.01 Transitional --&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+
+&lt;!-- HTML 4.01 Frameset --&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"&gt;
+
+&lt;!-- XHTML 1.0 Strict --&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+
+&lt;!-- XHTML 1.0 Transitional --&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+&lt;!-- XHTML 1.0 Frameset --&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"&gt;
+</pre>
+				
+				<br>
+				<h2>언어 속성 설정</h2>	
+				<div class="well">컨텐츠의 언어를 인식하고 언어 정보를 추출하는데 사용합니다. 미리 언어를 설정하면 효율성이 더 좋아집니다.</div>
+<pre class="pre-show prettyprint linenums">
+&lt;!-- HTML5 --&gt;
+&lt;html lang="ko"&gt;
+
+&lt;!-- HTML4 --&gt;
+&lt;html lang="ko" xml:lang="ko" xmlns= "http://www.w3.org/1999/xhtml"&gt;
+</pre>
+
+				<br>
+				<h2>문서 정보 설정</h2>	
+				<div class="well">웹 문서의 필요한 정보를 제공합니다.</div>
+<pre class="pre-show prettyprint linenums">
+&lt;!-- HTML5 언어설정 --&gt;
+&lt;meta charset="UTF-8"&gt;
+
+&lt;!-- HTML4 언어설정 --&gt;
+&lt;meta http-equiv="Content-Language" content="text/html; charset=UTF-8"&gt;
+
+&lt;!-- 웹 문서에 대한 제작자 설정 --&gt;
+&lt;meta name="author" content="webstoryboy"&gt;
+
+&lt;!-- 웹 문서에 대한 설명 설정 --&gt;
+&lt;meta name="description" content="사이트 설명"&gt;
+
+&lt;!-- 웹 문서에 대한 키워드 설정 --&gt;
+&lt;meta name="keywords" content="키워드"&gt;
+</pre>
+				
+				
+				<br><br>
+				<h1>HTML Description</h1>
+				<h2>&lt;html&gt;</h2>
+				<p class="well">HTML 문서의 최상위 루트를 나타냅니다.</p>
+				
+				<h2>&lt;head&gt;</h2>
+				<p class="well">HTML 문서의 헤더 요소를 정의하는 영역입니다.</p>
+				
+				<h2>&lt;body&gt;</h2>
+				<p class="well">HTML 문서의 본문에 해당하는 콘텐츠를 정의하는 영역입니다. </p>
+				
+				<h2>&lt;meta&gt;</h2>
+				<p class="well">문서에 대한 정보를 제공합니다.</p>
+				
+				<h2>&lt;link&gt;</h2>
+				<p class="well">문서를 외부 파일과 연결합니다.</p>
+				
+				<h2>&lt;title&gt;</h2>
+				<p class="well">문서의 제목을 설정합니다.</p>
+				
+				<h2>&lt;h1&gt;~&lt;h6&gt;</h2>
+				<p class="well">섹션의 제목을 정의합니다.</p>
+				
+				<h2>&lt;p&gt;</h2>
+				<p class="well">문단을 정의합니다.</p>
+				
+				<h2>&lt;ul&gt;</h2>
+				<p class="well">순서가 없는 목록을 정의합니다.</p>
+				
+				<h2>&lt;li&gt;</h2>
+				<p class="well">목록의 항목을 정의합니다.</p>
+				
+				<h2>&lt;a&gt;</h2>
+				<p class="well">하이퍼 링크를 정의합니다.</p>
+				<ul>
+					<li>href : 링크로 이동하는 경로를 설정합니다.</li>
+					<li>target : 브라우저의 타겟을 설정합니다.
+						<ul>
+							<li>&lt;a target="_blank"&gt;&lt;/a&gt; 링크 클릭시 새로운 브라우저 창으로 설정합니다.</li>
+							<li>&lt;a target="_parent"&gt;&lt;/a&gt; 현재 브라우저의 부모 브라우저 창으로 설정합니다. 부모가 없는 경우 _self와 동일합니다.</li>
+							<li>&lt;a target="_self"&gt;&lt;/a&gt; 현재와 동일한 브라우저 창으로 설정합니다.</li>
+							<li>&lt;a target="_top"&gt;&lt;/a&gt; 최상위 브라우저 창에서 설정합니다. 부모가 없는 경우 _self와 동일합니다.</li>
+						</ul>
+					</li>
+					<li>방문하지 않은 링크는 밑줄과 파란색으로 표시됩니다.</li>
+					<li>방문한 링크는 밑줄과 보라색으로 표시됩니다.</li>
+					<li>활성화된 링크즞 밑줄과 빨간색으로 표시됩니다.</li>
+					<li>&lt;a&gt; 태그는 예외적으로 HTML5에서 블록요소를 포함할 수 있습니다.</li>
+				</ul>
+				
+				<h2>strong</h2>
+				<h2>em</h2>
+				<h2>span</h2>
+				<h2>div</h2>
+				<h2>address</h2>
+				<h2>hr</h2>
+				<h2>br</h2>
+				<h2>table</h2>
+				<h2>input</h2>
+				<h2>legend</h2>
+				<h2>fieldset</h2>
+				<h2>form</h2>
+
+				<h2>section</h2>
+				<div class="well">일반적으로 문서의 콘텐츠 섹션을 의미합니다.</div>
+				<ul>
+					<li>콘텐츠와 관련된 한 가지 주제 영역을 말합니다.</li>
+					<li>section 요소는 문장이나 문서의 스타일링 요소가 아니기 때문에 편의나 영역을 위함이면 div 태그가 좋습니다.</li>
+					<li>section 요소는 제목이 없는 경우는 섹션이라고 할 수 없기 때문에 제목을 제공해야 합니다.</li>
+					<li>section 요소는 일반적인 주제가 아니라면 구체적인 요소(article, aside, nav)를 사용하는 것이 더 적절합니다.</li>
+				</ul>
+
+				<h2>article</h2>
+				<div class="well">콘텐츠의 독립적인 항목을 나타내는 콘텐츠를 의미합니다.</div>
+				<ul>
+					<li>article는 포럼, 신문기사, 잡지, 블러그 항목, 게시판 글 등은 콘텐츠의 독립적인 항목을 나타냅니다.</li>
+					<li>section은 하나의 주제를 나타낸다면, article은 주제를 묶은 독립적인 콘텐츠입니다.</li>
+					<li>section 요소 안에는 article 요소를 쓸 수 있으며, article 요소 안에도 section 요소를 쓸 수 있습니다.</li>
+				</ul>
+
+				<h2>nav</h2>
+				<div class="well">페이지 내에서 이동 할 수 있는 네비게이션 링크 그룹입니다.</div>
+				<ul>
+					<li>nav는 문서의 핵심적인 페이지의 메뉴 및 서브메뉴에서 사용하고, 문서에서 주로 한 번 사용합니다.</li>
+					<li>문서 안에 링크가 포함된 콘텐츠는 nav를 사용하지 않습니다.</li>
+					<li>nav는 핵심적인 네비게이션에 사용해야 하므로, 푸터 내에 링크 그룹의 사용은 적절하지 않습니다.</li>
+				</ul>
+
+				<h2>main</h2>
+				<div class="well">웹 문서의 주요 콘텐츠 영역을 나타낼 때 사용합니다.</div>
+				<ul>
+					<li>main는 웹 페이지에서 한 번만 사용할 수 있으며, 접근성과 검색 영역에 노출을 향상시킵니다.</li>
+					<li>article, aside, footer, header, nav를 하위 요소로 사용 할 수 있습니다.</li>
+				</ul>
+
+				<h2>aside</h2>
+				<div class="well">웹 무서의 메인 콘텐츠와 관련된 사이트 콘텐츠 영역을 나타냅니다.</div>
+				<ul>
+					<li>aside는 메인 콘텐츠와 관련된 사이드의 정보, 광고 등 부분적인 정보를 그룹화 할 때 사용합니다.</li>
+				</ul>
+
+				<h2>header</h2>
+				<div class="well">웹 문서의 헤더 영역을 나타냅니다.</div>
+				<ul>
+					<li>헤더에는 웹 페이지에 대한 소개, 네비게이션 영역, 테이블 영역, 검색영역, 로고 영역을 포함한 영역입니다.</li>
+					<li>헤데에는 제목 태그가 포할 될 수 있으며, 필수 조건은 아닙니다.</li>
+					<li>header는 섹션 콘텐츠가 아닌 그룹화하기 위한 요소이므로 section 요소를 포함 할 수 없습니다.</li>
+				</ul>
+
+				<h2>footer</h2>
+				<div class="well">웹 문서의 푸터 영역을 나타냅니다.</div>
+				<ul>
+					<li>footer는 저작권 정보, 회사 정보, 관련 링크, 주소, 바닥글, 사이트 정보 등을 포함하는 콘텐츠 영역입니다.</li>
+					<li>footer는 섹션 콘텐츠가 아닌 그룹을 나타내는 요소이며, section, article, aside 등을 포함 할 수 있습니다.</li>
+				</ul>
+
+				html5에서 새로 생긴 태그
+				html5에서 의미가 변한 속성 태그
+				html5에서 없어진 태그
+
+			</div>
+			<!--//span12-->
+		</div>
+		<!--//row-fluid-->
+	</div>  
+	<!-- //contents -->
+    
+    <!-- //footer -->
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <h5>Webstoryboy</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+	<!-- //footer -->
+
+	<!-- script -->
+	<script src="../assets/js/jquery-1.9.1.min.js"></script> 
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/google-code-prettify/prettify.js"></script>
+    <script src="../assets/js/application.js"></script>
+</body>
+</html>

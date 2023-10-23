@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	* {margin: 0; padding: 0;}
+
+/* progress bar */
+.progress {background-color: #000; color: #be0000; height: 100%; width: 100%; position: fixed; z-index:99999;}
+.progress-bar {border-top:2px solid #be0000; position: absolute; top: 50%; width: 0%;}
+.progress-bar.progress-complete {border-top-color: #be0000;}
+.progress-text {font-size: 14px; position: absolute; top: 50%; text-align: center; width: 100%; margin-top:10px;}
+
+	</style>
+
+
+</head>
+<body>
+	
+	
+	
+	<div class="progress" id="progress">
+		<span class="progress-bar"></span>
+		<span class="progress-text">0%</span>
+	</div>
+
+
+
+	<img src="img/bg01.jpg">
+	<img src="img/img01.jpg">
+	<img src="img/img1.png">
+	<img src="img/img2.png">
+	<img src="img/img3.png">
+	<img src="img/img4.png">
+	<img src="img/s01.jpg">
+	<img src="img/s02.jpg">
+	<img src="img/s03.jpg">
+	
+<div class="progress" id="progress">
+    <span class="progress-bar"></span>
+    <span class="progress-text">0%</span>
+</div>
+
+	<script src="assets/js/jquery-1.12.4.js"></script>
+    <script src="assets/js/jquery-ui-1.12.1.min.js"></script>
+    <script src="assets/js/jquery.fullPage.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/easypiechart.min.js"></script>
+
+	
+	<script>
+        $(function(){
+        	imagesProgress();  //로딩
+ 			
+
+
+function imagesProgress(){
+	var $container = $("#progress"),
+			$progressBar = $container.find(".progress-bar"),
+			$progressText = $container.find(".progress-text"),
+			imgLoad = imagesLoaded('body'),	//로딩 상황
+			imgTotal = imgLoad.images.length,	//전체 이미지 갯수
+			imgLoaded = 0,										//로딩을 완료환 이미지
+			current = 0,											//현재 이미지
+			//1초에 60번씩 이미지 로딩 상황 확인
+			progressTimer = setInterval(updateProgress, 1000 / 60);
+	
+	//imagesLoaded 라이브러리를 이용해서 이미지를 로딩할 때마다 카운터 값을 1씩 더함
+	imgLoad.on("progress", function(){
+		imgLoaded++;
+	});
+
+	function updateProgress(){
+	//로딩을 완료한 이미지 상태를 백분율로 계산
+	var target = (imgLoaded / imgTotal) * 100;
+	
+	current += ( target - current) * 0.1;
+	$progressBar.css({ width: current + '%' });
+	$progressText.text( Math.floor(current) + '%' );
+	
+	//진행률 표시
+	if(current >= 100){
+		clearInterval(progressTimer);
+		$container.addClass("progress-complete");
+		$progressBar.add($progressText)
+			.delay(500)
+			.animate({opacity: 0},250,function(){
+				$container.animate({top: '-100%'},1000,'easeInOutQuint');
+			});
+		
+	}
+	
+}
+}
+
+
+        });
+        
+        
+    </script>
+
+	
+</body>
+</html>

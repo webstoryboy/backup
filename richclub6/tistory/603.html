@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Hover Effect - Opacity</title>
+		<style>
+			* {padding: 0; margin: 0;}
+		body {background:#1a237e;}
+		.box-wrap {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		}
+		.box {
+		position: relative;
+		width: 400px;
+		height: 300px;
+		border: 7px solid #283593;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+		}
+		.box img {width: 100%;}
+		.box .img { }
+		.box .info {
+		position: absolute; left: 0; bottom: 0;
+		color: #fff;
+		background: rgba(0,0,0,0.5);
+		width: 100%;
+		padding: 15px;
+		box-sizing: border-box;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+		}
+		.box .info h3 {
+		font-size: 28px;
+		line-height: 40px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: #fff;
+		}
+		.box:hover .info {
+		opacity: 1;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="box-wrap">
+			<div class="box">
+				<div class="img">
+					<img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg01.png" alt="hover effect">
+				</div>
+				<div class="info">
+					<h3>타이틀</h3>
+					<p>이미지 설명 부분입니다.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

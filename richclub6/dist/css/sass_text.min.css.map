@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../javascript/sass/sass_text.sass"
+    ],
+    "names": [],
+    "file": "sass_text.min.css"
+}

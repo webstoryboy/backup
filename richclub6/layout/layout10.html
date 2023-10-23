@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		#wrap {  }
+		#header { }
+		#contents {width: 100%;  height: 1466px; background: #ddd;}
+		#footer {width: 100%; height: 314px; background: #eee; }
+		.header-top {width: 100%; height: 130px; background: #999;  }
+		.header-bom {width: 100%; height: 50px;  background: #888; }
+		.footer1 {width: 100%; height: 100px; background: #777;  }
+		.footer2 {width: 100%; height: 160px; background: #888;  }
+		.footer3 {width: 100%; height: 54px; background: #999;  }
+
+		.container {width: 1100px; height: inherit; margin: 0 auto; background: rgba(0,0,0,0.5);}
+
+		.contents {overflow: hidden;  }
+		.contents .left {float: left; width:740px; height: 1466px;   }
+		.contents .right {float: left; width: 332px; height: 1466px;  }
+	</style>
+</head>
+<body>
+	<div style="background: #f00;">bbbbb</div>
+	<a style="background: #f00;">bbbbb</a>
+	<p style="background: #f00;">bbbbb</p>
+	<em style="background: #f00;">bbbbb</em>
+	<strong style="background: #f00;">bbbbb</strong>
+	<li style="background: #f00;">bbbbb</li>
+	<ul>
+		<li></li>
+	</ul>
+	<ol>
+		<li></li>
+	</ol>
+	<dl>
+		<dt></dt>
+		<dd></dd>
+	</dl>
+
+	<div id="wrap">
+		<div id="header">
+			<div class="header-top">
+				<div class="container">header-top</div>
+			</div>
+			<div class="header-bom">
+				<div class="container">header-bom</div>
+			</div>
+		</div>
+
+		<div id="contents">
+			<div class="container">
+				<div class="contents">
+					<div class="left"></div>
+					<div class="right"></div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="footer1"><div class="container">footer1</div></div>
+			<div class="footer2"><div class="container">footer2</div></div>
+			<div class="footer3"><div class="container">footer3</div></div>
+		</div>
+	</div>
+</body>
+</html>

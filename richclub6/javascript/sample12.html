@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+        html,body{ margin:0; padding:0; width:100%; height:100%;}
+        .box{ width:100%; height:100%; position:relative; color:#ffffff; font-size:24pt;}
+    </style>
+</head>
+<body>
+	
+	
+	<div class="box" style="background-color:red;">1</div>
+    <div class="box" style="background-color:orange;">2</div>
+    <div class="box" style="background-color:yellow;">3</div>
+    <div class="box" style="background-color:green;">4</div>
+    <div class="box" style="background-color:blue;">5</div>
+    <div class="box" style="background-color:indigo;">6</div>
+    <div class="box" style="background-color:violet;">7</div>
+
+
+	<script src="assets/js/jquery-1.12.4.js"></script>
+	<script src="assets/js/jquery.mousewheel.min.js"></script>
+	<script>
+		var win_h = $(window).height();
+
+		$(".box").each(function(index){
+			$(this).attr("data-index", win_h*index);
+		});
+
+		$(".box").on("mousewheel",function(e){
+			var sectionPos = parseInt($(this).attr("data-index"));
+
+			if(e.originalEvent.wheelDelta >= 0){
+				$("html,body").stop().animate({scrollTop:sectionPos - win_h},300);
+				return false;
+			} else if(e.originalEvent.wheelDelta < 0){
+				$("html,body").stop().animate({scrollTop:sectionPos + win_h},300);
+				return false;
+			}
+		});
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

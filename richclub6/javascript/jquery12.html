@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        a {text-decoration: none;}
+        .accordion-tit {background: #ccc; width: 100%;
+            display: block; padding: 5px; 
+            border-top: 1px solid #000;}
+        .accordion-desc {display: none;}
+    </style>
+</head>
+<body>
+    <div>
+        <ul class="accordion">
+            <li>
+                <a href="#" class="accordion-tit">title1</a>
+                <div class="accordion-desc">
+                    <p>앞서 학습해본 바와 같이, 퍼소나에 따른 정황 시나리오 분석을 통하여 도출된 요구사항 을 바탕으로 개략적인 디자인 방향성을 예측할 수 있다. 이에 따라, 가상의 대표 사용자 퍼소나의 요구사항 구분은 다음과 같은 기준으로 정리될 수 있다.</p>
+                </div>
+            </li>
+            <li><a href="#" class="accordion-tit">title2</a>
+                <div class="accordion-desc">
+                    <p>앞서 학습해본 바와 같이, 퍼소나에 따른 정황 시나리오 분석을 통하여 도출된 요구사항 을 바탕으로 개략적인 디자인 방향성을 예측할 수 있다. 이에 따라, 가상의 대표 사용자 퍼소나의 요구사항 구분은 다음과 같은 기준으로 정리될 수 있다.</p>
+                </div>
+            </li>
+            <li><a href="#" class="accordion-tit">title3</a>
+                <div class="accordion-desc">
+                    <p>앞서 학습해본 바와 같이, 퍼소나에 따른 정황 시나리오 분석을 통하여 도출된 요구사항 을 바탕으로 개략적인 디자인 방향성을 예측할 수 있다. 이에 따라, 가상의 대표 사용자 퍼소나의 요구사항 구분은 다음과 같은 기준으로 정리될 수 있다.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(".accordion-tit").click(function(){
+            $(this).next(".accordion-desc").slideToggle(100);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

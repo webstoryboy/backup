@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;jQuery&lt;/title&gt;
+	&lt;style&gt;
+		*{padding: 0; margin: 0;}
+		li {list-style: none;}
+		a {text-decoration: none;}
+		.clearfix{*zoom:1;}
+		.clearfix:before, .clearfix:after {display: block; content: ''; line-height: 0;}
+		.clearfix:after {clear: both;}
+
+		.slide-wrap {background: #ccc;height: 500px;min-width: 500px; overflow: hidden;position: relative;}
+		
+		.slide-img {height: 100%;position: absolute;width: 100%;/* left: 0; */}
+		.slide-img &gt; div {height: 100%;overflow: hidden;position: absolute;width: 100%;/* left: 0; */}
+		.slide-img &gt; div img {left: 50%;margin-left: -400px;position: absolute;}
+ 
+		.slide-nav a {position: absolute;top: 50%; left: 50%;width: 70px;height: 70px;background: #000;border-radius: 50%;text-align: center;line-height: 70px;margin-top: -35px;display: block;color:#fff; background-color: rgba(0,0,0,0); overflow: hidden;}
+		.slide-nav a.prev {margin-left: -500px;}
+      .slide-nav a.next {margin-left: 500px;}
+      .slide-nav a.disabled {display: none;}
+      
+      .slide-indicator {position: absolute; left: 50%; bottom: 10px;transform: translate(-50%);}
+      .slide-indicator a {display: inline-block;width: 20px;height: 20px;background: #fff;border-radius:50%;text-align:center;line-height: 20px;margin: 0 3px; background-color: rgba(0,0,0,0);overflow: hidden;}
+      .slide-indicator a.active {background: #222;color:#fff;}
+
+      .count {position: absolute; top: 20px; left: 20px;}
+
+      .slide .text {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+      .slide .text .t1 {opacity: 0; transition: all 0.3s 1s ease;}
+      .slide .text .t2 {opacity: 0; transition: all 0.3s 1.3s ease;}
+      .slide .text .t3 {opacity: 0; transition: all 0.3s 1.6s ease;}
+
+      .slide.active .text .t1 {opacity: 1;}
+      .slide.active .text .t2 {opacity: 1;}
+      .slide.active .text .t3 {opacity: 1;}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	    &lt;div class="slide-wrap"&gt;
+        &lt;div class="slide-img"&gt;
+            &lt;div class="slide" href="#"&gt;
+					&lt;div class="text"&gt;
+						&lt;h3 class="t1"&gt;111Image slide&lt;/h3&gt;
+						&lt;p class="t2"&gt;background&lt;/p&gt;
+						&lt;p class="t3"&gt;background&lt;/p&gt;
+					&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slide" href="#"&gt;
+					&lt;div class="text"&gt;
+						&lt;h3 class="t1"&gt;2222Image slide&lt;/h3&gt;
+						&lt;p class="t2"&gt;background&lt;/p&gt;
+						&lt;p class="t3"&gt;background&lt;/p&gt;
+					&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slide" href="#"&gt;
+					&lt;div class="text"&gt;
+						&lt;h3 class="t1"&gt;333Image slide&lt;/h3&gt;
+						&lt;p class="t2"&gt;background&lt;/p&gt;
+						&lt;p class="t3"&gt;background&lt;/p&gt;
+					&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slide" href="#"&gt;
+					&lt;div class="text"&gt;
+						&lt;h3 class="t1"&gt;444Image slide&lt;/h3&gt;
+						&lt;p class="t2"&gt;background&lt;/p&gt;
+						&lt;p class="t3"&gt;background&lt;/p&gt;
+					&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+   &lt;script src="assets/js/jquery-1.12.4.min.js"&gt;&lt;/script&gt;
+   &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(".slide-wrap").append("&lt;div class='slide-nav'&gt;&lt;a href='#'' class='prev'&gt;Prev&lt;/a&gt;&lt;a href=# class='next'&gt;Next&lt;/a&gt;&lt;/div&gt;");
+		$(".slide-wrap").append("&lt;div class='slide-indicator'&gt;&lt;/div&gt;");
+		$(".slide-wrap").append("&lt;div class='count'&gt;&lt;span class='currentIndex'&gt;0&lt;/span&gt; / &lt;span class='slideCount'&gt;0&lt;/span&gt;&lt;/div&gt;");
+		$(".slide-wrap").each(function(){
+            var $container = $(this),                                //슬라이드 전체 컨테이너
+                $slideGroup = $container.find('.slide-img'),  		//각각의 슬라이드 그룹
+                $slide = $slideGroup.find('&gt; div'),                	//각각의 슬라이드 이미지
+                $nav = $container.find('.slide-nav'),            		//네비게이션
+                $indicator = $container.find('.slide-indicator'),		//인디케이터
+                
+                slideCount = $slide.length,     //슬라이드 갯수
+                indicatorHTML = '',             //인디케이터 콘텐츠
+                currentIndex = 0,             	//현제 슬라이드 페이지 인덱스
+                duration = 500,                 //슬라이드 지속 시간
+                easing = 'easeInOutExpo',       //애니메이션 이징 효과
+                interval = 5000,                //자동으로 다음 슬라이드로 옮길 때까지의 시간
+                timer;
+            
+            //각 슬라이드 위치 설정하고, 인디케이터 생성
+            $slide.each(function(i){
+                $(this).css({ left: 100 * i + '%'});
+                indicatorHTML += '&lt;a href="#"&gt;' + (i+1) + '&lt;/a&gt;';
+            });
+            
+            $indicator.html(indicatorHTML);
+            
+            function gotoSlide(index){
+                $slideGroup.animate({ left: -100 * index + '%' },duration,easing);
+                currentIndex = index;
+
+                // -1  100%
+                // 0   0%
+                // 1   -100%
+                // 2   -200
+                //alert(currentIndex);
+                updateNav();
+            }
+            
+            function updateNav(){
+                var $navPrev = $nav.find('.prev'),
+                    $navNext = $nav.find('.next');
+                // 첫 번째 슬라이드
+                if(currentIndex === 0){
+                    $navPrev.addClass('disabled')
+                }else{
+                    $navPrev.removeClass('disabled')
+                }
+                //마지막 번째 슬라이드
+                if(currentIndex === slideCount -1 ){
+
+                    //$navNext.addClass('disabled')
+                }else {
+                    $navNext.removeClass('disabled')
+                }
+                
+               $indicator.find('a').removeClass('active').eq(currentIndex).addClass('active');
+    				$slide.removeClass('active').eq(currentIndex).addClass('active');
+    				 $(".count .currentIndex").text(currentIndex + 1);
+            	$(".count .slideCount").text(slideCount);
+            } 
+            
+            $nav.on('click','a',function(event){
+                event.preventDefault();
+                if($(this).hasClass('prev')){
+                		 
+                    gotoSlide(currentIndex - 1); 
+                      // 0   -1
+							 // 1    0
+							 // 2    1
+							 // 3    2
+							 // 4   -1
+							 // 5    0
+                }else {
+                    gotoSlide(currentIndex + 1);
+                }
+            });
+
+
+
+            
+            $indicator.on('click','a',function(event){
+                event.preventDefault();
+                if(!$(this).hasClass('active')){
+                    gotoSlide($(this).index());
+                }
+            });
+            
+            //타이머 설정
+            function startTimer(){
+                timer = setInterval(function(){
+                    var nextIndex = (currentIndex + 1) % slideCount;
+                    gotoSlide(nextIndex);
+                },interval);
+            }
+        
+            function stopTimer(){
+                clearInterval(timer);
+            }
+            
+            $container.on({
+                mouseenter: stopTimer,
+                mouseleave: startTimer
+            })
+            
+            //첫 번째 슬라이드 표시
+            gotoSlide(currentIndex);         
+            
+            //타이머시작
+            startTimer()
+            
+            
+           
+            
+        });
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+	</pre>
+</body>
+</html>
